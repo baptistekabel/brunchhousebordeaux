@@ -24,6 +24,38 @@
     "subtitle": "Des recettes originales préparées chaque jour avec des produits frais et locaux",
     "cta": "Voir la carte complète",
     "homemade": "Fait maison",
+    "homeItems": {
+      "pancakes": {
+        "name": "Pancakes",
+        "description": "Pancakes moelleux avec sirop d'érable et fruits frais",
+        "price": "12€"
+      },
+      "burgerHouse": {
+        "name": "Burger House",
+        "description": "Notre burger maison avec sauce spéciale et frites",
+        "price": "16€"
+      },
+      "salmonGuacamole": {
+        "name": "Saumon Guacamole",
+        "description": "Saumon frais avec guacamole maison et fleur de sel",
+        "price": "14€"
+      },
+      "eggplantCaviar": {
+        "name": "Caviar d'Aubergine",
+        "description": "Toast avec caviar d'aubergine, émincé de poulet et parmesan",
+        "price": "14€"
+      },
+      "scrambledEggsBacon": {
+        "name": "Œuf Brouillé Bacon",
+        "description": "Œufs brouillés avec bacon croustillant et tomates cerises",
+        "price": "11€"
+      },
+      "beetrootHummus": {
+        "name": "Houmous à la betterave",
+        "description": "Houmous de betterave avec avocat frais et crudités",
+        "price": "12€"
+      }
+    },
     "items": {
       "pancakes": {
         "name": "Pancakes & sirop d'érable",
@@ -50,6 +82,22 @@
         "description": "Quinoa, légumes rôtis de saison, houmous maison, graines et vinaigrette tahini"
       }
     }
+  },
+  "creativeBrunch": {
+    "title": "Brunch Créatif",
+    "subtitle": "du Mercredi",
+    "description": "Chaque mercredi, transformez votre pause déjeuner en moment créatif et gourmand 🎨",
+    "badge": "Tous les mercredis",
+    "cardTitle": "Une expérience unique",
+    "cardDescription": "Rejoignez-nous chaque mercredi pour notre Brunch Créatif ! Un moment spécial où gastronomie et créativité se rencontrent pour créer une expérience inoubliable.",
+    "features": {
+      "item1": "Ateliers créatifs surprise chaque semaine",
+      "item2": "Menu spécial avec créations exclusives",
+      "item3": "Ambiance artistique et inspirante",
+      "item4": "Rencontres et échanges créatifs",
+      "item5": "Surprises gourmandes à partager"
+    },
+    "imageAlt": "Brunch créatif avec touches artistiques"
   },
   "location": {
     "title": "Un lieu unique au cœur de Bordeaux",

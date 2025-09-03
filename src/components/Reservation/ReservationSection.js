@@ -187,7 +187,7 @@ const SuccessMessage = styled(motion.div)`
 `;
 
 const ReservationSection = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -310,10 +310,18 @@ const ReservationSection = () => {
                   transition={{ duration: 0.5 }}
                 >
                   <h3 style={{ marginBottom: '20px', color: theme.colors.primary.text }}>
-                    Réservez facilement sur TheFork
+                    {i18n.language === 'en'
+                      ? 'Book easily on TheFork'
+                      : i18n.language === 'es'
+                      ? 'Reserva fácilmente en TheFork'
+                      : 'Réservez facilement sur TheFork'}
                   </h3>
                   <p style={{ marginBottom: '30px', color: theme.colors.secondary.text, maxWidth: '500px', margin: '0 auto 30px' }}>
-                    Pour réserver votre table, cliquez sur le bouton ci-dessous et vous serez redirigé vers notre page TheFork où vous pourrez choisir votre date, heure et nombre de convives.
+                    {i18n.language === 'en'
+                      ? 'To book your table, click the button below and you will be redirected to our TheFork page where you can choose your date, time and number of guests.'
+                      : i18n.language === 'es'
+                      ? 'Para reservar tu mesa, haz clic en el botón de abajo y serás redirigido a nuestra página de TheFork donde podrás elegir tu fecha, hora y número de invitados.'
+                      : 'Pour réserver votre table, cliquez sur le bouton ci-dessous et vous serez redirigé vers notre page TheFork où vous pourrez choisir votre date, heure et nombre de convives.'}
                   </p>
                 </motion.div>
               </div>
@@ -336,7 +344,13 @@ const ReservationSection = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span>Réserver sur TheFork</span>
+                <span>
+                  {i18n.language === 'en'
+                    ? 'Book on TheFork'
+                    : i18n.language === 'es'
+                    ? 'Reservar en TheFork'
+                    : 'Réserver sur TheFork'}
+                </span>
                 <span style={{ fontSize: '20px' }}>→</span>
               </LiquidGlassButton>
               

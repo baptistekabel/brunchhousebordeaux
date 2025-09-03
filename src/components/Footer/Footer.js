@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { FiInstagram, FiFacebook, FiMapPin, FiPhone, FiMail, FiClock } from 'react-icons/fi';
 import { LiquidGlassButton } from '../LiquidGlass';
+import { useTranslation } from 'react-i18next';
 
 const FooterSection = styled.footer`
   padding: ${props => props.theme.spacing.xxxl} ${props => props.theme.spacing.container.padding} ${props => props.theme.spacing.xl};
@@ -175,6 +176,8 @@ const LegalLinks = styled.div`
 `;
 
 const Footer = () => {
+  const { t, i18n } = useTranslation();
+  
   return (
     <FooterSection>
       <Container>
@@ -182,8 +185,11 @@ const Footer = () => {
           <FooterColumn>
             <Logo>Brunch House</Logo>
             <Description>
-              Le rendez-vous gourmand qui réconcilie matin et midi. 
-              Une expérience culinaire unique au cœur de Bordeaux.
+              {i18n.language === 'en'
+                ? "The gourmet rendezvous that reconciles morning and noon. A unique culinary experience in the heart of Bordeaux."
+                : i18n.language === 'es'
+                ? "El encuentro gourmet que reconcilia mañana y mediodía. Una experiencia culinaria única en el corazón de Burdeos."
+                : "Le rendez-vous gourmand qui réconcilie matin et midi. Une expérience culinaire unique au cœur de Bordeaux."}
             </Description>
             <SocialLinks>
               <SocialLink
@@ -199,7 +205,9 @@ const Footer = () => {
           </FooterColumn>
           
           <FooterColumn>
-            <ColumnTitle>Contact</ColumnTitle>
+            <ColumnTitle>
+              {i18n.language === 'en' ? 'Contact' : i18n.language === 'es' ? 'Contacto' : 'Contact'}
+            </ColumnTitle>
             <InfoList>
               <InfoItem>
                 <FiMapPin size={14} />
@@ -213,27 +221,39 @@ const Footer = () => {
           </FooterColumn>
           
           <FooterColumn>
-            <ColumnTitle>Horaires</ColumnTitle>
+            <ColumnTitle>
+              {i18n.language === 'en' ? 'Opening Hours' : i18n.language === 'es' ? 'Horarios' : 'Horaires'}
+            </ColumnTitle>
             <InfoList>
               <InfoItem>
                 <FiClock size={14} />
                 <span>
-                  Mar-Dim: 10h00-16h00<br />
-                  Fermé le lundi<br />
-                  🎨 Brunch Créatif le mercredi
+                  {i18n.language === 'en' 
+                    ? <>Tue-Sun: 10:00am-4:00pm<br />Closed on Monday<br />🎨 Creative Brunch on Wednesday</>
+                    : i18n.language === 'es'
+                    ? <>Mar-Dom: 10:00-16:00<br />Cerrado los lunes<br />🎨 Brunch Creativo los miércoles</>
+                    : <>Mar-Dim: 10h00-16h00<br />Fermé le lundi<br />🎨 Brunch Créatif le mercredi</>}
                 </span>
               </InfoItem>
             </InfoList>
-            <ColumnTitle style={{ marginTop: '24px' }}>Liens utiles</ColumnTitle>
+            <ColumnTitle style={{ marginTop: '24px' }}>
+              {i18n.language === 'en' ? 'Quick Links' : i18n.language === 'es' ? 'Enlaces útiles' : 'Liens utiles'}
+            </ColumnTitle>
             <LinkList>
               <LinkItem>
-                <FooterLink href="#menu">Menu</FooterLink>
+                <FooterLink href="#menu">
+                  {i18n.language === 'en' ? 'Menu' : i18n.language === 'es' ? 'Menú' : 'Menu'}
+                </FooterLink>
               </LinkItem>
               <LinkItem>
-                <FooterLink href="#reservation">Réservation</FooterLink>
+                <FooterLink href="#reservation">
+                  {i18n.language === 'en' ? 'Reservation' : i18n.language === 'es' ? 'Reserva' : 'Réservation'}
+                </FooterLink>
               </LinkItem>
               <LinkItem>
-                <FooterLink href="#location">Nous trouver</FooterLink>
+                <FooterLink href="#location">
+                  {i18n.language === 'en' ? 'Find Us' : i18n.language === 'es' ? 'Encuéntranos' : 'Nous trouver'}
+                </FooterLink>
               </LinkItem>
             </LinkList>
           </FooterColumn>
@@ -244,7 +264,12 @@ const Footer = () => {
         
         <FooterBottom>
           <Copyright>
-            © 2024 Brunch House Bordeaux. Tous droits réservés.
+            © 2024 Brunch House Bordeaux. 
+            {i18n.language === 'en' 
+              ? 'All rights reserved.'
+              : i18n.language === 'es'
+              ? 'Todos los derechos reservados.'
+              : 'Tous droits réservés.'}
           </Copyright>
         </FooterBottom>
       </Container>

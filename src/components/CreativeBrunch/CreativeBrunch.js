@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { FiCalendar, FiUsers, FiStar } from 'react-icons/fi';
 import { LiquidGlassCard } from '../LiquidGlass';
 import { ParallaxSection, ScaleInWhenVisible } from '../AnimatedSection/AnimatedSection';
+import { useTranslation } from 'react-i18next';
 
 const Section = styled.section`
   padding: ${props => props.theme.spacing.section.mobile} ${props => props.theme.spacing.container.padding};
@@ -179,6 +180,7 @@ const FloatingEmoji = styled(motion.div)`
 `;
 
 const CreativeBrunch = () => {
+  const { t } = useTranslation();
   const floatingAnimation = {
     y: [0, -20, 0],
     transition: {
@@ -198,7 +200,7 @@ const CreativeBrunch = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span>Brunch Créatif</span> du Mercredi
+            <span>{t('creativeBrunch.title')}</span> {t('creativeBrunch.subtitle')}
           </SectionTitle>
           <SectionSubtitle
             initial={{ opacity: 0, y: 20 }}
@@ -206,7 +208,7 @@ const CreativeBrunch = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Chaque mercredi, transformez votre pause déjeuner en moment créatif et gourmand 🎨
+            {t('creativeBrunch.description')}
           </SectionSubtitle>
         </Header>
         
@@ -215,31 +217,29 @@ const CreativeBrunch = () => {
             <ContentCard>
               <Badge>
                 <FiCalendar size={18} />
-                <span>Tous les mercredis</span>
+                <span>{t('creativeBrunch.badge')}</span>
               </Badge>
               
-              <ContentTitle>Une expérience unique</ContentTitle>
+              <ContentTitle>{t('creativeBrunch.cardTitle')}</ContentTitle>
               <ContentText>
-                Rejoignez-nous chaque mercredi pour notre Brunch Créatif ! 
-                Un moment spécial où gastronomie et créativité se rencontrent 
-                pour créer une expérience inoubliable.
+                {t('creativeBrunch.cardDescription')}
               </ContentText>
               
               <FeatureList>
                 <FeatureItem>
-                  Ateliers créatifs surprise chaque semaine
+                  {t('creativeBrunch.features.item1')}
                 </FeatureItem>
                 <FeatureItem>
-                  Menu spécial avec créations exclusives
+                  {t('creativeBrunch.features.item2')}
                 </FeatureItem>
                 <FeatureItem>
-                  Ambiance artistique et inspirante
+                  {t('creativeBrunch.features.item3')}
                 </FeatureItem>
                 <FeatureItem>
-                  Rencontres et échanges créatifs
+                  {t('creativeBrunch.features.item4')}
                 </FeatureItem>
                 <FeatureItem>
-                  Surprises gourmandes à partager
+                  {t('creativeBrunch.features.item5')}
                 </FeatureItem>
               </FeatureList>
               
@@ -278,7 +278,7 @@ const CreativeBrunch = () => {
             >
               <Image 
                 src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
-                alt="Brunch créatif avec touches artistiques"
+                alt={t('creativeBrunch.imageAlt')}
               />
             </ImageWrapper>
           </ParallaxSection>

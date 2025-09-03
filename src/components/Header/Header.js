@@ -336,7 +336,6 @@ const Header = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <FiGlobe size={16} />
                 <span>{currentLang.flag} {currentLang.code.toUpperCase()}</span>
               </LanguageButton>
               
@@ -413,7 +412,6 @@ const Header = () => {
                   onClick={() => setLangDropdownOpen(!langDropdownOpen)}
                   style={{ width: '100%' }}
                 >
-                  <FiGlobe size={16} />
                   <span>{currentLang.flag} {currentLang.name}</span>
                 </LanguageButton>
               </LanguageSelector>

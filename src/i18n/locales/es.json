@@ -24,6 +24,38 @@
     "subtitle": "Recetas originales preparadas diariamente con productos frescos y locales",
     "cta": "Ver menú completo",
     "homemade": "Hecho en casa",
+    "homeItems": {
+      "pancakes": {
+        "name": "Pancakes",
+        "description": "Pancakes esponjosos con jarabe de arce y frutas frescas",
+        "price": "12€"
+      },
+      "burgerHouse": {
+        "name": "Hamburguesa de la Casa",
+        "description": "Nuestra hamburguesa casera con salsa especial y papas fritas",
+        "price": "16€"
+      },
+      "salmonGuacamole": {
+        "name": "Salmón con Guacamole",
+        "description": "Salmón fresco con guacamole casero y flor de sal",
+        "price": "14€"
+      },
+      "eggplantCaviar": {
+        "name": "Caviar de Berenjena",
+        "description": "Tostada con caviar de berenjena, pollo en tiras y parmesano",
+        "price": "14€"
+      },
+      "scrambledEggsBacon": {
+        "name": "Huevos Revueltos con Bacon",
+        "description": "Huevos revueltos con bacon crujiente y tomates cherry",
+        "price": "11€"
+      },
+      "beetrootHummus": {
+        "name": "Hummus de Remolacha",
+        "description": "Hummus de remolacha con aguacate fresco y verduras crudas",
+        "price": "12€"
+      }
+    },
     "items": {
       "pancakes": {
         "name": "Pancakes y jarabe de arce",
@@ -50,6 +82,22 @@
         "description": "Quinoa, verduras asadas de temporada, hummus casero, semillas y aderezo de tahini"
       }
     }
+  },
+  "creativeBrunch": {
+    "title": "Brunch Creativo",
+    "subtitle": "de los Miércoles",
+    "description": "Cada miércoles, transforma tu pausa del almuerzo en un momento creativo y gourmet 🎨",
+    "badge": "Todos los miércoles",
+    "cardTitle": "Una experiencia única",
+    "cardDescription": "Únete a nosotros cada miércoles para nuestro Brunch Creativo! Un momento especial donde la gastronomía y la creatividad se encuentran para crear una experiencia inolvidable.",
+    "features": {
+      "item1": "Talleres creativos sorpresa cada semana",
+      "item2": "Menú especial con creaciones exclusivas",
+      "item3": "Ambiente artístico e inspirador",
+      "item4": "Encuentros e intercambios creativos",
+      "item5": "Sorpresas gourmet para compartir"
+    },
+    "imageAlt": "Brunch creativo con toques artísticos"
   },
   "location": {
     "title": "Un lugar único en el corazón de Burdeos",

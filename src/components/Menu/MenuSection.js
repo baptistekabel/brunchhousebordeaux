@@ -154,59 +154,59 @@ const CTAWrapper = styled.div`
   margin-top: ${props => props.theme.spacing.xl};
 `;
 
-const menuItems = [
-  {
-    id: 1,
-    name: "Pancakes",
-    description: "Pancakes moelleux avec sirop d'érable et fruits frais",
-    price: "12€",
-    image: "/images/menu/pancake.jpeg",
-    homemade: true
-  },
-  {
-    id: 2,
-    name: "Burger House",
-    description: "Notre burger maison avec sauce spéciale et frites",
-    price: "16€",
-    image: "/images/menu/burgerhouse.jpeg",
-    homemade: true
-  },
-  {
-    id: 3,
-    name: "Saumon Guacamole",
-    description: "Saumon frais avec guacamole maison et fleur de sel",
-    price: "14€",
-    image: "/images/menu/saumonguacamole.jpeg",
-    homemade: true
-  },
-  {
-    id: 4,
-    name: "Caviar d'Aubergine",
-    description: "Toast avec caviar d'aubergine, émincé de poulet et parmesan",
-    price: "14€",
-    image: "/images/menu/toastcaviaraubergine.jpeg",
-    homemade: true
-  },
-  {
-    id: 5,
-    name: "Œuf Brouillé Bacon",
-    description: "Œufs brouillés avec bacon croustillant et tomates cerises",
-    price: "11€",
-    image: "/images/menu/oeufbrouillebacon.jpeg",
-    homemade: true
-  },
-  {
-    id: 6,
-    name: "Houmous à la betterave",
-    description: "Houmous de betterave avec avocat frais et crudités",
-    price: "12€",
-    image: "/images/menu/houmous.jpeg",
-    homemade: true
-  }
-];
-
 const MenuSection = () => {
   const { t } = useTranslation();
+  
+  const menuItems = [
+    {
+      id: 1,
+      name: t('menu.homeItems.pancakes.name'),
+      description: t('menu.homeItems.pancakes.description'),
+      price: t('menu.homeItems.pancakes.price'),
+      image: "/images/menu/pancake.jpeg",
+      homemade: true
+    },
+    {
+      id: 2,
+      name: t('menu.homeItems.burgerHouse.name'),
+      description: t('menu.homeItems.burgerHouse.description'),
+      price: t('menu.homeItems.burgerHouse.price'),
+      image: "/images/menu/burgerhouse.jpeg",
+      homemade: true
+    },
+    {
+      id: 3,
+      name: t('menu.homeItems.salmonGuacamole.name'),
+      description: t('menu.homeItems.salmonGuacamole.description'),
+      price: t('menu.homeItems.salmonGuacamole.price'),
+      image: "/images/menu/saumonguacamole.jpeg",
+      homemade: true
+    },
+    {
+      id: 4,
+      name: t('menu.homeItems.eggplantCaviar.name'),
+      description: t('menu.homeItems.eggplantCaviar.description'),
+      price: t('menu.homeItems.eggplantCaviar.price'),
+      image: "/images/menu/toastcaviaraubergine.jpeg",
+      homemade: true
+    },
+    {
+      id: 5,
+      name: t('menu.homeItems.scrambledEggsBacon.name'),
+      description: t('menu.homeItems.scrambledEggsBacon.description'),
+      price: t('menu.homeItems.scrambledEggsBacon.price'),
+      image: "/images/menu/oeufbrouillebacon.jpeg",
+      homemade: true
+    },
+    {
+      id: 6,
+      name: t('menu.homeItems.beetrootHummus.name'),
+      description: t('menu.homeItems.beetrootHummus.description'),
+      price: t('menu.homeItems.beetrootHummus.price'),
+      image: "/images/menu/houmous.jpeg",
+      homemade: true
+    }
+  ];
   const navigate = useNavigate();
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({

@@ -24,6 +24,38 @@
     "subtitle": "Original recipes prepared daily with fresh and local products",
     "cta": "View full menu",
     "homemade": "Homemade",
+    "homeItems": {
+      "pancakes": {
+        "name": "Pancakes",
+        "description": "Fluffy pancakes with maple syrup and fresh fruits",
+        "price": "12€"
+      },
+      "burgerHouse": {
+        "name": "House Burger",
+        "description": "Our homemade burger with special sauce and fries",
+        "price": "16€"
+      },
+      "salmonGuacamole": {
+        "name": "Salmon Guacamole",
+        "description": "Fresh salmon with homemade guacamole and fleur de sel",
+        "price": "14€"
+      },
+      "eggplantCaviar": {
+        "name": "Eggplant Caviar",
+        "description": "Toast with eggplant caviar, sliced chicken and parmesan",
+        "price": "14€"
+      },
+      "scrambledEggsBacon": {
+        "name": "Scrambled Eggs & Bacon",
+        "description": "Scrambled eggs with crispy bacon and cherry tomatoes",
+        "price": "11€"
+      },
+      "beetrootHummus": {
+        "name": "Beetroot Hummus",
+        "description": "Beetroot hummus with fresh avocado and raw vegetables",
+        "price": "12€"
+      }
+    },
     "items": {
       "pancakes": {
         "name": "Pancakes & maple syrup",
@@ -50,6 +82,22 @@
         "description": "Quinoa, seasonal roasted vegetables, homemade hummus, seeds and tahini dressing"
       }
     }
+  },
+  "creativeBrunch": {
+    "title": "Creative Brunch",
+    "subtitle": "Wednesdays",
+    "description": "Every Wednesday, transform your lunch break into a creative and gourmet moment 🎨",
+    "badge": "Every Wednesday",
+    "cardTitle": "A unique experience",
+    "cardDescription": "Join us every Wednesday for our Creative Brunch! A special moment where gastronomy and creativity meet to create an unforgettable experience.",
+    "features": {
+      "item1": "Creative surprise workshops every week",
+      "item2": "Special menu with exclusive creations",
+      "item3": "Artistic and inspiring atmosphere",
+      "item4": "Creative meetings and exchanges",
+      "item5": "Gourmet surprises to share"
+    },
+    "imageAlt": "Creative brunch with artistic touches"
   },
   "location": {
     "title": "A unique place in the heart of Bordeaux",

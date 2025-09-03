@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { FiMapPin, FiSun, FiHome } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
 
 const Section = styled.section`
   padding: ${props => props.theme.spacing.section.mobile} ${props => props.theme.spacing.container.padding};
@@ -105,21 +106,35 @@ const ValueDescription = styled.p`
 `;
 
 const ValuesSection = () => {
+  const { i18n } = useTranslation();
+  
   const values = [
     {
       icon: <FiMapPin size={32} />,
-      title: "Local",
-      description: "Nous privilégions les producteurs locaux de la région bordelaise pour garantir fraîcheur et qualité tout en soutenant l'économie locale."
+      title: i18n.language === 'en' ? 'Local' : i18n.language === 'es' ? 'Local' : 'Local',
+      description: i18n.language === 'en'
+        ? "We prioritize local producers from the Bordeaux region to ensure freshness and quality while supporting the local economy."
+        : i18n.language === 'es'
+        ? "Priorizamos los productores locales de la región de Burdeos para garantizar frescura y calidad mientras apoyamos la economía local."
+        : "Nous privilégions les producteurs locaux de la région bordelaise pour garantir fraîcheur et qualité tout en soutenant l'économie locale."
     },
     {
       icon: <FiSun size={32} />,
-      title: "Saisonnier",
-      description: "Notre menu évolue au fil des saisons pour vous offrir le meilleur de chaque période de l'année avec des produits à leur apogée."
+      title: i18n.language === 'en' ? 'Seasonal' : i18n.language === 'es' ? 'Estacional' : 'Saisonnier',
+      description: i18n.language === 'en'
+        ? "Our menu evolves with the seasons to offer you the best of each time of year with products at their peak."
+        : i18n.language === 'es'
+        ? "Nuestro menú evoluciona con las estaciones para ofrecerte lo mejor de cada época del año con productos en su mejor momento."
+        : "Notre menu évolue au fil des saisons pour vous offrir le meilleur de chaque période de l'année avec des produits à leur apogée."
     },
     {
       icon: <FiHome size={32} />,
-      title: "Fait maison",
-      description: "Tout est préparé sur place par notre équipe."
+      title: i18n.language === 'en' ? 'Homemade' : i18n.language === 'es' ? 'Casero' : 'Fait maison',
+      description: i18n.language === 'en'
+        ? "Everything is prepared on-site by our team."
+        : i18n.language === 'es'
+        ? "Todo es preparado en el lugar por nuestro equipo."
+        : "Tout est préparé sur place par notre équipe."
     }
   ];
 
@@ -155,7 +170,7 @@ const ValuesSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Nos valeurs
+            {i18n.language === 'en' ? 'Our Values' : i18n.language === 'es' ? 'Nuestros Valores' : 'Nos valeurs'}
           </SectionTitle>
           <SectionSubtitle
             initial={{ opacity: 0, y: 20 }}
@@ -163,7 +178,11 @@ const ValuesSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Un engagement quotidien pour une cuisine authentique et responsable.
+            {i18n.language === 'en'
+              ? 'A daily commitment to authentic and responsible cuisine.'
+              : i18n.language === 'es'
+              ? 'Un compromiso diario con la cocina auténtica y responsable.'
+              : 'Un engagement quotidien pour une cuisine authentique et responsable.'}
           </SectionSubtitle>
         </Header>
         

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { FiStar } from 'react-icons/fi';
 import { FaGoogle } from 'react-icons/fa';
 import { LiquidGlassCard, LiquidGlassButton } from '../LiquidGlass';
+import { useTranslation } from 'react-i18next';
 
 const Section = styled.section`
   padding: ${props => props.theme.spacing.section.mobile} ${props => props.theme.spacing.container.padding};
@@ -161,6 +162,83 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  const { i18n } = useTranslation();
+  
+  const testimonials = [
+    {
+      name: "Sophie Larrieu",
+      initial: "S",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
+      date: i18n.language === 'en' ? "3 days ago" : i18n.language === 'es' ? "Hace 3 días" : "Il y a 3 jours",
+      rating: 5,
+      text: i18n.language === 'en' 
+        ? "An exceptional brunch! The pancakes are the best I've ever had. The atmosphere is warm and the service impeccable."
+        : i18n.language === 'es'
+        ? "¡Un brunch excepcional! Los pancakes son los mejores que he probado. El ambiente es cálido y el servicio impecable."
+        : "Un brunch exceptionnel ! Les pancakes sont les meilleurs que j'ai jamais mangés. L'ambiance est chaleureuse et le service impeccable."
+    },
+    {
+      name: "Marc Durand",
+      initial: "M",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
+      date: i18n.language === 'en' ? "1 week ago" : i18n.language === 'es' ? "Hace 1 semana" : "Il y a 1 semaine",
+      rating: 5,
+      text: i18n.language === 'en'
+        ? "Perfect place for a family brunch. The coffee is excellent and the team is very welcoming. Highly recommend!"
+        : i18n.language === 'es'
+        ? "Lugar perfecto para un brunch familiar. El café es excelente y el equipo muy acogedor. ¡Lo recomiendo mucho!"
+        : "Endroit parfait pour un brunch en famille. Le café est excellent et l'équipe très accueillante. Je recommande vivement !"
+    },
+    {
+      name: "Julie Martin",
+      initial: "J",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
+      date: i18n.language === 'en' ? "2 weeks ago" : i18n.language === 'es' ? "Hace 2 semanas" : "Il y a 2 semaines",
+      rating: 5,
+      text: i18n.language === 'en'
+        ? "The food is fresh and delicious. A real favorite for this warm place in the heart of Bordeaux. Wednesday's creative brunch is amazing!"
+        : i18n.language === 'es'
+        ? "La comida es fresca y deliciosa. Un verdadero favorito en este lugar cálido en el corazón de Burdeos. ¡El brunch creativo del miércoles es increíble!"
+        : "La nourriture est fraîche et savoureuse. Un vrai coup de cœur pour ce lieu chaleureux au cœur de Bordeaux. Brunch créatif du mercredi au top !"
+    },
+    {
+      name: "Thomas Bernard",
+      initial: "T",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop",
+      date: i18n.language === 'en' ? "3 weeks ago" : i18n.language === 'es' ? "Hace 3 semanas" : "Il y a 3 semaines",
+      rating: 5,
+      text: i18n.language === 'en'
+        ? "Fast service despite Sunday's crowd. The French toast croissants are incredible and the prices are very reasonable."
+        : i18n.language === 'es'
+        ? "Servicio rápido a pesar de la multitud del domingo. Los croissants French toast son increíbles y los precios muy razonables."
+        : "Service rapide malgré l'affluence du dimanche. Les croissants French toast sont incroyables et les prix sont très raisonnables."
+    },
+    {
+      name: "Emma Rousseau",
+      initial: "E",
+      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop",
+      date: i18n.language === 'en' ? "1 month ago" : i18n.language === 'es' ? "Hace 1 mes" : "Il y a 1 mois",
+      rating: 5,
+      text: i18n.language === 'en'
+        ? "A fantastic discovery! Everything is homemade and you can taste it. The team is adorable and very attentive."
+        : i18n.language === 'es'
+        ? "¡Un descubrimiento fantástico! Todo es casero y se nota. El equipo es adorable y muy atento."
+        : "Une découverte fantastique ! Tout est fait maison et ça se sent. L'équipe est adorable et aux petits soins."
+    },
+    {
+      name: "Lucas Petit",
+      initial: "L",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop",
+      date: i18n.language === 'en' ? "2 months ago" : i18n.language === 'es' ? "Hace 2 meses" : "Il y a 2 mois",
+      rating: 5,
+      text: i18n.language === 'en'
+        ? "The best brunch in Bordeaux without a doubt. The portions are generous and everything is delicious from start to finish."
+        : i18n.language === 'es'
+        ? "El mejor brunch de Burdeos sin duda. Las porciones son generosas y todo es delicioso de principio a fin."
+        : "Le meilleur brunch de Bordeaux sans hésitation. Les portions sont généreuses et tout est délicieux du début à la fin."
+    }
+  ];
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -193,7 +271,11 @@ const TestimonialsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Ils ont adoré l'expérience
+            {i18n.language === 'en' 
+              ? 'They loved the experience'
+              : i18n.language === 'es'
+              ? 'Les encantó la experiencia'
+              : "Ils ont adoré l'expérience"}
           </SectionTitle>
           <SectionSubtitle
             initial={{ opacity: 0, y: 20 }}
@@ -201,7 +283,11 @@ const TestimonialsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Découvrez ce que nos clients disent de nous
+            {i18n.language === 'en'
+              ? 'Discover what our customers say about us'
+              : i18n.language === 'es'
+              ? 'Descubre lo que nuestros clientes dicen de nosotros'
+              : 'Découvrez ce que nos clients disent de nous'}
           </SectionSubtitle>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -243,7 +329,11 @@ const TestimonialsSection = () => {
               color: '#1C3F33',
               fontWeight: '600'
             }}>
-              +200 avis Google
+              {i18n.language === 'en'
+                ? '+200 Google reviews'
+                : i18n.language === 'es'
+                ? '+200 reseñas de Google'
+                : '+200 avis Google'}
             </div>
           </motion.div>
         </Header>
@@ -304,7 +394,11 @@ const TestimonialsSection = () => {
               color: '#1C3F33'
             }}
           >
-            Vous avez aimé votre expérience ?
+            {i18n.language === 'en'
+              ? 'Did you enjoy your experience?'
+              : i18n.language === 'es'
+              ? '¿Disfrutaste tu experiencia?'
+              : 'Vous avez aimé votre expérience ?'}
           </motion.h3>
           <motion.p 
             style={{ 
@@ -315,7 +409,11 @@ const TestimonialsSection = () => {
               margin: '0 auto 32px'
             }}
           >
-            Partagez votre avis sur Google et aidez d'autres gourmands à découvrir notre brunch
+            {i18n.language === 'en'
+              ? 'Share your review on Google and help other food lovers discover our brunch'
+              : i18n.language === 'es'
+              ? 'Comparte tu opinión en Google y ayuda a otros amantes de la comida a descubrir nuestro brunch'
+              : "Partagez votre avis sur Google et aidez d'autres gourmands à découvrir notre brunch"}
           </motion.p>
           <LiquidGlassButton
             variant="accent"
@@ -333,7 +431,11 @@ const TestimonialsSection = () => {
             }}
           >
             <FaGoogle size={20} />
-            Laisser un avis sur Google
+            {i18n.language === 'en'
+              ? 'Leave a review on Google'
+              : i18n.language === 'es'
+              ? 'Dejar una reseña en Google'
+              : 'Laisser un avis sur Google'}
           </LiquidGlassButton>
         </motion.div>
       </Container>
