@@ -17,15 +17,19 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
+    lng: 'fr', // Force French as default
     fallbackLng: 'fr',
     debug: false,
     interpolation: {
       escapeValue: false
     },
     detection: {
-      order: ['localStorage', 'navigator', 'htmlTag'],
-      caches: ['localStorage']
-    }
+      order: ['localStorage', 'htmlTag'],
+      caches: ['localStorage'],
+      lookupLocalStorage: 'i18nextLng',
+      checkWhitelist: true
+    },
+    whitelist: ['fr', 'en', 'es']
   });
 
 export default i18n;
