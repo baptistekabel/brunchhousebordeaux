@@ -1,0 +1,176 @@
+{
+  "nav": {
+    "menu": "Menu",
+    "location": "Lieu",
+    "reservation": "Réservation",
+    "values": "Nos valeurs",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Que le brunch commence...",
+    "subtitle": "Découvrez une expérience gourmande unique avec nos produits frais et locaux, préparés avec passion dans une ambiance chaleureuse.",
+    "cta": {
+      "reserve": "Réserver une table",
+      "menu": "Voir le menu"
+    },
+    "badges": {
+      "open": "Mar-Dim 10h-16h",
+      "location": "Bordeaux",
+      "coffee": "Cuisine maison"
+    }
+  },
+  "menu": {
+    "title": "Nos créations gourmandes",
+    "subtitle": "Des recettes originales préparées chaque jour avec des produits frais et locaux",
+    "cta": "Voir la carte complète",
+    "homemade": "Fait maison",
+    "items": {
+      "pancakes": {
+        "name": "Pancakes & sirop d'érable",
+        "description": "Pancakes moelleux accompagnés de sirop d'érable pur du Canada, beurre fermier et fruits de saison"
+      },
+      "avocado": {
+        "name": "Avocado Toast Deluxe",
+        "description": "Pain au levain grillé, avocat frais, œuf poché, graines de sésame, citron vert et piment d'Espelette"
+      },
+      "granola": {
+        "name": "Granola Bowl Maison",
+        "description": "Granola croustillant fait maison, yaourt grec, compote de fruits, miel de fleurs et fruits frais"
+      },
+      "benedict": {
+        "name": "Œufs Bénédicte",
+        "description": "Muffin anglais, jambon de Bayonne, œufs pochés, sauce hollandaise maison et ciboulette"
+      },
+      "frenchtoast": {
+        "name": "French Toast Caramélisé",
+        "description": "Pain brioché, crème vanille, caramel au beurre salé, noix de pécan et chantilly"
+      },
+      "veggie": {
+        "name": "Bowl Végétarien",
+        "description": "Quinoa, légumes rôtis de saison, houmous maison, graines et vinaigrette tahini"
+      }
+    }
+  },
+  "location": {
+    "title": "Un lieu unique au cœur de Bordeaux",
+    "subtitle": "Niché dans le quartier de Bordeaux, notre établissement vous accueille dans un cadre chaleureux et moderne. Tous les mercredis : Brunch Créatif 🎨",
+    "hours": {
+      "title": "Horaires d'ouverture",
+      "weekdays": "Mardi - Dimanche : 10h00 - 16h00",
+      "weekend": "Fermé le lundi",
+      "service": "📲 Réservation conseillée en week-end"
+    },
+    "address": {
+      "title": "Adresse",
+      "street": "3 rue Ferbos",
+      "city": "33800 Bordeaux",
+      "transport": "Quartier Bacalan - Tram B (Arrêt Brandenburg)"
+    },
+    "contact": {
+      "title": "Contact",
+      "phone": "Instagram : @brunchhousebordeaux",
+      "reservation": "Réservation conseillée le week-end",
+      "groups": "Brunch Créatif tous les mercredis"
+    }
+  },
+  "reservation": {
+    "title": "Réservez votre table",
+    "subtitle": "Garantissez votre place pour un moment gourmand inoubliable",
+    "form": {
+      "date": "Date",
+      "time": "Heure",
+      "guests": "Nombre de personnes",
+      "name": "Nom complet",
+      "email": "Email",
+      "phone": "Téléphone",
+      "message": "Message (optionnel)",
+      "messagePlaceholder": "Allergies, demandes spéciales, événement particulier...",
+      "submit": "Confirmer la réservation",
+      "selectTime": "Choisir une heure",
+      "person": "personne",
+      "persons": "personnes"
+    },
+    "success": {
+      "title": "Votre réservation a été confirmée !",
+      "subtitle": "Nous vous enverrons un email de confirmation."
+    },
+    "features": {
+      "groups": "Groupes bienvenus",
+      "events": "Anniversaires & événements",
+      "private": "Privatisation possible"
+    }
+  },
+  "values": {
+    "title": "Nos valeurs",
+    "subtitle": "Un engagement quotidien pour une cuisine authentique et responsable",
+    "local": {
+      "title": "Local",
+      "description": "Nous privilégions les producteurs locaux de la région bordelaise pour garantir fraîcheur et qualité tout en soutenant l'économie locale."
+    },
+    "seasonal": {
+      "title": "Saisonnier",
+      "description": "Notre menu évolue au fil des saisons pour vous offrir le meilleur de chaque période de l'année avec des produits à leur apogée."
+    },
+    "homemade": {
+      "title": "Fait maison",
+      "description": "Tout est préparé sur place par notre équipe, du pain aux confitures, en passant par nos pâtisseries et sauces."
+    },
+    "badges": {
+      "organic": "🥞 Cuisine maison",
+      "zerowaste": "🌱 Produits frais",
+      "vegan": "🎨 Brunch Créatif le mercredi"
+    }
+  },
+  "testimonials": {
+    "title": "Ils ont adoré l'expérience",
+    "subtitle": "Découvrez ce que nos clients disent de nous"
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "subtitle": "Tout ce que vous devez savoir avant votre visite",
+    "items": {
+      "reservation": {
+        "q": "Faut-il réserver à l'avance ?",
+        "a": "Nous recommandons fortement de réserver, surtout le week-end où l'affluence est importante. Vous pouvez réserver directement sur notre site ou par téléphone."
+      },
+      "dietary": {
+        "q": "Proposez-vous des options véganes et sans gluten ?",
+        "a": "Absolument ! Notre menu comprend plusieurs options véganes et nous pouvons adapter la plupart de nos plats pour les personnes intolérantes au gluten."
+      },
+      "groups": {
+        "q": "Acceptez-vous les groupes et événements privés ?",
+        "a": "Oui, nous accueillons les groupes jusqu'à 30 personnes et proposons des formules pour les anniversaires, baptêmes et autres célébrations."
+      },
+      "kids": {
+        "q": "Y a-t-il un menu enfant ?",
+        "a": "Bien sûr ! Nous proposons un menu spécial pour les enfants avec des portions adaptées et des plats qu'ils adorent."
+      },
+      "parking": {
+        "q": "Où puis-je me garer ?",
+        "a": "Un parking public se trouve à 2 minutes à pied. Les transports en commun sont également très pratiques pour nous rejoindre."
+      },
+      "wifi": {
+        "q": "Le wifi est-il disponible ?",
+        "a": "Oui, nous proposons une connexion wifi gratuite et rapide pour tous nos clients."
+      }
+    }
+  },
+  "footer": {
+    "description": "Le rendez-vous gourmand qui réconcilie matin et midi. Une expérience culinaire unique au cœur de Bordeaux.",
+    "contact": "Contact",
+    "hours": "Horaires",
+    "links": "Liens utiles",
+    "newsletter": {
+      "title": "Newsletter",
+      "subtitle": "Recevez nos dernières actualités et offres spéciales",
+      "placeholder": "Votre email",
+      "button": "OK"
+    },
+    "legal": {
+      "copyright": "© 2024 Brunch House Bordeaux. Tous droits réservés.",
+      "terms": "Mentions légales",
+      "privacy": "Politique de confidentialité",
+      "cgv": "CGV"
+    }
+  }
+}

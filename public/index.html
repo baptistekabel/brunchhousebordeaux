@@ -1,30 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="theme-color" content="#1C3F33" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Brunch House Bordeaux | Restaurant Brunch Bordeaux</title>
+    <meta name="description" content="Découvrez le meilleur brunch de Bordeaux chez Brunch House. Restaurant chaleureux à Bacalan, cuisine maison avec produits frais locaux. Ouvert du mardi au dimanche 10h-16h. Réservation conseillée." />
+    <meta name="keywords" content="brunch bordeaux, restaurant brunch bordeaux, brunch bacalan, brunch house bordeaux, petit déjeuner bordeaux, pancakes bordeaux, avocado toast bordeaux, brunch créatif bordeaux" />
+    <meta name="author" content="Brunch House Bordeaux" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Brunch House Bordeaux | Le Meilleur Brunch de Bordeaux" />
+    <meta property="og:description" content="Restaurant brunch à Bordeaux. Cuisine maison, produits frais locaux, ambiance chaleureuse. Ouvert mar-dim 10h-16h." />
+    <meta property="og:type" content="restaurant" />
+    <meta property="og:url" content="https://brunchhousebordeaux.fr" />
+    <meta property="og:image" content="%PUBLIC_URL%/images/presentation1.png" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Brunch House Bordeaux" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Brunch House Bordeaux | Restaurant Brunch" />
+    <meta name="twitter:description" content="Le meilleur brunch de Bordeaux vous attend ! Cuisine maison, produits frais, ambiance unique." />
+    <meta name="twitter:image" content="%PUBLIC_URL%/images/presentation1.png" />
+    
+    <!-- Business Information -->
+    <meta name="geo.region" content="FR-33" />
+    <meta name="geo.placename" content="Bordeaux" />
+    <meta name="geo.position" content="44.8637;-0.5574" />
+    <meta name="ICBM" content="44.8637, -0.5574" />
+    
+    <!-- Additional SEO -->
+    <link rel="canonical" href="https://brunchhousebordeaux.fr" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Brunch House Bordeaux",
+      "image": "%PUBLIC_URL%/images/presentation1.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3 rue Ferbos",
+        "addressLocality": "Bordeaux",
+        "addressRegion": "Nouvelle-Aquitaine",
+        "postalCode": "33800",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 44.8637,
+        "longitude": -0.5574
+      },
+      "url": "https://brunchhousebordeaux.fr",
+      "telephone": "",
+      "servesCuisine": "Brunch, Petit-déjeuner",
+      "priceRange": "€€",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "10:00",
+          "closes": "16:00"
+        }
+      ],
+      "acceptsReservations": true,
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "200"
+      },
+      "menu": "https://brunchhousebordeaux.fr/menu",
+      "hasMenu": {
+        "@type": "Menu",
+        "name": "Menu Brunch",
+        "description": "Découvrez notre carte de brunchs gourmands avec des produits frais et locaux"
+      }
+    }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

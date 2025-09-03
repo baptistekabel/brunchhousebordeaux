@@ -1,0 +1,176 @@
+{
+  "nav": {
+    "menu": "Menú",
+    "location": "Ubicación",
+    "reservation": "Reserva",
+    "values": "Nuestros valores",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Que comience el brunch...",
+    "subtitle": "Descubre una experiencia gastronómica única con nuestros productos frescos y locales, preparados con pasión en un ambiente cálido.",
+    "cta": {
+      "reserve": "Reservar mesa",
+      "menu": "Ver menú"
+    },
+    "badges": {
+      "open": "Mar-Dom 10h-16h",
+      "location": "Burdeos",
+      "coffee": "Cocina casera"
+    }
+  },
+  "menu": {
+    "title": "Nuestras creaciones gourmet",
+    "subtitle": "Recetas originales preparadas diariamente con productos frescos y locales",
+    "cta": "Ver menú completo",
+    "homemade": "Hecho en casa",
+    "items": {
+      "pancakes": {
+        "name": "Pancakes y jarabe de arce",
+        "description": "Pancakes esponjosos con jarabe de arce puro de Canadá, mantequilla de granja y frutas de temporada"
+      },
+      "avocado": {
+        "name": "Tostada de Aguacate Deluxe",
+        "description": "Pan de masa madre tostado, aguacate fresco, huevo escalfado, semillas de sésamo, lima y pimiento de Espelette"
+      },
+      "granola": {
+        "name": "Bowl de Granola Casera",
+        "description": "Granola crujiente casera, yogur griego, compota de frutas, miel de flores y frutas frescas"
+      },
+      "benedict": {
+        "name": "Huevos Benedictinos",
+        "description": "Muffin inglés, jamón de Bayona, huevos escalfados, salsa holandesa casera y cebollino"
+      },
+      "frenchtoast": {
+        "name": "Tostada Francesa Caramelizada",
+        "description": "Pan brioche, crema de vainilla, caramelo de mantequilla salada, nueces pecanas y nata montada"
+      },
+      "veggie": {
+        "name": "Bowl Vegetariano",
+        "description": "Quinoa, verduras asadas de temporada, hummus casero, semillas y aderezo de tahini"
+      }
+    }
+  },
+  "location": {
+    "title": "Un lugar único en el corazón de Burdeos",
+    "subtitle": "Ubicado en Burdeos, nuestro establecimiento te recibe en un ambiente cálido y moderno. Todos los miércoles: Brunch Creativo 🎨",
+    "hours": {
+      "title": "Horario de apertura",
+      "weekdays": "Martes - Domingo: 10:00 - 16:00",
+      "weekend": "Cerrado los lunes",
+      "service": "📲 Reserva recomendada en fin de semana"
+    },
+    "address": {
+      "title": "Dirección",
+      "street": "3 rue Ferbos",
+      "city": "33800 Burdeos",
+      "transport": "Cerca del centro"
+    },
+    "contact": {
+      "title": "Contacto",
+      "phone": "Instagram: @brunchhousebordeaux",
+      "reservation": "Reserva recomendada en fin de semana",
+      "groups": "Brunch Creativo todos los miércoles"
+    }
+  },
+  "reservation": {
+    "title": "Reserva tu mesa",
+    "subtitle": "Asegura tu lugar para un momento gastronómico inolvidable",
+    "form": {
+      "date": "Fecha",
+      "time": "Hora",
+      "guests": "Número de personas",
+      "name": "Nombre completo",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "message": "Mensaje (opcional)",
+      "messagePlaceholder": "Alergias, peticiones especiales, evento especial...",
+      "submit": "Confirmar reserva",
+      "selectTime": "Elegir hora",
+      "person": "persona",
+      "persons": "personas"
+    },
+    "success": {
+      "title": "¡Tu reserva ha sido confirmada!",
+      "subtitle": "Te enviaremos un correo de confirmación."
+    },
+    "features": {
+      "groups": "Grupos bienvenidos",
+      "events": "Cumpleaños y eventos",
+      "private": "Privatización disponible"
+    }
+  },
+  "values": {
+    "title": "Nuestros valores",
+    "subtitle": "Un compromiso diario con la cocina auténtica y responsable",
+    "local": {
+      "title": "Local",
+      "description": "Priorizamos a los productores locales de la región de Burdeos para garantizar frescura y calidad mientras apoyamos la economía local."
+    },
+    "seasonal": {
+      "title": "De temporada",
+      "description": "Nuestro menú evoluciona con las estaciones para ofrecerte lo mejor de cada época del año con productos en su punto óptimo."
+    },
+    "homemade": {
+      "title": "Hecho en casa",
+      "description": "Todo se prepara en el lugar por nuestro equipo apasionado, desde el pan hasta las mermeladas, incluyendo nuestros pasteles y salsas."
+    },
+    "badges": {
+      "organic": "🥞 Cocina casera",
+      "zerowaste": "🌱 Productos frescos",
+      "vegan": "🎨 Brunch Creativo el miércoles"
+    }
+  },
+  "testimonials": {
+    "title": "Les encantó la experiencia",
+    "subtitle": "Descubre lo que dicen nuestros clientes sobre nosotros"
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "subtitle": "Todo lo que necesitas saber antes de tu visita",
+    "items": {
+      "reservation": {
+        "q": "¿Es necesario reservar con antelación?",
+        "a": "Recomendamos encarecidamente reservar, especialmente los fines de semana cuando hay más afluencia. Puedes reservar directamente en nuestro sitio web o por teléfono."
+      },
+      "dietary": {
+        "q": "¿Ofrecen opciones veganas y sin gluten?",
+        "a": "¡Por supuesto! Nuestro menú incluye varias opciones veganas y podemos adaptar la mayoría de nuestros platos para personas con intolerancia al gluten."
+      },
+      "groups": {
+        "q": "¿Aceptan grupos y eventos privados?",
+        "a": "Sí, recibimos grupos de hasta 30 personas y ofrecemos paquetes para cumpleaños, bautizos y otras celebraciones."
+      },
+      "kids": {
+        "q": "¿Hay menú infantil?",
+        "a": "¡Claro! Ofrecemos un menú especial para niños con porciones adaptadas y platos que les encantan."
+      },
+      "parking": {
+        "q": "¿Dónde puedo aparcar?",
+        "a": "Hay un aparcamiento público a 2 minutos a pie. El transporte público también es muy conveniente para llegar."
+      },
+      "wifi": {
+        "q": "¿Hay wifi disponible?",
+        "a": "Sí, ofrecemos conexión wifi gratuita y rápida para todos nuestros clientes."
+      }
+    }
+  },
+  "footer": {
+    "description": "El encuentro gastronómico que reconcilia mañana y mediodía. Una experiencia culinaria única en el corazón de Burdeos.",
+    "contact": "Contacto",
+    "hours": "Horarios",
+    "links": "Enlaces útiles",
+    "newsletter": {
+      "title": "Boletín",
+      "subtitle": "Recibe nuestras últimas noticias y ofertas especiales",
+      "placeholder": "Tu correo",
+      "button": "OK"
+    },
+    "legal": {
+      "copyright": "© 2024 Brunch House Burdeos. Todos los derechos reservados.",
+      "terms": "Aviso legal",
+      "privacy": "Política de privacidad",
+      "cgv": "Términos"
+    }
+  }
+}

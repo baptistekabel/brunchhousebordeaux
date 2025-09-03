@@ -1,0 +1,176 @@
+{
+  "nav": {
+    "menu": "Menu",
+    "location": "Location",
+    "reservation": "Reservation",
+    "values": "Our Values",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Let the brunch begin...",
+    "subtitle": "Discover a unique gourmet experience with our fresh and local products, prepared with passion in a warm atmosphere.",
+    "cta": {
+      "reserve": "Book a table",
+      "menu": "View menu"
+    },
+    "badges": {
+      "open": "Tue-Sun 10am-4pm",
+      "location": "Bordeaux",
+      "coffee": "Homemade cuisine"
+    }
+  },
+  "menu": {
+    "title": "Our gourmet creations",
+    "subtitle": "Original recipes prepared daily with fresh and local products",
+    "cta": "View full menu",
+    "homemade": "Homemade",
+    "items": {
+      "pancakes": {
+        "name": "Pancakes & maple syrup",
+        "description": "Fluffy pancakes with pure Canadian maple syrup, farm butter and seasonal fruits"
+      },
+      "avocado": {
+        "name": "Deluxe Avocado Toast",
+        "description": "Toasted sourdough bread, fresh avocado, poached egg, sesame seeds, lime and Espelette pepper"
+      },
+      "granola": {
+        "name": "Homemade Granola Bowl",
+        "description": "Crispy homemade granola, Greek yogurt, fruit compote, flower honey and fresh fruits"
+      },
+      "benedict": {
+        "name": "Eggs Benedict",
+        "description": "English muffin, Bayonne ham, poached eggs, homemade hollandaise sauce and chives"
+      },
+      "frenchtoast": {
+        "name": "Caramelized French Toast",
+        "description": "Brioche bread, vanilla cream, salted butter caramel, pecans and whipped cream"
+      },
+      "veggie": {
+        "name": "Vegetarian Bowl",
+        "description": "Quinoa, seasonal roasted vegetables, homemade hummus, seeds and tahini dressing"
+      }
+    }
+  },
+  "location": {
+    "title": "A unique place in the heart of Bordeaux",
+    "subtitle": "Located in Bordeaux, our establishment welcomes you in a warm and modern setting. Every Wednesday: Creative Brunch 🎨",
+    "hours": {
+      "title": "Opening hours",
+      "weekdays": "Tuesday - Sunday: 10:00 AM - 4:00 PM",
+      "weekend": "Closed on Monday",
+      "service": "📲 Reservation recommended on weekends"
+    },
+    "address": {
+      "title": "Address",
+      "street": "3 rue Ferbos",
+      "city": "33800 Bordeaux",
+      "transport": "Near city center"
+    },
+    "contact": {
+      "title": "Contact",
+      "phone": "Instagram: @brunchhousebordeaux",
+      "reservation": "Reservation recommended on weekends",
+      "groups": "Creative Brunch every Wednesday"
+    }
+  },
+  "reservation": {
+    "title": "Book your table",
+    "subtitle": "Secure your spot for an unforgettable gourmet moment",
+    "form": {
+      "date": "Date",
+      "time": "Time",
+      "guests": "Number of guests",
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message (optional)",
+      "messagePlaceholder": "Allergies, special requests, special event...",
+      "submit": "Confirm reservation",
+      "selectTime": "Select time",
+      "person": "person",
+      "persons": "persons"
+    },
+    "success": {
+      "title": "Your reservation has been confirmed!",
+      "subtitle": "We will send you a confirmation email."
+    },
+    "features": {
+      "groups": "Groups welcome",
+      "events": "Birthdays & events",
+      "private": "Private events available"
+    }
+  },
+  "values": {
+    "title": "Our values",
+    "subtitle": "A daily commitment to authentic and responsible cuisine",
+    "local": {
+      "title": "Local",
+      "description": "We prioritize local producers from the Bordeaux region to guarantee freshness and quality while supporting the local economy."
+    },
+    "seasonal": {
+      "title": "Seasonal",
+      "description": "Our menu evolves with the seasons to offer you the best of each time of year with products at their peak."
+    },
+    "homemade": {
+      "title": "Homemade",
+      "description": "Everything is prepared on-site by our passionate team, from bread to jams, including our pastries and sauces."
+    },
+    "badges": {
+      "organic": "🥞 Homemade cuisine",
+      "zerowaste": "🌱 Fresh products",
+      "vegan": "🎨 Creative Brunch on Wednesday"
+    }
+  },
+  "testimonials": {
+    "title": "They loved the experience",
+    "subtitle": "Discover what our customers say about us"
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "subtitle": "Everything you need to know before your visit",
+    "items": {
+      "reservation": {
+        "q": "Do I need to book in advance?",
+        "a": "We strongly recommend booking, especially on weekends when we're busiest. You can book directly on our website or by phone."
+      },
+      "dietary": {
+        "q": "Do you offer vegan and gluten-free options?",
+        "a": "Absolutely! Our menu includes several vegan options and we can adapt most of our dishes for people with gluten intolerance."
+      },
+      "groups": {
+        "q": "Do you accept groups and private events?",
+        "a": "Yes, we welcome groups up to 30 people and offer packages for birthdays, baptisms and other celebrations."
+      },
+      "kids": {
+        "q": "Is there a kids menu?",
+        "a": "Of course! We offer a special menu for children with adapted portions and dishes they love."
+      },
+      "parking": {
+        "q": "Where can I park?",
+        "a": "A public parking is located 2 minutes walk away. Public transport is also very convenient to reach us."
+      },
+      "wifi": {
+        "q": "Is wifi available?",
+        "a": "Yes, we offer free and fast wifi connection for all our customers."
+      }
+    }
+  },
+  "footer": {
+    "description": "The gourmet rendezvous that brings morning and noon together. A unique culinary experience in the heart of Bordeaux.",
+    "contact": "Contact",
+    "hours": "Hours",
+    "links": "Useful links",
+    "newsletter": {
+      "title": "Newsletter",
+      "subtitle": "Receive our latest news and special offers",
+      "placeholder": "Your email",
+      "button": "OK"
+    },
+    "legal": {
+      "copyright": "© 2024 Brunch House Bordeaux. All rights reserved.",
+      "terms": "Legal notice",
+      "privacy": "Privacy policy",
+      "cgv": "Terms"
+    }
+  }
+}
