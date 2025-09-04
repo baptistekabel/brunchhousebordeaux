@@ -5,6 +5,7 @@ import { theme } from './styles/theme';
 import { GlobalStyles } from './styles/GlobalStyles';
 import './i18n/i18n';
 import { useTranslation } from 'react-i18next';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import HomePage from './pages/HomePage';
 import MenuPage from './pages/MenuPage';
 
@@ -24,6 +25,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
+      <SpeedInsights />
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />

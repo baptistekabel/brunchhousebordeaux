@@ -215,10 +215,13 @@ const MobileImageDisplay = styled(motion.div)`
   position: absolute;
   top: 70%;
   right: -550px;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateZ(0);
   width: 400px;
   height: 300px;
   pointer-events: none;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   
   > * {
     pointer-events: auto;
@@ -227,10 +230,11 @@ const MobileImageDisplay = styled(motion.div)`
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     left: 50%;
     right: auto;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) translateZ(0);
     width: 90%;
     max-width: 400px;
     height: 250px;
+    will-change: transform;
   }
 `;
 
@@ -292,6 +296,12 @@ const ImageSlide = styled(motion.div)`
   border: 3px solid white;
   overflow: hidden;
   cursor: pointer;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  contain: layout style paint;
   
   &:nth-child(1) {
     top: 0px;
@@ -336,18 +346,18 @@ const ImageSlide = styled(motion.div)`
     &:nth-child(1) {
       top: -70px;
       left: 0%;
-      transform: rotate(-20deg) ${props => props.$active === 1 ? 'scale(1.3) rotate(-5deg)' : 'scale(1)'};
+      transform: rotate(-20deg) ${props => props.$active === 1 ? 'scale(1.3) rotate(-5deg)' : 'scale(1)'} translateZ(0);
       z-index: ${props => props.$active === 1 ? 4 : 1};
-      animation: float1 6s ease-in-out infinite;
+      animation: float1Mobile 6s ease-in-out infinite;
     }
     
     &:nth-child(2) {
       top: -70px;
       right: 0%;
       left: auto;
-      transform: rotate(15deg) ${props => props.$active === 2 ? 'scale(1.3) rotate(0deg)' : 'scale(1)'};
+      transform: rotate(15deg) ${props => props.$active === 2 ? 'scale(1.3) rotate(0deg)' : 'scale(1)'} translateZ(0);
       z-index: ${props => props.$active === 2 ? 4 : 2};
-      animation: float2 5s ease-in-out infinite;
+      animation: float2Mobile 5s ease-in-out infinite;
     }
     
     &:nth-child(3) {
@@ -362,24 +372,38 @@ const ImageSlide = styled(motion.div)`
     }
   }
   
+  @media (prefers-reduced-motion: reduce) {
+    animation: none !important;
+  }
+  
   @keyframes float1 {
-    0%, 100% { transform: translateY(0px) rotate(-25deg); }
-    50% { transform: translateY(-10px) rotate(-20deg); }
+    0%, 100% { transform: translateY(0px) rotate(-25deg) translateZ(0); }
+    50% { transform: translateY(-10px) rotate(-20deg) translateZ(0); }
   }
   
   @keyframes float2 {
-    0%, 100% { transform: translateY(0px) rotate(15deg); }
-    50% { transform: translateY(10px) rotate(20deg); }
+    0%, 100% { transform: translateY(0px) rotate(15deg) translateZ(0); }
+    50% { transform: translateY(10px) rotate(20deg) translateZ(0); }
   }
   
   @keyframes float3 {
-    0%, 100% { transform: translateY(0px) rotate(-10deg); }
-    50% { transform: translateY(-15px) rotate(-5deg); }
+    0%, 100% { transform: translateY(0px) rotate(-10deg) translateZ(0); }
+    50% { transform: translateY(-15px) rotate(-5deg) translateZ(0); }
   }
   
   @keyframes float4 {
-    0%, 100% { transform: translateY(0px) rotate(25deg); }
-    50% { transform: translateY(12px) rotate(20deg); }
+    0%, 100% { transform: translateY(0px) rotate(25deg) translateZ(0); }
+    50% { transform: translateY(12px) rotate(20deg) translateZ(0); }
+  }
+  
+  @keyframes float1Mobile {
+    0%, 100% { transform: translateY(0px) rotate(-20deg) translateZ(0); }
+    50% { transform: translateY(-5px) rotate(-15deg) translateZ(0); }
+  }
+  
+  @keyframes float2Mobile {
+    0%, 100% { transform: translateY(0px) rotate(15deg) translateZ(0); }
+    50% { transform: translateY(5px) rotate(20deg) translateZ(0); }
   }
 `;
 
@@ -388,6 +412,11 @@ const HeroImage = styled(motion.img)`
   height: 100%;
   object-fit: cover;
   object-position: center;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 `;
 
 
@@ -523,17 +552,49 @@ const Hero = () => {
   const [activeImage, setActiveImage] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const [modalImage, setModalImage] = useState(null);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  
+  // Preload images on mount
+  useEffect(() => {
+    const imageUrls = [
+      '/images/presentation1.png',
+      '/images/presentation2.png',
+      '/images/presentation3.png',
+      '/images/presentation4.png'
+    ];
+    
+    const preloadImages = async () => {
+      const promises = imageUrls.map(src => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.onload = resolve;
+          img.onerror = reject;
+          img.src = src;
+        });
+      });
+      
+      try {
+        await Promise.all(promises);
+        setImagesLoaded(true);
+      } catch (error) {
+        console.error('Error preloading images:', error);
+        setImagesLoaded(true); // Still show images even if preload fails
+      }
+    };
+    
+    preloadImages();
+  }, []);
   
   // Auto-rotation sur mobile
   useEffect(() => {
     const isMobile = window.innerWidth <= 768;
-    if (isMobile && !showModal) {
+    if (isMobile && !showModal && imagesLoaded) {
       const interval = setInterval(() => {
         setActiveImage(prev => (prev % 4) + 1);
       }, 3500);
       return () => clearInterval(interval);
     }
-  }, [showModal]);
+  }, [showModal, imagesLoaded]);
   
   const images = [
     { 
@@ -708,7 +769,7 @@ const Hero = () => {
                 ));
               })()}
               <MobileImageDisplay>
-                {images.map((image, index) => (
+                {imagesLoaded && images.map((image, index) => (
                   <ImageSlide
                     key={image.id}
                     $active={activeImage}
@@ -722,6 +783,8 @@ const Hero = () => {
                     <HeroImage
                       src={image.src}
                       alt={image.alt}
+                      loading="eager"
+                      decoding="async"
                     />
                   </ImageSlide>
                 ))}
