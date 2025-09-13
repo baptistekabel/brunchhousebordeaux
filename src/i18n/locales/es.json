@@ -32,8 +32,8 @@
       },
       "burgerHouse": {
         "name": "Hamburguesa de la Casa",
-        "description": "Nuestra hamburguesa casera con salsa especial y papas fritas",
-        "price": "16€"
+        "description": "Nuestra hamburguesa casera (carne o pollo) con salsa especial y papas fritas",
+        "price": "14€"
       },
       "salmonGuacamole": {
         "name": "Salmón con Guacamole",
@@ -83,13 +83,27 @@
       }
     }
   },
+  "drinks": {
+    "title": "Bebidas",
+    "items": {
+      "appleJuice": {
+        "name": "Zumo de manzana",
+        "price": "4€"
+      },
+      "orangeJuice": {
+        "name": "Zumo de naranja",
+        "price": "4€"
+      }
+    },
+    "included": "Todos nuestros platos incluyen a elegir: zumo de naranja o zumo de manzana"
+  },
   "creativeBrunch": {
     "title": "Brunch Creativo",
-    "subtitle": "de los Miércoles",
-    "description": "Cada miércoles, transforma tu pausa del almuerzo en un momento creativo y gourmet 🎨",
-    "badge": "Todos los miércoles",
+    "subtitle": "de Martes a Viernes",
+    "description": "De martes a viernes, transforma tu pausa del almuerzo en un momento creativo y gourmet 🎨",
+    "badge": "Martes a viernes",
     "cardTitle": "Una experiencia única",
-    "cardDescription": "Únete a nosotros cada miércoles para nuestro Brunch Creativo! Un momento especial donde la gastronomía y la creatividad se encuentran para crear una experiencia inolvidable.",
+    "cardDescription": "Únete a nosotros de martes a viernes para nuestro Brunch Creativo! Un momento especial donde la gastronomía y la creatividad se encuentran para crear una experiencia inolvidable.",
     "features": {
       "item1": "Talleres creativos sorpresa cada semana",
       "item2": "Menú especial con creaciones exclusivas",
@@ -106,7 +120,8 @@
       "title": "Horario de apertura",
       "weekdays": "Martes - Domingo: 10:00 - 16:00",
       "weekend": "Cerrado los lunes",
-      "service": "📲 Reserva recomendada en fin de semana"
+      "service": "📲 Reserva recomendada en fin de semana",
+      "kitchenClose": "⏰ La cocina cierra a las 15:00"
     },
     "address": {
       "title": "Dirección",
@@ -118,7 +133,7 @@
       "title": "Contacto",
       "phone": "Instagram: @brunchhousebordeaux",
       "reservation": "Reserva recomendada en fin de semana",
-      "groups": "Brunch Creativo todos los miércoles"
+      "groups": "Brunch Creativo de martes a viernes"
     }
   },
   "reservation": {
@@ -155,10 +170,6 @@
       "title": "Local",
       "description": "Priorizamos a los productores locales de la región de Burdeos para garantizar frescura y calidad mientras apoyamos la economía local."
     },
-    "seasonal": {
-      "title": "De temporada",
-      "description": "Nuestro menú evoluciona con las estaciones para ofrecerte lo mejor de cada época del año con productos en su punto óptimo."
-    },
     "homemade": {
       "title": "Hecho en casa",
       "description": "Todo se prepara en el lugar por nuestro equipo apasionado, desde el pan hasta las mermeladas, incluyendo nuestros pasteles y salsas."
@@ -166,7 +177,7 @@
     "badges": {
       "organic": "🥞 Cocina casera",
       "zerowaste": "🌱 Productos frescos",
-      "vegan": "🎨 Brunch Creativo el miércoles"
+      "vegan": "🎨 Brunch Creativo de martes a viernes"
     }
   },
   "testimonials": {

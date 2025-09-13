@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FiMapPin, FiSun, FiHome } from 'react-icons/fi';
+import { FiMapPin, FiHome } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 
 const Section = styled.section`
@@ -39,7 +39,9 @@ const ValuesGrid = styled.div`
   gap: ${props => props.theme.spacing.xl};
   
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+    margin: 0 auto;
   }
 `;
 
@@ -117,15 +119,6 @@ const ValuesSection = () => {
         : i18n.language === 'es'
         ? "Priorizamos los productores locales de la región de Burdeos para garantizar frescura y calidad mientras apoyamos la economía local."
         : "Nous privilégions les producteurs locaux de la région bordelaise pour garantir fraîcheur et qualité tout en soutenant l'économie locale."
-    },
-    {
-      icon: <FiSun size={32} />,
-      title: i18n.language === 'en' ? 'Seasonal' : i18n.language === 'es' ? 'Estacional' : 'Saisonnier',
-      description: i18n.language === 'en'
-        ? "Our menu evolves with the seasons to offer you the best of each time of year with products at their peak."
-        : i18n.language === 'es'
-        ? "Nuestro menú evoluciona con las estaciones para ofrecerte lo mejor de cada época del año con productos en su mejor momento."
-        : "Notre menu évolue au fil des saisons pour vous offrir le meilleur de chaque période de l'année avec des produits à leur apogée."
     },
     {
       icon: <FiHome size={32} />,

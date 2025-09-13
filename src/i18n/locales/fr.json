@@ -32,8 +32,8 @@
       },
       "burgerHouse": {
         "name": "Burger House",
-        "description": "Notre burger maison avec sauce spéciale et frites",
-        "price": "16€"
+        "description": "Notre burger maison (viande ou poulet) avec sauce spéciale et frites",
+        "price": "14€"
       },
       "salmonGuacamole": {
         "name": "Saumon Guacamole",
@@ -83,13 +83,27 @@
       }
     }
   },
+  "drinks": {
+    "title": "Boissons",
+    "items": {
+      "appleJuice": {
+        "name": "Jus de pomme",
+        "price": "4€"
+      },
+      "orangeJuice": {
+        "name": "Jus d'orange",
+        "price": "4€"
+      }
+    },
+    "included": "Toutes nos formules incluent au choix : jus d'orange ou jus de pomme"
+  },
   "creativeBrunch": {
     "title": "Brunch Créatif",
-    "subtitle": "du Mercredi",
-    "description": "Chaque mercredi, transformez votre pause déjeuner en moment créatif et gourmand 🎨",
-    "badge": "Tous les mercredis",
+    "subtitle": "du Mardi au Vendredi",
+    "description": "Du mardi au vendredi, transformez votre pause déjeuner en moment créatif et gourmand 🎨",
+    "badge": "Mardi au vendredi",
     "cardTitle": "Une expérience unique",
-    "cardDescription": "Rejoignez-nous chaque mercredi pour notre Brunch Créatif ! Un moment spécial où gastronomie et créativité se rencontrent pour créer une expérience inoubliable.",
+    "cardDescription": "Rejoignez-nous du mardi au vendredi pour notre Brunch Créatif ! Un moment spécial où gastronomie et créativité se rencontrent pour créer une expérience inoubliable.",
     "features": {
       "item1": "Ateliers créatifs surprise chaque semaine",
       "item2": "Menu spécial avec créations exclusives",
@@ -106,19 +120,20 @@
       "title": "Horaires d'ouverture",
       "weekdays": "Mardi - Dimanche : 10h00 - 16h00",
       "weekend": "Fermé le lundi",
-      "service": "📲 Réservation conseillée en week-end"
+      "service": "📲 Réservation conseillée en week-end",
+      "kitchenClose": "⏰ La cuisine ferme à 15h"
     },
     "address": {
       "title": "Adresse",
       "street": "3 rue Ferbos",
       "city": "33800 Bordeaux",
-      "transport": "Quartier Bacalan - Tram B (Arrêt Brandenburg)"
+      "transport": "Quartier Gare Saint-Jean"
     },
     "contact": {
       "title": "Contact",
       "phone": "Instagram : @brunchhousebordeaux",
       "reservation": "Réservation conseillée le week-end",
-      "groups": "Brunch Créatif tous les mercredis"
+      "groups": "Brunch Créatif du mardi au vendredi"
     }
   },
   "reservation": {
@@ -155,10 +170,6 @@
       "title": "Local",
       "description": "Nous privilégions les producteurs locaux de la région bordelaise pour garantir fraîcheur et qualité tout en soutenant l'économie locale."
     },
-    "seasonal": {
-      "title": "Saisonnier",
-      "description": "Notre menu évolue au fil des saisons pour vous offrir le meilleur de chaque période de l'année avec des produits à leur apogée."
-    },
     "homemade": {
       "title": "Fait maison",
       "description": "Tout est préparé sur place par notre équipe, du pain aux confitures, en passant par nos pâtisseries et sauces."
@@ -166,7 +177,7 @@
     "badges": {
       "organic": "🥞 Cuisine maison",
       "zerowaste": "🌱 Produits frais",
-      "vegan": "🎨 Brunch Créatif le mercredi"
+      "vegan": "🎨 Brunch Créatif du mardi au vendredi"
     }
   },
   "testimonials": {

@@ -1301,11 +1301,11 @@ const MenuPage = () => {
         { 
           name: "Le Burger House", 
           description: isEnglish 
-            ? "Brioche bun, chicken cutlet, lamb's lettuce, tomatoes, red onion, cheddar, saffron sauce"
+            ? "Brioche bun, chicken cutlet (beef or chicken), lamb's lettuce, tomatoes, red onion, cheddar, saffron sauce"
             : isSpanish 
-            ? "Pan brioche, escalope de pollo, canónigos, tomates, cebolla roja, cheddar, salsa azafrán"
-            : "Pain brioche, escalope de poulet, mâche, tomates, oignon rouge, cheddar, sauce safran", 
-          price: "16 €" 
+            ? "Pan brioche, escalope de pollo (carne o pollo), canónigos, tomates, cebolla roja, cheddar, salsa azafrán"
+            : "Pain brioche, escalope de poulet (viande ou poulet), mâche, tomates, oignon rouge, cheddar, sauce safran", 
+          price: "14 €" 
         },
         { 
           name: isEnglish 
@@ -1466,7 +1466,10 @@ const MenuPage = () => {
         },
         {
           title: isEnglish ? "Main course" : isSpanish ? "Plato principal" : "Plat",
-          options: ["Burger", "Cordon bleu"],
+          options: [
+            isEnglish ? "Burger (beef or chicken)" : isSpanish ? "Burger (carne o pollo)" : "Burger (viande ou poulet)", 
+            "Cordon bleu"
+          ],
           type: "plat"
         }
       ]
@@ -1661,6 +1664,13 @@ const MenuPage = () => {
           {...createScrollTrigger()}
         >
           <SectionTitle>🧺 {isEnglish ? "Formulas" : isSpanish ? "Fórmulas" : "Formules"}</SectionTitle>
+          <Note style={{ marginBottom: '24px' }}>
+            {isEnglish 
+              ? "All our dishes include your choice of: orange juice or apple juice"
+              : isSpanish 
+              ? "Todos nuestros platos incluyen a elegir: zumo de naranja o zumo de manzana"
+              : "Toutes nos formules incluent au choix : jus d'orange ou jus de pomme"}
+          </Note>
           <Note style={{ marginBottom: '24px' }}>
             {isEnglish 
               ? "For all formulas: Extra €2: latte / cappuccino | Extra €3: mocha / matcha"

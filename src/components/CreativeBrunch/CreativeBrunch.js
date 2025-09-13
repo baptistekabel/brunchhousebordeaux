@@ -277,8 +277,17 @@ const CreativeBrunch = () => {
               whileHover={{ scale: 1.02 }}
             >
               <Image 
-                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                src="/images/optimized/atelierBrunch.jpg"
+                srcSet="
+                  /images/optimized/atelierBrunch-400w.jpg 400w,
+                  /images/optimized/atelierBrunch-800w.jpg 800w,
+                  /images/optimized/atelierBrunch-1200w.jpg 1200w,
+                  /images/optimized/atelierBrunch-1600w.jpg 1600w
+                "
+                sizes="(max-width: 768px) 400px, (max-width: 1200px) 800px, 1200px"
                 alt={t('creativeBrunch.imageAlt')}
+                loading="lazy"
+                decoding="async"
               />
             </ImageWrapper>
           </ParallaxSection>

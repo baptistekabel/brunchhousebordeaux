@@ -838,36 +838,10 @@ const Hero = () => {
             }}
           >
             <motion.div
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{
-                delay: 1.8,
-                duration: 0.6,
-                type: "spring",
-                stiffness: 150,
-                damping: 12
-              }}
-            >
-              <LiquidGlassButton 
-                variant="accent" 
-                size="large"
-                onClick={() => window.open('https://www.thefork.fr/restaurant/brunch-house-r847025', '_blank')}
-                as={motion.button}
-                whileHover={{ 
-                  scale: 1.08,
-                  rotate: [0, -2, 2, -2, 0],
-                  transition: { rotate: { duration: 0.4 } }
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {t('hero.cta.reserve')}
-              </LiquidGlassButton>
-            </motion.div>
-            <motion.div
               initial={{ scale: 0, rotate: 180 }}
               animate={{ scale: 1, rotate: 0 }}
               transition={{
-                delay: 2,
+                delay: 1.8,
                 duration: 0.6,
                 type: "spring",
                 stiffness: 150,
@@ -890,6 +864,32 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 {t('hero.cta.menu')}
+              </LiquidGlassButton>
+            </motion.div>
+            <motion.div
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{
+                delay: 2,
+                duration: 0.6,
+                type: "spring",
+                stiffness: 150,
+                damping: 12
+              }}
+            >
+              <LiquidGlassButton 
+                variant="accent" 
+                size="large"
+                onClick={() => window.open('https://www.thefork.fr/restaurant/brunch-house-r847025', '_blank')}
+                as={motion.button}
+                whileHover={{ 
+                  scale: 1.08,
+                  rotate: [0, -2, 2, -2, 0],
+                  transition: { rotate: { duration: 0.4 } }
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {t('hero.cta.reserve')}
               </LiquidGlassButton>
             </motion.div>
           </ButtonGroup>

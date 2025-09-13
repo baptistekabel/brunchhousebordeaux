@@ -110,132 +110,76 @@ const TestimonialText = styled.p`
   font-style: italic;
 `;
 
-const testimonials = [
-  {
-    name: "Sophie Larrieu",
-    initial: "S",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
-    date: "Il y a 3 jours",
-    rating: 5,
-    text: "Un brunch exceptionnel ! Les pancakes sont les meilleurs que j'ai jamais mangés. L'ambiance est chaleureuse et le service impeccable."
-  },
-  {
-    name: "Marc Durand",
-    initial: "M",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
-    date: "Il y a 1 semaine",
-    rating: 5,
-    text: "Endroit parfait pour un brunch en famille. Le café est excellent et l'équipe très accueillante. Je recommande vivement !"
-  },
-  {
-    name: "Julie Martin",
-    initial: "J",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
-    date: "Il y a 2 semaines",
-    rating: 5,
-    text: "La nourriture est fraîche et savoureuse. Un vrai coup de cœur pour ce lieu chaleureux au cœur de Bordeaux. Brunch créatif du mercredi au top !"
-  },
-  {
-    name: "Thomas Bernard",
-    initial: "T",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop",
-    date: "Il y a 3 semaines",
-    rating: 5,
-    text: "Service rapide malgré l'affluence du dimanche. Les croissants French toast sont incroyables et les prix sont très raisonnables."
-  },
-  {
-    name: "Emma Rousseau",
-    initial: "E",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop",
-    date: "Il y a 1 mois",
-    rating: 5,
-    text: "Une découverte fantastique ! Tout est fait maison et ça se sent. L'équipe est adorable et aux petits soins."
-  },
-  {
-    name: "Lucas Petit",
-    initial: "L",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop",
-    date: "Il y a 2 mois",
-    rating: 5,
-    text: "Le meilleur brunch de Bordeaux sans hésitation. Les portions sont généreuses et tout est délicieux du début à la fin."
-  }
-];
 
 const TestimonialsSection = () => {
   const { i18n } = useTranslation();
   
   const testimonials = [
     {
-      name: "Sophie Larrieu",
-      initial: "S",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
-      date: i18n.language === 'en' ? "3 days ago" : i18n.language === 'es' ? "Hace 3 días" : "Il y a 3 jours",
+      name: "Magda Gomez",
+      initial: "MG",
+      date: i18n.language === 'en' ? "1 month ago" : i18n.language === 'es' ? "Hace 1 mes" : "il y a un mois",
       rating: 5,
       text: i18n.language === 'en' 
-        ? "An exceptional brunch! The pancakes are the best I've ever had. The atmosphere is warm and the service impeccable."
+        ? "A superb discovery! The brunch was really delicious, with homemade, flavorful and well-presented dishes. Everything is 100% halal, which is a real plus! Price-wise, it's very accessible for the quality offered. We were able to park easily, which is rare in Bordeaux and really appreciated. The service is impeccable: the servers are adorable, very pleasant, attentive and always smiling."
         : i18n.language === 'es'
-        ? "¡Un brunch excepcional! Los pancakes son los mejores que he probado. El ambiente es cálido y el servicio impecable."
-        : "Un brunch exceptionnel ! Les pancakes sont les meilleurs que j'ai jamais mangés. L'ambiance est chaleureuse et le service impeccable."
+        ? "¡Un descubrimiento magnífico! El brunch estaba realmente delicioso, con platos caseros, sabrosos y bien presentados. Todo es 100% halal, ¡lo cual es un verdadero plus! En cuanto al precio, es muy accesible para la calidad ofrecida. Pudimos aparcar fácilmente, lo cual es raro en Burdeos y realmente apreciable. El servicio es impecable: los camareros son adorables, muy agradables, atentos y siempre sonrientes."
+        : "Une superbe découverte ! Le brunch était vraiment délicieux, avec des plats faits maison, savoureux et bien présentés. Tout est 100 % halal, ce qui est un vrai plus ! Niveau prix, c'est très accessible pour la qualité proposée. On a pu se garer facilement, ce qui est rare à Bordeaux et vraiment appréciable. Le service est impeccable : les serveurs sont adorables, très agréables, à l'écoute et toujours souriants."
     },
     {
-      name: "Marc Durand",
-      initial: "M",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
-      date: i18n.language === 'en' ? "1 week ago" : i18n.language === 'es' ? "Hace 1 semana" : "Il y a 1 semaine",
+      name: "Bigué Gueye",
+      initial: "BG",
+      date: i18n.language === 'en' ? "2 weeks ago" : i18n.language === 'es' ? "Hace 2 semanas" : "il y a 2 semaines",
       rating: 5,
       text: i18n.language === 'en'
-        ? "Perfect place for a family brunch. The coffee is excellent and the team is very welcoming. Highly recommend!"
+        ? "This brunch is really excellent: the formulas are very complete, with several choices to please everyone. The quantities are generous and the quality of the dishes is there. Plus, the prices are really affordable for what is offered. A great address that I recommend without hesitation!"
         : i18n.language === 'es'
-        ? "Lugar perfecto para un brunch familiar. El café es excelente y el equipo muy acogedor. ¡Lo recomiendo mucho!"
-        : "Endroit parfait pour un brunch en famille. Le café est excellent et l'équipe très accueillante. Je recommande vivement !"
+        ? "Este brunch es realmente excelente: las fórmulas son muy completas, con varias opciones para complacer a todos. Las cantidades son generosas y la calidad de los platos está ahí. Además, los precios son realmente asequibles por lo que se ofrece. ¡Una gran dirección que recomiendo sin dudarlo!"
+        : "Ce brunch est vraiment excellent : les formules sont très complètes, avec plusieurs choix pour plaire à tout le monde. Les quantités sont généreuses et la qualité des plats est au rendez-vous. En plus, les prix sont vraiment abordables pour ce qui est proposé. Une super adresse que je recommande sans hésiter !"
     },
     {
-      name: "Julie Martin",
-      initial: "J",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
-      date: i18n.language === 'en' ? "2 weeks ago" : i18n.language === 'es' ? "Hace 2 semanas" : "Il y a 2 semaines",
+      name: "Cyrielle",
+      initial: "C",
+      date: i18n.language === 'en' ? "1 month ago" : i18n.language === 'es' ? "Hace 1 mes" : "il y a un mois",
       rating: 5,
       text: i18n.language === 'en'
-        ? "The food is fresh and delicious. A real favorite for this warm place in the heart of Bordeaux. Wednesday's creative brunch is amazing!"
+        ? "Very good time spent at Brunch House. The staff is very kind, welcoming and helpful. The excellent meal. Small cute place, beautiful decoration, cozy atmosphere. I recommend!"
         : i18n.language === 'es'
-        ? "La comida es fresca y deliciosa. Un verdadero favorito en este lugar cálido en el corazón de Burdeos. ¡El brunch creativo del miércoles es increíble!"
-        : "La nourriture est fraîche et savoureuse. Un vrai coup de cœur pour ce lieu chaleureux au cœur de Bordeaux. Brunch créatif du mercredi au top !"
+        ? "Muy buen momento pasado en Brunch House. El personal es muy amable, acogedor y servicial. La comida excelente. Pequeño lugar lindo, hermosa decoración, ambiente acogedor. ¡Lo recomiendo!"
+        : "Très bon moment passé au Brunch House. Le personnel est très gentil, accueillant et serviable. Le repas excellent. Petit endroit mignon, belle déco, ambiance cosy. Je recommande !"
     },
     {
-      name: "Thomas Bernard",
-      initial: "T",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop",
-      date: i18n.language === 'en' ? "3 weeks ago" : i18n.language === 'es' ? "Hace 3 semanas" : "Il y a 3 semaines",
+      name: "Maxime Barros",
+      initial: "MB",
+      date: i18n.language === 'en' ? "2 weeks ago" : i18n.language === 'es' ? "Hace 2 semanas" : "il y a 2 semaines",
       rating: 5,
       text: i18n.language === 'en'
-        ? "Fast service despite Sunday's crowd. The French toast croissants are incredible and the prices are very reasonable."
+        ? "A super and delicious brunch! The products are fresh, the flavors well balanced and the atmosphere warm. Special mention for the pancakes which were incredible. I highly recommend."
         : i18n.language === 'es'
-        ? "Servicio rápido a pesar de la multitud del domingo. Los croissants French toast son increíbles y los precios muy razonables."
-        : "Service rapide malgré l'affluence du dimanche. Les croissants French toast sont incroyables et les prix sont très raisonnables."
+        ? "¡Un brunch súper y delicioso! Los productos son frescos, los sabores bien equilibrados y el ambiente cálido. Mención especial para los pancakes que estaban increíbles. Lo recomiendo mucho."
+        : "Un brunch super et délicieux ! Les produits sont frais, les saveurs bien équilibrées et l'ambiance chaleureuse. Mention spéciale pour les pancakes qui étaient incroyable. Je recommande fortement."
     },
     {
-      name: "Emma Rousseau",
-      initial: "E",
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop",
-      date: i18n.language === 'en' ? "1 month ago" : i18n.language === 'es' ? "Hace 1 mes" : "Il y a 1 mois",
+      name: "Tess Maurel",
+      initial: "TM",
+      date: i18n.language === 'en' ? "1 week ago" : i18n.language === 'es' ? "Hace 1 semana" : "il y a une semaine",
       rating: 5,
       text: i18n.language === 'en'
-        ? "A fantastic discovery! Everything is homemade and you can taste it. The team is adorable and very attentive."
+        ? "We came as a group of 4 for a brunch and we had a great time. We were able to play UNO (which was provided) to keep busy. The relaxed service, the super good dishes, the very friendly server. We'll be back!"
         : i18n.language === 'es'
-        ? "¡Un descubrimiento fantástico! Todo es casero y se nota. El equipo es adorable y muy atento."
-        : "Une découverte fantastique ! Tout est fait maison et ça se sent. L'équipe est adorable et aux petits soins."
+        ? "Vinimos en grupo de 4 para un brunch y nos lo pasamos genial. Pudimos jugar al UNO (que nos proporcionaron) para entretenernos. El servicio relajado, los platos súper buenos, el camarero muy simpático. ¡Volveremos!"
+        : "Nous sommes venus à 4 pour un brunch et nous nous sommes régalés. Nous avons pu jouer au uno (qui était fourni) pour occuper. Le service à la cool, les plats super bon, le serveur très sympathique. On reviendra !"
     },
     {
-      name: "Lucas Petit",
-      initial: "L",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop",
-      date: i18n.language === 'en' ? "2 months ago" : i18n.language === 'es' ? "Hace 2 meses" : "Il y a 2 mois",
+      name: "Roukia Nomane",
+      initial: "RN",
+      date: i18n.language === 'en' ? "3 months ago" : i18n.language === 'es' ? "Hace 3 meses" : "il y a 3 mois",
       rating: 5,
       text: i18n.language === 'en'
-        ? "The best brunch in Bordeaux without a doubt. The portions are generous and everything is delicious from start to finish."
+        ? "Incredible moment, we had a wonderful time, everything was excellent! I highly recommend you come and have a brunch, you will be warmly welcomed by the Brunch House managers 😍"
         : i18n.language === 'es'
-        ? "El mejor brunch de Burdeos sin duda. Las porciones son generosas y todo es delicioso de principio a fin."
-        : "Le meilleur brunch de Bordeaux sans hésitation. Les portions sont généreuses et tout est délicieux du début à la fin."
+        ? "Momento increíble, lo pasamos de maravilla, ¡todo estaba excelente! Les recomiendo encarecidamente que vengan a tomar un brunch, serán calurosamente recibidos por los responsables del Brunch House 😍"
+        : "Incroyable moment, nous nous sommes régalés tout était excellent ! Je vous recommande vivement de passer prendre un brunch vous serez chaleureusement accueilli par les responsables du Brunch House 😍"
     }
   ];
   

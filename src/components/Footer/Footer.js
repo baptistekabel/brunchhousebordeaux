@@ -229,10 +229,10 @@ const Footer = () => {
                 <FiClock size={14} />
                 <span>
                   {i18n.language === 'en' 
-                    ? <>Tue-Sun: 10:00am-4:00pm<br />Closed on Monday<br />🎨 Creative Brunch on Wednesday</>
+                    ? <>Tue-Sun: 10:00am-4:00pm<br />Closed on Monday<br />⏰ Kitchen closes at 3:00 PM<br />🎨 Creative Brunch Tue-Fri</>
                     : i18n.language === 'es'
-                    ? <>Mar-Dom: 10:00-16:00<br />Cerrado los lunes<br />🎨 Brunch Creativo los miércoles</>
-                    : <>Mar-Dim: 10h00-16h00<br />Fermé le lundi<br />🎨 Brunch Créatif le mercredi</>}
+                    ? <>Mar-Dom: 10:00-16:00<br />Cerrado los lunes<br />⏰ La cocina cierra a las 15:00<br />🎨 Brunch Creativo Mar-Vie</>
+                    : <>Mar-Dim: 10h00-16h00<br />Fermé le lundi<br />⏰ La cuisine ferme à 15h<br />🎨 Brunch Créatif Mar-Ven</>}
                 </span>
               </InfoItem>
             </InfoList>

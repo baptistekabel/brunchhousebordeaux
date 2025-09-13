@@ -32,8 +32,8 @@
       },
       "burgerHouse": {
         "name": "House Burger",
-        "description": "Our homemade burger with special sauce and fries",
-        "price": "16€"
+        "description": "Our homemade burger (beef or chicken) with special sauce and fries",
+        "price": "14€"
       },
       "salmonGuacamole": {
         "name": "Salmon Guacamole",
@@ -83,13 +83,27 @@
       }
     }
   },
+  "drinks": {
+    "title": "Drinks",
+    "items": {
+      "appleJuice": {
+        "name": "Apple juice",
+        "price": "4€"
+      },
+      "orangeJuice": {
+        "name": "Orange juice",
+        "price": "4€"
+      }
+    },
+    "included": "All our dishes include your choice of: orange juice or apple juice"
+  },
   "creativeBrunch": {
     "title": "Creative Brunch",
-    "subtitle": "Wednesdays",
-    "description": "Every Wednesday, transform your lunch break into a creative and gourmet moment 🎨",
-    "badge": "Every Wednesday",
+    "subtitle": "Tuesday to Friday",
+    "description": "From Tuesday to Friday, transform your lunch break into a creative and gourmet moment 🎨",
+    "badge": "Tuesday to Friday",
     "cardTitle": "A unique experience",
-    "cardDescription": "Join us every Wednesday for our Creative Brunch! A special moment where gastronomy and creativity meet to create an unforgettable experience.",
+    "cardDescription": "Join us from Tuesday to Friday for our Creative Brunch! A special moment where gastronomy and creativity meet to create an unforgettable experience.",
     "features": {
       "item1": "Creative surprise workshops every week",
       "item2": "Special menu with exclusive creations",
@@ -106,7 +120,8 @@
       "title": "Opening hours",
       "weekdays": "Tuesday - Sunday: 10:00 AM - 4:00 PM",
       "weekend": "Closed on Monday",
-      "service": "📲 Reservation recommended on weekends"
+      "service": "📲 Reservation recommended on weekends",
+      "kitchenClose": "⏰ Kitchen closes at 3:00 PM"
     },
     "address": {
       "title": "Address",
@@ -118,7 +133,7 @@
       "title": "Contact",
       "phone": "Instagram: @brunchhousebordeaux",
       "reservation": "Reservation recommended on weekends",
-      "groups": "Creative Brunch every Wednesday"
+      "groups": "Creative Brunch Tuesday to Friday"
     }
   },
   "reservation": {
@@ -155,10 +170,6 @@
       "title": "Local",
       "description": "We prioritize local producers from the Bordeaux region to guarantee freshness and quality while supporting the local economy."
     },
-    "seasonal": {
-      "title": "Seasonal",
-      "description": "Our menu evolves with the seasons to offer you the best of each time of year with products at their peak."
-    },
     "homemade": {
       "title": "Homemade",
       "description": "Everything is prepared on-site by our passionate team, from bread to jams, including our pastries and sauces."
@@ -166,7 +177,7 @@
     "badges": {
       "organic": "🥞 Homemade cuisine",
       "zerowaste": "🌱 Fresh products",
-      "vegan": "🎨 Creative Brunch on Wednesday"
+      "vegan": "🎨 Creative Brunch Tuesday to Friday"
     }
   },
   "testimonials": {

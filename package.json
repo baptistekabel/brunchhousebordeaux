@@ -20,11 +20,16 @@
     "styled-components": "^6.1.19",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "glob": "^8.1.0",
+    "sharp": "^0.33.5"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "compress-images": "node compress-images.js"
   },
   "eslintConfig": {
     "extends": [
