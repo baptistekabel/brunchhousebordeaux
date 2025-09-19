@@ -34,6 +34,18 @@ export const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
 
+    @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+      background: linear-gradient(
+        135deg,
+        ${props => props.theme.colors.darkGreen} 0%,
+        rgba(1, 57, 39, 0.9) 40%,
+        rgba(190, 106, 101, 0.8) 70%,
+        ${props => props.theme.colors.teaRose} 100%
+      );
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+
     &::before {
       content: '';
       position: fixed;
@@ -47,6 +59,14 @@ export const GlobalStyles = createGlobalStyle`
         radial-gradient(circle at 60% 20%, rgba(253, 249, 240, 0.1) 0%, transparent 30%);
       pointer-events: none;
       z-index: -1;
+
+      @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+        position: fixed;
+        background:
+          radial-gradient(circle at 20% 30%, rgba(252, 189, 189, 0.3) 0%, transparent 40%),
+          radial-gradient(circle at 80% 70%, rgba(190, 106, 101, 0.2) 0%, transparent 40%),
+          radial-gradient(circle at 60% 20%, rgba(253, 249, 240, 0.1) 0%, transparent 30%);
+      }
     }
   }
   
