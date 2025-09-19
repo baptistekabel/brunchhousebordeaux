@@ -1,30 +1,35 @@
 export const theme = {
   colors: {
     primary: {
-      background: '#F7F2E7', // Fond beige
-      text: '#1C3F33', // Vert signature
-      accent: '#2B5B4A', // Vert clair d'accent
-      highlight: '#ECB2C0', // Rose accent plus visible
+      background: '#FDF9F0', // Floral White - fond principal
+      text: '#013927', // Dark Green - texte principal
+      accent: '#013927', // Dark Green - accent principal
+      highlight: '#FCBDBD', // Tea Rose - surbrillance
     },
     secondary: {
-      surface: '#FBF7EE', // Crème secondaire
-      text: '#222222', // Noir doux
+      surface: '#FDF9F0', // Floral White - surface secondaire
+      text: '#BE6A65', // Sugar Rose - texte secondaire
     },
     status: {
-      success: '#3BAA6D', // État positif
-      alert: '#E37B5E', // État d'alerte
-      accent: '#ECB2C0', // Accent rose
+      success: '#013927', // Dark Green - état positif
+      alert: '#BE6A65', // Sugar Rose - état d'alerte
+      accent: '#FCBDBD', // Tea Rose - accent
     },
     neutral: {
       white: '#FFFFFF',
-      lightGray: 'rgba(28,63,51,0.08)',
-    }
+      lightGray: 'rgba(1, 57, 39, 0.08)', // Dark Green avec opacité
+    },
+    // Couleurs de la charte graphique exactes
+    darkGreen: '#013927',
+    floralWhite: '#FDF9F0',
+    teaRose: '#FCBDBD',
+    sugarRose: '#BE6A65'
   },
   
   typography: {
     fonts: {
-      heading: "'Fraunces', 'Playfair Display', serif",
-      body: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      heading: "'Playfair Display', Georgia, serif",
+      body: "'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
     },
     sizes: {
       h1: {
@@ -92,10 +97,10 @@ export const theme = {
   },
   
   shadows: {
-    soft: '0 10px 30px rgba(28,63,51,0.08)',
-    medium: '0 15px 40px rgba(28,63,51,0.12)',
+    soft: '0 10px 30px rgba(1, 57, 39, 0.08)',
+    medium: '0 15px 40px rgba(1, 57, 39, 0.12)',
     glass: 'inset 0 1px 0 0 rgba(255,255,255,0.1)',
-    hover: '0 20px 50px rgba(28,63,51,0.15)',
+    hover: '0 20px 50px rgba(1, 57, 39, 0.15)',
   },
   
   transitions: {

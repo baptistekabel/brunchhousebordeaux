@@ -47,27 +47,22 @@ const Header = styled.div`
 const SectionTitle = styled(motion.h2)`
   margin-bottom: ${props => props.theme.spacing.xl};
   font-size: clamp(36px, 5vw, 56px);
-  background: linear-gradient(
-    135deg,
-    ${props => props.theme.colors.primary.text} 0%,
-    ${props => props.theme.colors.primary.accent} 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: ${props => props.theme.colors.floralWhite};
+  text-shadow: 2px 2px 4px rgba(1, 57, 39, 0.5);
   letter-spacing: -1px;
   line-height: 1.2;
 `;
 
 const SectionSubtitle = styled(motion.p)`
   font-size: ${props => props.theme.typography.sizes.body.large};
-  color: ${props => props.theme.colors.secondary.text};
+  color: ${props => props.theme.colors.floralWhite};
   max-width: 700px;
   margin: 0 auto;
   line-height: ${props => props.theme.typography.lineHeight.relaxed};
   padding: 0 ${props => props.theme.spacing.lg};
   opacity: 0.9;
   font-style: italic;
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.4);
 `;
 
 const MenuGrid = styled.div`
@@ -123,19 +118,24 @@ const MenuItemHeader = styled.div`
 const MenuItemName = styled.h3`
   font-size: 20px;
   flex: 1;
+  color: ${props => props.theme.colors.floralWhite};
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.4);
 `;
 
 const MenuItemPrice = styled.span`
   font-size: ${props => props.theme.typography.sizes.body.large};
   font-weight: ${props => props.theme.typography.weights.semibold};
-  color: ${props => props.theme.colors.primary.highlight};
+  color: ${props => props.theme.colors.floralWhite};
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.4);
 `;
 
 const MenuItemDescription = styled.p`
   font-size: ${props => props.theme.typography.sizes.small};
-  color: ${props => props.theme.colors.secondary.text};
+  color: ${props => props.theme.colors.floralWhite};
   line-height: ${props => props.theme.typography.lineHeight.relaxed};
   flex: 1;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.3);
 `;
 
 const HomemadeBadge = styled.span`
@@ -255,22 +255,25 @@ const MenuSection = () => {
       <Container>
         <Header>
           <SectionTitle
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            {...createScrollTrigger()}
-            transition={{ 
-              duration: 0.8,
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{
+              duration: 0.6,
               ease: [0.25, 0.46, 0.45, 0.94]
             }}
-            style={{ y: parallaxY }}
           >
             {t('menu.title')}
           </SectionTitle>
           <SectionSubtitle
-            variants={animationVariants.fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            {...createScrollTrigger()}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{
+              duration: 0.6,
+              delay: 0.2,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}
           >
             {t('menu.subtitle')}
           </SectionSubtitle>

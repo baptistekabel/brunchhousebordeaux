@@ -6,19 +6,38 @@ import { FiClock, FiMapPin, FiCoffee, FiX, FiChevronLeft, FiChevronRight } from 
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { ParallaxSection, BlurInWhenVisible } from '../AnimatedSection/AnimatedSection';
+import HeroIntro from './HeroIntro';
+import DecorativeDots from './DecorativeDots';
 
 const HeroSection = styled.section`
   min-height: 100vh;
   display: flex;
   align-items: center;
   padding: ${props => props.theme.spacing.section.mobile} ${props => props.theme.spacing.container.padding};
-  padding-top: calc(100px + ${props => props.theme.spacing.md});
+  padding-top: calc(40px + ${props => props.theme.spacing.md});
   position: relative;
   overflow: hidden;
-  
+  margin-top: -20px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(
+      to bottom,
+      rgba(1, 57, 39, 0.05) 0%,
+      rgba(1, 57, 39, 0.02) 50%,
+      transparent 100%
+    );
+    z-index: 1;
+  }
+
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     padding: ${props => props.theme.spacing.section.desktop} ${props => props.theme.spacing.xl};
-    padding-top: calc(100px + ${props => props.theme.spacing.lg});
+    padding-top: calc(40px + ${props => props.theme.spacing.lg});
   }
 `;
 
@@ -26,24 +45,65 @@ const Container = styled.div`
   max-width: ${props => props.theme.spacing.container.maxWidth};
   margin: 0 auto;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: ${props => props.theme.spacing.xxl};
   align-items: center;
-  
-  @media (min-width: ${props => props.theme.breakpoints.desktop}) {
-    grid-template-columns: 1fr 1fr;
-  }
+  position: relative;
+  z-index: 2;
+  text-align: center;
 `;
 
 const ContentWrapper = styled(motion.div)`
   z-index: 2;
   position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg,
+      ${props => props.theme.colors.floralWhite} 0%,
+      rgba(253, 249, 240, 0.8) 100%
+    );
+    box-shadow:
+      0 0 20px rgba(253, 249, 240, 0.5),
+      0 0 40px rgba(253, 249, 240, 0.3);
+    animation: floatDots 6s ease-in-out infinite;
+  }
+
+  &::before {
+    width: 8px;
+    height: 8px;
+    top: -20px;
+    left: -30px;
+    animation-delay: 0s;
+  }
+
+  &::after {
+    width: 12px;
+    height: 12px;
+    top: -40px;
+    right: -40px;
+    animation-delay: 2s;
+  }
+
+  @keyframes floatDots {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translateY(-10px) scale(1.2);
+      opacity: 1;
+    }
+  }
 `;
 
 const Title = styled(motion.h1)`
   margin-bottom: ${props => props.theme.spacing.lg};
-  color: ${props => props.theme.colors.primary.text};
+  color: ${props => props.theme.colors.floralWhite};
   position: relative;
   text-align: center;
   font-size: ${props => props.theme.typography.sizes.h1.desktop};
@@ -52,9 +112,59 @@ const Title = styled(motion.h1)`
   white-space: nowrap;
   overflow-wrap: normal;
   word-break: keep-all;
-  
+  text-shadow: 2px 2px 4px rgba(1, 57, 39, 0.3);
+  z-index: 3;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: ${props => props.theme.colors.teaRose};
+    border-radius: 50%;
+    top: 20%;
+    left: -50px;
+    box-shadow: 0 0 15px rgba(252, 189, 189, 0.6);
+    animation: pulse1 4s ease-in-out infinite;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: ${props => props.theme.colors.floralWhite};
+    border-radius: 50%;
+    bottom: 30%;
+    right: -60px;
+    box-shadow: 0 0 20px rgba(253, 249, 240, 0.8);
+    animation: pulse2 5s ease-in-out infinite;
+  }
+
+  @keyframes pulse1 {
+    0%, 100% {
+      transform: scale(1) translateY(0);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.5) translateY(-5px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes pulse2 {
+    0%, 100% {
+      transform: scale(1) translateY(0);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.3) translateY(-8px);
+      opacity: 1;
+    }
+  }
+
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    margin-bottom: 180px;
+    margin-bottom: ${props => props.theme.spacing.xl};
     margin-top: ${props => props.theme.spacing.xl};
     font-size: 48px;
     line-height: 1.3;
@@ -63,19 +173,38 @@ const Title = styled(motion.h1)`
     white-space: normal;
     word-break: keep-all;
     overflow-wrap: normal;
-    z-index: 5;
+
+    &::before {
+      left: -30px;
+      width: 4px;
+      height: 4px;
+    }
+
+    &::after {
+      right: -40px;
+      width: 8px;
+      height: 8px;
+    }
   }
-  
+
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     font-size: 38px;
     white-space: normal;
     word-break: keep-all;
+
+    &::before {
+      left: -20px;
+    }
+
+    &::after {
+      right: -30px;
+    }
   }
 `;
 
 const Subtitle = styled(motion.p)`
   font-size: clamp(16px, 2.5vw, 20px);
-  color: ${props => props.theme.colors.secondary.text};
+  color: ${props => props.theme.colors.floralWhite};
   margin-bottom: ${props => props.theme.spacing.xxl};
   line-height: 1.8;
   max-width: 600px;
@@ -85,35 +214,37 @@ const Subtitle = styled(motion.p)`
   font-weight: ${props => props.theme.typography.weights.light};
   position: relative;
   padding: 0 ${props => props.theme.spacing.lg};
-  
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.5);
+  z-index: 3;
+
   &::before {
     content: '"';
     position: absolute;
     left: -10px;
     top: -10px;
     font-size: 48px;
-    color: ${props => props.theme.colors.primary.highlight};
-    opacity: 0.3;
+    color: ${props => props.theme.colors.teaRose};
+    opacity: 0.8;
     font-family: Georgia, serif;
   }
-  
+
   &::after {
     content: '"';
     position: absolute;
     right: -10px;
     bottom: -20px;
     font-size: 48px;
-    color: ${props => props.theme.colors.primary.highlight};
-    opacity: 0.3;
+    color: ${props => props.theme.colors.teaRose};
+    opacity: 0.8;
     font-family: Georgia, serif;
     transform: rotate(180deg);
   }
-  
+
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     font-size: 17px;
     padding: 0 ${props => props.theme.spacing.md};
     margin-bottom: ${props => props.theme.spacing.xl};
-    
+
     &::before, &::after {
       font-size: 36px;
     }
@@ -167,74 +298,153 @@ const Badge = styled(motion.div)`
   align-items: center;
   gap: ${props => props.theme.spacing.xs};
   padding: ${props => props.theme.spacing.sm} ${props => props.theme.spacing.sm};
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.8) 0%, 
-    rgba(224, 171, 159, 0.1) 100%
+  background: linear-gradient(135deg,
+    rgba(253, 249, 240, 0.9) 0%,
+    rgba(252, 189, 189, 0.2) 100%
   );
   backdrop-filter: blur(10px);
   border-radius: ${props => props.theme.borderRadius.pill};
-  border: 1px solid rgba(224, 171, 159, 0.3);
+  border: 1px solid rgba(252, 189, 189, 0.4);
   font-size: 12px;
   font-weight: ${props => props.theme.typography.weights.medium};
   color: ${props => props.theme.colors.primary.text};
   transition: all ${props => props.theme.transitions.normal};
   white-space: nowrap;
-  
+
   svg {
-    color: ${props => props.theme.colors.primary.highlight};
+    color: ${props => props.theme.colors.darkGreen};
     width: 14px;
     height: 14px;
     flex-shrink: 0;
   }
-  
+
   span {
     white-space: nowrap;
   }
-  
+
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     padding: 6px 10px;
     font-size: 11px;
-    
+
     svg {
       width: 12px;
       height: 12px;
     }
   }
-  
+
   &:hover {
-    background: linear-gradient(135deg, 
-      rgba(255, 255, 255, 0.9) 0%, 
-      rgba(224, 171, 159, 0.2) 100%
+    background: linear-gradient(135deg,
+      rgba(253, 249, 240, 0.95) 0%,
+      rgba(252, 189, 189, 0.3) 100%
     );
-    border-color: rgba(224, 171, 159, 0.5);
+    border-color: rgba(252, 189, 189, 0.6);
   }
 `;
 
-const MobileImageDisplay = styled(motion.div)`
-  display: block;
-  position: absolute;
-  top: 70%;
-  right: -550px;
-  transform: translateY(-50%) translateZ(0);
-  width: 400px;
-  height: 300px;
-  pointer-events: none;
-  will-change: transform;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  
-  > * {
-    pointer-events: auto;
-  }
-  
+const PhotosContainer = styled.div`
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  margin-top: ${props => props.theme.spacing.xxl};
+  margin-bottom: ${props => props.theme.spacing.xxl};
+  overflow: hidden;
+
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    left: 50%;
-    right: auto;
-    transform: translate(-50%, -50%) translateZ(0);
-    width: 90%;
-    max-width: 400px;
-    height: 250px;
-    will-change: transform;
+    height: auto;
+    margin-top: ${props => props.theme.spacing.xl};
+    margin-bottom: ${props => props.theme.spacing.xl};
+    padding: ${props => props.theme.spacing.md} 0;
+  }
+`;
+
+const PhotoGrid = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: ${props => props.theme.spacing.md};
+  padding: ${props => props.theme.spacing.xl};
+
+  .photo-item {
+    position: relative;
+
+    /* Photo de brunch principale - Plus grande et centrale */
+    &:nth-child(1) {
+      grid-column: 2 / 4;
+      grid-row: 1 / 3;
+      transform: rotate(-2deg);
+      z-index: 10;
+    }
+
+    /* Photo de brunch secondaire - Grande à droite */
+    &:nth-child(2) {
+      grid-column: 4 / 6;
+      grid-row: 2 / 4;
+      transform: rotate(3deg);
+      z-index: 9;
+    }
+
+    /* Photos de plats disposées autour */
+    &:nth-child(3) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      transform: rotate(-8deg);
+      z-index: 8;
+    }
+
+    &:nth-child(4) {
+      grid-column: 5 / 6;
+      grid-row: 1 / 2;
+      transform: rotate(6deg);
+      z-index: 7;
+    }
+
+    &:nth-child(5) {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+      transform: rotate(4deg);
+      z-index: 6;
+    }
+
+    &:nth-child(6) {
+      grid-column: 6 / 7;
+      grid-row: 2 / 3;
+      transform: rotate(-5deg);
+      z-index: 5;
+    }
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: ${props => props.theme.spacing.lg};
+    padding: ${props => props.theme.spacing.md};
+
+    .photo-item {
+      position: relative;
+      width: 100%;
+      height: 45vh;
+      transform: none !important;
+      grid-column: unset !important;
+      grid-row: unset !important;
+      border-radius: ${props => props.theme.borderRadius.xlarge};
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(1, 57, 39, 0.3);
+      border: 2px solid rgba(252, 189, 189, 0.2);
+
+      &:nth-child(1), &:nth-child(2) {
+        height: 50vh;
+        border: 3px solid ${props => props.theme.colors.teaRose};
+        box-shadow: 0 25px 50px rgba(1, 57, 39, 0.4);
+      }
+    }
   }
 `;
 
@@ -242,13 +452,13 @@ const ImageWrapper = styled(motion.div)`
   position: relative;
   border-radius: ${props => props.theme.borderRadius.xlarge};
   overflow: hidden;
-  box-shadow: ${props => props.theme.shadows.soft};
+  box-shadow: 0 25px 60px rgba(1, 57, 39, 0.4);
   height: 500px;
-  
-  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    display: none;
-  }
-  
+  width: 100%;
+  max-width: 900px;
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(253, 249, 240, 0.3);
+
   &::after {
     content: '';
     position: absolute;
@@ -257,16 +467,19 @@ const ImageWrapper = styled(motion.div)`
     right: 0;
     bottom: 0;
     background: linear-gradient(
-      135deg,
-      rgba(28, 63, 51, 0.1) 0%,
-      rgba(43, 91, 74, 0.05) 100%
+      45deg,
+      rgba(252, 189, 189, 0.1) 0%,
+      transparent 30%,
+      rgba(190, 106, 101, 0.1) 100%
     );
     pointer-events: none;
-    z-index: 2;
-    
-    @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-      display: none;
-    }
+    z-index: 1;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+    height: 350px;
+    border-radius: ${props => props.theme.borderRadius.large};
+    box-shadow: 0 15px 40px rgba(1, 57, 39, 0.3);
   }
 `;
 
@@ -274,26 +487,129 @@ const ImageCarousel = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4px;
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  /* Disposition en constellation unique */
+  .photo-item {
+    position: absolute;
+
+    /* Photo de brunch principale - Centre gauche */
+    &:nth-child(1) {
+      width: 380px;
+      height: 280px;
+      top: 25%;
+      left: 5%;
+      transform: rotate(-3deg);
+      z-index: 12;
+
+      @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+        width: 320px;
+        height: 240px;
+        top: 15%;
+        left: 2%;
+      }
+    }
+
+    /* Photo de brunch secondaire - Centre droit */
+    &:nth-child(2) {
+      width: 350px;
+      height: 260px;
+      top: 45%;
+      right: 8%;
+      transform: rotate(4deg);
+      z-index: 11;
+
+      @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+        width: 280px;
+        height: 210px;
+        top: 35%;
+        right: 3%;
+      }
+    }
+
+    /* Photos de plats - Disposition harmonisée et plus grandes */
+    &:nth-child(3) {
+      width: 220px;
+      height: 165px;
+      top: 5%;
+      left: 35%;
+      transform: rotate(-8deg);
+      z-index: 8;
+
+      @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+        width: 180px;
+        height: 135px;
+        top: 5%;
+        left: 25%;
+      }
+    }
+
+    &:nth-child(4) {
+      width: 240px;
+      height: 180px;
+      bottom: 8%;
+      left: 15%;
+      transform: rotate(12deg);
+      z-index: 7;
+
+      @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+        width: 200px;
+        height: 150px;
+        bottom: 5%;
+        left: 8%;
+      }
+    }
+
+    &:nth-child(5) {
+      width: 200px;
+      height: 150px;
+      top: 8%;
+      right: 20%;
+      transform: rotate(-12deg);
+      z-index: 6;
+
+      @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+        width: 170px;
+        height: 128px;
+        top: 5%;
+        right: 15%;
+      }
+    }
+
+    &:nth-child(6) {
+      width: 190px;
+      height: 143px;
+      bottom: 12%;
+      right: 25%;
+      transform: rotate(9deg);
+      z-index: 5;
+
+      @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+        width: 160px;
+        height: 120px;
+        bottom: 8%;
+        right: 20%;
+      }
+    }
+  }
+
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    display: flex;
-    height: 120px;
-    gap: 0;
-    margin-bottom: ${props => props.theme.spacing.xl};
-    position: relative;
+    padding: 15px;
+    height: 450px;
   }
 `;
 
 const ImageSlide = styled(motion.div)`
-  position: absolute;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  border: 3px solid white;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: ${props => props.theme.borderRadius.medium};
+  box-shadow: 0 8px 25px rgba(1, 57, 39, 0.3);
+  border: 2px solid rgba(252, 189, 189, 0.6);
   overflow: hidden;
   cursor: pointer;
   will-change: transform, opacity;
@@ -302,108 +618,61 @@ const ImageSlide = styled(motion.div)`
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   contain: layout style paint;
-  
-  &:nth-child(1) {
-    top: 0px;
-    left: 0px;
-    transform: rotate(-20deg) ${props => props.$active === 1 ? 'scale(1.3) rotate(-5deg)' : 'scale(1)'};
-    z-index: ${props => props.$active === 1 ? 4 : 1};
-    animation: float1 6s ease-in-out infinite;
+
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Style spécial pour les photos de brunch */
+  &.brunch-photo {
+    border: 3px solid ${props => props.theme.colors.teaRose};
+    box-shadow:
+      0 12px 35px rgba(1, 57, 39, 0.4),
+      0 0 0 1px rgba(252, 189, 189, 0.3);
   }
-  
-  &:nth-child(2) {
-    top: 0px;
-    right: 0px;
-    left: auto;
-    transform: rotate(15deg) ${props => props.$active === 2 ? 'scale(1.3) rotate(0deg)' : 'scale(1)'};
-    z-index: ${props => props.$active === 2 ? 4 : 2};
-    animation: float2 5s ease-in-out infinite;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(252, 189, 189, 0.1) 0%,
+      transparent 50%,
+      rgba(190, 106, 101, 0.1) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    pointer-events: none;
   }
-  
-  &:nth-child(3) {
-    bottom: 0px;
-    left: 0px;
-    transform: rotate(-10deg) ${props => props.$active === 3 ? 'scale(1.3) rotate(5deg)' : 'scale(1)'};
-    z-index: ${props => props.$active === 3 ? 4 : 1};
-    animation: float3 7s ease-in-out infinite;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(1, 57, 39, 0.4);
+    border-color: rgba(252, 189, 189, 0.9);
+
+    &.brunch-photo {
+      transform: scale(1.08);
+      box-shadow:
+        0 20px 50px rgba(1, 57, 39, 0.5),
+        0 0 0 2px rgba(252, 189, 189, 0.6);
+    }
+
+    &::before {
+      opacity: 1;
+    }
   }
-  
-  &:nth-child(4) {
-    bottom: 0px;
-    right: 0px;
-    left: auto;
-    transform: rotate(25deg) ${props => props.$active === 4 ? 'scale(1.3) rotate(10deg)' : 'scale(1)'};
-    z-index: ${props => props.$active === 4 ? 4 : 3};
-    animation: float4 6.5s ease-in-out infinite;
-  }
-  
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  
+
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    width: 110px;
-    height: 110px;
-    
-    &:nth-child(1) {
-      top: -70px;
-      left: 0%;
-      transform: rotate(-20deg) ${props => props.$active === 1 ? 'scale(1.3) rotate(-5deg)' : 'scale(1)'} translateZ(0);
-      z-index: ${props => props.$active === 1 ? 4 : 1};
-      animation: float1Mobile 6s ease-in-out infinite;
+    border-radius: ${props => props.theme.borderRadius.small};
+    box-shadow: 0 6px 20px rgba(1, 57, 39, 0.2);
+
+    &:hover {
+      transform: scale(1.02);
     }
-    
-    &:nth-child(2) {
-      top: -70px;
-      right: 0%;
-      left: auto;
-      transform: rotate(15deg) ${props => props.$active === 2 ? 'scale(1.3) rotate(0deg)' : 'scale(1)'} translateZ(0);
-      z-index: ${props => props.$active === 2 ? 4 : 2};
-      animation: float2Mobile 5s ease-in-out infinite;
-    }
-    
-    &:nth-child(3) {
-      bottom: -70px;
-      left: 0%;
-    }
-    
-    &:nth-child(4) {
-      bottom: -70px;
-      right: 0%;
-      left: auto;
-    }
-  }
-  
-  @media (prefers-reduced-motion: reduce) {
-    animation: none !important;
-  }
-  
-  @keyframes float1 {
-    0%, 100% { transform: translateY(0px) rotate(-25deg) translateZ(0); }
-    50% { transform: translateY(-10px) rotate(-20deg) translateZ(0); }
-  }
-  
-  @keyframes float2 {
-    0%, 100% { transform: translateY(0px) rotate(15deg) translateZ(0); }
-    50% { transform: translateY(10px) rotate(20deg) translateZ(0); }
-  }
-  
-  @keyframes float3 {
-    0%, 100% { transform: translateY(0px) rotate(-10deg) translateZ(0); }
-    50% { transform: translateY(-15px) rotate(-5deg) translateZ(0); }
-  }
-  
-  @keyframes float4 {
-    0%, 100% { transform: translateY(0px) rotate(25deg) translateZ(0); }
-    50% { transform: translateY(12px) rotate(20deg) translateZ(0); }
-  }
-  
-  @keyframes float1Mobile {
-    0%, 100% { transform: translateY(0px) rotate(-20deg) translateZ(0); }
-    50% { transform: translateY(-5px) rotate(-15deg) translateZ(0); }
-  }
-  
-  @keyframes float2Mobile {
-    0%, 100% { transform: translateY(0px) rotate(15deg) translateZ(0); }
-    50% { transform: translateY(5px) rotate(20deg) translateZ(0); }
+
   }
 `;
 
@@ -560,7 +829,9 @@ const Hero = () => {
       '/images/presentation1.png',
       '/images/presentation2.png',
       '/images/presentation3.png',
-      '/images/presentation4.png'
+      '/images/presentation4.png',
+      '/images/presentation5.jpg',
+      '/images/presentation6.jpg'
     ];
     
     const preloadImages = async () => {
@@ -590,36 +861,54 @@ const Hero = () => {
     const isMobile = window.innerWidth <= 768;
     if (isMobile && !showModal && imagesLoaded) {
       const interval = setInterval(() => {
-        setActiveImage(prev => (prev % 4) + 1);
+        setActiveImage(prev => (prev % 6) + 1);
       }, 3500);
       return () => clearInterval(interval);
     }
   }, [showModal, imagesLoaded]);
   
   const images = [
-    { 
-      id: 1, 
-      src: '/images/presentation1.png', 
+    {
+      id: 1,
+      src: '/images/presentation5.jpg',
+      title: 'Ambiance Brunch',
+      alt: 'L\'atmosphère chaleureuse de notre brunch',
+      isBrunch: true
+    },
+    {
+      id: 2,
+      src: '/images/presentation6.jpg',
+      title: 'Expérience Brunch',
+      alt: 'Découvrez l\'art du brunch à la française',
+      isBrunch: true
+    },
+    {
+      id: 3,
+      src: '/images/presentation1.png',
       title: 'Pancakes Gourmands',
-      alt: 'Nos fameux pancakes avec sirop d\'érable et fruits frais' 
+      alt: 'Nos fameux pancakes avec sirop d\'érable et fruits frais',
+      isBrunch: false
     },
-    { 
-      id: 2, 
-      src: '/images/presentation2.png', 
+    {
+      id: 4,
+      src: '/images/presentation2.png',
       title: 'Avocado Toast Signature',
-      alt: 'Toast à l\'avocat, œuf poché et graines torréfiées' 
+      alt: 'Toast à l\'avocat, œuf poché et graines torréfiées',
+      isBrunch: false
     },
-    { 
-      id: 3, 
+    {
+      id: 5,
       src: '/images/presentation3.png',
       title: 'Bowl Énergétique',
-      alt: 'Granola maison, yaourt grec et fruits de saison' 
+      alt: 'Granola maison, yaourt grec et fruits de saison',
+      isBrunch: false
     },
-    { 
-      id: 4, 
+    {
+      id: 6,
       src: '/images/presentation4.png',
       title: 'Œufs Bénédicte',
-      alt: 'Œufs pochés, sauce hollandaise et jambon de Bayonne' 
+      alt: 'Œufs pochés, sauce hollandaise et jambon de Bayonne',
+      isBrunch: false
     }
   ];
   
@@ -720,8 +1009,11 @@ const Hero = () => {
   };
 
   return (
-    <HeroSection>
-      <Container>
+    <>
+      <HeroIntro />
+      <HeroSection>
+        <DecorativeDots />
+        <Container>
         <ContentWrapper
           variants={containerVariants}
           initial="hidden"
@@ -735,19 +1027,19 @@ const Hero = () => {
                 return titleWithBreak.split('').map((letter, index) => (
                   <motion.span
                     key={index}
-                    initial={{ 
-                      opacity: 0, 
+                    initial={{
+                      opacity: 0,
                       y: 50,
                       scale: 0,
                       rotate: Math.random() * 360 - 180
                     }}
-                    animate={{ 
-                      opacity: 1, 
+                    animate={{
+                      opacity: 1,
                       y: 0,
                       scale: 1,
                       rotate: 0
                     }}
-                    transition={{ 
+                    transition={{
                       delay: index * 0.05,
                       duration: 0.5,
                       type: "spring",
@@ -759,7 +1051,7 @@ const Hero = () => {
                       rotate: [-5, 5, -5],
                       transition: { duration: 0.3 }
                     }}
-                    style={{ 
+                    style={{
                       display: letter === '\n' ? 'block' : 'inline-block',
                       transformOrigin: 'center bottom'
                     }}
@@ -768,65 +1060,73 @@ const Hero = () => {
                   </motion.span>
                 ));
               })()}
-              <MobileImageDisplay>
-                {imagesLoaded && images.map((image, index) => (
-                  <ImageSlide
-                    key={image.id}
-                    $active={activeImage}
-                    custom={index}
-                    initial="initial"
-                    animate="animate"
-                    whileTap="tap"
-                    variants={mobileImageVariants}
-                    onClick={() => openModal(image)}
-                  >
-                    <HeroImage
-                      src={image.src}
-                      alt={image.alt}
-                      loading="eager"
-                      decoding="async"
-                    />
-                  </ImageSlide>
-                ))}
-              </MobileImageDisplay>
             </Title>
           </motion.div>
-          
-          <Subtitle
-            initial={{ opacity: 0, y: 30, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{
-              delay: 1.2,
-              duration: 0.8,
-              ease: [0.25, 0.46, 0.45, 0.94]
-            }}
-          >
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.5, duration: 1 }}
-            >
-              {t('hero.subtitle').split(' ').map((word, index) => (
-                <motion.span
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 1.3 + index * 0.05,
-                    duration: 0.5
+
+          {/* Photos directement après le titre sur mobile */}
+          <PhotosContainer>
+            <PhotoGrid>
+              {imagesLoaded && images.map((image, index) => (
+                <ImageSlide
+                  key={image.id}
+                  custom={index}
+                  className={`photo-item ${image.isBrunch ? 'brunch-photo' : ''}`}
+                  initial={{
+                    opacity: 0,
+                    scale: 0.9,
+                    y: 50
                   }}
-                  style={{ display: 'inline-block', marginRight: '6px' }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    transition: {
+                      delay: index * 0.2,
+                      duration: 0.6,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 15
+                    }
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.6,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 15
+                    }
+                  }}
+                  viewport={{
+                    once: true,
+                    margin: "-50px"
+                  }}
+                  whileHover={{
+                    scale: 1.02,
+                    y: -5,
+                    transition: {
+                      duration: 0.3
+                    }
+                  }}
+                  onClick={() => openModal(image)}
                 >
-                  {word}
-                </motion.span>
+                  <HeroImage
+                    src={image.src}
+                    alt={image.alt}
+                    loading="eager"
+                    decoding="async"
+                  />
+                </ImageSlide>
               ))}
-            </motion.span>
-          </Subtitle>
-          
+            </PhotoGrid>
+          </PhotosContainer>
+
           <ButtonGroup
             initial={{ opacity: 0, y: 100 }}
-            animate={{ 
-              opacity: 1, 
+            animate={{
+              opacity: 1,
               y: 0,
             }}
             transition={{
@@ -848,15 +1148,15 @@ const Hero = () => {
                 damping: 12
               }}
             >
-              <LiquidGlassButton 
-                variant="secondary" 
+              <LiquidGlassButton
+                variant="secondary"
                 size="large"
                 onClick={() => {
                   navigate('/menu');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 as={motion.button}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.08,
                   rotate: [0, 2, -2, 2, 0],
                   transition: { rotate: { duration: 0.4 } }
@@ -877,12 +1177,12 @@ const Hero = () => {
                 damping: 12
               }}
             >
-              <LiquidGlassButton 
-                variant="accent" 
+              <LiquidGlassButton
+                variant="accent"
                 size="large"
-                onClick={() => window.open('https://www.thefork.fr/restaurant/brunch-house-r847025', '_blank')}
+                onClick={() => window.open('https://www.google.com/maps/reserve/v/dine/c/tYfq5WqTgGw?source=pa&opi=89978449&hl=fr-FR&gei=J6rNaMFru-jszw-zsPfoDw&sourceurl=https%3A%2F%2Fwww.google.com%2Fsearch%3Fq%3Dbrunch%2Bhouse%2Bbordeaux%26rlz%3D1C5CHFA_enFR1079FR1079%26oq%3Dbrunch%2Bhouse%26gs_lcrp%3DEgZjaHJvbWUqCggAEAAY4wIYgAQyCggAEAAY4wIYgAQyDQgBEC4YrwEYxwEYgAQyBwgCEAAYgAQyBwgDEAAYgAQyDQgEEAAYgwEYsQMYgAQyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQg0OTA2ajBqN6gCALACAA%26sourceid%3Dchrome%26ie%3DUTF-8&ihs=3', '_blank')}
                 as={motion.button}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.08,
                   rotate: [0, -2, 2, -2, 0],
                   transition: { rotate: { duration: 0.4 } }
@@ -893,7 +1193,7 @@ const Hero = () => {
               </LiquidGlassButton>
             </motion.div>
           </ButtonGroup>
-          
+
           <motion.div variants={itemVariants}>
             <BadgeContainer>
               <Badge
@@ -912,6 +1212,7 @@ const Hero = () => {
               </Badge>
             </BadgeContainer>
           </motion.div>
+
         </ContentWrapper>
       </Container>
       
@@ -998,7 +1299,8 @@ const Hero = () => {
           </ModalOverlay>
         )}
       </AnimatePresence>
-    </HeroSection>
+      </HeroSection>
+    </>
   );
 };
 

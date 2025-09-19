@@ -7,11 +7,7 @@ import MapEmbed from './MapEmbed';
 
 const Section = styled.section`
   padding: ${props => props.theme.spacing.section.mobile} ${props => props.theme.spacing.container.padding};
-  background: linear-gradient(180deg, 
-    ${props => props.theme.colors.primary.background} 0%, 
-    ${props => props.theme.colors.secondary.surface} 100%
-  );
-  
+
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     padding: ${props => props.theme.spacing.section.desktop} ${props => props.theme.spacing.xl};
   }
@@ -37,13 +33,17 @@ const ContentWrapper = styled.div``;
 
 const SectionTitle = styled(motion.h2)`
   margin-bottom: ${props => props.theme.spacing.lg};
+  color: ${props => props.theme.colors.floralWhite};
+  text-shadow: 2px 2px 4px rgba(1, 57, 39, 0.5);
 `;
 
 const Description = styled(motion.p)`
   font-size: ${props => props.theme.typography.sizes.body.large};
-  color: ${props => props.theme.colors.secondary.text};
+  color: ${props => props.theme.colors.floralWhite};
   line-height: ${props => props.theme.typography.lineHeight.relaxed};
   margin-bottom: ${props => props.theme.spacing.xl};
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.4);
+  opacity: 0.9;
 `;
 
 const InfoGrid = styled.div`
@@ -79,12 +79,16 @@ const InfoContent = styled.div`
 const InfoTitle = styled.h3`
   font-size: 18px;
   margin-bottom: ${props => props.theme.spacing.sm};
+  color: ${props => props.theme.colors.floralWhite};
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.4);
 `;
 
 const InfoText = styled.p`
   font-size: ${props => props.theme.typography.sizes.small};
-  color: ${props => props.theme.colors.secondary.text};
+  color: ${props => props.theme.colors.floralWhite};
   line-height: ${props => props.theme.typography.lineHeight.relaxed};
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.3);
+  opacity: 0.9;
 `;
 
 

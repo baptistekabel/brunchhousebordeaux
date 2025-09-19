@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import HomePage from './pages/HomePage';
 import MenuPage from './pages/MenuPage';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const { i18n } = useTranslation();
@@ -27,6 +28,7 @@ function App() {
       <GlobalStyles />
       <SpeedInsights />
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/menu" element={<MenuPage />} />

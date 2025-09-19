@@ -11,19 +11,23 @@ import { createScrollTrigger } from '../hooks/useScrollAnimation';
 
 const PageWrapper = styled.div`
   min-height: 100vh;
-  background: ${props => props.theme.colors.primary.background};
+  background: linear-gradient(
+    135deg,
+    ${props => props.theme.colors.darkGreen} 0%,
+    rgba(1, 57, 39, 0.85) 25%,
+    rgba(28, 63, 51, 0.9) 50%,
+    rgba(43, 91, 74, 0.85) 75%,
+    ${props => props.theme.colors.darkGreen} 100%
+  );
+  background-attachment: fixed;
   padding-top: 80px;
 `;
 
 const MenuHeader = styled.section`
   padding: ${props => props.theme.spacing.xxl} ${props => props.theme.spacing.container.padding};
-  background: linear-gradient(135deg, 
-    ${props => props.theme.colors.primary.background} 0%, 
-    rgba(224, 171, 159, 0.1) 100%
-  );
   text-align: center;
   position: relative;
-  
+
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     padding: ${props => props.theme.spacing.xxxl} ${props => props.theme.spacing.xl};
   }
@@ -34,10 +38,10 @@ const BackButton = styled(Link)`
   align-items: center;
   gap: ${props => props.theme.spacing.sm};
   padding: ${props => props.theme.spacing.sm} ${props => props.theme.spacing.md};
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(253, 249, 240, 0.9);
   backdrop-filter: blur(10px);
   border-radius: ${props => props.theme.borderRadius.pill};
-  color: ${props => props.theme.colors.primary.text};
+  color: ${props => props.theme.colors.darkGreen};
   font-size: ${props => props.theme.typography.sizes.small};
   font-weight: ${props => props.theme.typography.weights.medium};
   transition: all ${props => props.theme.transitions.fast};
@@ -45,12 +49,12 @@ const BackButton = styled(Link)`
   position: absolute;
   left: ${props => props.theme.spacing.xl};
   top: ${props => props.theme.spacing.xl};
-  
+
   &:hover {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(253, 249, 240, 0.95);
     transform: translateX(-4px);
   }
-  
+
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     left: ${props => props.theme.spacing.md};
     top: ${props => props.theme.spacing.md};
@@ -61,8 +65,9 @@ const Title = styled(motion.h1)`
   font-size: ${props => props.theme.typography.sizes.h1.desktop};
   margin-bottom: ${props => props.theme.spacing.md};
   text-align: center;
-  color: ${props => props.theme.colors.primary.text};
-  
+  color: ${props => props.theme.colors.floralWhite};
+  text-shadow: 2px 2px 4px rgba(1, 57, 39, 0.5);
+
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     font-size: ${props => props.theme.typography.sizes.h1.mobile};
     margin-top: ${props => props.theme.spacing.xl};
@@ -71,13 +76,15 @@ const Title = styled(motion.h1)`
 
 const Subtitle = styled(motion.p)`
   font-size: ${props => props.theme.typography.sizes.body.large};
-  color: ${props => props.theme.colors.secondary.text};
+  color: ${props => props.theme.colors.floralWhite};
   margin-bottom: ${props => props.theme.spacing.xl};
   font-style: italic;
   text-align: center;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.4);
+  opacity: 0.9;
 `;
 
 const MenuContainer = styled.div`
@@ -113,14 +120,15 @@ const SectionTitle = styled.h2`
   display: flex;
   align-items: center;
   gap: ${props => props.theme.spacing.md};
-  color: ${props => props.theme.colors.primary.text};
-  
+  color: ${props => props.theme.colors.floralWhite};
+  text-shadow: 2px 2px 4px rgba(1, 57, 39, 0.5);
+
   &::after {
     content: '';
     flex: 1;
     height: 2px;
-    background: linear-gradient(90deg, 
-      ${props => props.theme.colors.primary.highlight} 0%, 
+    background: linear-gradient(90deg,
+      ${props => props.theme.colors.floralWhite} 0%,
       transparent 100%
     );
   }
@@ -171,31 +179,37 @@ const MenuItem = styled(motion.div)`
 const ItemName = styled.div`
   flex: 1;
   font-size: ${props => props.theme.typography.sizes.body.regular};
-  color: ${props => props.theme.colors.primary.text};
-  
+  color: ${props => props.theme.colors.floralWhite};
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.4);
+
   span {
     display: block;
     font-size: ${props => props.theme.typography.sizes.small};
-    color: ${props => props.theme.colors.secondary.text};
+    color: ${props => props.theme.colors.floralWhite};
     margin-top: 4px;
     font-style: italic;
+    opacity: 0.8;
+    text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.3);
   }
 `;
 
 const ItemPrice = styled.div`
   font-size: ${props => props.theme.typography.sizes.body.large};
   font-weight: ${props => props.theme.typography.weights.semibold};
-  color: ${props => props.theme.colors.primary.highlight};
+  color: ${props => props.theme.colors.floralWhite};
   min-width: 60px;
   text-align: right;
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.4);
 `;
 
 const Note = styled.p`
   font-size: ${props => props.theme.typography.sizes.small};
-  color: ${props => props.theme.colors.secondary.text};
+  color: ${props => props.theme.colors.floralWhite};
   font-style: italic;
   margin-top: ${props => props.theme.spacing.md};
   padding-left: ${props => props.theme.spacing.md};
+  opacity: 0.8;
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.3);
 `;
 
 const FormulaCard = styled(LiquidGlassCard)`
@@ -242,11 +256,12 @@ const FormulaHeader = styled.div`
 
 const FormulaTitle = styled.h3`
   font-size: 24px;
-  color: ${props => props.theme.colors.primary.text};
+  color: ${props => props.theme.colors.floralWhite};
   display: flex;
   align-items: center;
   gap: ${props => props.theme.spacing.md};
   font-weight: ${props => props.theme.typography.weights.bold};
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.4);
 `;
 
 const FormulaBadge = styled.span`
@@ -266,9 +281,10 @@ const FormulaBadge = styled.span`
 const FormulaPrice = styled.div`
   font-size: 28px;
   font-weight: ${props => props.theme.typography.weights.bold};
-  color: ${props => props.theme.colors.primary.highlight};
+  color: ${props => props.theme.colors.floralWhite};
   white-space: nowrap;
   margin-top: ${props => props.theme.spacing.md};
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.4);
 `;
 
 const FormulaContent = styled.div`
@@ -292,10 +308,12 @@ const FormulaVisual = styled.div`
 
 const FormulaDescription = styled.p`
   font-size: ${props => props.theme.typography.sizes.small};
-  color: ${props => props.theme.colors.secondary.text};
+  color: ${props => props.theme.colors.floralWhite};
   font-style: italic;
   margin-top: ${props => props.theme.spacing.sm};
   padding-left: ${props => props.theme.spacing.sm};
+  opacity: 0.8;
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.3);
 `;
 
 const FormulaSection = styled.div`
@@ -305,17 +323,18 @@ const FormulaSection = styled.div`
 const FormulaSectionTitle = styled.h4`
   font-size: 14px;
   font-weight: ${props => props.theme.typography.weights.semibold};
-  color: ${props => props.theme.colors.primary.accent};
+  color: ${props => props.theme.colors.floralWhite};
   margin-bottom: ${props => props.theme.spacing.md};
   text-transform: uppercase;
   letter-spacing: 1px;
   display: flex;
   align-items: center;
-  
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.4);
+
   &::before {
     content: '•';
     margin-right: ${props => props.theme.spacing.sm};
-    color: ${props => props.theme.colors.primary.highlight};
+    color: ${props => props.theme.colors.floralWhite};
   }
 `;
 
@@ -478,7 +497,7 @@ const ModalHeader = styled.div`
 
 const ModalTitle = styled.h3`
   font-size: 18px;
-  color: ${props => props.theme.colors.primary.text};
+  color: ${props => props.theme.colors.darkGreen};
   display: flex;
   align-items: center;
   gap: ${props => props.theme.spacing.sm};
@@ -523,7 +542,7 @@ const ModalSection = styled.div`
 const ModalSectionTitle = styled.h4`
   font-size: 12px;
   font-weight: ${props => props.theme.typography.weights.semibold};
-  color: ${props => props.theme.colors.primary.accent};
+  color: ${props => props.theme.colors.darkGreen};
   margin-bottom: ${props => props.theme.spacing.xs};
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -535,10 +554,10 @@ const ModalItem = styled.div`
   gap: ${props => props.theme.spacing.xs};
   padding: ${props => props.theme.spacing.xs} 0;
   font-size: 14px;
-  color: ${props => props.theme.colors.primary.text};
-  
+  color: ${props => props.theme.colors.darkGreen};
+
   svg {
-    color: ${props => props.theme.colors.primary.highlight};
+    color: ${props => props.theme.colors.teaRose};
     width: 14px;
     height: 14px;
   }
@@ -646,24 +665,25 @@ const DishDetails = styled.div`
 
 const DishName = styled.h2`
   font-size: 24px;
-  color: ${props => props.theme.colors.primary.text};
+  color: ${props => props.theme.colors.darkGreen};
   margin-bottom: ${props => props.theme.spacing.md};
 `;
 
 const DishDescription = styled.p`
   font-size: ${props => props.theme.typography.sizes.body.regular};
-  color: ${props => props.theme.colors.secondary.text};
+  color: ${props => props.theme.colors.darkGreen};
   line-height: ${props => props.theme.typography.lineHeight.relaxed};
   margin-bottom: ${props => props.theme.spacing.lg};
+  opacity: 0.8;
 `;
 
 const DishPrice = styled.div`
   font-size: 28px;
   font-weight: ${props => props.theme.typography.weights.bold};
-  color: ${props => props.theme.colors.primary.highlight};
+  color: ${props => props.theme.colors.teaRose};
   text-align: center;
   padding: ${props => props.theme.spacing.md};
-  background: rgba(224, 171, 159, 0.1);
+  background: rgba(252, 189, 189, 0.1);
   border-radius: ${props => props.theme.borderRadius.medium};
 `;
 
@@ -717,7 +737,7 @@ const PreviewImage = styled.img`
 const PreviewTitle = styled.div`
   padding: ${props => props.theme.spacing.sm};
   font-size: 12px;
-  color: ${props => props.theme.colors.primary.text};
+  color: ${props => props.theme.colors.darkGreen};
   background: rgba(247, 242, 231, 0.8);
 `;
 

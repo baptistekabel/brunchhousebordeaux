@@ -6,11 +6,8 @@ import { useTranslation } from 'react-i18next';
 
 const FooterSection = styled.footer`
   padding: ${props => props.theme.spacing.xxxl} ${props => props.theme.spacing.container.padding} ${props => props.theme.spacing.xl};
-  background: linear-gradient(180deg, 
-    ${props => props.theme.colors.primary.text} 0%, 
-    #0A1F19 100%
-  );
-  color: ${props => props.theme.colors.neutral.white};
+  background: linear-gradient(135deg, rgba(253, 249, 240, 0.95) 0%, rgba(253, 249, 240, 0.9) 100%);
+  color: ${props => props.theme.colors.darkGreen};
 `;
 
 const Container = styled.div`
@@ -35,7 +32,7 @@ const Logo = styled.h3`
   font-family: ${props => props.theme.typography.fonts.heading};
   font-size: 28px;
   margin-bottom: ${props => props.theme.spacing.lg};
-  color: ${props => props.theme.colors.neutral.white};
+  color: ${props => props.theme.colors.darkGreen};
 `;
 
 const Description = styled.p`
@@ -56,13 +53,13 @@ const SocialLink = styled(motion.a)`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(1, 57, 39, 0.1);
   border-radius: ${props => props.theme.borderRadius.medium};
-  color: ${props => props.theme.colors.neutral.white};
+  color: ${props => props.theme.colors.darkGreen};
   transition: all ${props => props.theme.transitions.fast};
-  
+
   &:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(1, 57, 39, 0.2);
     transform: translateY(-2px);
   }
 `;
@@ -71,7 +68,7 @@ const ColumnTitle = styled.h4`
   font-size: 16px;
   font-weight: ${props => props.theme.typography.weights.semibold};
   margin-bottom: ${props => props.theme.spacing.lg};
-  color: ${props => props.theme.colors.neutral.white};
+  color: ${props => props.theme.colors.darkGreen};
 `;
 
 const InfoList = styled.ul`
@@ -104,11 +101,11 @@ const LinkItem = styled.li`
 `;
 
 const FooterLink = styled.a`
-  color: ${props => props.theme.colors.neutral.white};
+  color: ${props => props.theme.colors.darkGreen};
   font-size: ${props => props.theme.typography.sizes.small};
   opacity: 0.9;
   transition: opacity ${props => props.theme.transitions.fast};
-  
+
   &:hover {
     opacity: 1;
   }
@@ -123,20 +120,20 @@ const NewsletterForm = styled.form`
 const EmailInput = styled.input`
   flex: 1;
   padding: ${props => props.theme.spacing.sm} ${props => props.theme.spacing.md};
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(1, 57, 39, 0.1);
+  border: 1px solid rgba(1, 57, 39, 0.2);
   border-radius: ${props => props.theme.borderRadius.medium};
-  color: ${props => props.theme.colors.neutral.white};
+  color: ${props => props.theme.colors.darkGreen};
   font-size: ${props => props.theme.typography.sizes.small};
-  
+
   &::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(1, 57, 39, 0.5);
   }
-  
+
   &:focus {
     outline: none;
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(1, 57, 39, 0.15);
+    border-color: rgba(1, 57, 39, 0.3);
   }
 `;
 
@@ -147,7 +144,7 @@ const NewsletterButton = styled(LiquidGlassButton)`
 
 const Divider = styled.hr`
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(1, 57, 39, 0.1);
   margin: ${props => props.theme.spacing.xxl} 0 ${props => props.theme.spacing.lg};
 `;
 

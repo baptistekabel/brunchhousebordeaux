@@ -10,16 +10,16 @@ const StyledButton = styled(motion.button)`
   border-radius: ${props => props.theme.borderRadius.pill};
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.9) 0%,
-    rgba(255, 255, 255, 0.7) 100%
+    rgba(253, 249, 240, 0.95) 0%,
+    rgba(253, 249, 240, 0.8) 100%
   );
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.08),
-    0 2px 8px rgba(0, 0, 0, 0.06),
-    inset 0 2px 4px rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(252, 189, 189, 0.4);
+  box-shadow:
+    0 8px 32px rgba(1, 57, 39, 0.08),
+    0 2px 8px rgba(1, 57, 39, 0.06),
+    inset 0 2px 4px rgba(253, 249, 240, 0.6);
   color: ${props => props.$variant === 'primary' 
     ? props.theme.colors.primary.text 
     : props.theme.colors.neutral.white};
@@ -31,10 +31,10 @@ const StyledButton = styled(motion.button)`
   ${props => props.$variant === 'primary' && `
     background: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.98) 0%,
-      rgba(247, 242, 231, 0.95) 100%
+      rgba(253, 249, 240, 0.98) 0%,
+      rgba(253, 249, 240, 0.95) 100%
     );
-    border: 2px solid rgba(236, 178, 192, 0.3);
+    border: 2px solid rgba(252, 189, 189, 0.4);
     color: ${props.theme.colors.primary.text};
   `}
   
@@ -46,8 +46,8 @@ const StyledButton = styled(motion.button)`
     );
     border: 2px solid transparent;
     box-shadow: 
-      0 10px 40px rgba(28, 63, 51, 0.3),
-      0 2px 12px rgba(28, 63, 51, 0.2),
+      0 10px 40px rgba(1, 57, 39, 0.3),
+      0 2px 12px rgba(1, 57, 39, 0.2),
       inset 0 2px 4px rgba(255, 255, 255, 0.1);
   `}
   
@@ -55,13 +55,13 @@ const StyledButton = styled(motion.button)`
     background: linear-gradient(
       135deg,
       ${props.theme.colors.primary.highlight} 0%,
-      rgba(236, 178, 192, 0.8) 100%
+      rgba(252, 189, 189, 0.8) 100%
     );
     border: 2px solid rgba(255, 255, 255, 0.5);
     color: white;
     box-shadow: 
-      0 10px 40px rgba(236, 178, 192, 0.4),
-      0 2px 12px rgba(236, 178, 192, 0.3),
+      0 10px 40px rgba(252, 189, 189, 0.4),
+      0 2px 12px rgba(252, 189, 189, 0.3),
       inset 0 2px 4px rgba(255, 255, 255, 0.3);
   `}
   
@@ -88,22 +88,22 @@ const StyledButton = styled(motion.button)`
     
     ${props => props.$variant === 'primary' && `
       box-shadow: 
-        0 12px 40px rgba(236, 178, 192, 0.25),
-        0 4px 12px rgba(236, 178, 192, 0.15),
+        0 12px 40px rgba(252, 189, 189, 0.25),
+        0 4px 12px rgba(252, 189, 189, 0.15),
         inset 0 2px 4px rgba(255, 255, 255, 0.5);
     `}
     
     ${props => props.$variant === 'secondary' && `
       box-shadow: 
-        0 14px 48px rgba(28, 63, 51, 0.35),
-        0 4px 16px rgba(28, 63, 51, 0.25),
+        0 14px 48px rgba(1, 57, 39, 0.35),
+        0 4px 16px rgba(1, 57, 39, 0.25),
         inset 0 2px 4px rgba(255, 255, 255, 0.2);
     `}
     
     ${props => props.$variant === 'accent' && `
       box-shadow: 
-        0 14px 48px rgba(236, 178, 192, 0.5),
-        0 4px 16px rgba(236, 178, 192, 0.35),
+        0 14px 48px rgba(252, 189, 189, 0.5),
+        0 4px 16px rgba(252, 189, 189, 0.35),
         inset 0 2px 4px rgba(255, 255, 255, 0.4);
     `}
     

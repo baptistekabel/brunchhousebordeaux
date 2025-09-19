@@ -13,14 +13,14 @@ const HeaderWrapper = styled(motion.header)`
   z-index: 1000;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  background: ${props => props.$scrolled 
-    ? 'linear-gradient(135deg, rgba(247, 242, 231, 0.95) 0%, rgba(251, 247, 238, 0.9) 100%)' 
-    : 'linear-gradient(135deg, rgba(247, 242, 231, 0.8) 0%, rgba(251, 247, 238, 0.7) 100%)'};
-  border-bottom: 1px solid ${props => props.$scrolled 
-    ? 'rgba(28, 63, 51, 0.1)' 
-    : 'rgba(255, 255, 255, 0.3)'};
-  box-shadow: ${props => props.$scrolled 
-    ? '0 10px 30px rgba(28, 63, 51, 0.08)' 
+  background: ${props => props.$scrolled
+    ? 'linear-gradient(135deg, rgba(253, 249, 240, 0.95) 0%, rgba(253, 249, 240, 0.9) 100%)'
+    : 'linear-gradient(135deg, rgba(253, 249, 240, 0.8) 0%, rgba(253, 249, 240, 0.7) 100%)'};
+  border-bottom: 1px solid ${props => props.$scrolled
+    ? 'rgba(1, 57, 39, 0.1)'
+    : 'rgba(252, 189, 189, 0.3)'};
+  box-shadow: ${props => props.$scrolled
+    ? '0 10px 30px rgba(1, 57, 39, 0.08)'
     : 'none'};
   transition: all ${props => props.theme.transitions.normal};
 `;
@@ -39,21 +39,20 @@ const Container = styled.div`
 `;
 
 const Logo = styled(motion.div)`
-  font-family: ${props => props.theme.typography.fonts.heading};
-  font-size: 28px;
-  font-weight: ${props => props.theme.typography.weights.bold};
-  color: ${props => props.theme.colors.primary.text};
-  letter-spacing: -0.02em;
   cursor: pointer;
-  white-space: nowrap;
-  
-  span {
-    color: ${props => props.theme.colors.primary.text};
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
   }
-  
+
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-    font-size: 24px;
-    white-space: nowrap;
+    img {
+      height: 40px;
+    }
   }
 `;
 
@@ -109,8 +108,8 @@ const LanguageButton = styled(motion.button)`
   align-items: center;
   gap: ${props => props.theme.spacing.sm};
   padding: ${props => props.theme.spacing.sm} ${props => props.theme.spacing.md};
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(28, 63, 51, 0.1);
+  background: rgba(253, 249, 240, 0.8);
+  border: 1px solid rgba(1, 57, 39, 0.1);
   border-radius: ${props => props.theme.borderRadius.medium};
   color: ${props => props.theme.colors.primary.text};
   font-size: ${props => props.theme.typography.sizes.small};
@@ -119,7 +118,7 @@ const LanguageButton = styled(motion.button)`
   transition: all ${props => props.theme.transitions.fast};
   
   &:hover {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(253, 249, 240, 0.9);
     transform: translateY(-2px);
   }
 `;
@@ -128,9 +127,9 @@ const LanguageDropdown = styled(motion.div)`
   position: absolute;
   top: calc(100% + 8px);
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(253, 249, 240, 0.95);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(28, 63, 51, 0.1);
+  border: 1px solid rgba(1, 57, 39, 0.1);
   border-radius: ${props => props.theme.borderRadius.medium};
   box-shadow: ${props => props.theme.shadows.medium};
   overflow: hidden;
@@ -149,11 +148,11 @@ const LanguageOption = styled.button`
   transition: background ${props => props.theme.transitions.fast};
   
   &:hover {
-    background: rgba(28, 63, 51, 0.05);
+    background: rgba(1, 57, 39, 0.05);
   }
   
   &:not(:last-child) {
-    border-bottom: 1px solid rgba(28, 63, 51, 0.05);
+    border-bottom: 1px solid rgba(1, 57, 39, 0.05);
   }
 `;
 
@@ -163,8 +162,8 @@ const MobileMenuButton = styled(motion.button)`
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(28, 63, 51, 0.1);
+  background: rgba(253, 249, 240, 0.8);
+  border: 1px solid rgba(1, 57, 39, 0.1);
   border-radius: ${props => props.theme.borderRadius.medium};
   color: ${props => props.theme.colors.primary.text};
   cursor: pointer;
@@ -182,11 +181,11 @@ const MobileMenu = styled(motion.div)`
   max-width: 400px;
   height: 100vh;
   background: linear-gradient(135deg, 
-    rgba(251, 247, 238, 0.98) 0%, 
-    rgba(247, 242, 231, 0.95) 100%
+    rgba(253, 249, 240, 0.98) 0%, 
+    rgba(253, 249, 240, 0.95) 100%
   );
   backdrop-filter: blur(20px);
-  box-shadow: -10px 0 40px rgba(28, 63, 51, 0.1);
+  box-shadow: -10px 0 40px rgba(1, 57, 39, 0.1);
   padding: ${props => props.theme.spacing.xl};
   z-index: 999;
 `;
@@ -219,7 +218,7 @@ const MobileNavLink = styled.a`
   font-weight: ${props => props.theme.typography.weights.medium};
   color: ${props => props.theme.colors.primary.text};
   padding: ${props => props.theme.spacing.md} 0;
-  border-bottom: 1px solid rgba(28, 63, 51, 0.05);
+  border-bottom: 1px solid rgba(1, 57, 39, 0.05);
 `;
 
 const Header = () => {
@@ -236,9 +235,9 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 100);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -298,9 +297,12 @@ const Header = () => {
       <HeaderWrapper
         $scrolled={scrolled}
         style={{ y: headerY, opacity: headerOpacity }}
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+        initial={{ y: -100, opacity: 0 }}
+        animate={{
+          y: scrolled ? 0 : -100,
+          opacity: scrolled ? 1 : 0
+        }}
+        transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
         <Container>
           <Logo
@@ -314,7 +316,7 @@ const Header = () => {
               }
             }}
           >
-            Brunch <span>House</span>
+            <img src="/logoBrunch.png" alt="Brunch House Logo" />
           </Logo>
           
           <Nav>

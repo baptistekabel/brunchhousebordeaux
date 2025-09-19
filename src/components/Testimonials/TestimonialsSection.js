@@ -25,11 +25,14 @@ const Header = styled.div`
 
 const SectionTitle = styled(motion.h2)`
   margin-bottom: ${props => props.theme.spacing.md};
+  color: ${props => props.theme.colors.floralWhite};
+  text-shadow: 2px 2px 4px rgba(1, 57, 39, 0.5);
 `;
 
 const SectionSubtitle = styled(motion.p)`
   font-size: ${props => props.theme.typography.sizes.body.large};
-  color: ${props => props.theme.colors.secondary.text};
+  color: ${props => props.theme.colors.floralWhite};
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.4);
 `;
 
 const TestimonialsGrid = styled.div`
@@ -85,11 +88,15 @@ const Name = styled.h4`
   font-size: 16px;
   font-weight: ${props => props.theme.typography.weights.semibold};
   margin-bottom: 4px;
+  color: ${props => props.theme.colors.floralWhite};
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.4);
 `;
 
 const Date = styled.span`
   font-size: ${props => props.theme.typography.sizes.small};
-  color: ${props => props.theme.colors.secondary.text};
+  color: ${props => props.theme.colors.floralWhite};
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.3);
+  opacity: 0.8;
 `;
 
 const Rating = styled.div`
@@ -105,9 +112,11 @@ const Rating = styled.div`
 
 const TestimonialText = styled.p`
   font-size: ${props => props.theme.typography.sizes.body.regular};
-  color: ${props => props.theme.colors.secondary.text};
+  color: ${props => props.theme.colors.floralWhite};
   line-height: ${props => props.theme.typography.lineHeight.relaxed};
   font-style: italic;
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.3);
+  opacity: 0.9;
 `;
 
 

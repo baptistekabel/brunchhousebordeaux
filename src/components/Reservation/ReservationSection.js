@@ -211,7 +211,7 @@ const ReservationSection = () => {
   const [showError, setShowError] = useState(false);
 
   const handleReservation = () => {
-    window.open('https://www.thefork.fr/restaurant/brunch-house-r847025', '_blank');
+    window.open('https://www.google.com/maps/reserve/v/dine/c/tYfq5WqTgGw?source=pa&opi=89978449&hl=fr-FR&gei=J6rNaMFru-jszw-zsPfoDw&sourceurl=https%3A%2F%2Fwww.google.com%2Fsearch%3Fq%3Dbrunch%2Bhouse%2Bbordeaux%26rlz%3D1C5CHFA_enFR1079FR1079%26oq%3Dbrunch%2Bhouse%26gs_lcrp%3DEgZjaHJvbWUqCggAEAAY4wIYgAQyCggAEAAY4wIYgAQyDQgBEC4YrwEYxwEYgAQyBwgCEAAYgAQyBwgDEAAYgAQyDQgEEAAYgwEYsQMYgAQyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQg0OTA2ajBqN6gCALACAA%26sourceid%3Dchrome%26ie%3DUTF-8&ihs=3', '_blank');
   };
 
   const handleChange = (e) => {
@@ -309,19 +309,19 @@ const ReservationSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <h3 style={{ marginBottom: '20px', color: theme.colors.primary.text }}>
+                  <h3 style={{ marginBottom: '20px', color: theme.colors.floralWhite, textShadow: '2px 2px 4px rgba(1, 57, 39, 0.5)' }}>
                     {i18n.language === 'en'
-                      ? 'Book easily on TheFork'
+                      ? 'Book easily on Google'
                       : i18n.language === 'es'
-                      ? 'Reserva fácilmente en TheFork'
-                      : 'Réservez facilement sur TheFork'}
+                      ? 'Reserva fácilmente en Google'
+                      : 'Réservez facilement sur Google'}
                   </h3>
-                  <p style={{ marginBottom: '30px', color: theme.colors.secondary.text, maxWidth: '500px', margin: '0 auto 30px' }}>
+                  <p style={{ marginBottom: '30px', color: theme.colors.floralWhite, textShadow: '1px 1px 2px rgba(1, 57, 39, 0.4)', opacity: '0.9', maxWidth: '500px', margin: '0 auto 30px' }}>
                     {i18n.language === 'en'
-                      ? 'To book your table, click the button below and you will be redirected to our TheFork page where you can choose your date, time and number of guests.'
+                      ? 'To book your table, click the button below and you will be redirected to our Google reservation page where you can choose your date, time and number of guests.'
                       : i18n.language === 'es'
-                      ? 'Para reservar tu mesa, haz clic en el botón de abajo y serás redirigido a nuestra página de TheFork donde podrás elegir tu fecha, hora y número de invitados.'
-                      : 'Pour réserver votre table, cliquez sur le bouton ci-dessous et vous serez redirigé vers notre page TheFork où vous pourrez choisir votre date, heure et nombre de convives.'}
+                      ? 'Para reservar tu mesa, haz clic en el botón de abajo y serás redirigido a nuestra página de reserva de Google donde podrás elegir tu fecha, hora y número de invitados.'
+                      : 'Pour réserver votre table, cliquez sur le bouton ci-dessous et vous serez redirigé vers notre page de réservation Google où vous pourrez choisir votre date, heure et nombre de convives.'}
                   </p>
                 </motion.div>
               </div>
@@ -346,10 +346,10 @@ const ReservationSection = () => {
               >
                 <span>
                   {i18n.language === 'en'
-                    ? 'Book on TheFork'
+                    ? 'Book on Google'
                     : i18n.language === 'es'
-                    ? 'Reservar en TheFork'
-                    : 'Réserver sur TheFork'}
+                    ? 'Reservar en Google'
+                    : 'Réserver sur Google'}
                 </span>
                 <span style={{ fontSize: '20px' }}>→</span>
               </LiquidGlassButton>

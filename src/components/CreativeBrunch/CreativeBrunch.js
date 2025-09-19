@@ -7,13 +7,9 @@ import { useTranslation } from 'react-i18next';
 
 const Section = styled.section`
   padding: ${props => props.theme.spacing.section.mobile} ${props => props.theme.spacing.container.padding};
-  background: linear-gradient(135deg, 
-    ${props => props.theme.colors.primary.background} 0%, 
-    rgba(251, 247, 238, 0.5) 100%
-  );
   position: relative;
   overflow: hidden;
-  
+
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     padding: ${props => props.theme.spacing.section.desktop} ${props => props.theme.spacing.xl};
   }
@@ -54,23 +50,21 @@ const Header = styled.div`
 const SectionTitle = styled(motion.h2)`
   margin-bottom: ${props => props.theme.spacing.md};
   font-size: ${props => props.theme.typography.sizes.h2.desktop};
-  
+  color: ${props => props.theme.colors.floralWhite};
+  text-shadow: 2px 2px 4px rgba(1, 57, 39, 0.5);
+
   span {
-    background: linear-gradient(135deg, 
-      ${props => props.theme.colors.primary.accent} 0%, 
-      ${props => props.theme.colors.primary.text} 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: inherit;
   }
 `;
 
 const SectionSubtitle = styled(motion.p)`
   font-size: ${props => props.theme.typography.sizes.body.large};
-  color: ${props => props.theme.colors.secondary.text};
+  color: ${props => props.theme.colors.floralWhite};
   max-width: 600px;
   margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.4);
+  opacity: 0.9;
 `;
 
 const Grid = styled.div`
@@ -97,29 +91,32 @@ const Badge = styled.div`
   align-items: center;
   gap: ${props => props.theme.spacing.sm};
   padding: ${props => props.theme.spacing.sm} ${props => props.theme.spacing.lg};
-  background: linear-gradient(135deg, 
-    rgba(28, 63, 51, 0.1) 0%, 
-    rgba(43, 91, 74, 0.05) 100%
+  background: linear-gradient(135deg,
+    ${props => props.theme.colors.darkGreen} 0%,
+    rgba(1, 57, 39, 0.9) 100%
   );
   border-radius: ${props => props.theme.borderRadius.pill};
   margin-bottom: ${props => props.theme.spacing.lg};
-  
+  color: ${props => props.theme.colors.floralWhite};
+  font-weight: ${props => props.theme.typography.weights.medium};
+
   svg {
-    color: ${props => props.theme.colors.primary.accent};
+    color: ${props => props.theme.colors.floralWhite};
   }
 `;
 
 const ContentTitle = styled.h3`
   font-size: 28px;
   margin-bottom: ${props => props.theme.spacing.lg};
-  color: ${props => props.theme.colors.primary.text};
+  color: ${props => props.theme.colors.darkGreen};
 `;
 
 const ContentText = styled.p`
   font-size: ${props => props.theme.typography.sizes.body.regular};
-  color: ${props => props.theme.colors.secondary.text};
+  color: ${props => props.theme.colors.darkGreen};
   line-height: ${props => props.theme.typography.lineHeight.relaxed};
   margin-bottom: ${props => props.theme.spacing.lg};
+  opacity: 0.8;
 `;
 
 const FeatureList = styled.ul`
@@ -133,10 +130,13 @@ const FeatureItem = styled.li`
   align-items: center;
   gap: ${props => props.theme.spacing.md};
   margin-bottom: ${props => props.theme.spacing.md};
-  
+  color: ${props => props.theme.colors.darkGreen};
+  opacity: 0.8;
+
   &::before {
     content: '✨';
     font-size: 20px;
+    color: ${props => props.theme.colors.teaRose};
   }
 `;
 
@@ -168,16 +168,6 @@ const Image = styled.img`
   object-fit: cover;
 `;
 
-const FloatingEmoji = styled(motion.div)`
-  position: absolute;
-  font-size: 40px;
-  z-index: 10;
-  
-  &.emoji1 { top: 10%; left: 10%; }
-  &.emoji2 { top: 20%; right: 15%; }
-  &.emoji3 { bottom: 20%; left: 20%; }
-  &.emoji4 { bottom: 10%; right: 10%; }
-`;
 
 const CreativeBrunch = () => {
   const { t } = useTranslation();
@@ -243,28 +233,6 @@ const CreativeBrunch = () => {
                 </FeatureItem>
               </FeatureList>
               
-              <FloatingEmoji className="emoji1" animate={floatingAnimation}>
-                🎨
-              </FloatingEmoji>
-              <FloatingEmoji 
-                className="emoji2" 
-                animate={{
-                  ...floatingAnimation,
-                  transition: { ...floatingAnimation.transition, delay: 0.5 }
-                }}
-              >
-                🥞
-              </FloatingEmoji>
-              
-              <FloatingEmoji 
-                className="emoji4" 
-                animate={{
-                  ...floatingAnimation,
-                  transition: { ...floatingAnimation.transition, delay: 1.5 }
-                }}
-              >
-                🌟
-              </FloatingEmoji>
             </ContentCard>
           </ScaleInWhenVisible>
           

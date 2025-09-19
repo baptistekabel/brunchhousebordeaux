@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+  @import url('./fonts.css');
   
   * {
     margin: 0;
@@ -18,18 +18,44 @@ export const GlobalStyles = createGlobalStyle`
     font-family: ${props => props.theme.typography.fonts.body};
     font-size: ${props => props.theme.typography.sizes.body.regular};
     line-height: ${props => props.theme.typography.lineHeight.normal};
-    color: ${props => props.theme.colors.primary.text};
-    background-color: ${props => props.theme.colors.primary.background};
+    color: ${props => props.theme.colors.floralWhite};
+    background: linear-gradient(
+      135deg,
+      ${props => props.theme.colors.darkGreen} 0%,
+      rgba(1, 57, 39, 0.9) 40%,
+      rgba(190, 106, 101, 0.8) 70%,
+      ${props => props.theme.colors.teaRose} 100%
+    );
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+
+    &::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(252, 189, 189, 0.3) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(190, 106, 101, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 60% 20%, rgba(253, 249, 240, 0.1) 0%, transparent 30%);
+      pointer-events: none;
+      z-index: -1;
+    }
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: ${props => props.theme.typography.fonts.heading};
     font-weight: ${props => props.theme.typography.weights.bold};
     line-height: ${props => props.theme.typography.lineHeight.tight};
-    color: ${props => props.theme.colors.primary.text};
+    color: ${props => props.theme.colors.floralWhite};
+    text-shadow: 2px 2px 4px rgba(1, 57, 39, 0.3);
   }
   
   h1 {
