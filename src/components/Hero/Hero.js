@@ -886,7 +886,7 @@ const Hero = () => {
       id: 3,
       src: '/images/presentation1.png',
       title: 'Pancakes Gourmands',
-      alt: 'Nos fameux pancakes avec sirop d\'érable et fruits frais',
+      alt: 'Nos fameux pancakes avec napage et fruits frais',
       isBrunch: false
     },
     {

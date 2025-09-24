@@ -186,7 +186,7 @@ const Footer = () => {
                 ? "The gourmet rendezvous that reconciles morning and noon. A unique culinary experience in the heart of Bordeaux."
                 : i18n.language === 'es'
                 ? "El encuentro gourmet que reconcilia mañana y mediodía. Una experiencia culinaria única en el corazón de Burdeos."
-                : "Le rendez-vous gourmand qui réconcilie matin et midi. Une expérience culinaire unique au cœur de Bordeaux."}
+                : "Le brunch comme vous ne l'avez jamais imaginé."}
             </Description>
             <SocialLinks>
               <SocialLink

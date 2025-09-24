@@ -805,14 +805,32 @@ const MenuPage = () => {
     
     // Burger House
     "Burger House": {
-      image: "/images/menu/burgerhouse.jpeg",
+      image: "/images/menu/burgerHouse.jpg",
       description: isEnglish
         ? "Our signature house burger with special sauce"
         : isSpanish
         ? "Nuestra hamburguesa de la casa con salsa especial"
         : "Notre burger maison avec sauce spéciale"
     },
-    
+    "Le Burger House": {
+      image: "/images/menu/burgerHouse.jpg",
+      description: isEnglish
+        ? "Our signature house burger with special sauce"
+        : isSpanish
+        ? "Nuestra hamburguesa de la casa con salsa especial"
+        : "Notre burger maison avec sauce spéciale"
+    },
+
+    // Le Special One
+    "Le Special One": {
+      image: "/images/menu/specialOne.jpg",
+      description: isEnglish
+        ? "Brioche bun, guacamole, steak, cheddar, arugula, tomatoes, BBQ sauce"
+        : isSpanish
+        ? "Pan brioche, guacamole, filete, cheddar, rúcula, tomates, salsa barbacoa"
+        : "Pain brioche, guacamole, steak, cheddar, roquette, tomates, sauce barbecue"
+    },
+
     // Saumon guacamole
     "Saumon guacamole maison, fleur de sel": {
       image: "/images/menu/saumonguacamole.jpeg",
@@ -856,7 +874,7 @@ const MenuPage = () => {
         ? "Fluffy pancakes with maple syrup and fresh fruits"
         : isSpanish
         ? "Pancakes esponjosos con sirope de arce y frutas frescas"
-        : "Pancakes moelleux avec sirop d'érable et fruits frais"
+        : "Pancakes moelleux avec napage et fruits frais"
     },
     
     // Formule Plaisir
@@ -876,7 +894,25 @@ const MenuPage = () => {
       image: "/images/menu/formuleplaisir.jpeg",
       description: "El equilibrio perfecto entre dulce y salado"
     },
-    
+
+    // Burrata
+    "Burrata, tomates coeur de boeuf, fleur de sel": {
+      image: "/images/menu/burrataTomates.jpg",
+      description: isEnglish
+        ? "Burrata with beef heart tomatoes and fleur de sel"
+        : isSpanish
+        ? "Burrata con tomates corazón de buey y flor de sal"
+        : "Burrata avec tomates coeur de boeuf et fleur de sel"
+    },
+    "Burrata, beef heart tomatoes, fleur de sel": {
+      image: "/images/menu/burrataTomates.jpg",
+      description: "Burrata with beef heart tomatoes and fleur de sel"
+    },
+    "Burrata, tomates corazón de buey, flor de sal": {
+      image: "/images/menu/burrataTomates.jpg",
+      description: "Burrata con tomates corazón de buey y flor de sal"
+    },
+
     // Houmous betterave
     "Houmous à la betterave, avocat": {
       image: "/images/menu/houmous.jpeg",
@@ -945,16 +981,6 @@ const MenuPage = () => {
       description: "Seasonal fresh juice"
     },
     
-    // Cordon Bleu
-    "Cordon Bleu House": {
-      image: "/images/menu/cordonbleue.jpeg",
-      description: isEnglish
-        ? "House special cordon bleu with melted cheese"
-        : isSpanish
-        ? "Cordon bleu especial de la casa con queso fundido"
-        : "Cordon bleu maison avec fromage fondant"
-    },
-    
     // Viennoiseries
     "Croissant": {
       image: "/images/menu/croissant.png",
@@ -990,6 +1016,22 @@ const MenuPage = () => {
     },
     
     // Desserts
+    "Le pancake": {
+      image: "/images/menu/pancake.jpeg",
+      description: isEnglish
+        ? "Fluffy pancake with toppings"
+        : isSpanish
+        ? "Pancake esponjoso con coberturas"
+        : "Pancake moelleux avec napage"
+    },
+    "The pancake": {
+      image: "/images/menu/pancake.jpeg",
+      description: "Fluffy pancake with toppings"
+    },
+    "El pancake": {
+      image: "/images/menu/pancake.jpeg",
+      description: "Pancake esponjoso con coberturas"
+    },
     "Grec granola": {
       image: "/images/menu/grecgranola.jpeg",
       description: isEnglish
@@ -1032,13 +1074,13 @@ const MenuPage = () => {
         ? "Té matcha japonés tradicional"
         : "Thé matcha japonais traditionnel"
     },
-    "Chocolat viennois": {
+    "Chocolat": {
       image: "/images/menu/chocolatviennois.png",
       description: isEnglish
         ? "Viennese hot chocolate with whipped cream"
         : isSpanish
         ? "Chocolate vienés con nata montada"
-        : "Chocolat viennois avec chantilly"
+        : "Chocolat avec chantilly"
     },
     "Viennese chocolate": {
       image: "/images/menu/chocolatviennois.png",
@@ -1149,7 +1191,7 @@ const MenuPage = () => {
     
     // Boissons froides
     "Canette": {
-      image: "/images/menu/canette.jpg",
+      image: "/images/menu/canettes.png",
       description: isEnglish
         ? "Selection of canned soft drinks"
         : isSpanish
@@ -1157,15 +1199,15 @@ const MenuPage = () => {
         : "Sélection de canettes de sodas"
     },
     "Can": {
-      image: "/images/menu/canette.jpg",
+      image: "/images/menu/canettes.png",
       description: "Selection of canned soft drinks"
     },
     "Lata": {
-      image: "/images/menu/canette.jpg",
+      image: "/images/menu/canettes.png",
       description: "Selección de refrescos en lata"
     },
     "Canette au choix": {
-      image: "/images/menu/canette.jpg",
+      image: "/images/menu/canettes.png",
       description: isEnglish
         ? "Choice of canned soft drink"
         : isSpanish
@@ -1173,7 +1215,7 @@ const MenuPage = () => {
         : "Canette au choix"
     },
     "1 canette au choix": {
-      image: "/images/menu/canette.jpg",
+      image: "/images/menu/canettes.png",
       description: isEnglish
         ? "Choice of canned soft drink"
         : isSpanish
@@ -1254,7 +1296,7 @@ const MenuPage = () => {
         ? "Toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup."
         : isSpanish 
         ? "Coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce."
-        : "Nappage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable."
+        : "Napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable."
     },
     toasts: {
       title: "🥑 Toasts",
@@ -1361,7 +1403,7 @@ const MenuPage = () => {
         { name: "Cappuccino", price: "4 €" },
         { name: isEnglish ? "Café Latte" : isSpanish ? "Café con leche" : "Café Latté", price: "4 €" },
         { name: "Matcha", price: "5 €" },
-        { name: isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat viennois", price: "5,50 €" },
+        { name: isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat", price: "5,50 €" },
         { name: isEnglish ? "Tea" : isSpanish ? "Té" : "Thé", price: "4 €" },
         { name: isEnglish ? "Mocha" : isSpanish ? "Moca" : "Moka", price: "5 €" }
       ],

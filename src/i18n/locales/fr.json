@@ -27,7 +27,7 @@
     "homeItems": {
       "pancakes": {
         "name": "Pancakes",
-        "description": "Pancakes moelleux avec sirop d'érable et fruits frais",
+        "description": "Pancakes moelleux avec napage et fruits frais",
         "price": "12€"
       },
       "burgerHouse": {
@@ -52,14 +52,14 @@
       },
       "beetrootHummus": {
         "name": "Houmous à la betterave",
-        "description": "Houmous de betterave avec avocat frais et crudités",
+        "description": "Houmous de betterave avec avocat frais et noix",
         "price": "12€"
       }
     },
     "items": {
       "pancakes": {
-        "name": "Pancakes & sirop d'érable",
-        "description": "Pancakes moelleux accompagnés de sirop d'érable pur du Canada, beurre fermier et fruits de saison"
+        "name": "Pancakes & napage",
+        "description": "Pancakes moelleux accompagnés de napage"
       },
       "avocado": {
         "name": "Avocado Toast Deluxe",
@@ -215,7 +215,7 @@
     }
   },
   "footer": {
-    "description": "Le rendez-vous gourmand qui réconcilie matin et midi. Une expérience culinaire unique au cœur de Bordeaux.",
+    "description": "Le brunch comme vous ne l'avez jamais imaginé.",
     "contact": "Contact",
     "hours": "Horaires",
     "links": "Liens utiles",

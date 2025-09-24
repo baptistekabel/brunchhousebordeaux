@@ -186,7 +186,7 @@ const HeroIntro = () => {
           }}
         />
         <IntroText variants={itemVariants}>
-          Le meilleur brunch de Bordeaux.
+          Le brunch comme vous ne l'avez jamais imaginé.
         </IntroText>
       </ContentWrapper>
     </IntroSection>
