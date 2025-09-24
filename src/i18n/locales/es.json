@@ -1,5 +1,6 @@
 {
   "nav": {
+    "home": "Inicio",
     "menu": "Menú",
     "location": "Ubicación",
     "reservation": "Reserva",
@@ -9,6 +10,7 @@
   "hero": {
     "title": "Que comience el brunch...",
     "subtitle": "Descubre una experiencia gastronómica única con nuestros productos frescos y locales, preparados con pasión en un ambiente cálido.",
+    "slogan": "El brunch como nunca lo habías imaginado.",
     "cta": {
       "reserve": "Reservar mesa",
       "menu": "Ver menú"
@@ -27,7 +29,7 @@
     "homeItems": {
       "pancakes": {
         "name": "Pancakes",
-        "description": "Pancakes esponjosos con jarabe de arce y frutas frescas",
+        "description": "Pancakes esponjosos con cobertura y frutas frescas",
         "price": "12€"
       },
       "burgerHouse": {
@@ -52,14 +54,14 @@
       },
       "beetrootHummus": {
         "name": "Hummus de Remolacha",
-        "description": "Hummus de remolacha con aguacate fresco y verduras crudas",
+        "description": "Hummus de remolacha con aguacate fresco y nueces",
         "price": "12€"
       }
     },
     "items": {
       "pancakes": {
-        "name": "Pancakes y jarabe de arce",
-        "description": "Pancakes esponjosos con jarabe de arce puro de Canadá, mantequilla de granja y frutas de temporada"
+        "name": "Pancakes y cobertura",
+        "description": "Pancakes esponjosos con cobertura"
       },
       "avocado": {
         "name": "Tostada de Aguacate Deluxe",
@@ -134,6 +136,11 @@
       "phone": "Instagram: @brunchhousebordeaux",
       "reservation": "Reserva recomendada en fin de semana",
       "groups": "Brunch Creativo de martes a viernes"
+    },
+    "map": {
+      "plan": "Mapa",
+      "streetView": "Vista de Calle",
+      "directions": "Cómo llegar"
     }
   },
   "reservation": {
@@ -215,7 +222,7 @@
     }
   },
   "footer": {
-    "description": "El encuentro gastronómico que reconcilia mañana y mediodía. Una experiencia culinaria única en el corazón de Burdeos.",
+    "description": "El brunch como nunca lo habías imaginado.",
     "contact": "Contacto",
     "hours": "Horarios",
     "links": "Enlaces útiles",

@@ -1,5 +1,6 @@
 {
   "nav": {
+    "home": "Accueil",
     "menu": "Menu",
     "location": "Lieu",
     "reservation": "Réservation",
@@ -9,6 +10,7 @@
   "hero": {
     "title": "Que le brunch commence...",
     "subtitle": "Découvrez une expérience gourmande unique avec nos produits frais et locaux, préparés avec passion dans une ambiance chaleureuse.",
+    "slogan": "Le brunch comme vous ne l'avez jamais imaginé.",
     "cta": {
       "reserve": "Réserver une table",
       "menu": "Voir le menu"
@@ -134,6 +136,11 @@
       "phone": "Instagram : @brunchhousebordeaux",
       "reservation": "Réservation conseillée le week-end",
       "groups": "Brunch Créatif du mardi au vendredi"
+    },
+    "map": {
+      "plan": "Plan",
+      "streetView": "Street View",
+      "directions": "Itinéraire"
     }
   },
   "reservation": {

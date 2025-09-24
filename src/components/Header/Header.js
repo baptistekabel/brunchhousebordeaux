@@ -258,14 +258,21 @@ const Header = () => {
   const handleNavClick = (e, href) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    
+
+    // Si on clique sur Accueil, toujours retourner à l'accueil
+    if (href === '#home') {
+      navigate('/');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
     // Si on clique sur Menu, aller à la page menu
     if (href === '#menu') {
       navigate('/menu');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
-    
+
     // Si on est sur la page menu, retourner à l'accueil
     if (location.pathname === '/menu') {
       navigate('/');
@@ -286,6 +293,7 @@ const Header = () => {
   };
 
   const navItems = [
+    { href: '#home', label: t('nav.home') },
     { href: '#menu', label: t('nav.menu') },
     { href: '#location', label: t('nav.location') },
     { href: '#reservation', label: t('nav.reservation') },

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { FiMap, FiEye, FiNavigation } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
 
 const MapContainer = styled(motion.div)`
   position: relative;
@@ -140,6 +141,7 @@ const MapOverlay = styled(motion.div)`
 `;
 
 const MapEmbed = () => {
+  const { t } = useTranslation();
   const [mapView, setMapView] = useState('streetview');
   
   // Coordonnées exactes pour 3 rue Ferbos, 33800 Bordeaux
@@ -177,7 +179,7 @@ const MapEmbed = () => {
           whileTap={{ scale: 0.95 }}
         >
           <FiMap size={16} />
-          <span>Plan</span>
+          <span>{t('location.map.plan')}</span>
         </ControlButton>
         
         <ControlButton
@@ -187,7 +189,7 @@ const MapEmbed = () => {
           whileTap={{ scale: 0.95 }}
         >
           <FiEye size={16} />
-          <span>Street View</span>
+          <span>{t('location.map.streetView')}</span>
         </ControlButton>
         
         <DirectionsButton
@@ -198,7 +200,7 @@ const MapEmbed = () => {
           whileTap={{ scale: 0.95 }}
         >
           <FiNavigation size={16} />
-          <span>Itinéraire</span>
+          <span>{t('location.map.directions')}</span>
         </DirectionsButton>
       </MapControls>
       

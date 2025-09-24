@@ -1,5 +1,6 @@
 {
   "nav": {
+    "home": "Home",
     "menu": "Menu",
     "location": "Location",
     "reservation": "Reservation",
@@ -9,6 +10,7 @@
   "hero": {
     "title": "Let the brunch begin...",
     "subtitle": "Discover a unique gourmet experience with our fresh and local products, prepared with passion in a warm atmosphere.",
+    "slogan": "Brunch like you've never imagined it.",
     "cta": {
       "reserve": "Book a table",
       "menu": "View menu"
@@ -27,7 +29,7 @@
     "homeItems": {
       "pancakes": {
         "name": "Pancakes",
-        "description": "Fluffy pancakes with maple syrup and fresh fruits",
+        "description": "Fluffy pancakes with toppings and fresh fruits",
         "price": "12€"
       },
       "burgerHouse": {
@@ -52,14 +54,14 @@
       },
       "beetrootHummus": {
         "name": "Beetroot Hummus",
-        "description": "Beetroot hummus with fresh avocado and raw vegetables",
+        "description": "Beetroot hummus with fresh avocado and nuts",
         "price": "12€"
       }
     },
     "items": {
       "pancakes": {
-        "name": "Pancakes & maple syrup",
-        "description": "Fluffy pancakes with pure Canadian maple syrup, farm butter and seasonal fruits"
+        "name": "Pancakes & toppings",
+        "description": "Fluffy pancakes with toppings"
       },
       "avocado": {
         "name": "Deluxe Avocado Toast",
@@ -134,6 +136,11 @@
       "phone": "Instagram: @brunchhousebordeaux",
       "reservation": "Reservation recommended on weekends",
       "groups": "Creative Brunch Tuesday to Friday"
+    },
+    "map": {
+      "plan": "Map",
+      "streetView": "Street View",
+      "directions": "Directions"
     }
   },
   "reservation": {
@@ -215,7 +222,7 @@
     }
   },
   "footer": {
-    "description": "The gourmet rendezvous that brings morning and noon together. A unique culinary experience in the heart of Bordeaux.",
+    "description": "Brunch like you've never imagined it.",
     "contact": "Contact",
     "hours": "Hours",
     "links": "Useful links",

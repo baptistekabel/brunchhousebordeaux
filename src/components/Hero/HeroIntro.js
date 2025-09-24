@@ -186,7 +186,7 @@ const HeroIntro = () => {
           }}
         />
         <IntroText variants={itemVariants}>
-          Le brunch comme vous ne l'avez jamais imaginé.
+          {t('hero.slogan')}
         </IntroText>
       </ContentWrapper>
     </IntroSection>
