@@ -913,6 +913,24 @@ const MenuPage = () => {
       description: "Burrata con tomates corazón de buey y flor de sal"
     },
 
+    // Crevettes tomates cerises fromage frais
+    "Crevettes, tomates cerises, fromage frais": {
+      image: "/images/menu/toastCrevettes.jpg",
+      description: isEnglish
+        ? "Shrimp with cherry tomatoes and cream cheese"
+        : isSpanish
+        ? "Gambas con tomates cherry y queso fresco"
+        : "Crevettes avec tomates cerises et fromage frais"
+    },
+    "Shrimp, cherry tomatoes, cream cheese": {
+      image: "/images/menu/toastCrevettes.jpg",
+      description: "Shrimp with cherry tomatoes and cream cheese"
+    },
+    "Gambas, tomates cherry, queso fresco": {
+      image: "/images/menu/toastCrevettes.jpg",
+      description: "Gambas con tomates cherry y queso fresco"
+    },
+
     // Houmous betterave
     "Houmous à la betterave, avocat": {
       image: "/images/menu/houmous.jpeg",
@@ -1333,13 +1351,21 @@ const MenuPage = () => {
             : "Saumon guacamole maison, fleur de sel", 
           price: "14 €" 
         },
-        { 
-          name: isEnglish 
-            ? "Burrata, beef heart tomatoes, fleur de sel" 
-            : isSpanish 
+        {
+          name: isEnglish
+            ? "Burrata, beef heart tomatoes, fleur de sel"
+            : isSpanish
             ? "Burrata, tomates corazón de buey, flor de sal"
-            : "Burrata, tomates coeur de boeuf, fleur de sel", 
-          price: "15 €" 
+            : "Burrata, tomates coeur de boeuf, fleur de sel",
+          price: "15 €"
+        },
+        {
+          name: isEnglish
+            ? "Shrimp, cherry tomatoes, cream cheese"
+            : isSpanish
+            ? "Gambas, tomates cherry, queso fresco"
+            : "Crevettes, tomates cerises, fromage frais",
+          price: "15 €"
         }
       ],
       note: isEnglish 
