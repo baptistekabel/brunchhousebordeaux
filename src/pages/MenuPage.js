@@ -1067,7 +1067,7 @@ const MenuPage = () => {
       description: "Yogur griego con granola casera y frutas frescas"
     },
     "Brioche perdue": {
-      image: "/images/menu/brioche.png",
+      image: "/images/menu/briochePerdue.JPG",
       description: isEnglish
         ? "French toast with caramelized sugar"
         : isSpanish
@@ -1075,11 +1075,11 @@ const MenuPage = () => {
         : "Brioche perdue dorée au sucre caramélisé"
     },
     "French toast": {
-      image: "/images/menu/brioche.png",
+      image: "/images/menu/briochePerdue.JPG",
       description: "French toast with caramelized sugar"
     },
     "Tostada francesa": {
-      image: "/images/menu/brioche.png",
+      image: "/images/menu/briochePerdue.JPG",
       description: "Tostada francesa con azúcar caramelizado"
     },
     
@@ -1308,7 +1308,7 @@ const MenuPage = () => {
           price: "4 €" 
         },
         { name: isEnglish ? "The pancake" : isSpanish ? "El pancake" : "Le pancake", price: "8 €" },
-        { name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "La brioche perdue", price: "8 €" }
+        { name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue", price: "8 €" }
       ],
       note: isEnglish 
         ? "Toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup."
