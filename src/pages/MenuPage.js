@@ -831,6 +831,16 @@ const MenuPage = () => {
         : "Pain brioche, guacamole, steak, cheddar, roquette, tomates, sauce barbecue"
     },
 
+    // Cordon Bleu House
+    "Cordon Bleu House": {
+      image: "/images/menu/cordonbleue.jpeg",
+      description: isEnglish
+        ? "Marinated chicken cutlet, turkey ham, cheese"
+        : isSpanish
+        ? "Escalope de pollo marinado, jamón de pavo, queso"
+        : "Escalope de poulet mariné, jambon de dinde, fromage"
+    },
+
     // Saumon guacamole
     "Saumon guacamole maison, fleur de sel": {
       image: "/images/menu/saumonguacamole.jpeg",
@@ -1365,7 +1375,7 @@ const MenuPage = () => {
             : isSpanish
             ? "Gambas, tomates cherry, queso fresco"
             : "Crevettes, tomates cerises, fromage frais",
-          price: "15 €"
+          price: "14 €"
         }
       ],
       note: isEnglish 
