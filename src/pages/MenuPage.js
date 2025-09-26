@@ -656,6 +656,7 @@ const DishImage = styled.img`
   width: 100%;
   height: 300px;
   object-fit: cover;
+  object-position: ${props => props.$isVeggieBurger ? 'center 70%' : 'center center'};
   border-radius: ${props => props.theme.borderRadius.xlarge} ${props => props.theme.borderRadius.xlarge} 0 0;
 `;
 
@@ -829,6 +830,24 @@ const MenuPage = () => {
         : isSpanish
         ? "Pan brioche, guacamole, filete, cheddar, rúcula, tomates, salsa barbacoa"
         : "Pain brioche, guacamole, steak, cheddar, roquette, tomates, sauce barbecue"
+    },
+
+    // Burger végé
+    "Burger végé du moment": {
+      image: "/images/menu/burgerVege.JPG",
+      description: isEnglish
+        ? "Seasonal veggie burger with fresh ingredients"
+        : isSpanish
+        ? "Hamburguesa vegetariana de temporada con ingredientes frescos"
+        : "Burger végétarien de saison avec ingrédients frais"
+    },
+    "Veggie burger of the day": {
+      image: "/images/menu/burgerVege.JPG",
+      description: "Seasonal veggie burger with fresh ingredients"
+    },
+    "Hamburguesa vegetariana del día": {
+      image: "/images/menu/burgerVege.JPG",
+      description: "Hamburguesa vegetariana de temporada con ingredientes frescos"
     },
 
     // Cordon Bleu House
@@ -1103,7 +1122,7 @@ const MenuPage = () => {
         : "Thé matcha japonais traditionnel"
     },
     "Chocolat": {
-      image: "/images/menu/chocolatviennois.png",
+      image: "/images/menu/chocolat.JPG",
       description: isEnglish
         ? "Viennese hot chocolate with whipped cream"
         : isSpanish
@@ -1111,11 +1130,11 @@ const MenuPage = () => {
         : "Chocolat avec chantilly"
     },
     "Viennese chocolate": {
-      image: "/images/menu/chocolatviennois.png",
+      image: "/images/menu/chocolat.JPG",
       description: "Viennese hot chocolate with whipped cream"
     },
     "Chocolate vienés": {
-      image: "/images/menu/chocolatviennois.png",
+      image: "/images/menu/chocolat.JPG",
       description: "Chocolate vienés con nata montada"
     },
     "Thé": {
@@ -1175,18 +1194,18 @@ const MenuPage = () => {
     "Café noisette": {
       image: "/images/menu/cafenoisette.jpg",
       description: isEnglish
-        ? "Espresso with a dash of milk"
+        ? "Cappuccino with a dash of milk"
         : isSpanish
-        ? "Expreso con un toque de leche"
-        : "Expresso avec une pointe de lait"
+        ? "Cappuccino con un toque de leche"
+        : "Cappuccino avec une pointe de lait"
     },
     "Hazelnut coffee": {
       image: "/images/menu/cafenoisette.jpg",
-      description: "Espresso with a dash of milk"
+      description: "Cappuccino with a dash of milk"
     },
     "Café cortado": {
       image: "/images/menu/cafenoisette.jpg",
-      description: "Expreso con un toque de leche"
+      description: "Cappuccino con un toque de leche"
     },
     "Allongé": {
       image: "/images/menu/cafeallonge.png",
@@ -1306,7 +1325,6 @@ const MenuPage = () => {
       items: [
         { name: "Croissant", price: "2 €" },
         { name: "Chocolatine", price: "2 €" },
-        { name: isEnglish ? "Chocolate muffin" : isSpanish ? "Muffin de chocolate" : "Muffin chocolat", price: "4 €" }
       ]
     },
     desserts: {
@@ -1438,7 +1456,15 @@ const MenuPage = () => {
         { name: isEnglish ? "Double espresso" : isSpanish ? "Doble espresso" : "Double expresso", price: "3,50 €" },
         { name: "Cappuccino", price: "4 €" },
         { name: isEnglish ? "Café Latte" : isSpanish ? "Café con leche" : "Café Latté", price: "4 €" },
-        { name: "Matcha", price: "5 €" },
+        {
+          name: "Matcha",
+          description: isEnglish
+            ? "Choice of coulis: vanilla caramel / mango / passion"
+            : isSpanish
+            ? "Coulis a elegir: caramelo vainilla / mango / maracuyá"
+            : "Coulis au choix : caramel vanille / mangue / passion",
+          price: "5 €"
+        },
         { name: isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat", price: "5,50 €" },
         { name: isEnglish ? "Tea" : isSpanish ? "Té" : "Thé", price: "4 €" },
         { name: isEnglish ? "Mocha" : isSpanish ? "Moca" : "Moka", price: "5 €" }
@@ -2017,9 +2043,10 @@ const MenuPage = () => {
               </DishCloseButton>
               
               {selectedDish.image && (
-                <DishImage 
-                  src={selectedDish.image} 
+                <DishImage
+                  src={selectedDish.image}
                   alt={selectedDish.name}
+                  $isVeggieBurger={selectedDish.name.includes('végé') || selectedDish.name.includes('Veggie') || selectedDish.name.includes('vegetariana')}
                   onError={(e) => {
                     e.target.style.display = 'none';
                   }}
