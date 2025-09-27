@@ -836,18 +836,18 @@ const MenuPage = () => {
     "Burger végé du moment": {
       image: "/images/menu/burgerVege.JPG",
       description: isEnglish
-        ? "Seasonal veggie burger with fresh ingredients"
+        ? "Veggie burger with fresh ingredients"
         : isSpanish
-        ? "Hamburguesa vegetariana de temporada con ingredientes frescos"
-        : "Burger végétarien de saison avec ingrédients frais"
+        ? "Hamburguesa vegetariana con ingredientes frescos"
+        : "Burger végétarien avec ingrédients frais"
     },
     "Veggie burger of the day": {
       image: "/images/menu/burgerVege.JPG",
-      description: "Seasonal veggie burger with fresh ingredients"
+      description: "Veggie burger with fresh ingredients"
     },
     "Hamburguesa vegetariana del día": {
       image: "/images/menu/burgerVege.JPG",
-      description: "Hamburguesa vegetariana de temporada con ingredientes frescos"
+      description: "Hamburguesa vegetariana con ingredientes frescos"
     },
 
     // Cordon Bleu House
@@ -1116,26 +1116,26 @@ const MenuPage = () => {
     "Matcha": {
       image: "/images/menu/matcha.png",
       description: isEnglish
-        ? "Traditional Japanese matcha tea"
+        ? "Japanese matcha tea - Choice of coulis: vanilla caramel / mango / passion"
         : isSpanish
-        ? "Té matcha japonés tradicional"
-        : "Thé matcha japonais traditionnel"
+        ? "Té matcha japonés - Coulis a elegir: caramelo vainilla / mango / maracuyá"
+        : "Thé matcha japonais - Coulis au choix : caramel vanille / mangue / passion"
     },
     "Chocolat": {
       image: "/images/menu/chocolat.JPG",
       description: isEnglish
-        ? "Viennese hot chocolate with whipped cream"
+        ? "Rich hot chocolate - Whipped cream +0.50€"
         : isSpanish
-        ? "Chocolate vienés con nata montada"
-        : "Chocolat avec chantilly"
+        ? "Chocolate caliente cremoso - Nata montada +0,50€"
+        : "Chocolat chaud onctueux - Chantilly +0,50€"
     },
     "Viennese chocolate": {
       image: "/images/menu/chocolat.JPG",
-      description: "Viennese hot chocolate with whipped cream"
+      description: "Rich hot chocolate - Whipped cream +0.50€"
     },
     "Chocolate vienés": {
       image: "/images/menu/chocolat.JPG",
-      description: "Chocolate vienés con nata montada"
+      description: "Chocolate caliente cremoso - Nata montada +0,50€"
     },
     "Thé": {
       image: "/images/menu/tea.jpeg",
@@ -1465,15 +1465,23 @@ const MenuPage = () => {
             : "Coulis au choix : caramel vanille / mangue / passion",
           price: "5 €"
         },
-        { name: isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat", price: "5,50 €" },
+        {
+          name: isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat",
+          description: isEnglish
+            ? "Optional whipped cream +0.50€"
+            : isSpanish
+            ? "Nata montada opcional +0,50€"
+            : "Chantilly en option +0,50€",
+          price: "5 €"
+        },
         { name: isEnglish ? "Tea" : isSpanish ? "Té" : "Thé", price: "4 €" },
         { name: isEnglish ? "Mocha" : isSpanish ? "Moca" : "Moka", price: "5 €" }
       ],
       note: isEnglish 
-        ? "Extra €2: whipped cream"
-        : isSpanish 
-        ? "Suplemento 2€: nata montada"
-        : "Supplément 2€ : chantilly"
+        ? "Extra €0.50: whipped cream"
+        : isSpanish
+        ? "Suplemento 0,50€: nata montada"
+        : "Supplément 0,50€ : chantilly"
     },
     boissonsF: {
       title: isEnglish ? "🧊 Cold drinks" : isSpanish ? "🧊 Bebidas frías" : "🧊 Boissons froides",
