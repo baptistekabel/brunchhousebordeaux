@@ -256,12 +256,13 @@ const FormulaHeader = styled.div`
 
 const FormulaTitle = styled.h3`
   font-size: 24px;
-  color: ${props => props.theme.colors.floralWhite};
+  color: ${props => props.$selected ? props.theme.colors.teaRose : props.theme.colors.floralWhite};
   display: flex;
   align-items: center;
   gap: ${props => props.theme.spacing.md};
   font-weight: ${props => props.theme.typography.weights.bold};
-  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.4);
+  text-shadow: ${props => props.$selected ? 'none' : '1px 1px 2px rgba(1, 57, 39, 0.4)'};
+  transition: color ${props => props.theme.transitions.fast};
 `;
 
 const FormulaBadge = styled.span`
@@ -281,10 +282,11 @@ const FormulaBadge = styled.span`
 const FormulaPrice = styled.div`
   font-size: 28px;
   font-weight: ${props => props.theme.typography.weights.bold};
-  color: ${props => props.theme.colors.floralWhite};
+  color: ${props => props.$selected ? props.theme.colors.teaRose : props.theme.colors.floralWhite};
   white-space: nowrap;
   margin-top: ${props => props.theme.spacing.md};
-  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.4);
+  text-shadow: ${props => props.$selected ? 'none' : '1px 1px 2px rgba(1, 57, 39, 0.4)'};
+  transition: color ${props => props.theme.transitions.fast};
 `;
 
 const FormulaContent = styled.div`
@@ -308,12 +310,13 @@ const FormulaVisual = styled.div`
 
 const FormulaDescription = styled.p`
   font-size: ${props => props.theme.typography.sizes.small};
-  color: ${props => props.theme.colors.floralWhite};
+  color: ${props => props.$selected ? props.theme.colors.teaRose : props.theme.colors.floralWhite};
   font-style: italic;
   margin-top: ${props => props.theme.spacing.sm};
   padding-left: ${props => props.theme.spacing.sm};
   opacity: 0.8;
-  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.3);
+  text-shadow: ${props => props.$selected ? 'none' : '1px 1px 2px rgba(1, 57, 39, 0.3)'};
+  transition: color ${props => props.theme.transitions.fast};
 `;
 
 const FormulaSection = styled.div`
@@ -323,18 +326,18 @@ const FormulaSection = styled.div`
 const FormulaSectionTitle = styled.h4`
   font-size: 14px;
   font-weight: ${props => props.theme.typography.weights.semibold};
-  color: ${props => props.theme.colors.floralWhite};
+  color: ${props => props.theme.colors.darkGreen};
   margin-bottom: ${props => props.theme.spacing.md};
   text-transform: uppercase;
   letter-spacing: 1px;
   display: flex;
   align-items: center;
-  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.4);
+  text-shadow: none;
 
   &::before {
     content: '•';
     margin-right: ${props => props.theme.spacing.sm};
-    color: ${props => props.theme.colors.floralWhite};
+    color: ${props => props.theme.colors.darkGreen};
   }
 `;
 
@@ -349,25 +352,26 @@ const FormulaOption = styled.div`
   align-items: center;
   gap: ${props => props.theme.spacing.sm};
   padding: ${props => props.theme.spacing.sm} ${props => props.theme.spacing.md};
-  background: ${props => props.$selected 
-    ? 'linear-gradient(135deg, rgba(224, 171, 159, 0.2) 0%, rgba(224, 171, 159, 0.1) 100%)' 
+  background: ${props => props.$selected
+    ? 'linear-gradient(135deg, rgba(224, 171, 159, 0.2) 0%, rgba(224, 171, 159, 0.1) 100%)'
     : 'rgba(255, 255, 255, 0.5)'};
-  border: 1px solid ${props => props.$selected 
-    ? props.theme.colors.primary.highlight 
+  border: 1px solid ${props => props.$selected
+    ? props.theme.colors.primary.highlight
     : 'rgba(28, 63, 51, 0.1)'};
   border-radius: ${props => props.theme.borderRadius.medium};
   cursor: pointer;
   transition: all ${props => props.theme.transitions.fast};
   position: relative;
   overflow: hidden;
-  
+  color: ${props => props.theme.colors.darkGreen};
+
   &:hover {
-    background: ${props => props.$selected 
+    background: ${props => props.$selected
       ? 'linear-gradient(135deg, rgba(224, 171, 159, 0.25) 0%, rgba(224, 171, 159, 0.15) 100%)'
       : 'rgba(224, 171, 159, 0.08)'};
     transform: translateX(4px);
   }
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -1121,6 +1125,22 @@ const MenuPage = () => {
         ? "Té matcha japonés - Coulis a elegir: caramelo vainilla / mango / maracuyá"
         : "Thé matcha japonais - Coulis au choix : caramel vanille / mangue / passion"
     },
+    "Moka": {
+      image: "/images/menu/moka.JPG",
+      description: isEnglish
+        ? "Rich mocha coffee with chocolate"
+        : isSpanish
+        ? "Café moca rico con chocolate"
+        : "Café moka riche au chocolat"
+    },
+    "Mocha": {
+      image: "/images/menu/moka.JPG",
+      description: "Rich mocha coffee with chocolate"
+    },
+    "Moca": {
+      image: "/images/menu/moka.JPG",
+      description: "Café moca rico con chocolate"
+    },
     "Chocolat": {
       image: "/images/menu/chocolat.JPG",
       description: isEnglish
@@ -1835,14 +1855,13 @@ const MenuPage = () => {
                     {formula.emoji}
                   </FormulaVisual>
                   <div style={{ flex: 1 }}>
-                    <FormulaTitle>
+                    <FormulaTitle $selected={expandedFormulas[formula.id]}>
                       {formula.name}
-                      {formula.id === 'etudiant' && <FormulaBadge>Étudiant</FormulaBadge>}
                     </FormulaTitle>
-                    <FormulaDescription>{formula.description}</FormulaDescription>
+                    <FormulaDescription $selected={expandedFormulas[formula.id]}>{formula.description}</FormulaDescription>
                   </div>
                 </div>
-                <FormulaPrice>{formula.price}</FormulaPrice>
+                <FormulaPrice $selected={expandedFormulas[formula.id]}>{formula.price}</FormulaPrice>
               </FormulaHeader>
               
               <AnimatePresence>
@@ -1865,15 +1884,16 @@ const MenuPage = () => {
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: iIndex * 0.1 }}
-                                style={{ 
-                                  padding: '12px 16px', 
+                                style={{
+                                  padding: '12px 16px',
                                   background: 'linear-gradient(135deg, rgba(59, 170, 109, 0.1) 0%, rgba(59, 170, 109, 0.05) 100%)',
                                   borderRadius: '12px',
                                   fontSize: '14px',
                                   display: 'flex',
                                   alignItems: 'center',
                                   gap: '8px',
-                                  border: '1px solid rgba(59, 170, 109, 0.2)'
+                                  border: '1px solid rgba(59, 170, 109, 0.2)',
+                                  color: '#1c3f33'
                                 }}
                               >
                                 <FiCheck style={{ color: '#3BAA6D', flexShrink: 0 }} />
@@ -1911,7 +1931,7 @@ const MenuPage = () => {
                               </FormulaOption>
                             ))}
                             {section.note && (
-                              <Note style={{ marginTop: '8px', paddingLeft: '28px' }}>
+                              <Note style={{ marginTop: '8px', paddingLeft: '28px', color: '#1c3f33' }}>
                                 {section.note}
                               </Note>
                             )}
