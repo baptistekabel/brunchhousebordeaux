@@ -1218,18 +1218,18 @@ const MenuPage = () => {
     "Matcha": {
       image: "/images/menu/matcha.png",
       description: isEnglish
-        ? "Japanese matcha tea - Choice of coulis: vanilla caramel / mango / passion"
+        ? "Japanese matcha tea - Choice of coulis: vanilla / caramel / mango / passion"
         : isSpanish
-        ? "Té matcha japonés - Coulis a elegir: caramelo vainilla / mango / maracuyá"
-        : "Thé matcha japonais - Coulis au choix : caramel vanille / mangue / passion"
+        ? "Té matcha japonés - Coulis a elegir: caramelo / vainilla / mango / maracuyá"
+        : "Coulis au choix : caramel / vanille / mangue / passion"
     },
     "Moka": {
       image: "/images/menu/moka.JPG",
       description: isEnglish
         ? "Rich mocha coffee with chocolate"
         : isSpanish
-        ? "Café moca rico con chocolate"
-        : "Café moka riche au chocolat"
+        ? "Café moca con chocolate"
+        : "Coulis au choix : chocolat / caramel"
     },
     "Mocha": {
       image: "/images/menu/moka.JPG",
@@ -1864,7 +1864,8 @@ const MenuPage = () => {
                   >
                     <ItemName>
                       {item.name}
-                      {item.description && <span>{item.description}</span>}
+                      {item.description && item.name !== "Moka" && item.name !== "Matcha" && <span>{item.description}</span>}
+                      {(item.name === "Moka" || item.name === "Matcha") && dishInfo && dishInfo.description && <span>{dishInfo.description}</span>}
                     </ItemName>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                       <ItemPrice>{item.price}</ItemPrice>
