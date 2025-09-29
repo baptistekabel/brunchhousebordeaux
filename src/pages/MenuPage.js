@@ -24,9 +24,14 @@ const PageWrapper = styled.div`
 `;
 
 const MenuHeader = styled.section`
-  padding: ${props => props.theme.spacing.xxl} ${props => props.theme.spacing.container.padding};
+  padding: ${props => props.theme.spacing.xl} ${props => props.theme.spacing.container.padding};
   text-align: center;
   position: relative;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: ${props => props.theme.spacing.lg} ${props => props.theme.spacing.md};
+    padding-top: ${props => props.theme.spacing.xl};
+  }
 
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     padding: ${props => props.theme.spacing.xxxl} ${props => props.theme.spacing.xl};
@@ -59,6 +64,13 @@ const BackButton = styled(Link)`
     left: ${props => props.theme.spacing.md};
     top: ${props => props.theme.spacing.md};
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    left: ${props => props.theme.spacing.sm};
+    top: ${props => props.theme.spacing.sm};
+    padding: ${props => props.theme.spacing.xs} ${props => props.theme.spacing.sm};
+    font-size: 12px;
+  }
 `;
 
 const Title = styled(motion.h1)`
@@ -71,6 +83,12 @@ const Title = styled(motion.h1)`
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     font-size: ${props => props.theme.typography.sizes.h1.mobile};
     margin-top: ${props => props.theme.spacing.xl};
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 28px;
+    margin-top: ${props => props.theme.spacing.lg};
+    margin-bottom: ${props => props.theme.spacing.sm};
   }
 `;
 
@@ -85,12 +103,22 @@ const Subtitle = styled(motion.p)`
   margin-right: auto;
   text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.4);
   opacity: 0.9;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 16px;
+    margin-bottom: ${props => props.theme.spacing.lg};
+    padding: 0 ${props => props.theme.spacing.sm};
+  }
 `;
 
 const MenuContainer = styled.div`
   max-width: ${props => props.theme.spacing.container.maxWidth};
   margin: 0 auto;
   padding: ${props => props.theme.spacing.xl} ${props => props.theme.spacing.container.padding};
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: ${props => props.theme.spacing.lg} ${props => props.theme.spacing.md};
+  }
 `;
 
 const MenuSection = styled(motion.section)`
@@ -131,6 +159,12 @@ const SectionTitle = styled.h2`
       ${props => props.theme.colors.floralWhite} 0%,
       transparent 100%
     );
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 24px;
+    margin-bottom: ${props => props.theme.spacing.lg};
+    gap: ${props => props.theme.spacing.sm};
   }
 `;
 
@@ -191,6 +225,14 @@ const ItemName = styled.div`
     opacity: 0.8;
     text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.3);
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 15px;
+
+    span {
+      font-size: 13px;
+    }
+  }
 `;
 
 const ItemPrice = styled.div`
@@ -200,6 +242,11 @@ const ItemPrice = styled.div`
   min-width: 60px;
   text-align: right;
   text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.4);
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 16px;
+    min-width: 50px;
+  }
 `;
 
 const Note = styled.p`
@@ -219,6 +266,11 @@ const FormulaCard = styled(LiquidGlassCard)`
   transition: all ${props => props.theme.transitions.normal};
   position: relative;
   overflow: visible;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: ${props => props.theme.spacing.lg};
+    margin-bottom: ${props => props.theme.spacing.lg};
+  }
   
   ${props => props.$selected && `
     background: linear-gradient(135deg, 
@@ -252,6 +304,12 @@ const FormulaHeader = styled.div`
   justify-content: space-between;
   align-items: start;
   margin-bottom: ${props => props.theme.spacing.lg};
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    flex-direction: column;
+    gap: ${props => props.theme.spacing.sm};
+    align-items: stretch;
+  }
 `;
 
 const FormulaTitle = styled.h3`
@@ -263,6 +321,11 @@ const FormulaTitle = styled.h3`
   font-weight: ${props => props.theme.typography.weights.bold};
   text-shadow: ${props => props.$selected ? 'none' : '1px 1px 2px rgba(1, 57, 39, 0.4)'};
   transition: color ${props => props.theme.transitions.fast};
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 20px;
+    gap: ${props => props.theme.spacing.sm};
+  }
 `;
 
 const FormulaBadge = styled.span`
@@ -287,6 +350,12 @@ const FormulaPrice = styled.div`
   margin-top: ${props => props.theme.spacing.md};
   text-shadow: ${props => props.$selected ? 'none' : '1px 1px 2px rgba(1, 57, 39, 0.4)'};
   transition: color ${props => props.theme.transitions.fast};
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 0;
+  }
 `;
 
 const FormulaContent = styled.div`
@@ -299,13 +368,20 @@ const FormulaVisual = styled.div`
   justify-content: center;
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, 
-    rgba(224, 171, 159, 0.2) 0%, 
+  background: linear-gradient(135deg,
+    rgba(224, 171, 159, 0.2) 0%,
     rgba(224, 171, 159, 0.1) 100%
   );
   border-radius: ${props => props.theme.borderRadius.medium};
   margin-right: ${props => props.theme.spacing.lg};
   font-size: 28px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    margin-right: ${props => props.theme.spacing.md};
+  }
 `;
 
 const FormulaDescription = styled.p`
@@ -455,8 +531,8 @@ const ModalOverlay = styled(motion.div)`
 `;
 
 const ModalContent = styled(motion.div)`
-  background: linear-gradient(135deg, 
-    rgba(251, 247, 238, 0.98) 0%, 
+  background: linear-gradient(135deg,
+    rgba(251, 247, 238, 0.98) 0%,
     rgba(247, 242, 231, 0.95) 100%
   );
   backdrop-filter: blur(20px);
@@ -472,11 +548,18 @@ const ModalContent = styled(motion.div)`
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   pointer-events: auto;
   overflow: hidden;
-  
+
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     max-width: calc(100vw - 40px);
-    max-height: 450px;
-    min-height: 350px;
+    max-height: 70vh;
+    min-height: auto;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    max-width: calc(100vw - 20px);
+    max-height: 80vh;
+    padding: ${props => props.theme.spacing.md};
+    border-radius: ${props => props.theme.borderRadius.large};
   }
 `;
 
@@ -643,8 +726,8 @@ const DishModalOverlay = styled(motion.div)`
 `;
 
 const DishModalContent = styled(motion.div)`
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.98) 0%, 
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.98) 0%,
     rgba(247, 242, 231, 0.95) 100%
   );
   border-radius: ${props => props.theme.borderRadius.xlarge};
@@ -654,6 +737,12 @@ const DishModalContent = styled(motion.div)`
   overflow-y: auto;
   position: relative;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    max-width: calc(100vw - 20px);
+    max-height: 90vh;
+    border-radius: ${props => props.theme.borderRadius.large};
+  }
 `;
 
 const DishImage = styled.img`
@@ -662,10 +751,19 @@ const DishImage = styled.img`
   object-fit: cover;
   object-position: ${props => props.$isVeggieBurger ? 'center 70%' : 'center center'};
   border-radius: ${props => props.theme.borderRadius.xlarge} ${props => props.theme.borderRadius.xlarge} 0 0;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    height: 200px;
+    border-radius: ${props => props.theme.borderRadius.large} ${props => props.theme.borderRadius.large} 0 0;
+  }
 `;
 
 const DishDetails = styled.div`
   padding: ${props => props.theme.spacing.xl};
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: ${props => props.theme.spacing.lg};
+  }
 `;
 
 const DishName = styled.h2`

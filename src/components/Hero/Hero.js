@@ -255,7 +255,7 @@ const ButtonGroup = styled(motion.div)`
   position: fixed;
   bottom: ${props => props.theme.spacing.xxl};
   right: ${props => props.theme.spacing.xxl};
-  z-index: 100;
+  z-index: 1500;
   display: flex;
   gap: ${props => props.theme.spacing.md};
   justify-content: center;
