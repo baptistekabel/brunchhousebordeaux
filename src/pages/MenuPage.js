@@ -1256,7 +1256,7 @@ const MenuPage = () => {
       description: "Chocolate caliente cremoso - Nata montada +0,50€"
     },
     "Thé": {
-      image: "/images/menu/tea.jpeg",
+      image: "/images/menu/tea.JPG",
       description: isEnglish
         ? "Selection of fine teas"
         : isSpanish
@@ -1264,17 +1264,17 @@ const MenuPage = () => {
         : "Sélection de thés fins"
     },
     "Tea": {
-      image: "/images/menu/tea.jpeg",
+      image: "/images/menu/tea.JPG",
       description: "Selection of fine teas"
     },
     "Té": {
-      image: "/images/menu/tea.jpeg",
+      image: "/images/menu/tea.JPG",
       description: "Selección de tés finos"
     },
     
     // Cafés
     "Café latte": {
-      image: "/images/menu/cafelatte.jpg",
+      image: "/images/menu/cafelatte.JPG",
       description: isEnglish
         ? "Smooth latte with steamed milk"
         : isSpanish
@@ -1282,7 +1282,7 @@ const MenuPage = () => {
         : "Café latte onctueux avec lait moussé"
     },
     "Latte": {
-      image: "/images/menu/cafelatte.jpg",
+      image: "/images/menu/cafelatte.JPG",
       description: "Smooth latte with steamed milk"
     },
     "Cappuccino": {
