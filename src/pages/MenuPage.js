@@ -1281,6 +1281,30 @@ const MenuPage = () => {
         ? "Café latte suave con leche vaporizada"
         : "Café latte onctueux avec lait moussé"
     },
+    "Café Latté": {
+      image: "/images/menu/cafelatte.JPG",
+      description: isEnglish
+        ? "Smooth latte with steamed milk"
+        : isSpanish
+        ? "Café latte suave con leche vaporizada"
+        : "Café latte onctueux avec lait moussé"
+    },
+    "Café Latte": {
+      image: "/images/menu/cafelatte.JPG",
+      description: isEnglish
+        ? "Smooth latte with steamed milk"
+        : isSpanish
+        ? "Café latte suave con leche vaporizada"
+        : "Café latte onctueux avec lait moussé"
+    },
+    "Café con leche": {
+      image: "/images/menu/cafelatte.JPG",
+      description: isEnglish
+        ? "Smooth latte with steamed milk"
+        : isSpanish
+        ? "Café latte suave con leche vaporizada"
+        : "Café latte onctueux avec lait moussé"
+    },
     "Latte": {
       image: "/images/menu/cafelatte.JPG",
       description: "Smooth latte with steamed milk"
