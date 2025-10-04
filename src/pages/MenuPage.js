@@ -1861,82 +1861,9 @@ const MenuPage = () => {
       </MenuHeader>
       
       <MenuContainer>
-        {Object.entries(menuData).map(([key, section], sectionIndex) => (
-          <MenuSection
-            key={key}
-            initial={sectionIndex === 0 ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            {...(sectionIndex === 0 ? {} : createScrollTrigger())}
-            transition={{ duration: 0.6, delay: sectionIndex * 0.1 }}
-          >
-            <SectionTitle>{section.title}</SectionTitle>
-            <MenuGrid>
-              {section.items.map((item, index) => {
-                const dishInfo = dishImages[item.name] || dishImages[item.name.split(',')[0]?.trim()] || null;
-                
-                return (
-                  <MenuItem
-                    key={index}
-                    initial={sectionIndex === 0 ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    {...(sectionIndex === 0 ? {} : createScrollTrigger())}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
-                    onClick={() => dishInfo ? handleDishClick(item) : null}
-                    style={{ cursor: dishInfo ? 'pointer' : 'default' }}
-                    onMouseEnter={() => dishInfo && setHoveredDish({ ...item, ...dishInfo })}
-                    onMouseLeave={() => setHoveredDish(null)}
-                  >
-                    <ItemName>
-                      {item.name}
-                      {item.description && item.name !== "Moka" && item.name !== "Matcha" && <span>{item.description}</span>}
-                      {(item.name === "Moka" || item.name === "Matcha") && dishInfo && dishInfo.description && <span>{dishInfo.description}</span>}
-                    </ItemName>
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                      <ItemPrice>{item.price}</ItemPrice>
-                      {dishInfo && (
-                        <ImageIndicator>
-                          <img 
-                            src={dishInfo.image} 
-                            alt={item.name}
-                            onError={(e) => {
-                              e.target.style.display = 'none';
-                            }}
-                          />
-                        </ImageIndicator>
-                      )}
-                    </div>
-                    
-                    <AnimatePresence>
-                      {hoveredDish && hoveredDish.name === item.name && dishInfo && (
-                        <DishPreview
-                          initial={{ opacity: 0, scale: 0.8, x: -10 }}
-                          animate={{ opacity: 1, scale: 1, x: 0 }}
-                          exit={{ opacity: 0, scale: 0.8, x: -10 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <PreviewImage 
-                            src={dishInfo.image} 
-                            alt={item.name}
-                            onError={(e) => {
-                              e.target.style.display = 'none';
-                            }}
-                          />
-                          <PreviewTitle>{item.name}</PreviewTitle>
-                        </DishPreview>
-                      )}
-                    </AnimatePresence>
-                  </MenuItem>
-                );
-              })}
-            </MenuGrid>
-            {section.note && <Note>{section.note}</Note>}
-          </MenuSection>
-        ))}
-        
         <MenuSection
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 1, y: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
-          {...createScrollTrigger()}
         >
           <SectionTitle>🧺 {isEnglish ? "Formulas" : isSpanish ? "Fórmulas" : "Formules"}</SectionTitle>
           <Note style={{ marginBottom: '24px' }}>
@@ -2069,13 +1996,85 @@ const MenuPage = () => {
           ))}
           
           <Note style={{ marginTop: '32px', fontSize: '16px' }}>
-            {i18n.language === 'en' 
+            {i18n.language === 'en'
               ? "Extra €3: salad / fries / sweet potato fries"
               : i18n.language === 'es'
               ? "Suplemento 3€: ensalada / patatas fritas / patatas dulces fritas"
               : "Supplément 3€ : salade / frites / frites patates douces"}
           </Note>
         </MenuSection>
+
+        {Object.entries(menuData).map(([key, section], sectionIndex) => (
+          <MenuSection
+            key={key}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            {...createScrollTrigger()}
+            transition={{ duration: 0.6, delay: sectionIndex * 0.1 }}
+          >
+            <SectionTitle>{section.title}</SectionTitle>
+            <MenuGrid>
+              {section.items.map((item, index) => {
+                const dishInfo = dishImages[item.name] || dishImages[item.name.split(',')[0]?.trim()] || null;
+
+                return (
+                  <MenuItem
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    {...createScrollTrigger()}
+                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                    onClick={() => dishInfo ? handleDishClick(item) : null}
+                    style={{ cursor: dishInfo ? 'pointer' : 'default' }}
+                    onMouseEnter={() => dishInfo && setHoveredDish({ ...item, ...dishInfo })}
+                    onMouseLeave={() => setHoveredDish(null)}
+                  >
+                    <ItemName>
+                      {item.name}
+                      {item.description && item.name !== "Moka" && item.name !== "Matcha" && <span>{item.description}</span>}
+                      {(item.name === "Moka" || item.name === "Matcha") && dishInfo && dishInfo.description && <span>{dishInfo.description}</span>}
+                    </ItemName>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                      <ItemPrice>{item.price}</ItemPrice>
+                      {dishInfo && (
+                        <ImageIndicator>
+                          <img
+                            src={dishInfo.image}
+                            alt={item.name}
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                            }}
+                          />
+                        </ImageIndicator>
+                      )}
+                    </div>
+
+                    <AnimatePresence>
+                      {hoveredDish && hoveredDish.name === item.name && dishInfo && (
+                        <DishPreview
+                          initial={{ opacity: 0, scale: 0.8, x: -10 }}
+                          animate={{ opacity: 1, scale: 1, x: 0 }}
+                          exit={{ opacity: 0, scale: 0.8, x: -10 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <PreviewImage
+                            src={dishInfo.image}
+                            alt={item.name}
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                            }}
+                          />
+                          <PreviewTitle>{item.name}</PreviewTitle>
+                        </DishPreview>
+                      )}
+                    </AnimatePresence>
+                  </MenuItem>
+                );
+              })}
+            </MenuGrid>
+            {section.note && <Note>{section.note}</Note>}
+          </MenuSection>
+        ))}
       </MenuContainer>
       
       <Footer />
