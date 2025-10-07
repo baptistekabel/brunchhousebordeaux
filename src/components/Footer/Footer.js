@@ -183,10 +183,10 @@ const Footer = () => {
             <Logo>Brunch House</Logo>
             <Description>
               {i18n.language === 'en'
-                ? "The gourmet rendezvous that reconciles morning and noon. A unique culinary experience in the heart of Bordeaux."
+                ? "Your new gourmet rendezvous."
                 : i18n.language === 'es'
-                ? "El encuentro gourmet que reconcilia mañana y mediodía. Una experiencia culinaria única en el corazón de Burdeos."
-                : "Le brunch comme vous ne l'avez jamais imaginé."}
+                ? "Su nueva cita gourmet."
+                : "Votre nouveau rendez-vous gourmand."}
             </Description>
             <SocialLinks>
               <SocialLink

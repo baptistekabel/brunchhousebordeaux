@@ -15,22 +15,22 @@ const HomePage = () => {
 
   const banners = {
     fr: [
-      { text: "L'INSTANT MAGIQUE DU BRUNCH •", variant: "green" },
-      { text: "CRÉATIVITÉ & GASTRONOMIE •", variant: "rose" },
+      { text: "SAVEURS & CRÉATIVITÉ •", variant: "green" },
+      { text: "BRUNCH CRÉATIF •", variant: "rose" },
       { text: "QUARTIER GARE SAINT-JEAN •", variant: "beige" },
       { text: "RÉSERVEZ & SAVOUREZ •", variant: "green" },
       { text: "MERCI POUR VOS SOURIRES •", variant: "beige" }
     ],
     en: [
-      { text: "THE MAGICAL BRUNCH MOMENT •", variant: "green" },
-      { text: "CREATIVITY & GASTRONOMY •", variant: "rose" },
+      { text: "FLAVORS & CREATIVITY •", variant: "green" },
+      { text: "CREATIVE BRUNCH •", variant: "rose" },
       { text: "GARE SAINT-JEAN DISTRICT •", variant: "beige" },
       { text: "BOOK & ENJOY •", variant: "green" },
       { text: "THANK YOU FOR YOUR SMILES •", variant: "beige" }
     ],
     es: [
-      { text: "EL MOMENTO MÁGICO DEL BRUNCH •", variant: "green" },
-      { text: "CREATIVIDAD & GASTRONOMÍA •", variant: "rose" },
+      { text: "SABORES & CREATIVIDAD •", variant: "green" },
+      { text: "BRUNCH CREATIVO •", variant: "rose" },
       { text: "BARRIO GARE SAINT-JEAN •", variant: "beige" },
       { text: "RESERVA & DISFRUTA •", variant: "green" },
       { text: "GRACIAS POR VUESTRAS SONRISAS •", variant: "beige" }

@@ -1023,8 +1023,7 @@ const Hero = () => {
             <Title>
               {(() => {
                 const title = t('hero.title');
-                const titleWithBreak = title.replace('commence...', '\ncommence...');
-                return titleWithBreak.split('').map((letter, index) => (
+                return title.split('').map((letter, index) => (
                   <motion.span
                     key={index}
                     initial={{
@@ -1052,11 +1051,11 @@ const Hero = () => {
                       transition: { duration: 0.3 }
                     }}
                     style={{
-                      display: letter === '\n' ? 'block' : 'inline-block',
+                      display: 'inline-block',
                       transformOrigin: 'center bottom'
                     }}
                   >
-                    {letter === ' ' ? '\u00A0' : letter === '\n' ? '' : letter}
+                    {letter === ' ' ? '\u00A0' : letter}
                   </motion.span>
                 ));
               })()}

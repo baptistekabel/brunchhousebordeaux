@@ -72,12 +72,18 @@ const ContentWrapper = styled(motion.div)`
   padding: ${props => props.theme.spacing.xl};
   max-width: 800px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 `;
 
 const Logo = styled(motion.img)`
-  height: 120px;
+  height: 280px;
   width: auto;
-  margin: 0 auto ${props => props.theme.spacing.lg} auto;
+  margin: 0 auto;
+  display: block;
   filter:
     brightness(0)
     invert(1)
@@ -118,8 +124,7 @@ const Logo = styled(motion.img)`
   }
 
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    height: 80px;
-    margin-bottom: ${props => props.theme.spacing.md};
+    height: 200px;
   }
 `;
 
@@ -185,9 +190,6 @@ const HeroIntro = () => {
             transition: { duration: 0.3 }
           }}
         />
-        <IntroText variants={itemVariants}>
-          {t('hero.slogan')}
-        </IntroText>
       </ContentWrapper>
     </IntroSection>
   );

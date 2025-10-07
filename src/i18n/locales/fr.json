@@ -10,7 +10,6 @@
   "hero": {
     "title": "Que le brunch commence...",
     "subtitle": "Découvrez une expérience gourmande unique avec nos produits frais et locaux, préparés avec passion dans une ambiance chaleureuse.",
-    "slogan": "Le brunch comme vous ne l'avez jamais imaginé.",
     "cta": {
       "reserve": "Réserver une table",
       "menu": "Voir le menu"
@@ -222,7 +221,6 @@
     }
   },
   "footer": {
-    "description": "Le brunch comme vous ne l'avez jamais imaginé.",
     "contact": "Contact",
     "hours": "Horaires",
     "links": "Liens utiles",
