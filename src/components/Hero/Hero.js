@@ -106,7 +106,7 @@ const Title = styled(motion.h1)`
   color: ${props => props.theme.colors.floralWhite};
   position: relative;
   text-align: center;
-  font-size: ${props => props.theme.typography.sizes.h1.desktop};
+  font-size: clamp(24px, 8vw, 80px);
   font-weight: ${props => props.theme.typography.weights.bold};
   letter-spacing: -1px;
   white-space: nowrap;
@@ -166,11 +166,10 @@ const Title = styled(motion.h1)`
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     margin-bottom: ${props => props.theme.spacing.xl};
     margin-top: ${props => props.theme.spacing.xl};
-    font-size: 48px;
     line-height: 1.3;
     text-align: center;
     padding: 0 ${props => props.theme.spacing.md};
-    white-space: normal;
+    white-space: nowrap;
     word-break: keep-all;
     overflow-wrap: normal;
 
@@ -188,8 +187,7 @@ const Title = styled(motion.h1)`
   }
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-    font-size: 38px;
-    white-space: normal;
+    white-space: nowrap;
     word-break: keep-all;
 
     &::before {
