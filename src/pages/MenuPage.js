@@ -1424,15 +1424,21 @@ const MenuPage = () => {
     }
   };
 
+  // Helper function to get comparable value from option (string or object.name)
+  const getOptionValue = (option) => {
+    return typeof option === 'string' ? option : option.name;
+  };
+
   const toggleOption = (formulaId, optionType, option) => {
+    const optionValue = getOptionValue(option);
     setSelectedOptions(prev => {
       const newOptions = {
         ...prev,
         [formulaId]: {
           ...prev[formulaId],
-          [optionType]: prev[formulaId]?.[optionType] === option 
-            ? null 
-            : option
+          [optionType]: prev[formulaId]?.[optionType] === optionValue
+            ? null
+            : optionValue
         }
       };
       
@@ -1727,16 +1733,20 @@ const MenuPage = () => {
         {
           title: isEnglish ? "Dessert" : isSpanish ? "Postre" : "Dessert",
           options: [
-            isEnglish ? "Greek granola" : isSpanish ? "Granola griego" : "Grec granola", 
-            "Pancake", 
-            isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue"
+            {
+              name: isEnglish ? "Greek granola" : isSpanish ? "Granola griego" : "Grec granola",
+              description: isEnglish ? "passion coulis / red berries" : isSpanish ? "coulis de maracuyá / frutos rojos" : "coulis passion / fruits rouges"
+            },
+            {
+              name: "Pancake",
+              description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable"
+            },
+            {
+              name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue",
+              description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable"
+            }
           ],
-          type: "dessert",
-          note: isEnglish 
-            ? "Served with fruits and topping of choice"
-            : isSpanish 
-            ? "Servido con frutas y cobertura a elegir"
-            : "Servis avec fruits et nappage au choix"
+          type: "dessert"
         },
         {
           title: isEnglish ? "Main course" : isSpanish ? "Plato principal" : "Plat",
@@ -1780,16 +1790,20 @@ const MenuPage = () => {
         {
           title: isEnglish ? "Dessert" : isSpanish ? "Postre" : "Dessert",
           options: [
-            isEnglish ? "Greek granola" : isSpanish ? "Granola griego" : "Grec granola", 
-            "Pancake", 
-            isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue"
+            {
+              name: isEnglish ? "Greek granola" : isSpanish ? "Granola griego" : "Grec granola",
+              description: isEnglish ? "passion coulis / red berries" : isSpanish ? "coulis de maracuyá / frutos rojos" : "coulis passion / fruits rouges"
+            },
+            {
+              name: "Pancake",
+              description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable"
+            },
+            {
+              name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue",
+              description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable"
+            }
           ],
-          type: "dessert",
-          note: isEnglish 
-            ? "Served with fruits and topping of choice"
-            : isSpanish 
-            ? "Servido con frutas y cobertura a elegir"
-            : "Servis avec fruits et nappage au choix"
+          type: "dessert"
         },
         {
           title: isEnglish ? "Choice of toasts" : isSpanish ? "Tostadas a elegir" : "Toasts au choix",
@@ -1957,7 +1971,7 @@ const MenuPage = () => {
                             {section.options.map((option, oIndex) => (
                               <FormulaOption
                                 key={oIndex}
-                                $selected={selectedOptions[formula.id]?.[section.type] === option}
+                                $selected={selectedOptions[formula.id]?.[section.type] === getOptionValue(option)}
                                 onClick={(e) => {
                                   e.stopPropagation();
                                   toggleOption(formula.id, section.type, option);
@@ -1967,17 +1981,28 @@ const MenuPage = () => {
                                 whileTap={{ scale: 0.98 }}
                               >
                                 <RadioButton 
-                                  $checked={selectedOptions[formula.id]?.[section.type] === option}
-                                  animate={selectedOptions[formula.id]?.[section.type] === option ? {
+                                  $checked={selectedOptions[formula.id]?.[section.type] === getOptionValue(option)}
+                                  animate={selectedOptions[formula.id]?.[section.type] === getOptionValue(option) ? {
                                     scale: [1, 1.2, 1],
                                   } : {}}
                                   transition={{ duration: 0.3 }}
                                 />
-                                <span style={{ 
-                                  flex: 1, 
-                                  fontWeight: selectedOptions[formula.id]?.[section.type] === option ? 600 : 400 
+                                <span style={{
+                                  flex: 1,
+                                  fontWeight: selectedOptions[formula.id]?.[section.type] === getOptionValue(option) ? 600 : 400
                                 }}>
-                                  {option}
+                                  {typeof option === 'string' ? option : option.name}
+                                  {typeof option === 'object' && option.description && (
+                                    <span style={{
+                                      display: 'block',
+                                      fontSize: '0.85em',
+                                      color: '#666',
+                                      fontWeight: 400,
+                                      marginTop: '2px'
+                                    }}>
+                                      {option.description}
+                                    </span>
+                                  )}
                                 </span>
                               </FormulaOption>
                             ))}
