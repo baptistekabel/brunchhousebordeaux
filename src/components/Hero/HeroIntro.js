@@ -80,7 +80,7 @@ const ContentWrapper = styled(motion.div)`
 `;
 
 const Logo = styled(motion.img)`
-  height: 280px;
+  height: 180px;
   width: auto;
   margin: 0 auto;
   display: block;
@@ -124,7 +124,7 @@ const Logo = styled(motion.img)`
   }
 
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    height: 200px;
+    height: 140px;
   }
 `;
 

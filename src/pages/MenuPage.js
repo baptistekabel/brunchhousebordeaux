@@ -1794,10 +1794,11 @@ const MenuPage = () => {
         {
           title: isEnglish ? "Choice of toasts" : isSpanish ? "Tostadas a elegir" : "Toasts au choix",
           options: [
-            isEnglish ? "Scrambled egg & bacon" : isSpanish ? "Huevo revuelto y bacon" : "Œuf brouillé bacon", 
-            isEnglish ? "Beetroot hummus" : isSpanish ? "Hummus de remolacha" : "Houmous betterave", 
-            isEnglish ? "Eggplant caviar" : isSpanish ? "Caviar de berenjena" : "Caviar d'aubergine", 
-            isEnglish ? "Salmon guacamole" : isSpanish ? "Salmón guacamole" : "Saumon guacamole", 
+            isEnglish ? "Scrambled egg & bacon" : isSpanish ? "Huevo revuelto y bacon" : "Œuf brouillé bacon",
+            isEnglish ? "Beetroot hummus" : isSpanish ? "Hummus de remolacha" : "Houmous betterave",
+            isEnglish ? "Eggplant caviar" : isSpanish ? "Caviar de berenjena" : "Caviar d'aubergine",
+            isEnglish ? "Salmon guacamole" : isSpanish ? "Salmón guacamole" : "Saumon guacamole",
+            isEnglish ? "Shrimp, cherry tomatoes, fresh cheese" : isSpanish ? "Gambas, tomates cherry, queso fresco" : "Crevettes, tomates cerises, fromage frais",
             "Burrata (+2€)"
           ],
           type: "toasts"
