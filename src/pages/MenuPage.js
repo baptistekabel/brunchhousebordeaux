@@ -1429,16 +1429,45 @@ const MenuPage = () => {
     return typeof option === 'string' ? option : option.name;
   };
 
+  const isOptionSelected = (formulaId, optionType, option) => {
+    const currentSelections = selectedOptions[formulaId]?.[optionType];
+    const optionValue = getOptionValue(option);
+
+    if (optionType === 'toasts') {
+      return Array.isArray(currentSelections) && currentSelections.includes(optionValue);
+    }
+    return currentSelections === optionValue;
+  };
+
   const toggleOption = (formulaId, optionType, option) => {
     const optionValue = getOptionValue(option);
     setSelectedOptions(prev => {
+      const currentSelections = prev[formulaId]?.[optionType];
+      let newSelection;
+
+      // Pour les toasts, permettre la sélection de 2 maximum
+      if (optionType === 'toasts') {
+        const currentArray = Array.isArray(currentSelections) ? currentSelections : [];
+        if (currentArray.includes(optionValue)) {
+          // Désélectionner si déjà sélectionné
+          newSelection = currentArray.filter(item => item !== optionValue);
+        } else if (currentArray.length < 2) {
+          // Ajouter si moins de 2 sélectionnés
+          newSelection = [...currentArray, optionValue];
+        } else {
+          // Remplacer le premier par le nouveau si déjà 2 sélectionnés
+          newSelection = [currentArray[1], optionValue];
+        }
+      } else {
+        // Comportement normal pour les autres types
+        newSelection = currentSelections === optionValue ? null : optionValue;
+      }
+
       const newOptions = {
         ...prev,
         [formulaId]: {
           ...prev[formulaId],
-          [optionType]: prev[formulaId]?.[optionType] === optionValue
-            ? null
-            : optionValue
+          [optionType]: newSelection
         }
       };
       
@@ -1713,10 +1742,18 @@ const MenuPage = () => {
         : "La formule complète pour un brunch gourmand",
       sections: [
         {
+          title: isEnglish ? "Main course" : isSpanish ? "Plato principal" : "Plat",
+          options: [
+            isEnglish ? "Burger (beef or chicken)" : isSpanish ? "Burger (carne o pollo)" : "Burger (viande ou poulet)",
+            "Cordon bleu"
+          ],
+          type: "plat"
+        },
+        {
           title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
           options: [
-            isEnglish ? "Espresso" : "Expresso", 
-            isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé", 
+            isEnglish ? "Espresso" : "Expresso",
+            isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
             isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud"
           ],
           type: "boisson_chaude"
@@ -1724,8 +1761,8 @@ const MenuPage = () => {
         {
           title: isEnglish ? "Cold drink" : isSpanish ? "Bebida fría" : "Boisson froide",
           options: [
-            isEnglish ? "Can" : isSpanish ? "Lata" : "Canette", 
-            isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme", 
+            isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
+            isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme",
             isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange"
           ],
           type: "boisson_froide"
@@ -1747,14 +1784,6 @@ const MenuPage = () => {
             }
           ],
           type: "dessert"
-        },
-        {
-          title: isEnglish ? "Main course" : isSpanish ? "Plato principal" : "Plat",
-          options: [
-            isEnglish ? "Burger (beef or chicken)" : isSpanish ? "Burger (carne o pollo)" : "Burger (viande ou poulet)", 
-            "Cordon bleu"
-          ],
-          type: "plat"
         }
       ]
     },
@@ -1770,10 +1799,23 @@ const MenuPage = () => {
         : "L'équilibre parfait entre sucré et salé",
       sections: [
         {
+          title: isEnglish ? "Choice of toasts" : isSpanish ? "Tostadas a elegir" : "Toasts au choix",
+          description: isEnglish ? "Choose up to 2 toasts to your liking" : isSpanish ? "Elige hasta 2 tostadas a tu gusto" : "Choisissez jusqu'à 2 toasts selon vos envies",
+          options: [
+            isEnglish ? "Scrambled egg & bacon" : isSpanish ? "Huevo revuelto y bacon" : "Œuf brouillé bacon",
+            isEnglish ? "Beetroot hummus" : isSpanish ? "Hummus de remolacha" : "Houmous betterave",
+            isEnglish ? "Eggplant caviar" : isSpanish ? "Caviar de berenjena" : "Caviar d'aubergine",
+            isEnglish ? "Salmon guacamole" : isSpanish ? "Salmón guacamole" : "Saumon guacamole",
+            isEnglish ? "Shrimp, cherry tomatoes, fresh cheese" : isSpanish ? "Gambas, tomates cherry, queso fresco" : "Crevettes, tomates cerises, fromage frais",
+            "Burrata (+2€)"
+          ],
+          type: "toasts"
+        },
+        {
           title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
           options: [
-            isEnglish ? "Espresso" : "Expresso", 
-            isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé", 
+            isEnglish ? "Espresso" : "Expresso",
+            isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
             isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud"
           ],
           type: "boisson_chaude"
@@ -1781,8 +1823,8 @@ const MenuPage = () => {
         {
           title: isEnglish ? "Cold drink" : isSpanish ? "Bebida fría" : "Boisson froide",
           options: [
-            isEnglish ? "Can" : isSpanish ? "Lata" : "Canette", 
-            isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme", 
+            isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
+            isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme",
             isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange"
           ],
           type: "boisson_froide"
@@ -1804,18 +1846,6 @@ const MenuPage = () => {
             }
           ],
           type: "dessert"
-        },
-        {
-          title: isEnglish ? "Choice of toasts" : isSpanish ? "Tostadas a elegir" : "Toasts au choix",
-          options: [
-            isEnglish ? "Scrambled egg & bacon" : isSpanish ? "Huevo revuelto y bacon" : "Œuf brouillé bacon",
-            isEnglish ? "Beetroot hummus" : isSpanish ? "Hummus de remolacha" : "Houmous betterave",
-            isEnglish ? "Eggplant caviar" : isSpanish ? "Caviar de berenjena" : "Caviar d'aubergine",
-            isEnglish ? "Salmon guacamole" : isSpanish ? "Salmón guacamole" : "Saumon guacamole",
-            isEnglish ? "Shrimp, cherry tomatoes, fresh cheese" : isSpanish ? "Gambas, tomates cherry, queso fresco" : "Crevettes, tomates cerises, fromage frais",
-            "Burrata (+2€)"
-          ],
-          type: "toasts"
         }
       ]
     },
@@ -1941,6 +1971,16 @@ const MenuPage = () => {
                     {formula.sections.map((section, sIndex) => (
                       <FormulaSection key={sIndex}>
                         <FormulaSectionTitle>{section.title}</FormulaSectionTitle>
+                        {section.description && (
+                          <div style={{
+                            fontSize: '0.9em',
+                            color: '#666',
+                            marginBottom: '12px',
+                            fontStyle: 'italic'
+                          }}>
+                            {section.description}
+                          </div>
+                        )}
                         {section.fixed ? (
                           <FormulaOptions>
                             {section.fixed.map((item, iIndex) => (
@@ -1971,7 +2011,7 @@ const MenuPage = () => {
                             {section.options.map((option, oIndex) => (
                               <FormulaOption
                                 key={oIndex}
-                                $selected={selectedOptions[formula.id]?.[section.type] === getOptionValue(option)}
+                                $selected={isOptionSelected(formula.id, section.type, option)}
                                 onClick={(e) => {
                                   e.stopPropagation();
                                   toggleOption(formula.id, section.type, option);
@@ -1980,16 +2020,16 @@ const MenuPage = () => {
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                               >
-                                <RadioButton 
-                                  $checked={selectedOptions[formula.id]?.[section.type] === getOptionValue(option)}
-                                  animate={selectedOptions[formula.id]?.[section.type] === getOptionValue(option) ? {
+                                <RadioButton
+                                  $checked={isOptionSelected(formula.id, section.type, option)}
+                                  animate={isOptionSelected(formula.id, section.type, option) ? {
                                     scale: [1, 1.2, 1],
                                   } : {}}
                                   transition={{ duration: 0.3 }}
                                 />
                                 <span style={{
                                   flex: 1,
-                                  fontWeight: selectedOptions[formula.id]?.[section.type] === getOptionValue(option) ? 600 : 400
+                                  fontWeight: isOptionSelected(formula.id, section.type, option) ? 600 : 400
                                 }}>
                                   {typeof option === 'string' ? option : option.name}
                                   {typeof option === 'object' && option.description && (
@@ -2152,12 +2192,23 @@ const MenuPage = () => {
                         ))
                       ) : (
                         currentFormula.selections[section.type] ? (
-                          <ModalItem>
-                            <FiCheck size={16} style={{ color: '#3BAA6D' }} />
-                            <span style={{ fontWeight: 500 }}>
-                              {currentFormula.selections[section.type]}
-                            </span>
-                          </ModalItem>
+                          Array.isArray(currentFormula.selections[section.type]) ? (
+                            currentFormula.selections[section.type].map((item, i) => (
+                              <ModalItem key={i}>
+                                <FiCheck size={16} style={{ color: '#3BAA6D' }} />
+                                <span style={{ fontWeight: 500 }}>
+                                  {item}
+                                </span>
+                              </ModalItem>
+                            ))
+                          ) : (
+                            <ModalItem>
+                              <FiCheck size={16} style={{ color: '#3BAA6D' }} />
+                              <span style={{ fontWeight: 500 }}>
+                                {currentFormula.selections[section.type]}
+                              </span>
+                            </ModalItem>
+                          )
                         ) : (
                           <ModalItem style={{ opacity: 0.5, fontStyle: 'italic' }}>
                             <span>Aucune sélection</span>
