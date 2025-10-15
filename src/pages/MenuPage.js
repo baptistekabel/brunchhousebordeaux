@@ -1700,6 +1700,21 @@ const MenuPage = () => {
         : "Pour bien démarrer la journée en toute simplicité",
       sections: [
         {
+          title: isEnglish ? "Included" : isSpanish ? "Incluido" : "Inclus",
+          fixed: [
+            isEnglish
+              ? "1 cold drink (homemade orange juice)"
+              : isSpanish
+              ? "1 bebida fría (zumo de naranja casero)"
+              : "1 boisson froide (jus d'orange maison)",
+            isEnglish
+              ? "1 scrambled egg & bacon toast"
+              : isSpanish
+              ? "1 tostada de huevos revueltos y bacon"
+              : "1 toast œuf brouillé bacon"
+          ]
+        },
+        {
           title: isEnglish ? "Pastry" : isSpanish ? "Bollería" : "Viennoiserie",
           options: ["Chocolatine", "Croissant"],
           type: "viennoiserie"
@@ -1707,26 +1722,11 @@ const MenuPage = () => {
         {
           title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
           options: [
-            isEnglish ? "Espresso" : "Expresso", 
-            isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé", 
+            isEnglish ? "Espresso" : "Expresso",
+            isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
             isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud"
           ],
           type: "boisson_chaude"
-        },
-        {
-          title: isEnglish ? "Included" : isSpanish ? "Incluido" : "Inclus",
-          fixed: [
-            isEnglish 
-              ? "1 cold drink (homemade orange juice)" 
-              : isSpanish 
-              ? "1 bebida fría (zumo de naranja casero)"
-              : "1 boisson froide (jus d'orange maison)", 
-            isEnglish 
-              ? "1 scrambled egg & bacon toast" 
-              : isSpanish 
-              ? "1 tostada de huevos revueltos y bacon"
-              : "1 toast œuf brouillé bacon"
-          ]
         }
       ]
     },
@@ -1750,24 +1750,6 @@ const MenuPage = () => {
           type: "plat"
         },
         {
-          title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
-          options: [
-            isEnglish ? "Espresso" : "Expresso",
-            isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
-            isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud"
-          ],
-          type: "boisson_chaude"
-        },
-        {
-          title: isEnglish ? "Cold drink" : isSpanish ? "Bebida fría" : "Boisson froide",
-          options: [
-            isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
-            isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme",
-            isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange"
-          ],
-          type: "boisson_froide"
-        },
-        {
           title: isEnglish ? "Dessert" : isSpanish ? "Postre" : "Dessert",
           options: [
             {
@@ -1784,6 +1766,24 @@ const MenuPage = () => {
             }
           ],
           type: "dessert"
+        },
+        {
+          title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
+          options: [
+            isEnglish ? "Espresso" : "Expresso",
+            isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
+            isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud"
+          ],
+          type: "boisson_chaude"
+        },
+        {
+          title: isEnglish ? "Cold drink" : isSpanish ? "Bebida fría" : "Boisson froide",
+          options: [
+            isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
+            isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme",
+            isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange"
+          ],
+          type: "boisson_froide"
         }
       ]
     },
@@ -1812,24 +1812,6 @@ const MenuPage = () => {
           type: "toasts"
         },
         {
-          title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
-          options: [
-            isEnglish ? "Espresso" : "Expresso",
-            isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
-            isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud"
-          ],
-          type: "boisson_chaude"
-        },
-        {
-          title: isEnglish ? "Cold drink" : isSpanish ? "Bebida fría" : "Boisson froide",
-          options: [
-            isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
-            isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme",
-            isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange"
-          ],
-          type: "boisson_froide"
-        },
-        {
           title: isEnglish ? "Dessert" : isSpanish ? "Postre" : "Dessert",
           options: [
             {
@@ -1846,6 +1828,24 @@ const MenuPage = () => {
             }
           ],
           type: "dessert"
+        },
+        {
+          title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
+          options: [
+            isEnglish ? "Espresso" : "Expresso",
+            isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
+            isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud"
+          ],
+          type: "boisson_chaude"
+        },
+        {
+          title: isEnglish ? "Cold drink" : isSpanish ? "Bebida fría" : "Boisson froide",
+          options: [
+            isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
+            isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme",
+            isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange"
+          ],
+          type: "boisson_froide"
         }
       ]
     },
@@ -1974,7 +1974,7 @@ const MenuPage = () => {
                         {section.description && (
                           <div style={{
                             fontSize: '0.9em',
-                            color: '#666',
+                            color: 'white',
                             marginBottom: '12px',
                             fontStyle: 'italic'
                           }}>
