@@ -1213,7 +1213,23 @@ const MenuPage = () => {
       image: "/images/menu/briochePerdue.JPG",
       description: "Tostada francesa con azúcar caramelizado"
     },
-    
+    "Brioche crème brûlée": {
+      image: "/images/menu/briocheCremeBrulee.JPG",
+      description: isEnglish
+        ? "Brioche with crème brûlée"
+        : isSpanish
+        ? "Brioche con crema catalana"
+        : "Brioche avec crème brûlée"
+    },
+    "Brioche with crème brûlée": {
+      image: "/images/menu/briocheCremeBrulee.JPG",
+      description: "Brioche with crème brûlée"
+    },
+    "Brioche con crema catalana": {
+      image: "/images/menu/briocheCremeBrulee.JPG",
+      description: "Brioche con crema catalana"
+    },
+
     // Boissons chaudes spéciales
     "Matcha": {
       image: "/images/menu/matcha.png",
@@ -1507,13 +1523,14 @@ const MenuPage = () => {
     desserts: {
       title: "🍰 Desserts",
       items: [
-        { 
-          name: isEnglish ? "Greek yogurt granola" : isSpanish ? "Granola griego" : "Grec granola", 
-          description: isEnglish ? "passion coulis / red berries" : isSpanish ? "coulis de maracuyá / frutos rojos" : "coulis passion / fruits rouges", 
-          price: "4 €" 
+        {
+          name: isEnglish ? "Greek yogurt granola" : isSpanish ? "Granola griego" : "Grec granola",
+          description: isEnglish ? "passion coulis / red berries" : isSpanish ? "coulis de maracuyá / frutos rojos" : "coulis passion / fruits rouges",
+          price: "4 €"
         },
         { name: isEnglish ? "The pancake" : isSpanish ? "El pancake" : "Le pancake", price: "8 €" },
-        { name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue", price: "8 €" }
+        { name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue", price: "8 €" },
+        { name: isEnglish ? "Brioche with crème brûlée" : isSpanish ? "Brioche con crema catalana" : "Brioche crème brûlée", price: "10 €" }
       ],
       note: isEnglish 
         ? "Toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup."
@@ -1663,7 +1680,11 @@ const MenuPage = () => {
     boissonsF: {
       title: isEnglish ? "🧊 Cold drinks" : isSpanish ? "🧊 Bebidas frías" : "🧊 Boissons froides",
       items: [
-        { name: isEnglish ? "Can" : isSpanish ? "Lata" : "Canette", price: "2 €" },
+        {
+          name: isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
+          description: "Sprite, Coca Cola, Coca Cherry, Coca Zero, Oasis, Fuze Tea, Orangina",
+          price: "2 €"
+        },
         { name: isEnglish ? "Homemade orange juice" : isSpanish ? "Zumo de naranja casero" : "Jus d'orange maison", price: "4 €" },
         { name: isEnglish ? "Homemade hibiscus" : isSpanish ? "Bissap casero" : "Bissap maison", price: "4 €" },
         { name: isEnglish ? "Homemade ginger juice" : isSpanish ? "Zumo de jengibre casero" : "Jus de gingembre maison", price: "5 €" },
@@ -1724,7 +1745,11 @@ const MenuPage = () => {
           options: [
             isEnglish ? "Espresso" : "Expresso",
             isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
-            isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud"
+            isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
+            isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
+            "Cappuccino (+2€)",
+            isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moca (+3€)",
+            "Matcha (+3€)"
           ],
           type: "boisson_chaude"
         }
@@ -1762,7 +1787,7 @@ const MenuPage = () => {
             },
             {
               name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue",
-              description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable"
+              description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup / crème brûlée (+2€)" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce / crème brûlée (+2€)" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable / crème brûlée (+2€)"
             }
           ],
           type: "dessert"
@@ -1772,16 +1797,25 @@ const MenuPage = () => {
           options: [
             isEnglish ? "Espresso" : "Expresso",
             isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
-            isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud"
+            isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
+            isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
+            "Cappuccino (+2€)",
+            isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moca (+3€)",
+            "Matcha (+3€)"
           ],
           type: "boisson_chaude"
         },
         {
           title: isEnglish ? "Cold drink" : isSpanish ? "Bebida fría" : "Boisson froide",
           options: [
-            isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
+            {
+              name: isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
+              description: "Sprite, Coca Cola, Coca Cherry, Coca Zero, Oasis, Fuze Tea, Orangina"
+            },
             isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme",
-            isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange"
+            isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange",
+            isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
+            isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)"
           ],
           type: "boisson_froide"
         }
@@ -1824,7 +1858,7 @@ const MenuPage = () => {
             },
             {
               name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue",
-              description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable"
+              description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup / crème brûlée (+2€)" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce / crème brûlée (+2€)" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable / crème brûlée (+2€)"
             }
           ],
           type: "dessert"
@@ -1834,16 +1868,25 @@ const MenuPage = () => {
           options: [
             isEnglish ? "Espresso" : "Expresso",
             isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
-            isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud"
+            isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
+            isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
+            "Cappuccino (+2€)",
+            isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moca (+3€)",
+            "Matcha (+3€)"
           ],
           type: "boisson_chaude"
         },
         {
           title: isEnglish ? "Cold drink" : isSpanish ? "Bebida fría" : "Boisson froide",
           options: [
-            isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
+            {
+              name: isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
+              description: "Sprite, Coca Cola, Coca Cherry, Coca Zero, Oasis, Fuze Tea, Orangina"
+            },
             isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme",
-            isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange"
+            isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange",
+            isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
+            isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)"
           ],
           type: "boisson_froide"
         }
@@ -1917,13 +1960,6 @@ const MenuPage = () => {
               : isSpanish 
               ? "Todos nuestros platos incluyen a elegir: zumo de naranja o zumo de manzana"
               : "Toutes nos formules incluent au choix : jus d'orange ou jus de pomme"}
-          </Note>
-          <Note style={{ marginBottom: '24px' }}>
-            {isEnglish 
-              ? "For all formulas: Extra €2: latte / cappuccino | Extra €3: mocha / matcha"
-              : isSpanish 
-              ? "Para todas las fórmulas: Suplemento 2€: latte / cappuccino | Suplemento 3€: moca / matcha"
-              : "Pour toutes les formules : Supplément 2€ : latte / cappuccino | Supplément 3€ : moka / matcha"}
           </Note>
           
           {formulas.map((formula, index) => (
