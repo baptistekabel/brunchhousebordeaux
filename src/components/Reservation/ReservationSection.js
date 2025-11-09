@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useState, useRef } from 'react';
 import { LiquidGlassCard, LiquidGlassButton } from '../LiquidGlass';
-import { FiCalendar, FiClock, FiUsers, FiCheck, FiAlertCircle } from 'react-icons/fi';
+import { FiAlertCircle } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 import { animationVariants, createScrollTrigger } from '../../hooks/useScrollAnimation';
 import { theme } from '../../styles/theme';
@@ -43,116 +43,14 @@ const FormCard = styled(LiquidGlassCard)`
   }
 `;
 
-const Form = styled.form`
-  display: grid;
-  gap: ${props => props.theme.spacing.lg};
-`;
 
-const FormRow = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: ${props => props.theme.spacing.lg};
-  
-  @media (min-width: ${props => props.theme.breakpoints.tablet}) {
-    grid-template-columns: ${props => props.$columns || '1fr 1fr'};
-  }
-`;
 
-const FormGroup = styled.div`
-  position: relative;
-`;
 
-const Label = styled.label`
-  display: block;
-  font-size: ${props => props.theme.typography.sizes.small};
-  font-weight: ${props => props.theme.typography.weights.medium};
-  color: ${props => props.theme.colors.primary.text};
-  margin-bottom: ${props => props.theme.spacing.sm};
-`;
 
-const InputWrapper = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-`;
 
-const IconLeft = styled.div`
-  position: absolute;
-  left: ${props => props.theme.spacing.md};
-  color: ${props => props.theme.colors.primary.accent};
-  pointer-events: none;
-  z-index: 1;
-`;
 
-const Input = styled.input`
-  width: 100%;
-  padding: ${props => props.theme.spacing.md};
-  padding-left: ${props => props.$hasIcon ? '48px' : props.theme.spacing.md};
-  font-size: ${props => props.theme.typography.sizes.body.regular};
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(28, 63, 51, 0.1);
-  border-radius: ${props => props.theme.borderRadius.medium};
-  transition: all ${props => props.theme.transitions.fast};
-  
-  &:focus {
-    outline: none;
-    background: rgba(255, 255, 255, 0.95);
-    border-color: ${props => props.theme.colors.primary.accent};
-    box-shadow: 0 0 0 3px rgba(43, 91, 74, 0.1);
-  }
-  
-  &::placeholder {
-    color: rgba(34, 34, 34, 0.5);
-  }
-`;
 
-const Select = styled.select`
-  width: 100%;
-  padding: ${props => props.theme.spacing.md};
-  padding-left: ${props => props.$hasIcon ? '48px' : props.theme.spacing.md};
-  font-size: ${props => props.theme.typography.sizes.body.regular};
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(28, 63, 51, 0.1);
-  border-radius: ${props => props.theme.borderRadius.medium};
-  transition: all ${props => props.theme.transitions.fast};
-  cursor: pointer;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%231C3F33' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-  padding-right: 40px;
-  
-  &:focus {
-    outline: none;
-    background-color: rgba(255, 255, 255, 0.95);
-    border-color: ${props => props.theme.colors.primary.accent};
-    box-shadow: 0 0 0 3px rgba(43, 91, 74, 0.1);
-  }
-`;
 
-const Textarea = styled.textarea`
-  width: 100%;
-  padding: ${props => props.theme.spacing.md};
-  font-size: ${props => props.theme.typography.sizes.body.regular};
-  font-family: inherit;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(28, 63, 51, 0.1);
-  border-radius: ${props => props.theme.borderRadius.medium};
-  transition: all ${props => props.theme.transitions.fast};
-  resize: vertical;
-  min-height: 100px;
-  
-  &:focus {
-    outline: none;
-    background: rgba(255, 255, 255, 0.95);
-    border-color: ${props => props.theme.colors.primary.accent};
-    box-shadow: 0 0 0 3px rgba(43, 91, 74, 0.1);
-  }
-  
-  &::placeholder {
-    color: rgba(34, 34, 34, 0.5);
-  }
-`;
 
 const Features = styled.div`
   display: grid;
@@ -161,17 +59,6 @@ const Features = styled.div`
   margin-top: ${props => props.theme.spacing.lg};
 `;
 
-const Feature = styled.div`
-  display: flex;
-  align-items: center;
-  gap: ${props => props.theme.spacing.sm};
-  font-size: ${props => props.theme.typography.sizes.small};
-  color: ${props => props.theme.colors.secondary.text};
-  
-  svg {
-    color: ${props => props.theme.colors.status.success};
-  }
-`;
 
 const SuccessMessage = styled(motion.div)`
   padding: ${props => props.theme.spacing.lg};
@@ -197,47 +84,14 @@ const ReservationSection = () => {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
   const rotateY = useTransform(scrollYProgress, [0, 0.5, 1], [-10, 0, 10]);
   
-  const [formData, setFormData] = useState({
-    date: '',
-    time: '',
-    guests: '2',
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
   
-  const [submitted, setSubmitted] = useState(false);
-  const [showError, setShowError] = useState(false);
+  const [showError] = useState(false);
 
   const handleReservation = () => {
     window.open('https://www.google.com/maps/reserve/v/dine/c/tYfq5WqTgGw?source=pa&opi=89978449&hl=fr-FR&gei=J6rNaMFru-jszw-zsPfoDw&sourceurl=https%3A%2F%2Fwww.google.com%2Fsearch%3Fq%3Dbrunch%2Bhouse%2Bbordeaux%26rlz%3D1C5CHFA_enFR1079FR1079%26oq%3Dbrunch%2Bhouse%26gs_lcrp%3DEgZjaHJvbWUqCggAEAAY4wIYgAQyCggAEAAY4wIYgAQyDQgBEC4YrwEYxwEYgAQyBwgCEAAYgAQyBwgDEAAYgAQyDQgEEAAYgwEYsQMYgAQyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQg0OTA2ajBqN6gCALACAA%26sourceid%3Dchrome%26ie%3DUTF-8&ihs=3', '_blank');
   };
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
 
-  const formFieldVariants = {
-    hidden: { 
-      opacity: 0, 
-      x: -50,
-      scale: 0.9
-    },
-    visible: i => ({
-      opacity: 1,
-      x: 0,
-      scale: 1,
-      transition: {
-        delay: i * 0.05,
-        duration: 0.5,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }
-    })
-  };
 
   return (
     <Section id="reservation" ref={sectionRef}>

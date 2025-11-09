@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FiInstagram, FiFacebook, FiMapPin, FiPhone, FiMail, FiClock } from 'react-icons/fi';
-import { LiquidGlassButton } from '../LiquidGlass';
+import { FiInstagram, FiMapPin, FiClock } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 
 const FooterSection = styled.footer`
@@ -111,36 +110,6 @@ const FooterLink = styled.a`
   }
 `;
 
-const NewsletterForm = styled.form`
-  display: flex;
-  gap: ${props => props.theme.spacing.sm};
-  margin-top: ${props => props.theme.spacing.md};
-`;
-
-const EmailInput = styled.input`
-  flex: 1;
-  padding: ${props => props.theme.spacing.sm} ${props => props.theme.spacing.md};
-  background: rgba(1, 57, 39, 0.1);
-  border: 1px solid rgba(1, 57, 39, 0.2);
-  border-radius: ${props => props.theme.borderRadius.medium};
-  color: ${props => props.theme.colors.darkGreen};
-  font-size: ${props => props.theme.typography.sizes.small};
-
-  &::placeholder {
-    color: rgba(1, 57, 39, 0.5);
-  }
-
-  &:focus {
-    outline: none;
-    background: rgba(1, 57, 39, 0.15);
-    border-color: rgba(1, 57, 39, 0.3);
-  }
-`;
-
-const NewsletterButton = styled(LiquidGlassButton)`
-  padding: ${props => props.theme.spacing.sm} ${props => props.theme.spacing.lg};
-  font-size: ${props => props.theme.typography.sizes.small};
-`;
 
 const Divider = styled.hr`
   border: none;
@@ -167,13 +136,9 @@ const Copyright = styled.p`
   opacity: 0.7;
 `;
 
-const LegalLinks = styled.div`
-  display: flex;
-  gap: ${props => props.theme.spacing.lg};
-`;
 
 const Footer = () => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   
   return (
     <FooterSection>

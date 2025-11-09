@@ -30,16 +30,6 @@ const MapWrapper = styled.div`
   }
 `;
 
-const MapMask = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 150px;
-  height: 50px;
-  background: ${props => props.theme.colors.primary.background};
-  pointer-events: none;
-  z-index: 5;
-`;
 
 const MapControls = styled.div`
   position: absolute;
@@ -152,8 +142,6 @@ const MapEmbed = () => {
   const lat = "44.82819"; // Latitude exacte pour 3 rue Ferbos
   const lng = "-0.567471"; // Longitude exacte pour 3 rue Ferbos
   
-  // URL pour Google Maps avec l'adresse exacte
-  const mapEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodedAddress}&zoom=17`;
   
   // Alternative sans clé API avec coordonnées exactes
   const mapEmbedUrlAlt = `https://maps.google.com/maps?q=${lat},${lng}&t=&z=17&ie=UTF8&iwloc=&output=embed`;

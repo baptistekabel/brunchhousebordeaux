@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import { LiquidGlassCard } from '../LiquidGlass';
 import { LiquidGlassButton } from '../LiquidGlass';
 import { animationVariants, createScrollTrigger } from '../../hooks/useScrollAnimation';
@@ -138,16 +137,6 @@ const MenuItemDescription = styled.p`
   text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.3);
 `;
 
-const HomemadeBadge = styled.span`
-  display: inline-block;
-  padding: 4px 12px;
-  background: rgba(59, 170, 109, 0.1);
-  color: ${props => props.theme.colors.status.success};
-  border-radius: ${props => props.theme.borderRadius.pill};
-  font-size: 12px;
-  font-weight: ${props => props.theme.typography.weights.medium};
-  margin-top: ${props => props.theme.spacing.sm};
-`;
 
 const CTAWrapper = styled.div`
   text-align: center;
@@ -208,13 +197,7 @@ const MenuSection = () => {
     }
   ];
   const navigate = useNavigate();
-  const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
   
-  const parallaxY = useTransform(scrollYProgress, [0, 1], [50, -50]);
   const cardVariants = {
     hidden: { 
       opacity: 0, 
@@ -251,7 +234,7 @@ const MenuSection = () => {
   };
 
   return (
-    <Section id="menu" ref={sectionRef}>
+    <Section id="menu">
       <Container>
         <Header>
           <SectionTitle

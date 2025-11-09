@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowLeft, FiCheck, FiPlus, FiX, FiImage } from 'react-icons/fi';
+import { FiArrowLeft, FiCheck, FiPlus, FiX } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
@@ -328,19 +328,6 @@ const FormulaTitle = styled.h3`
   }
 `;
 
-const FormulaBadge = styled.span`
-  display: inline-block;
-  padding: 4px 12px;
-  background: linear-gradient(135deg, 
-    ${props => props.theme.colors.primary.highlight} 0%, 
-    rgba(224, 171, 159, 0.7) 100%
-  );
-  color: white;
-  border-radius: ${props => props.theme.borderRadius.pill};
-  font-size: 12px;
-  font-weight: ${props => props.theme.typography.weights.medium};
-  margin-left: ${props => props.theme.spacing.sm};
-`;
 
 const FormulaPrice = styled.div`
   font-size: 28px;
@@ -563,17 +550,6 @@ const ModalContent = styled(motion.div)`
   }
 `;
 
-const ProgressBar = styled(motion.div)`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 3px;
-  background: linear-gradient(90deg, 
-    ${props => props.theme.colors.primary.highlight} 0%, 
-    ${props => props.theme.colors.primary.accent} 100%
-  );
-  transform-origin: left;
-`;
 
 const ModalHeader = styled.div`
   display: flex;
@@ -677,39 +653,7 @@ const ModalPrice = styled.div`
   }
 `;
 
-const EmptyState = styled.div`
-  text-align: center;
-  padding: ${props => props.theme.spacing.xl};
-  color: ${props => props.theme.colors.secondary.text};
-  font-style: italic;
-`;
 
-const ValidateButton = styled(motion.button)`
-  width: 100%;
-  padding: ${props => props.theme.spacing.md} ${props => props.theme.spacing.xl};
-  background: linear-gradient(135deg, 
-    ${props => props.theme.colors.primary.text} 0%, 
-    ${props => props.theme.colors.primary.accent} 100%
-  );
-  color: white;
-  border: none;
-  border-radius: ${props => props.theme.borderRadius.xlarge};
-  font-size: ${props => props.theme.typography.sizes.body.regular};
-  font-weight: ${props => props.theme.typography.weights.semibold};
-  cursor: pointer;
-  margin-top: ${props => props.theme.spacing.xl};
-  transition: all ${props => props.theme.transitions.normal};
-  
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(28, 63, 51, 0.3);
-  }
-  
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-`;
 
 const DishModalOverlay = styled(motion.div)`
   position: fixed;

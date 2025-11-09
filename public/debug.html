@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Debug - Brunch House Bordeaux</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #00ff00;
+            line-height: 1.6;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { color: #00ff00; border-bottom: 2px solid #00ff00; padding-bottom: 10px; }
+        h2 { color: #ffff00; margin-top: 30px; }
+        .section {
+            background: #2a2a2a;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border-left: 4px solid #00ff00;
+        }
+        .ok { color: #00ff00; }
+        .warning { color: #ffff00; }
+        .error { color: #ff0000; }
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 10px 0;
+            padding: 8px 16px;
+            background: #00ff00;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        pre {
+            background: #333;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐛 Debug Information - Brunch House Bordeaux</h1>
+
+        <h2>📍 URL Information</h2>
+        <div class="section">
+            <p><strong>Current URL:</strong> <span id="current-url"></span></p>
+            <p><strong>Pathname:</strong> <span id="pathname"></span></p>
+            <p><strong>Search:</strong> <span id="search"></span></p>
+            <p><strong>Hash:</strong> <span id="hash"></span></p>
+            <p><strong>Host:</strong> <span id="host"></span></p>
+        </div>
+
+        <h2>🌐 Environment</h2>
+        <div class="section">
+            <p><strong>User Agent:</strong> <span id="user-agent"></span></p>
+            <p><strong>Language:</strong> <span id="language"></span></p>
+            <p><strong>Platform:</strong> <span id="platform"></span></p>
+            <p><strong>Timestamp:</strong> <span id="timestamp"></span></p>
+        </div>
+
+        <h2>📊 Performance</h2>
+        <div class="section">
+            <p><strong>Load Time:</strong> <span id="load-time"></span>ms</p>
+            <p><strong>Memory Usage:</strong> <span id="memory"></span></p>
+            <p><strong>Connection:</strong> <span id="connection"></span></p>
+        </div>
+
+        <h2>🔧 Configuration Status</h2>
+        <div class="section">
+            <div id="config-status">
+                <p class="ok">✅ _redirects file: Active</p>
+                <p class="ok">✅ 404.html fallback: Active</p>
+                <p class="ok">✅ React Router: Ready</p>
+                <p class="ok">✅ Static files: Optimized for Render</p>
+            </div>
+        </div>
+
+        <h2>🧪 Tests de routing</h2>
+        <div class="section">
+            <p>Testez ces liens pour vérifier le routing:</p>
+            <a href="/" class="btn">Accueil (/)</a>
+            <a href="/menu" class="btn">Menu (/menu)</a>
+            <a href="/test-404" class="btn">Test 404</a>
+            <a href="/debug" class="btn">Debug</a>
+        </div>
+
+        <h2>📋 Deployment Checklist</h2>
+        <div class="section">
+            <pre id="checklist">
+🚀 Configuration Render:
+✅ Build Command: npm run build
+✅ Publish Directory: build
+✅ Environment: Static Site
+✅ _redirects: /* /index.html 200
+✅ 404 fallback: 404.html
+✅ Debug page: debug.html
+
+📁 Structure attendue après build:
+build/
+  ├── index.html
+  ├── _redirects
+  ├── 404.html
+  ├── debug.html
+  ├── static/
+  │   ├── css/
+  │   └── js/
+  └── [autres assets]
+            </pre>
+        </div>
+
+        <h2>🆘 En cas de problème</h2>
+        <div class="section">
+            <p><strong class="error">Problème de routing?</strong></p>
+            <ul>
+                <li>Vérifiez que _redirects est dans /build/</li>
+                <li>Confirmez que "Publish Directory" = "build" dans Render</li>
+                <li>Testez les URLs directement</li>
+            </ul>
+
+            <p><strong class="warning">Assets non chargés?</strong></p>
+            <ul>
+                <li>Vérifiez les chemins dans build/</li>
+                <li>Confirmez que npm run build s'exécute sans erreur</li>
+                <li>Testez en local avec serve build/</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Remplir les informations de debug
+        document.addEventListener('DOMContentLoaded', function() {
+            const startTime = performance.now();
+
+            document.getElementById('current-url').textContent = window.location.href;
+            document.getElementById('pathname').textContent = window.location.pathname;
+            document.getElementById('search').textContent = window.location.search || 'None';
+            document.getElementById('hash').textContent = window.location.hash || 'None';
+            document.getElementById('host').textContent = window.location.host;
+
+            document.getElementById('user-agent').textContent = navigator.userAgent;
+            document.getElementById('language').textContent = navigator.language;
+            document.getElementById('platform').textContent = navigator.platform;
+            document.getElementById('timestamp').textContent = new Date().toLocaleString('fr-FR');
+
+            window.addEventListener('load', function() {
+                const loadTime = performance.now() - startTime;
+                document.getElementById('load-time').textContent = Math.round(loadTime);
+
+                if ('memory' in performance) {
+                    const memory = performance.memory;
+                    document.getElementById('memory').textContent =
+                        `${Math.round(memory.usedJSHeapSize / 1024 / 1024)}MB utilisés`;
+                } else {
+                    document.getElementById('memory').textContent = 'Non disponible';
+                }
+
+                if ('connection' in navigator) {
+                    const conn = navigator.connection;
+                    document.getElementById('connection').textContent =
+                        `${conn.effectiveType || 'Unknown'} (${conn.downlink || '?'}Mbps)`;
+                } else {
+                    document.getElementById('connection').textContent = 'Non disponible';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

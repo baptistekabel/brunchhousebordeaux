@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
 
 const IntroSection = styled.section`
   width: 100vw;
@@ -128,28 +127,8 @@ const Logo = styled(motion.img)`
   }
 `;
 
-const IntroText = styled(motion.h2)`
-  font-size: clamp(24px, 4vw, 48px);
-  font-weight: ${props => props.theme.typography.weights.bold};
-  color: ${props => props.theme.colors.floralWhite};
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-align: center;
-  text-shadow:
-    2px 2px 8px rgba(1, 57, 39, 0.8),
-    0 0 20px rgba(253, 249, 240, 0.6),
-    0 0 40px rgba(253, 249, 240, 0.3);
-  margin: 0;
-  line-height: 1.2;
-
-  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    font-size: clamp(18px, 5vw, 32px);
-    letter-spacing: 1px;
-  }
-`;
 
 const HeroIntro = () => {
-  const { t } = useTranslation();
 
   const containerVariants = {
     hidden: { opacity: 0 },

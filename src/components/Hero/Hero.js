@@ -2,10 +2,9 @@ import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { LiquidGlassButton } from '../LiquidGlass';
-import { FiClock, FiMapPin, FiCoffee, FiX, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { FiClock, FiMapPin, FiX, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { ParallaxSection, BlurInWhenVisible } from '../AnimatedSection/AnimatedSection';
 import HeroIntro from './HeroIntro';
 import DecorativeDots from './DecorativeDots';
 
@@ -200,54 +199,6 @@ const Title = styled(motion.h1)`
   }
 `;
 
-const Subtitle = styled(motion.p)`
-  font-size: clamp(16px, 2.5vw, 20px);
-  color: ${props => props.theme.colors.floralWhite};
-  margin-bottom: ${props => props.theme.spacing.xxl};
-  line-height: 1.8;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  font-weight: ${props => props.theme.typography.weights.light};
-  position: relative;
-  padding: 0 ${props => props.theme.spacing.lg};
-  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.5);
-  z-index: 3;
-
-  &::before {
-    content: '"';
-    position: absolute;
-    left: -10px;
-    top: -10px;
-    font-size: 48px;
-    color: ${props => props.theme.colors.teaRose};
-    opacity: 0.8;
-    font-family: Georgia, serif;
-  }
-
-  &::after {
-    content: '"';
-    position: absolute;
-    right: -10px;
-    bottom: -20px;
-    font-size: 48px;
-    color: ${props => props.theme.colors.teaRose};
-    opacity: 0.8;
-    font-family: Georgia, serif;
-    transform: rotate(180deg);
-  }
-
-  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    font-size: 17px;
-    padding: 0 ${props => props.theme.spacing.md};
-    margin-bottom: ${props => props.theme.spacing.xl};
-
-    &::before, &::after {
-      font-size: 36px;
-    }
-  }
-`;
 
 const ButtonGroup = styled(motion.div)`
   position: fixed;
@@ -446,160 +397,7 @@ const PhotoGrid = styled.div`
   }
 `;
 
-const ImageWrapper = styled(motion.div)`
-  position: relative;
-  border-radius: ${props => props.theme.borderRadius.xlarge};
-  overflow: hidden;
-  box-shadow: 0 25px 60px rgba(1, 57, 39, 0.4);
-  height: 500px;
-  width: 100%;
-  max-width: 900px;
-  backdrop-filter: blur(10px);
-  border: 3px solid rgba(253, 249, 240, 0.3);
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      45deg,
-      rgba(252, 189, 189, 0.1) 0%,
-      transparent 30%,
-      rgba(190, 106, 101, 0.1) 100%
-    );
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    height: 350px;
-    border-radius: ${props => props.theme.borderRadius.large};
-    box-shadow: 0 15px 40px rgba(1, 57, 39, 0.3);
-  }
-`;
-
-const ImageCarousel = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-
-  /* Disposition en constellation unique */
-  .photo-item {
-    position: absolute;
-
-    /* Photo de brunch principale - Centre gauche */
-    &:nth-child(1) {
-      width: 380px;
-      height: 280px;
-      top: 25%;
-      left: 5%;
-      transform: rotate(-3deg);
-      z-index: 12;
-
-      @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-        width: 320px;
-        height: 240px;
-        top: 15%;
-        left: 2%;
-      }
-    }
-
-    /* Photo de brunch secondaire - Centre droit */
-    &:nth-child(2) {
-      width: 350px;
-      height: 260px;
-      top: 45%;
-      right: 8%;
-      transform: rotate(4deg);
-      z-index: 11;
-
-      @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-        width: 280px;
-        height: 210px;
-        top: 35%;
-        right: 3%;
-      }
-    }
-
-    /* Photos de plats - Disposition harmonisée et plus grandes */
-    &:nth-child(3) {
-      width: 220px;
-      height: 165px;
-      top: 5%;
-      left: 35%;
-      transform: rotate(-8deg);
-      z-index: 8;
-
-      @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-        width: 180px;
-        height: 135px;
-        top: 5%;
-        left: 25%;
-      }
-    }
-
-    &:nth-child(4) {
-      width: 240px;
-      height: 180px;
-      bottom: 8%;
-      left: 15%;
-      transform: rotate(12deg);
-      z-index: 7;
-
-      @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-        width: 200px;
-        height: 150px;
-        bottom: 5%;
-        left: 8%;
-      }
-    }
-
-    &:nth-child(5) {
-      width: 200px;
-      height: 150px;
-      top: 8%;
-      right: 20%;
-      transform: rotate(-12deg);
-      z-index: 6;
-
-      @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-        width: 170px;
-        height: 128px;
-        top: 5%;
-        right: 15%;
-      }
-    }
-
-    &:nth-child(6) {
-      width: 190px;
-      height: 143px;
-      bottom: 12%;
-      right: 25%;
-      transform: rotate(9deg);
-      z-index: 5;
-
-      @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-        width: 160px;
-        height: 120px;
-        bottom: 8%;
-        right: 20%;
-      }
-    }
-  }
-
-  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    padding: 15px;
-    height: 450px;
-  }
-`;
 
 const ImageSlide = styled(motion.div)`
   position: relative;
@@ -687,29 +485,7 @@ const HeroImage = styled(motion.img)`
 `;
 
 
-const ImageDots = styled.div`
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: none;
-  gap: ${props => props.theme.spacing.sm};
-  z-index: 10;
-  
-  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    display: flex;
-  }
-`;
 
-const Dot = styled(motion.button)`
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 2px solid white;
-  background: ${props => props.$active ? 'white' : 'transparent'};
-  cursor: pointer;
-  transition: all ${props => props.theme.transitions.fast};
-`;
 
 // Modal Fullscreen Styles
 const ModalOverlay = styled(motion.div)`
@@ -816,7 +592,7 @@ const SwipeIndicator = styled(motion.div)`
 const Hero = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const [activeImage, setActiveImage] = useState(1);
+  const [, setActiveImage] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const [modalImage, setModalImage] = useState(null);
   const [imagesLoaded, setImagesLoaded] = useState(false);
@@ -956,55 +732,7 @@ const Hero = () => {
     }
   };
   
-  const imageVariants = {
-    initial: { scale: 1.2, opacity: 0 },
-    animate: { 
-      scale: 1, 
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }
-    },
-    hover: {
-      scale: 1.05,
-      transition: { duration: 0.3 }
-    }
-  };
   
-  const mobileImageVariants = {
-    initial: (i) => ({
-      opacity: 0,
-      scale: 0,
-      x: i === 0 ? -100 : i === 2 ? 100 : 0,
-      y: -50,
-      rotate: i === 0 ? -180 : i === 2 ? 180 : 0
-    }),
-    animate: (i) => ({
-      opacity: 1,
-      scale: 1,
-      x: 0,
-      y: 0,
-      rotate: i === 0 ? -15 : i === 1 ? 5 : 12,
-      transition: {
-        delay: i * 0.2,
-        duration: 0.8,
-        type: "spring",
-        stiffness: 100,
-        damping: 15
-      }
-    }),
-    tap: {
-      scale: 1.3,
-      rotate: 0,
-      zIndex: 10,
-      transition: {
-        type: "spring",
-        stiffness: 200,
-        damping: 20
-      }
-    }
-  };
 
   return (
     <>

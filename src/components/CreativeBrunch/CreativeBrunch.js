@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FiCalendar, FiUsers, FiStar, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { FiCalendar, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { LiquidGlassCard } from '../LiquidGlass';
 import { ParallaxSection, ScaleInWhenVisible } from '../AnimatedSection/AnimatedSection';
 import { useTranslation } from 'react-i18next';
@@ -15,25 +15,6 @@ const Section = styled.section`
     padding: ${props => props.theme.spacing.section.desktop} ${props => props.theme.spacing.xl};
   }
   
-  &::before {
-    content: '🎨';
-    position: absolute;
-    top: 10%;
-    right: 5%;
-    font-size: 100px;
-    opacity: 0.1;
-    transform: rotate(-15deg);
-  }
-  
-  &::after {
-    content: '🥞';
-    position: absolute;
-    bottom: 10%;
-    left: 5%;
-    font-size: 120px;
-    opacity: 0.1;
-    transform: rotate(15deg);
-  }
 `;
 
 const Container = styled.div`
@@ -283,14 +264,6 @@ const CreativeBrunch = () => {
     setCurrentImageIndex(index);
   };
 
-  const floatingAnimation = {
-    y: [0, -20, 0],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  };
 
   return (
     <Section id="creative-brunch">

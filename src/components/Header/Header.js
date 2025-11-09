@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { FiMenu, FiX, FiGlobe } from 'react-icons/fi';
+import { FiMenu, FiX } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useLocation } from 'react-router-dom';
 
