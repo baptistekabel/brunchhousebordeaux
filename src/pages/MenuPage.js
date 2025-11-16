@@ -1347,6 +1347,15 @@ const MenuPage = () => {
         ? "Selección de refrescos en lata"
         : "Sélection de canettes de sodas"
     },
+
+    "Smoothie avocat, banane, miel": {
+      image: "/images/menu/smootie.JPG",
+      description: isEnglish
+        ? "Avocado, banana, honey smoothie"
+        : isSpanish
+        ? "Smoothie de aguacate, plátano, miel"
+        : "Smoothie avocat, banane, miel"
+    },
     "Can": {
       image: "/images/menu/canettes.png",
       description: "Selection of canned soft drinks"
@@ -1633,7 +1642,7 @@ const MenuPage = () => {
         { name: isEnglish ? "Homemade hibiscus" : isSpanish ? "Bissap casero" : "Bissap maison", price: "4 €" },
         { name: isEnglish ? "Homemade ginger juice" : isSpanish ? "Zumo de jengibre casero" : "Jus de gingembre maison", price: "5 €" },
         { name: isEnglish ? "Seasonal juice" : isSpanish ? "Zumo de temporada" : "Jus de saison", price: "5 €" },
-        { name: isEnglish ? "Iced jasmine tea" : isSpanish ? "Té de jazmín helado" : "Thé jasmin glacé", price: "5 €" }
+        { name: isEnglish ? "Avocado, banana, honey smoothie" : isSpanish ? "Smoothie de aguacate, plátano, miel" : "Smoothie avocat, banane, miel", price: "5 €" }
       ]
     },
     kids: {
