@@ -1083,6 +1083,52 @@ const MenuPage = () => {
         ? "Croissant fresco y mantecoso"
         : "Croissant frais au beurre"
     },
+
+    // Croissant œufs brouillés bacon
+    "Croissant œufs brouillés bacon": {
+      image: "/images/menu/croissant1.png",
+      description: isEnglish
+        ? "Scrambled eggs, bacon, cheddar, salad, tomatoes, onions"
+        : isSpanish
+        ? "Huevos revueltos, bacon, cheddar, ensalada, tomates, cebollas"
+        : "Œufs brouillés, bacon, cheddar, salade, tomates, oignons"
+    },
+    "Croissant scrambled eggs bacon": {
+      image: "/images/menu/croissant1.png",
+      description: "Scrambled eggs, bacon, cheddar, salad, tomatoes, onions"
+    },
+    "Croissant huevos revueltos bacon": {
+      image: "/images/menu/croissant1.png",
+      description: "Huevos revueltos, bacon, cheddar, ensalada, tomates, cebollas"
+    },
+
+    // Croissant saumon guacamole
+    "Croissant saumon guacamole": {
+      image: "/images/menu/croissant2.png",
+      description: isEnglish
+        ? "Salmon, guacamole, scrambled eggs, salad, tomatoes, red onions"
+        : isSpanish
+        ? "Salmón, guacamole, huevos revueltos, ensalada, tomates, cebollas rojas"
+        : "Saumon, guacamole, œufs brouillés, salade, tomates, oignons rouges"
+    },
+    "Croissant salmon guacamole": {
+      image: "/images/menu/croissant2.png",
+      description: "Salmon, guacamole, scrambled eggs, salad, tomatoes, red onions"
+    },
+    "Croissant salmón guacamole": {
+      image: "/images/menu/croissant2.png",
+      description: "Salmón, guacamole, huevos revueltos, ensalada, tomates, cebollas rojas"
+    },
+
+    // Croissant burger
+    "Croissant burger": {
+      image: "/images/menu/croissant3.png",
+      description: isEnglish
+        ? "Beef patty, cheddar, salad, tomatoes, onions, homemade burger sauce"
+        : isSpanish
+        ? "Steak picado, cheddar, ensalada, tomates, cebollas, salsa burger casera"
+        : "Steak haché, cheddar, salade, tomates, oignons, sauce burger maison"
+    },
     "Chocolatine": {
       image: "/images/menu/chocolatine.jpg",
       description: isEnglish
@@ -1172,6 +1218,24 @@ const MenuPage = () => {
     "Brioche con crema catalana": {
       image: "/images/menu/briocheCremeBrulee.JPG",
       description: "Brioche con crema catalana"
+    },
+
+    // Brioche perdue pomme caramel
+    "Brioche perdue pomme caramel": {
+      image: "/images/menu/briocheperdue1.jpeg",
+      description: isEnglish
+        ? "Apple, caramel, cinnamon, whipped cream, speculoos"
+        : isSpanish
+        ? "Manzana, caramelo, canela, nata montada, speculoos"
+        : "Pomme, caramel, cannelle, chantilly, spéculoos"
+    },
+    "French toast apple caramel": {
+      image: "/images/menu/briocheperdue1.jpeg",
+      description: "Apple, caramel, cinnamon, whipped cream, speculoos"
+    },
+    "Tostada francesa manzana caramelo": {
+      image: "/images/menu/briocheperdue1.jpeg",
+      description: "Manzana, caramelo, canela, nata montada, speculoos"
     },
 
     // Boissons chaudes spéciales
@@ -1483,7 +1547,20 @@ const MenuPage = () => {
         },
         { name: isEnglish ? "The pancake" : isSpanish ? "El pancake" : "Le pancake", price: "8 €" },
         { name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue", price: "8 €" },
-        { name: isEnglish ? "Brioche with crème brûlée" : isSpanish ? "Brioche con crema catalana" : "Brioche crème brûlée", price: "10 €" }
+        { name: isEnglish ? "Brioche with crème brûlée" : isSpanish ? "Brioche con crema catalana" : "Brioche crème brûlée", price: "10 €" },
+        {
+          name: isEnglish
+            ? "French toast apple caramel"
+            : isSpanish
+            ? "Tostada francesa manzana caramelo"
+            : "Brioche perdue pomme caramel",
+          description: isEnglish
+            ? "Apple, caramel, cinnamon, whipped cream, speculoos"
+            : isSpanish
+            ? "Manzana, caramelo, canela, nata montada, speculoos"
+            : "Pomme, caramel, cannelle, chantilly, spéculoos",
+          price: "10 €"
+        }
       ],
       note: isEnglish 
         ? "Toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup."
@@ -1578,19 +1655,58 @@ const MenuPage = () => {
             : "Burger végé du moment", 
           price: "14 €" 
         },
-        { 
-          name: "Cordon Bleu House", 
-          description: isEnglish 
+        {
+          name: "Cordon Bleu House",
+          description: isEnglish
             ? "Marinated chicken cutlet, turkey ham, cheese"
-            : isSpanish 
+            : isSpanish
             ? "Escalope de pollo marinado, jamón de pavo, queso"
-            : "Escalope de poulet mariné, jambon de dinde, fromage", 
-          price: "15 €" 
+            : "Escalope de poulet mariné, jambon de dinde, fromage",
+          price: "15 €"
+        },
+        {
+          name: isEnglish
+            ? "Croissant scrambled eggs bacon"
+            : isSpanish
+            ? "Croissant huevos revueltos bacon"
+            : "Croissant œufs brouillés bacon",
+          description: isEnglish
+            ? "Scrambled eggs, bacon, cheddar, salad, tomatoes, onions"
+            : isSpanish
+            ? "Huevos revueltos, bacon, cheddar, ensalada, tomates, cebollas"
+            : "Œufs brouillés, bacon, cheddar, salade, tomates, oignons",
+          price: "14 €"
+        },
+        {
+          name: isEnglish
+            ? "Croissant salmon guacamole"
+            : isSpanish
+            ? "Croissant salmón guacamole"
+            : "Croissant saumon guacamole",
+          description: isEnglish
+            ? "Salmon, guacamole, scrambled eggs, salad, tomatoes, red onions"
+            : isSpanish
+            ? "Salmón, guacamole, huevos revueltos, ensalada, tomates, cebollas rojas"
+            : "Saumon, guacamole, œufs brouillés, salade, tomates, oignons rouges",
+          price: "14 €"
+        },
+        {
+          name: isEnglish
+            ? "Croissant burger"
+            : isSpanish
+            ? "Croissant burger"
+            : "Croissant burger",
+          description: isEnglish
+            ? "Beef patty, cheddar, salad, tomatoes, onions, homemade burger sauce"
+            : isSpanish
+            ? "Steak picado, cheddar, ensalada, tomates, cebollas, salsa burger casera"
+            : "Steak haché, cheddar, salade, tomates, oignons, sauce burger maison",
+          price: "14 €"
         }
       ],
-      note: isEnglish 
+      note: isEnglish
         ? "Burgers are served with fries or salad."
-        : isSpanish 
+        : isSpanish
         ? "Las hamburguesas se sirven con patatas fritas o ensalada."
         : "Les burgers sont servis avec frites ou salades."
     },
