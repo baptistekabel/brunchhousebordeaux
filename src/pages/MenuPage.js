@@ -1203,25 +1203,8 @@ const MenuPage = () => {
       image: "/images/menu/briochePerdue.JPG",
       description: "Tostada francesa con azúcar caramelizado"
     },
+    // Brioche crème brûlée
     "Brioche crème brûlée": {
-      image: "/images/menu/briocheCremeBrulee.JPG",
-      description: isEnglish
-        ? "Brioche with crème brûlée"
-        : isSpanish
-        ? "Brioche con crema catalana"
-        : "Brioche avec crème brûlée"
-    },
-    "Brioche with crème brûlée": {
-      image: "/images/menu/briocheCremeBrulee.JPG",
-      description: "Brioche with crème brûlée"
-    },
-    "Brioche con crema catalana": {
-      image: "/images/menu/briocheCremeBrulee.JPG",
-      description: "Brioche con crema catalana"
-    },
-
-    // Brioche perdue pomme caramel
-    "Brioche perdue pomme caramel": {
       image: "/images/menu/briocheperdue1.jpeg",
       description: isEnglish
         ? "Apple, caramel, cinnamon, whipped cream, speculoos"
@@ -1239,11 +1222,11 @@ const MenuPage = () => {
         ? "Brioche Tatin"
         : "Brioche Tatin"
     },
-    "French toast apple caramel": {
+    "Brioche crème brûlée EN": {
       image: "/images/menu/briocheperdue1.jpeg",
       description: "Apple, caramel, cinnamon, whipped cream, speculoos"
     },
-    "Tostada francesa manzana caramelo": {
+    "Brioche crème brûlée ES": {
       image: "/images/menu/briocheperdue1.jpeg",
       description: "Manzana, caramelo, canela, nata montada, speculoos"
     },
@@ -1557,13 +1540,8 @@ const MenuPage = () => {
         },
         { name: isEnglish ? "The pancake" : isSpanish ? "El pancake" : "Le pancake", price: "8 €" },
         { name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue", price: "8 €" },
-        { name: isEnglish ? "Brioche with crème brûlée" : isSpanish ? "Brioche con crema catalana" : "Brioche crème brûlée", price: "10 €" },
         {
-          name: isEnglish
-            ? "French toast apple caramel"
-            : isSpanish
-            ? "Tostada francesa manzana caramelo"
-            : "Brioche perdue pomme caramel",
+          name: "Brioche crème brûlée",
           description: isEnglish
             ? "Apple, caramel, cinnamon, whipped cream, speculoos"
             : isSpanish
@@ -1572,12 +1550,7 @@ const MenuPage = () => {
           price: "10 €"
         },
         { name: "Brioche Tatin", price: "10 €" }
-      ],
-      note: isEnglish
-        ? "Toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup."
-        : isSpanish
-        ? "Coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce."
-        : "Napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable."
+      ]
     },
     toasts: {
       title: "🥑 Toasts",
