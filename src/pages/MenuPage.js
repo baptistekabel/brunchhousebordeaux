@@ -1229,6 +1229,16 @@ const MenuPage = () => {
         ? "Manzana, caramelo, canela, nata montada, speculoos"
         : "Pomme, caramel, cannelle, chantilly, spéculoos"
     },
+
+    // Brioche Tatin
+    "Brioche Tatin": {
+      image: "/images/menu/briochetatin.jpeg",
+      description: isEnglish
+        ? "Brioche Tatin"
+        : isSpanish
+        ? "Brioche Tatin"
+        : "Brioche Tatin"
+    },
     "French toast apple caramel": {
       image: "/images/menu/briocheperdue1.jpeg",
       description: "Apple, caramel, cinnamon, whipped cream, speculoos"
@@ -1560,11 +1570,12 @@ const MenuPage = () => {
             ? "Manzana, caramelo, canela, nata montada, speculoos"
             : "Pomme, caramel, cannelle, chantilly, spéculoos",
           price: "10 €"
-        }
+        },
+        { name: "Brioche Tatin", price: "10 €" }
       ],
-      note: isEnglish 
+      note: isEnglish
         ? "Toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup."
-        : isSpanish 
+        : isSpanish
         ? "Coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce."
         : "Napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable."
     },
@@ -1857,7 +1868,8 @@ const MenuPage = () => {
             {
               name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue",
               description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup / crème brûlée (+2€)" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce / crème brûlée (+2€)" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable / crème brûlée (+2€)"
-            }
+            },
+            "Brioche Tatin (+2€)"
           ],
           type: "dessert"
         },
@@ -1928,7 +1940,8 @@ const MenuPage = () => {
             {
               name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue",
               description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup / crème brûlée (+2€)" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce / crème brûlée (+2€)" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable / crème brûlée (+2€)"
-            }
+            },
+            "Brioche Tatin (+2€)"
           ],
           type: "dessert"
         },
