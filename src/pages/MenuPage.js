@@ -693,7 +693,7 @@ const DishImage = styled.img`
   width: 100%;
   height: 300px;
   object-fit: cover;
-  object-position: ${props => props.$isVeggieBurger ? 'center 70%' : 'center center'};
+  object-position: ${props => props.$isVeggieBurger ? 'center 70%' : props.$isBuche ? 'center 80%' : 'center center'};
   border-radius: ${props => props.theme.borderRadius.xlarge} ${props => props.theme.borderRadius.xlarge} 0 0;
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
@@ -1463,6 +1463,14 @@ const MenuPage = () => {
         ? "Tronco de Navidad tradicional"
         : "Bûche traditionnelle"
     },
+    "La bûche": {
+      image: "/images/menu/buche.JPG",
+      description: isEnglish
+        ? "Traditional Yule log"
+        : isSpanish
+        ? "Tronco de Navidad tradicional"
+        : "Bûche traditionnelle"
+    },
     "Yule log": {
       image: "/images/menu/buche.JPG",
       description: "Traditional Yule log"
@@ -1599,7 +1607,8 @@ const MenuPage = () => {
             : "Pomme, caramel, cannelle, chantilly, spéculoos",
           price: "10 €"
         },
-        { name: "Brioche Tatin", price: "10 €" }
+        { name: "Brioche Tatin", price: "10 €" },
+        { name: isEnglish ? "Yule log" : isSpanish ? "Tronco de Navidad" : "La bûche", price: "7 €" }
       ]
     },
     toasts: {
@@ -1821,6 +1830,58 @@ const MenuPage = () => {
 
   const formulas = [
     {
+      id: 'findannee',
+      name: isEnglish ? "End of Year Formula" : isSpanish ? "Fórmula de fin de año" : "Formule de fin d'année",
+      price: "30 €",
+      emoji: "🎄",
+      description: isEnglish
+        ? "A festive formula for the end of year celebrations"
+        : isSpanish
+        ? "Una fórmula festiva para las celebraciones de fin de año"
+        : "Une formule festive pour les fêtes de fin d'année",
+      sections: [
+        {
+          title: isEnglish ? "Toast" : isSpanish ? "Tostada" : "Toast",
+          fixed: [
+            isEnglish ? "Scallop toast" : isSpanish ? "Tostada de vieiras" : "Toast noix de Saint-Jacques"
+          ]
+        },
+        {
+          title: isEnglish ? "Dessert" : isSpanish ? "Postre" : "Dessert",
+          fixed: [
+            isEnglish ? "Yule log" : isSpanish ? "Tronco de Navidad" : "Bûche"
+          ]
+        },
+        {
+          title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
+          options: [
+            isEnglish ? "Espresso" : "Expresso",
+            isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
+            isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
+            isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
+            "Cappuccino (+2€)",
+            isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moca (+3€)",
+            "Matcha (+3€)"
+          ],
+          type: "boisson_chaude"
+        },
+        {
+          title: isEnglish ? "Cold drink" : isSpanish ? "Bebida fría" : "Boisson froide",
+          options: [
+            {
+              name: isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
+              description: "Sprite, Coca Cola, Coca Cherry, Coca Zero, Oasis, Fuze Tea, Orangina"
+            },
+            isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme",
+            isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange",
+            isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
+            isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)"
+          ],
+          type: "boisson_froide"
+        }
+      ]
+    },
+    {
       id: 'efficace',
       name: isEnglish ? "The Efficient" : isSpanish ? "El Eficaz" : "L'Efficace",
       price: "15 €",
@@ -2030,58 +2091,6 @@ const MenuPage = () => {
             isEnglish ? "Beef burger" : isSpanish ? "Hamburguesa de carne" : "Burger viande hachée"
           ],
           type: "burger"
-        }
-      ]
-    },
-    {
-      id: 'findannee',
-      name: isEnglish ? "End of Year Formula" : isSpanish ? "Fórmula de fin de año" : "Formule de fin d'année",
-      price: "30 €",
-      emoji: "🎄",
-      description: isEnglish
-        ? "A festive formula for the end of year celebrations"
-        : isSpanish
-        ? "Una fórmula festiva para las celebraciones de fin de año"
-        : "Une formule festive pour les fêtes de fin d'année",
-      sections: [
-        {
-          title: isEnglish ? "Toast" : isSpanish ? "Tostada" : "Toast",
-          fixed: [
-            isEnglish ? "Scallop toast" : isSpanish ? "Tostada de vieiras" : "Toast noix de Saint-Jacques"
-          ]
-        },
-        {
-          title: isEnglish ? "Dessert" : isSpanish ? "Postre" : "Dessert",
-          fixed: [
-            isEnglish ? "Yule log" : isSpanish ? "Tronco de Navidad" : "Bûche"
-          ]
-        },
-        {
-          title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
-          options: [
-            isEnglish ? "Espresso" : "Expresso",
-            isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
-            isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
-            isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
-            "Cappuccino (+2€)",
-            isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moca (+3€)",
-            "Matcha (+3€)"
-          ],
-          type: "boisson_chaude"
-        },
-        {
-          title: isEnglish ? "Cold drink" : isSpanish ? "Bebida fría" : "Boisson froide",
-          options: [
-            {
-              name: isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
-              description: "Sprite, Coca Cola, Coca Cherry, Coca Zero, Oasis, Fuze Tea, Orangina"
-            },
-            isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme",
-            isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange",
-            isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
-            isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)"
-          ],
-          type: "boisson_froide"
         }
       ]
     }
@@ -2475,6 +2484,7 @@ const MenuPage = () => {
                   src={selectedDish.image}
                   alt={selectedDish.name}
                   $isVeggieBurger={selectedDish.name.includes('végé') || selectedDish.name.includes('Veggie') || selectedDish.name.includes('vegetariana')}
+                  $isBuche={selectedDish.name.includes('bûche') || selectedDish.name.includes('Bûche') || selectedDish.name.includes('Yule log') || selectedDish.name.includes('Tronco')}
                   onError={(e) => {
                     e.target.style.display = 'none';
                   }}
