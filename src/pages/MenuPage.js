@@ -1436,6 +1436,56 @@ const MenuPage = () => {
         : isSpanish
         ? "Lata de refresco a elegir"
         : "Canette au choix"
+    },
+
+    // Formule de fin d'année
+    "Toast noix de Saint-Jacques": {
+      image: "/images/menu/noixsaint.JPG",
+      description: isEnglish
+        ? "Toast with scallops"
+        : isSpanish
+        ? "Tostada con vieiras"
+        : "Toast aux noix de Saint-Jacques"
+    },
+    "Scallop toast": {
+      image: "/images/menu/noixsaint.JPG",
+      description: "Toast with scallops"
+    },
+    "Tostada de vieiras": {
+      image: "/images/menu/noixsaint.JPG",
+      description: "Tostada con vieiras"
+    },
+    "Bûche": {
+      image: "/images/menu/buche.JPG",
+      description: isEnglish
+        ? "Traditional Yule log"
+        : isSpanish
+        ? "Tronco de Navidad tradicional"
+        : "Bûche traditionnelle"
+    },
+    "Yule log": {
+      image: "/images/menu/buche.JPG",
+      description: "Traditional Yule log"
+    },
+    "Tronco de Navidad": {
+      image: "/images/menu/buche.JPG",
+      description: "Tronco de Navidad tradicional"
+    },
+    "Formule de fin d'année": {
+      image: "/images/menu/noixsaint.JPG",
+      description: isEnglish
+        ? "End of year special formula"
+        : isSpanish
+        ? "Fórmula especial de fin de año"
+        : "Formule spéciale de fin d'année"
+    },
+    "End of Year Formula": {
+      image: "/images/menu/noixsaint.JPG",
+      description: "End of year special formula"
+    },
+    "Fórmula de fin de año": {
+      image: "/images/menu/noixsaint.JPG",
+      description: "Fórmula especial de fin de año"
     }
   };
 
@@ -1602,9 +1652,17 @@ const MenuPage = () => {
             ? "Gambas, tomates cherry, queso fresco"
             : "Crevettes, tomates cerises, fromage frais",
           price: "14 €"
+        },
+        {
+          name: isEnglish
+            ? "Scallop toast"
+            : isSpanish
+            ? "Tostada de vieiras"
+            : "Toast noix de Saint-Jacques",
+          price: "16 €"
         }
       ],
-      note: isEnglish 
+      note: isEnglish
         ? "*Toasts are served by 2."
         : isSpanish 
         ? "*Las tostadas se sirven de 2 en 2."
@@ -1968,10 +2026,62 @@ const MenuPage = () => {
         {
           title: "Burger",
           options: [
-            isEnglish ? "Chicken burger" : isSpanish ? "Hamburguesa de pollo" : "Burger poulet", 
+            isEnglish ? "Chicken burger" : isSpanish ? "Hamburguesa de pollo" : "Burger poulet",
             isEnglish ? "Beef burger" : isSpanish ? "Hamburguesa de carne" : "Burger viande hachée"
           ],
           type: "burger"
+        }
+      ]
+    },
+    {
+      id: 'findannee',
+      name: isEnglish ? "End of Year Formula" : isSpanish ? "Fórmula de fin de año" : "Formule de fin d'année",
+      price: "30 €",
+      emoji: "🎄",
+      description: isEnglish
+        ? "A festive formula for the end of year celebrations"
+        : isSpanish
+        ? "Una fórmula festiva para las celebraciones de fin de año"
+        : "Une formule festive pour les fêtes de fin d'année",
+      sections: [
+        {
+          title: isEnglish ? "Toast" : isSpanish ? "Tostada" : "Toast",
+          fixed: [
+            isEnglish ? "Scallop toast" : isSpanish ? "Tostada de vieiras" : "Toast noix de Saint-Jacques"
+          ]
+        },
+        {
+          title: isEnglish ? "Dessert" : isSpanish ? "Postre" : "Dessert",
+          fixed: [
+            isEnglish ? "Yule log" : isSpanish ? "Tronco de Navidad" : "Bûche"
+          ]
+        },
+        {
+          title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
+          options: [
+            isEnglish ? "Espresso" : "Expresso",
+            isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
+            isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
+            isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
+            "Cappuccino (+2€)",
+            isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moca (+3€)",
+            "Matcha (+3€)"
+          ],
+          type: "boisson_chaude"
+        },
+        {
+          title: isEnglish ? "Cold drink" : isSpanish ? "Bebida fría" : "Boisson froide",
+          options: [
+            {
+              name: isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
+              description: "Sprite, Coca Cola, Coca Cherry, Coca Zero, Oasis, Fuze Tea, Orangina"
+            },
+            isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme",
+            isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange",
+            isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
+            isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)"
+          ],
+          type: "boisson_froide"
         }
       ]
     }
