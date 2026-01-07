@@ -878,22 +878,22 @@ const MenuPage = () => {
         : "Pain brioche, guacamole, steak, cheddar, roquette, tomates, sauce barbecue"
     },
 
-    // Burger végé
-    "Burger végé du moment": {
+    // Burger végé aubergine
+    "Burger végé aubergine": {
       image: "/images/menu/burgerVege.JPG",
       description: isEnglish
-        ? "Veggie burger with fresh ingredients"
+        ? "Veggie eggplant burger"
         : isSpanish
-        ? "Hamburguesa vegetariana con ingredientes frescos"
-        : "Burger végétarien avec ingrédients frais"
+        ? "Hamburguesa vegetariana de berenjena"
+        : "Burger végétarien à l'aubergine"
     },
-    "Veggie burger of the day": {
+    "Veggie eggplant burger": {
       image: "/images/menu/burgerVege.JPG",
-      description: "Veggie burger with fresh ingredients"
+      description: "Veggie eggplant burger"
     },
-    "Hamburguesa vegetariana del día": {
+    "Hamburguesa vegetariana de berenjena": {
       image: "/images/menu/burgerVege.JPG",
-      description: "Hamburguesa vegetariana con ingredientes frescos"
+      description: "Hamburguesa vegetariana de berenjena"
     },
 
     // Cordon Bleu House
@@ -1207,28 +1207,28 @@ const MenuPage = () => {
     "Brioche crème brûlée": {
       image: "/images/menu/briocheperdue1.jpeg",
       description: isEnglish
-        ? "Apple, caramel, cinnamon, whipped cream, speculoos"
+        ? "Crème brûlée French toast"
         : isSpanish
-        ? "Manzana, caramelo, canela, nata montada, speculoos"
-        : "Pomme, caramel, cannelle, chantilly, spéculoos"
+        ? "Tostada francesa crème brûlée"
+        : "Brioche perdue crème brûlée"
     },
 
     // Brioche Tatin
     "Brioche Tatin": {
       image: "/images/menu/briochetatin.jpeg",
       description: isEnglish
-        ? "Brioche Tatin"
+        ? "Apple, caramel, cinnamon, whipped cream, speculoos"
         : isSpanish
-        ? "Brioche Tatin"
-        : "Brioche Tatin"
+        ? "Manzana, caramelo, canela, nata montada, speculoos"
+        : "Pomme, caramel, cannelle, chantilly, spéculoos"
     },
     "Brioche crème brûlée EN": {
       image: "/images/menu/briocheperdue1.jpeg",
-      description: "Apple, caramel, cinnamon, whipped cream, speculoos"
+      description: "Crème brûlée French toast"
     },
     "Brioche crème brûlée ES": {
       image: "/images/menu/briocheperdue1.jpeg",
-      description: "Manzana, caramelo, canela, nata montada, speculoos"
+      description: "Tostada francesa crème brûlée"
     },
 
     // Boissons chaudes spéciales
@@ -1436,64 +1436,6 @@ const MenuPage = () => {
         : isSpanish
         ? "Lata de refresco a elegir"
         : "Canette au choix"
-    },
-
-    // Formule de fin d'année
-    "Toast noix de Saint-Jacques": {
-      image: "/images/menu/noixsaint.JPG",
-      description: isEnglish
-        ? "Toast with scallops"
-        : isSpanish
-        ? "Tostada con vieiras"
-        : "Toast aux noix de Saint-Jacques"
-    },
-    "Scallop toast": {
-      image: "/images/menu/noixsaint.JPG",
-      description: "Toast with scallops"
-    },
-    "Tostada de vieiras": {
-      image: "/images/menu/noixsaint.JPG",
-      description: "Tostada con vieiras"
-    },
-    "Bûche": {
-      image: "/images/menu/buche.JPG",
-      description: isEnglish
-        ? "Traditional Yule log"
-        : isSpanish
-        ? "Tronco de Navidad tradicional"
-        : "Bûche traditionnelle"
-    },
-    "La bûche": {
-      image: "/images/menu/buche.JPG",
-      description: isEnglish
-        ? "Traditional Yule log"
-        : isSpanish
-        ? "Tronco de Navidad tradicional"
-        : "Bûche traditionnelle"
-    },
-    "Yule log": {
-      image: "/images/menu/buche.JPG",
-      description: "Traditional Yule log"
-    },
-    "Tronco de Navidad": {
-      image: "/images/menu/buche.JPG",
-      description: "Tronco de Navidad tradicional"
-    },
-    "Formule de fin d'année": {
-      image: "/images/menu/noixsaint.JPG",
-      description: isEnglish
-        ? "End of year special formula"
-        : isSpanish
-        ? "Fórmula especial de fin de año"
-        : "Formule spéciale de fin d'année"
-    },
-    "End of Year Formula": {
-      image: "/images/menu/noixsaint.JPG",
-      description: "End of year special formula"
-    },
-    "Fórmula de fin de año": {
-      image: "/images/menu/noixsaint.JPG",
-      description: "Fórmula especial de fin de año"
     }
   };
 
@@ -1598,17 +1540,16 @@ const MenuPage = () => {
         },
         { name: isEnglish ? "The pancake" : isSpanish ? "El pancake" : "Le pancake", price: "8 €" },
         { name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue", price: "8 €" },
+        { name: "Brioche crème brûlée", price: "10 €" },
         {
-          name: "Brioche crème brûlée",
+          name: "Brioche Tatin",
           description: isEnglish
             ? "Apple, caramel, cinnamon, whipped cream, speculoos"
             : isSpanish
             ? "Manzana, caramelo, canela, nata montada, speculoos"
             : "Pomme, caramel, cannelle, chantilly, spéculoos",
           price: "10 €"
-        },
-        { name: "Brioche Tatin", price: "10 €" },
-        { name: isEnglish ? "Yule log" : isSpanish ? "Tronco de Navidad" : "La bûche", price: "7 €" }
+        }
       ]
     },
     toasts: {
@@ -1661,14 +1602,6 @@ const MenuPage = () => {
             ? "Gambas, tomates cherry, queso fresco"
             : "Crevettes, tomates cerises, fromage frais",
           price: "14 €"
-        },
-        {
-          name: isEnglish
-            ? "Scallop toast"
-            : isSpanish
-            ? "Tostada de vieiras"
-            : "Toast noix de Saint-Jacques",
-          price: "16 €"
         }
       ],
       note: isEnglish
@@ -1698,13 +1631,13 @@ const MenuPage = () => {
             : "Pain brioche, escalope de poulet (viande ou poulet), mâche, tomates, oignon rouge, cheddar, sauce safran", 
           price: "14 €" 
         },
-        { 
-          name: isEnglish 
-            ? "Veggie burger of the day" 
-            : isSpanish 
-            ? "Hamburguesa vegetariana del día"
-            : "Burger végé du moment", 
-          price: "14 €" 
+        {
+          name: isEnglish
+            ? "Veggie eggplant burger"
+            : isSpanish
+            ? "Hamburguesa vegetariana de berenjena"
+            : "Burger végé aubergine",
+          price: "14 €"
         },
         {
           name: "Cordon Bleu House",
@@ -1806,6 +1739,7 @@ const MenuPage = () => {
           price: "2 €"
         },
         { name: isEnglish ? "Homemade orange juice" : isSpanish ? "Zumo de naranja casero" : "Jus d'orange maison", price: "4 €" },
+        { name: isEnglish ? "Pineapple juice" : isSpanish ? "Zumo de piña" : "Jus d'ananas", price: "4 €" },
         { name: isEnglish ? "Homemade hibiscus" : isSpanish ? "Bissap casero" : "Bissap maison", price: "4 €" },
         { name: isEnglish ? "Homemade ginger juice" : isSpanish ? "Zumo de jengibre casero" : "Jus de gingembre maison", price: "5 €" },
         { name: isEnglish ? "Seasonal juice" : isSpanish ? "Zumo de temporada" : "Jus de saison", price: "5 €" },
@@ -1830,58 +1764,6 @@ const MenuPage = () => {
 
   const formulas = [
     {
-      id: 'findannee',
-      name: isEnglish ? "End of Year Formula" : isSpanish ? "Fórmula de fin de año" : "Formule de fin d'année",
-      price: "30 €",
-      emoji: "🎄",
-      description: isEnglish
-        ? "A festive formula for the end of year celebrations"
-        : isSpanish
-        ? "Una fórmula festiva para las celebraciones de fin de año"
-        : "Une formule festive pour les fêtes de fin d'année",
-      sections: [
-        {
-          title: isEnglish ? "Toast" : isSpanish ? "Tostada" : "Toast",
-          fixed: [
-            isEnglish ? "Scallop toast" : isSpanish ? "Tostada de vieiras" : "Toast noix de Saint-Jacques"
-          ]
-        },
-        {
-          title: isEnglish ? "Dessert" : isSpanish ? "Postre" : "Dessert",
-          fixed: [
-            isEnglish ? "Yule log" : isSpanish ? "Tronco de Navidad" : "Bûche"
-          ]
-        },
-        {
-          title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
-          options: [
-            isEnglish ? "Espresso" : "Expresso",
-            isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
-            isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
-            isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
-            "Cappuccino (+2€)",
-            isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moca (+3€)",
-            "Matcha (+3€)"
-          ],
-          type: "boisson_chaude"
-        },
-        {
-          title: isEnglish ? "Cold drink" : isSpanish ? "Bebida fría" : "Boisson froide",
-          options: [
-            {
-              name: isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
-              description: "Sprite, Coca Cola, Coca Cherry, Coca Zero, Oasis, Fuze Tea, Orangina"
-            },
-            isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme",
-            isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange",
-            isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
-            isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)"
-          ],
-          type: "boisson_froide"
-        }
-      ]
-    },
-    {
       id: 'efficace',
       name: isEnglish ? "The Efficient" : isSpanish ? "El Eficaz" : "L'Efficace",
       price: "15 €",
@@ -1901,10 +1783,10 @@ const MenuPage = () => {
               ? "1 bebida fría (zumo de naranja casero)"
               : "1 boisson froide (jus d'orange maison)",
             isEnglish
-              ? "1 scrambled egg & bacon toast"
+              ? "1 scrambled eggs, bacon, cherry tomatoes toast"
               : isSpanish
-              ? "1 tostada de huevos revueltos y bacon"
-              : "1 toast œuf brouillé bacon"
+              ? "1 tostada de huevos revueltos, bacon, tomates cherry"
+              : "1 toast œuf brouillé, bacon, tomates cerises"
           ]
         },
         {
@@ -1942,7 +1824,10 @@ const MenuPage = () => {
           title: isEnglish ? "Main course" : isSpanish ? "Plato principal" : "Plat",
           options: [
             isEnglish ? "Burger (beef or chicken)" : isSpanish ? "Burger (carne o pollo)" : "Burger (viande ou poulet)",
-            "Cordon bleu"
+            "Cordon bleu",
+            isEnglish ? "Croissant burger" : isSpanish ? "Croissant burger" : "Croissant burger",
+            isEnglish ? "Croissant scrambled eggs bacon" : isSpanish ? "Croissant huevos revueltos bacon" : "Croissant œuf brouillé bacon",
+            isEnglish ? "Croissant salmon" : isSpanish ? "Croissant salmón" : "Croissant saumon"
           ],
           type: "plat"
         },
@@ -1961,7 +1846,8 @@ const MenuPage = () => {
               name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue",
               description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup / crème brûlée (+2€)" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce / crème brûlée (+2€)" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable / crème brûlée (+2€)"
             },
-            "Brioche Tatin (+2€)"
+            "Brioche Tatin (+2€)",
+            isEnglish ? "Crème brûlée French toast (+2€)" : isSpanish ? "Tostada francesa crème brûlée (+2€)" : "Brioche crème brûlée (+2€)"
           ],
           type: "dessert"
         },
@@ -1974,7 +1860,8 @@ const MenuPage = () => {
             isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
             "Cappuccino (+2€)",
             isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moca (+3€)",
-            "Matcha (+3€)"
+            "Matcha (+3€)",
+            "Chai Latté (+3€)"
           ],
           type: "boisson_chaude"
         },
@@ -1987,6 +1874,7 @@ const MenuPage = () => {
             },
             isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme",
             isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange",
+            isEnglish ? "Pineapple juice" : isSpanish ? "Zumo de piña" : "Jus d'ananas",
             isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
             isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)"
           ],
@@ -2009,12 +1897,12 @@ const MenuPage = () => {
           title: isEnglish ? "Choice of toasts" : isSpanish ? "Tostadas a elegir" : "Toasts au choix",
           description: isEnglish ? "Choose up to 2 toasts to your liking" : isSpanish ? "Elige hasta 2 tostadas a tu gusto" : "Choisissez jusqu'à 2 toasts selon vos envies",
           options: [
-            isEnglish ? "Scrambled egg & bacon" : isSpanish ? "Huevo revuelto y bacon" : "Œuf brouillé bacon",
-            isEnglish ? "Beetroot hummus" : isSpanish ? "Hummus de remolacha" : "Houmous betterave",
-            isEnglish ? "Eggplant caviar" : isSpanish ? "Caviar de berenjena" : "Caviar d'aubergine",
-            isEnglish ? "Salmon guacamole" : isSpanish ? "Salmón guacamole" : "Saumon guacamole",
-            isEnglish ? "Shrimp, cherry tomatoes, fresh cheese" : isSpanish ? "Gambas, tomates cherry, queso fresco" : "Crevettes, tomates cerises, fromage frais",
-            "Burrata (+2€)"
+            isEnglish ? "Scrambled eggs, bacon, cherry tomatoes" : isSpanish ? "Huevos revueltos, bacon, tomates cherry" : "Œuf brouillé, bacon, tomates cerises",
+            isEnglish ? "Beetroot hummus, avocado" : isSpanish ? "Hummus de remolacha, aguacate" : "Houmous à la betterave, avocat",
+            isEnglish ? "Eggplant caviar, sliced chicken, parmesan" : isSpanish ? "Caviar de berenjena, pollo laminado, parmesano" : "Caviar d'aubergine, émincé de poulet, parmesan",
+            isEnglish ? "Salmon, homemade guacamole, fleur de sel" : isSpanish ? "Salmón, guacamole casero, flor de sal" : "Saumon guacamole maison, fleur de sel",
+            isEnglish ? "Shrimp, cherry tomatoes, cream cheese" : isSpanish ? "Gambas, tomates cherry, queso fresco" : "Crevettes, tomates cerises, fromage frais",
+            isEnglish ? "Burrata, beef heart tomatoes, fleur de sel (+2€)" : isSpanish ? "Burrata, tomates corazón de buey, flor de sal (+2€)" : "Burrata, tomates coeur de boeuf, fleur de sel (+2€)"
           ],
           type: "toasts"
         },
@@ -2033,7 +1921,8 @@ const MenuPage = () => {
               name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue",
               description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup / crème brûlée (+2€)" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce / crème brûlée (+2€)" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable / crème brûlée (+2€)"
             },
-            "Brioche Tatin (+2€)"
+            "Brioche Tatin (+2€)",
+            isEnglish ? "Crème brûlée French toast (+2€)" : isSpanish ? "Tostada francesa crème brûlée (+2€)" : "Brioche crème brûlée (+2€)"
           ],
           type: "dessert"
         },
@@ -2046,7 +1935,8 @@ const MenuPage = () => {
             isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
             "Cappuccino (+2€)",
             isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moca (+3€)",
-            "Matcha (+3€)"
+            "Matcha (+3€)",
+            "Chai Latté (+3€)"
           ],
           type: "boisson_chaude"
         },
@@ -2059,6 +1949,7 @@ const MenuPage = () => {
             },
             isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme",
             isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange",
+            isEnglish ? "Pineapple juice" : isSpanish ? "Zumo de piña" : "Jus d'ananas",
             isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
             isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)"
           ],
