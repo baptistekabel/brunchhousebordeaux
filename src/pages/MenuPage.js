@@ -1861,7 +1861,10 @@ const MenuPage = () => {
             "Cappuccino (+2€)",
             isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moca (+3€)",
             "Matcha (+3€)",
-            "Chai Latté (+3€)"
+            "Chai Latté (+3€)",
+            isEnglish ? "Mint tea (+2€)" : isSpanish ? "Té de menta (+2€)" : "Thé menthe (+2€)",
+            isEnglish ? "Jasmine tea (+2€)" : isSpanish ? "Té de jazmín (+2€)" : "Thé jasmin (+2€)",
+            isEnglish ? "Mango tea (+2€)" : isSpanish ? "Té de mango (+2€)" : "Thé mangue (+2€)"
           ],
           type: "boisson_chaude"
         },
@@ -1936,7 +1939,10 @@ const MenuPage = () => {
             "Cappuccino (+2€)",
             isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moca (+3€)",
             "Matcha (+3€)",
-            "Chai Latté (+3€)"
+            "Chai Latté (+3€)",
+            isEnglish ? "Mint tea (+2€)" : isSpanish ? "Té de menta (+2€)" : "Thé menthe (+2€)",
+            isEnglish ? "Jasmine tea (+2€)" : isSpanish ? "Té de jazmín (+2€)" : "Thé jasmin (+2€)",
+            isEnglish ? "Mango tea (+2€)" : isSpanish ? "Té de mango (+2€)" : "Thé mangue (+2€)"
           ],
           type: "boisson_chaude"
         },
