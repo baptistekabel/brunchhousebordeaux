@@ -1954,7 +1954,6 @@ const MenuPage = () => {
               description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup / crème brûlée (+2€)" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce / crème brûlée (+2€)" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable / crème brûlée (+2€)"
             },
             "Brioche Tatin (+2€)",
-            isEnglish ? "Crème brûlée French toast (+2€)" : isSpanish ? "Tostada francesa crème brûlée (+2€)" : "Brioche crème brûlée (+2€)",
             isEnglish ? "Crème brûlée pancake (+2€)" : isSpanish ? "Pancake crème brûlée (+2€)" : "Pancake crème brûlée (+2€)",
             isEnglish ? "Tiramisu French toast (+2€)" : isSpanish ? "Tostada francesa tiramisú (+2€)" : "Brioche perdue tiramisu (+2€)",
           ],
@@ -2036,7 +2035,6 @@ const MenuPage = () => {
               description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup / crème brûlée (+2€)" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce / crème brûlée (+2€)" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable / crème brûlée (+2€)"
             },
             "Brioche Tatin (+2€)",
-            isEnglish ? "Crème brûlée French toast (+2€)" : isSpanish ? "Tostada francesa crème brûlée (+2€)" : "Brioche crème brûlée (+2€)",
             isEnglish ? "Crème brûlée pancake (+2€)" : isSpanish ? "Pancake crème brûlée (+2€)" : "Pancake crème brûlée (+2€)",
             isEnglish ? "Tiramisu French toast (+2€)" : isSpanish ? "Tostada francesa tiramisú (+2€)" : "Brioche perdue tiramisu (+2€)",
           ],
