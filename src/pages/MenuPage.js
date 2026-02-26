@@ -907,21 +907,21 @@ const MenuPage = () => {
     },
 
     // Saumon guacamole
-    "Saumon guacamole maison, fleur de sel": {
+    "Saumon, guacamole, fleur de sel": {
       image: "/images/menu/saumonguacamole.jpeg",
       description: isEnglish
-        ? "Fresh salmon with homemade guacamole and fleur de sel"
+        ? "Fresh salmon with guacamole and fleur de sel"
         : isSpanish
-        ? "Salmón fresco con guacamole casero y flor de sal"
-        : "Saumon frais avec guacamole maison et fleur de sel"
+        ? "Salmón fresco con guacamole y flor de sal"
+        : "Saumon frais avec guacamole et fleur de sel"
     },
-    "Salmon, homemade guacamole, fleur de sel": {
+    "Salmon, guacamole, fleur de sel": {
       image: "/images/menu/saumonguacamole.jpeg",
-      description: "Fresh salmon with homemade guacamole and fleur de sel"
+      description: "Fresh salmon with guacamole and fleur de sel"
     },
-    "Salmón, guacamole casero, flor de sal": {
+    "Salmón, guacamole, flor de sal": {
       image: "/images/menu/saumonguacamole.jpeg",
-      description: "Salmón fresco con guacamole casero y flor de sal"
+      description: "Salmón fresco con guacamole y flor de sal"
     },
     
     // Œuf brouillé bacon
@@ -971,21 +971,21 @@ const MenuPage = () => {
     },
 
     // Burrata
-    "Burrata, tomates coeur de boeuf, fleur de sel": {
+    "Burrata, tomates cœur de bœuf, pesto": {
       image: "/images/menu/burrataTomates.jpg",
       description: isEnglish
-        ? "Burrata with beef heart tomatoes and fleur de sel"
+        ? "Burrata with beef heart tomatoes and pesto"
         : isSpanish
-        ? "Burrata con tomates corazón de buey y flor de sal"
-        : "Burrata avec tomates coeur de boeuf et fleur de sel"
+        ? "Burrata con tomates corazón de buey y pesto"
+        : "Burrata avec tomates cœur de bœuf et pesto"
     },
-    "Burrata, beef heart tomatoes, fleur de sel": {
+    "Burrata, beef heart tomatoes, pesto": {
       image: "/images/menu/burrataTomates.jpg",
-      description: "Burrata with beef heart tomatoes and fleur de sel"
+      description: "Burrata with beef heart tomatoes and pesto"
     },
-    "Burrata, tomates corazón de buey, flor de sal": {
+    "Burrata, tomates corazón de buey, pesto": {
       image: "/images/menu/burrataTomates.jpg",
-      description: "Burrata con tomates corazón de buey y flor de sal"
+      description: "Burrata con tomates corazón de buey y pesto"
     },
 
     // Crevettes tomates cerises fromage frais
@@ -1007,21 +1007,21 @@ const MenuPage = () => {
     },
 
     // Houmous betterave
-    "Houmous à la betterave, avocat": {
+    "Houmous à la betterave, avocat, noix": {
       image: "/images/menu/houmous.jpeg",
       description: isEnglish
-        ? "Beetroot hummus with fresh avocado"
+        ? "Beetroot hummus with fresh avocado and walnuts"
         : isSpanish
-        ? "Hummus de remolacha con aguacate fresco"
-        : "Houmous de betterave avec avocat frais"
+        ? "Hummus de remolacha con aguacate fresco y nueces"
+        : "Houmous de betterave avec avocat frais et noix"
     },
-    "Beetroot hummus, avocado": {
+    "Beetroot hummus, avocado, walnuts": {
       image: "/images/menu/houmous.jpeg",
-      description: "Beetroot hummus with fresh avocado"
+      description: "Beetroot hummus with fresh avocado and walnuts"
     },
-    "Hummus de remolacha, aguacate": {
+    "Hummus de remolacha, aguacate, nueces": {
       image: "/images/menu/houmous.jpeg",
-      description: "Hummus de remolacha con aguacate fresco"
+      description: "Hummus de remolacha con aguacate fresco y nueces"
     },
     
     // Jus maison
@@ -1203,6 +1203,72 @@ const MenuPage = () => {
       image: "/images/menu/briochePerdue.JPG",
       description: "Tostada francesa con azúcar caramelizado"
     },
+    // Pancake crème brûlée
+    "Pancake crème brûlée": {
+      image: "/images/menu/pancakecremebrulee.JPG",
+      description: isEnglish
+        ? "Crème brûlée pancake"
+        : isSpanish
+        ? "Pancake crème brûlée"
+        : "Pancake crème brûlée"
+    },
+    "Crème brûlée pancake": {
+      image: "/images/menu/pancakecremebrulee.JPG",
+      description: "Crème brûlée pancake"
+    },
+
+    // Brioche perdue tiramisu
+    "Brioche perdue tiramisu": {
+      image: "/images/menu/briocheperduetiramisu.JPG",
+      description: isEnglish
+        ? "Tiramisu French toast"
+        : isSpanish
+        ? "Tostada francesa tiramisú"
+        : "Brioche perdue tiramisu"
+    },
+    "Tiramisu French toast": {
+      image: "/images/menu/briocheperduetiramisu.JPG",
+      description: "Tiramisu French toast"
+    },
+
+    // Brioche perdue salée œuf brouillé bacon
+    "Brioche perdue salée œuf brouillé bacon": {
+      image: "/images/menu/briocheperdusaleeoeufbrouilleebacon.JPG",
+      description: isEnglish
+        ? "Savory French toast with scrambled eggs and bacon"
+        : isSpanish
+        ? "Tostada francesa salada con huevos revueltos y bacon"
+        : "Brioche perdue salée avec œuf brouillé et bacon"
+    },
+    "Savory French toast scrambled eggs bacon": {
+      image: "/images/menu/briocheperdusaleeoeufbrouilleebacon.JPG",
+      description: "Savory French toast with scrambled eggs and bacon"
+    },
+
+    // Brioche perdue salée burrata pesto
+    "Brioche perdue salée burrata pesto": {
+      image: "/images/menu/briocheperdusaleeburratapesto.JPG",
+      description: isEnglish
+        ? "Savory French toast with burrata and pesto"
+        : isSpanish
+        ? "Tostada francesa salada con burrata y pesto"
+        : "Brioche perdue salée avec burrata et pesto"
+    },
+    "Savory French toast burrata pesto": {
+      image: "/images/menu/briocheperdusaleeburratapesto.JPG",
+      description: "Savory French toast with burrata and pesto"
+    },
+
+    // Ube Latté
+    "Ube Latté": {
+      image: "/images/menu/ubelatte.JPG",
+      description: isEnglish
+        ? "Purple yam ube latte"
+        : isSpanish
+        ? "Ube latte de boniato morado"
+        : "Ube latté"
+    },
+
     // Brioche crème brûlée
     "Brioche crème brûlée": {
       image: "/images/menu/briocheperdue1.jpeg",
@@ -1538,8 +1604,24 @@ const MenuPage = () => {
           description: isEnglish ? "passion coulis / red berries" : isSpanish ? "coulis de maracuyá / frutos rojos" : "coulis passion / fruits rouges",
           price: "4 €"
         },
-        { name: isEnglish ? "The pancake" : isSpanish ? "El pancake" : "Le pancake", price: "8 €" },
-        { name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue", price: "8 €" },
+        {
+          name: isEnglish ? "The pancake" : isSpanish ? "El pancake" : "Le pancake",
+          description: isEnglish
+            ? "topping: salted butter caramel / chocolate hazelnut / maple syrup / red berries"
+            : isSpanish
+            ? "cobertura: caramelo de mantequilla salada / chocolate avellana / jarabe de arce / frutos rojos"
+            : "nappage : caramel beurre salé / chocolat noisette / sirop d'érable / fruit rouge",
+          price: "8 €"
+        },
+        {
+          name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue",
+          description: isEnglish
+            ? "topping: salted butter caramel / chocolate hazelnut / maple syrup / red berries"
+            : isSpanish
+            ? "cobertura: caramelo de mantequilla salada / chocolate avellana / jarabe de arce / frutos rojos"
+            : "nappage : caramel beurre salé / chocolat noisette / sirop d'érable / fruit rouge",
+          price: "8 €"
+        },
         { name: "Brioche crème brûlée", price: "10 €" },
         {
           name: "Brioche Tatin",
@@ -1549,6 +1631,22 @@ const MenuPage = () => {
             ? "Manzana, caramelo, canela, nata montada, speculoos"
             : "Pomme, caramel, cannelle, chantilly, spéculoos",
           price: "10 €"
+        },
+        {
+          name: isEnglish ? "Crème brûlée pancake" : isSpanish ? "Pancake crème brûlée" : "Pancake crème brûlée",
+          price: "10 €"
+        },
+        {
+          name: isEnglish ? "Tiramisu French toast" : isSpanish ? "Tostada francesa tiramisú" : "Brioche perdue tiramisu",
+          price: "10 €"
+        },
+        {
+          name: isEnglish ? "Savory French toast scrambled eggs bacon" : isSpanish ? "Tostada francesa salada huevos revueltos bacon" : "Brioche perdue salée œuf brouillé bacon",
+          price: "14 €"
+        },
+        {
+          name: isEnglish ? "Savory French toast burrata pesto" : isSpanish ? "Tostada francesa salada burrata pesto" : "Brioche perdue salée burrata pesto",
+          price: "14 €"
         }
       ]
     },
@@ -1563,13 +1661,13 @@ const MenuPage = () => {
             : "Œuf brouillé, bacon, tomates cerises", 
           price: "11 €" 
         },
-        { 
-          name: isEnglish 
-            ? "Beetroot hummus, avocado" 
-            : isSpanish 
-            ? "Hummus de remolacha, aguacate"
-            : "Houmous à la betterave, avocat", 
-          price: "12 €" 
+        {
+          name: isEnglish
+            ? "Beetroot hummus, avocado, walnuts"
+            : isSpanish
+            ? "Hummus de remolacha, aguacate, nueces"
+            : "Houmous à la betterave, avocat, noix",
+          price: "12 €"
         },
         { 
           name: isEnglish 
@@ -1579,20 +1677,20 @@ const MenuPage = () => {
             : "Caviar d'aubergine, émincé de poulet, parmesan", 
           price: "14 €" 
         },
-        { 
-          name: isEnglish 
-            ? "Salmon, homemade guacamole, fleur de sel" 
-            : isSpanish 
-            ? "Salmón, guacamole casero, flor de sal"
-            : "Saumon guacamole maison, fleur de sel", 
-          price: "14 €" 
+        {
+          name: isEnglish
+            ? "Salmon, guacamole, fleur de sel"
+            : isSpanish
+            ? "Salmón, guacamole, flor de sal"
+            : "Saumon, guacamole, fleur de sel",
+          price: "14 €"
         },
         {
           name: isEnglish
-            ? "Burrata, beef heart tomatoes, fleur de sel"
+            ? "Burrata, beef heart tomatoes, pesto"
             : isSpanish
-            ? "Burrata, tomates corazón de buey, flor de sal"
-            : "Burrata, tomates coeur de boeuf, fleur de sel",
+            ? "Burrata, tomates corazón de buey, pesto"
+            : "Burrata, tomates cœur de bœuf, pesto",
           price: "15 €"
         },
         {
@@ -1630,14 +1728,6 @@ const MenuPage = () => {
             ? "Pan brioche, escalope de pollo (carne o pollo), canónigos, tomates, cebolla roja, cheddar, salsa azafrán"
             : "Pain brioche, escalope de poulet (viande ou poulet), mâche, tomates, oignon rouge, cheddar, sauce safran", 
           price: "14 €" 
-        },
-        {
-          name: isEnglish
-            ? "Veggie eggplant burger"
-            : isSpanish
-            ? "Hamburguesa vegetariana de berenjena"
-            : "Burger végé aubergine",
-          price: "14 €"
         },
         {
           name: "Cordon Bleu House",
@@ -1689,10 +1779,10 @@ const MenuPage = () => {
         }
       ],
       note: isEnglish
-        ? "Burgers are served with fries or salad."
+        ? "Dishes are served with fries and salad."
         : isSpanish
-        ? "Las hamburguesas se sirven con patatas fritas o ensalada."
-        : "Les burgers sont servis avec frites ou salades."
+        ? "Los platos se sirven con patatas fritas y ensalada."
+        : "Les plats sont servis avec frites et salade."
     },
     boissonsC: {
       title: isEnglish ? "☕ Hot drinks" : isSpanish ? "☕ Bebidas calientes" : "☕ Boissons chaudes",
@@ -1722,7 +1812,8 @@ const MenuPage = () => {
           price: "5 €"
         },
         { name: isEnglish ? "Tea" : isSpanish ? "Té" : "Thé", price: "4 €" },
-        { name: isEnglish ? "Mocha" : isSpanish ? "Moca" : "Moka", price: "5 €" }
+        { name: isEnglish ? "Mocha" : isSpanish ? "Moca" : "Moka", price: "5 €" },
+        { name: "Ube Latté", price: "6 €" }
       ],
       note: isEnglish 
         ? "Extra €0.50: whipped cream"
@@ -1749,14 +1840,14 @@ const MenuPage = () => {
     kids: {
       title: isEnglish ? "👶 Kids Menu" : isSpanish ? "👶 Menú Niños" : "👶 Menu Kids",
       items: [
-        { 
-          name: isEnglish ? "Complete menu" : isSpanish ? "Menú completo" : "Menu complet", 
-          description: isEnglish 
-            ? "3 chicken tenders, Homemade fries, Caprisun"
-            : isSpanish 
-            ? "3 tiras de pollo, Patatas fritas caseras, Caprisun"
-            : "3 aiguillettes de poulet, Frites maison, Caprisun", 
-          price: "6 €" 
+        {
+          name: isEnglish ? "Complete menu" : isSpanish ? "Menú completo" : "Menu complet",
+          description: isEnglish
+            ? "Chicken cutlet, homemade fries, Caprisun"
+            : isSpanish
+            ? "Escalope de pollo, patatas fritas caseras, Caprisun"
+            : "Escalope de poulet, frite maison, Caprisun",
+          price: "6 €"
         }
       ]
     }
@@ -1803,7 +1894,13 @@ const MenuPage = () => {
             isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
             "Cappuccino (+2€)",
             isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moca (+3€)",
-            "Matcha (+3€)"
+            "Matcha (+3€)",
+            {
+              name: isEnglish ? "Tea (+2€)" : isSpanish ? "Té (+2€)" : "Thé (+2€)",
+              description: isEnglish ? "mint / jasmine / mango" : isSpanish ? "menta / jazmín / mango" : "menthe / jasmin / mangue"
+            },
+            isEnglish ? "Oat chai latte (+3€)" : isSpanish ? "Chai latte avena (+3€)" : "Chaï latté avoine (+3€)",
+            "Ube Latté (+3€)"
           ],
           type: "boisson_chaude"
         }
@@ -1847,7 +1944,11 @@ const MenuPage = () => {
               description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup / crème brûlée (+2€)" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce / crème brûlée (+2€)" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable / crème brûlée (+2€)"
             },
             "Brioche Tatin (+2€)",
-            isEnglish ? "Crème brûlée French toast (+2€)" : isSpanish ? "Tostada francesa crème brûlée (+2€)" : "Brioche crème brûlée (+2€)"
+            isEnglish ? "Crème brûlée French toast (+2€)" : isSpanish ? "Tostada francesa crème brûlée (+2€)" : "Brioche crème brûlée (+2€)",
+            isEnglish ? "Crème brûlée pancake (+2€)" : isSpanish ? "Pancake crème brûlée (+2€)" : "Pancake crème brûlée (+2€)",
+            isEnglish ? "Tiramisu French toast (+2€)" : isSpanish ? "Tostada francesa tiramisú (+2€)" : "Brioche perdue tiramisu (+2€)",
+            isEnglish ? "Savory French toast scrambled eggs bacon (+2€)" : isSpanish ? "Tostada francesa salada huevos revueltos bacon (+2€)" : "Brioche perdue salée œuf brouillé bacon (+2€)",
+            isEnglish ? "Savory French toast burrata pesto (+2€)" : isSpanish ? "Tostada francesa salada burrata pesto (+2€)" : "Brioche perdue salée burrata pesto (+2€)"
           ],
           type: "dessert"
         },
@@ -1862,9 +1963,11 @@ const MenuPage = () => {
             isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moca (+3€)",
             "Matcha (+3€)",
             "Chai Latté (+3€)",
-            isEnglish ? "Mint tea (+2€)" : isSpanish ? "Té de menta (+2€)" : "Thé menthe (+2€)",
-            isEnglish ? "Jasmine tea (+2€)" : isSpanish ? "Té de jazmín (+2€)" : "Thé jasmin (+2€)",
-            isEnglish ? "Mango tea (+2€)" : isSpanish ? "Té de mango (+2€)" : "Thé mangue (+2€)"
+            {
+              name: isEnglish ? "Tea (+2€)" : isSpanish ? "Té (+2€)" : "Thé (+2€)",
+              description: isEnglish ? "mint / jasmine / mango" : isSpanish ? "menta / jazmín / mango" : "menthe / jasmin / mangue"
+            },
+            "Ube Latté (+3€)"
           ],
           type: "boisson_chaude"
         },
@@ -1901,11 +2004,11 @@ const MenuPage = () => {
           description: isEnglish ? "Choose up to 2 toasts to your liking" : isSpanish ? "Elige hasta 2 tostadas a tu gusto" : "Choisissez jusqu'à 2 toasts selon vos envies",
           options: [
             isEnglish ? "Scrambled eggs, bacon, cherry tomatoes" : isSpanish ? "Huevos revueltos, bacon, tomates cherry" : "Œuf brouillé, bacon, tomates cerises",
-            isEnglish ? "Beetroot hummus, avocado" : isSpanish ? "Hummus de remolacha, aguacate" : "Houmous à la betterave, avocat",
+            isEnglish ? "Beetroot hummus, avocado, walnuts" : isSpanish ? "Hummus de remolacha, aguacate, nueces" : "Houmous à la betterave, avocat, noix",
             isEnglish ? "Eggplant caviar, sliced chicken, parmesan" : isSpanish ? "Caviar de berenjena, pollo laminado, parmesano" : "Caviar d'aubergine, émincé de poulet, parmesan",
-            isEnglish ? "Salmon, homemade guacamole, fleur de sel" : isSpanish ? "Salmón, guacamole casero, flor de sal" : "Saumon guacamole maison, fleur de sel",
+            isEnglish ? "Salmon, guacamole, fleur de sel" : isSpanish ? "Salmón, guacamole, flor de sal" : "Saumon, guacamole, fleur de sel",
             isEnglish ? "Shrimp, cherry tomatoes, cream cheese" : isSpanish ? "Gambas, tomates cherry, queso fresco" : "Crevettes, tomates cerises, fromage frais",
-            isEnglish ? "Burrata, beef heart tomatoes, fleur de sel (+2€)" : isSpanish ? "Burrata, tomates corazón de buey, flor de sal (+2€)" : "Burrata, tomates coeur de boeuf, fleur de sel (+2€)"
+            isEnglish ? "Burrata, beef heart tomatoes, pesto (+2€)" : isSpanish ? "Burrata, tomates corazón de buey, pesto (+2€)" : "Burrata, tomates cœur de bœuf, pesto (+2€)"
           ],
           type: "toasts"
         },
@@ -1925,7 +2028,11 @@ const MenuPage = () => {
               description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup / crème brûlée (+2€)" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce / crème brûlée (+2€)" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable / crème brûlée (+2€)"
             },
             "Brioche Tatin (+2€)",
-            isEnglish ? "Crème brûlée French toast (+2€)" : isSpanish ? "Tostada francesa crème brûlée (+2€)" : "Brioche crème brûlée (+2€)"
+            isEnglish ? "Crème brûlée French toast (+2€)" : isSpanish ? "Tostada francesa crème brûlée (+2€)" : "Brioche crème brûlée (+2€)",
+            isEnglish ? "Crème brûlée pancake (+2€)" : isSpanish ? "Pancake crème brûlée (+2€)" : "Pancake crème brûlée (+2€)",
+            isEnglish ? "Tiramisu French toast (+2€)" : isSpanish ? "Tostada francesa tiramisú (+2€)" : "Brioche perdue tiramisu (+2€)",
+            isEnglish ? "Savory French toast scrambled eggs bacon (+2€)" : isSpanish ? "Tostada francesa salada huevos revueltos bacon (+2€)" : "Brioche perdue salée œuf brouillé bacon (+2€)",
+            isEnglish ? "Savory French toast burrata pesto (+2€)" : isSpanish ? "Tostada francesa salada burrata pesto (+2€)" : "Brioche perdue salée burrata pesto (+2€)"
           ],
           type: "dessert"
         },
@@ -1940,9 +2047,11 @@ const MenuPage = () => {
             isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moca (+3€)",
             "Matcha (+3€)",
             "Chai Latté (+3€)",
-            isEnglish ? "Mint tea (+2€)" : isSpanish ? "Té de menta (+2€)" : "Thé menthe (+2€)",
-            isEnglish ? "Jasmine tea (+2€)" : isSpanish ? "Té de jazmín (+2€)" : "Thé jasmin (+2€)",
-            isEnglish ? "Mango tea (+2€)" : isSpanish ? "Té de mango (+2€)" : "Thé mangue (+2€)"
+            {
+              name: isEnglish ? "Tea (+2€)" : isSpanish ? "Té (+2€)" : "Thé (+2€)",
+              description: isEnglish ? "mint / jasmine / mango" : isSpanish ? "menta / jazmín / mango" : "menthe / jasmin / mangue"
+            },
+            "Ube Latté (+3€)"
           ],
           type: "boisson_chaude"
         },
@@ -2025,13 +2134,6 @@ const MenuPage = () => {
           whileInView={{ opacity: 1, y: 0 }}
         >
           <SectionTitle>🧺 {isEnglish ? "Formulas" : isSpanish ? "Fórmulas" : "Formules"}</SectionTitle>
-          <Note style={{ marginBottom: '24px' }}>
-            {isEnglish 
-              ? "All our dishes include your choice of: orange juice or apple juice"
-              : isSpanish 
-              ? "Todos nuestros platos incluyen a elegir: zumo de naranja o zumo de manzana"
-              : "Toutes nos formules incluent au choix : jus d'orange ou jus de pomme"}
-          </Note>
           
           {formulas.map((formula, index) => (
             <FormulaCard
@@ -2170,10 +2272,10 @@ const MenuPage = () => {
           
           <Note style={{ marginTop: '32px', fontSize: '16px' }}>
             {i18n.language === 'en'
-              ? "Extra €3: salad / fries / sweet potato fries"
+              ? "Extra €2: salad / fries / sweet potato fries"
               : i18n.language === 'es'
-              ? "Suplemento 3€: ensalada / patatas fritas / patatas dulces fritas"
-              : "Supplément 3€ : salade / frites / frites patates douces"}
+              ? "Suplemento 2€: ensalada / patatas fritas / patatas dulces fritas"
+              : "Supplément 2€ : salade / frites / frites patates douces"}
           </Note>
         </MenuSection>
 
