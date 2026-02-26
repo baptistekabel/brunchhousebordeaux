@@ -1776,6 +1776,14 @@ const MenuPage = () => {
             ? "Steak picado, cheddar, ensalada, tomates, cebollas, salsa burger casera"
             : "Steak haché, cheddar, salade, tomates, oignons, sauce burger maison",
           price: "14 €"
+        },
+        {
+          name: isEnglish ? "Savory French toast scrambled eggs bacon" : isSpanish ? "Tostada francesa salada huevos revueltos bacon" : "Brioche perdue salée œuf brouillé bacon",
+          price: "14 €"
+        },
+        {
+          name: isEnglish ? "Savory French toast burrata pesto" : isSpanish ? "Tostada francesa salada burrata pesto" : "Brioche perdue salée burrata pesto",
+          price: "14 €"
         }
       ],
       note: isEnglish
@@ -1924,7 +1932,9 @@ const MenuPage = () => {
             "Cordon bleu",
             isEnglish ? "Croissant burger" : isSpanish ? "Croissant burger" : "Croissant burger",
             isEnglish ? "Croissant scrambled eggs bacon" : isSpanish ? "Croissant huevos revueltos bacon" : "Croissant œuf brouillé bacon",
-            isEnglish ? "Croissant salmon" : isSpanish ? "Croissant salmón" : "Croissant saumon"
+            isEnglish ? "Croissant salmon" : isSpanish ? "Croissant salmón" : "Croissant saumon",
+            isEnglish ? "Savory French toast scrambled eggs bacon" : isSpanish ? "Tostada francesa salada huevos revueltos bacon" : "Brioche perdue salée œuf brouillé bacon",
+            isEnglish ? "Savory French toast burrata pesto" : isSpanish ? "Tostada francesa salada burrata pesto" : "Brioche perdue salée burrata pesto"
           ],
           type: "plat"
         },
@@ -1947,8 +1957,6 @@ const MenuPage = () => {
             isEnglish ? "Crème brûlée French toast (+2€)" : isSpanish ? "Tostada francesa crème brûlée (+2€)" : "Brioche crème brûlée (+2€)",
             isEnglish ? "Crème brûlée pancake (+2€)" : isSpanish ? "Pancake crème brûlée (+2€)" : "Pancake crème brûlée (+2€)",
             isEnglish ? "Tiramisu French toast (+2€)" : isSpanish ? "Tostada francesa tiramisú (+2€)" : "Brioche perdue tiramisu (+2€)",
-            isEnglish ? "Savory French toast scrambled eggs bacon (+2€)" : isSpanish ? "Tostada francesa salada huevos revueltos bacon (+2€)" : "Brioche perdue salée œuf brouillé bacon (+2€)",
-            isEnglish ? "Savory French toast burrata pesto (+2€)" : isSpanish ? "Tostada francesa salada burrata pesto (+2€)" : "Brioche perdue salée burrata pesto (+2€)"
           ],
           type: "dessert"
         },
@@ -2031,8 +2039,6 @@ const MenuPage = () => {
             isEnglish ? "Crème brûlée French toast (+2€)" : isSpanish ? "Tostada francesa crème brûlée (+2€)" : "Brioche crème brûlée (+2€)",
             isEnglish ? "Crème brûlée pancake (+2€)" : isSpanish ? "Pancake crème brûlée (+2€)" : "Pancake crème brûlée (+2€)",
             isEnglish ? "Tiramisu French toast (+2€)" : isSpanish ? "Tostada francesa tiramisú (+2€)" : "Brioche perdue tiramisu (+2€)",
-            isEnglish ? "Savory French toast scrambled eggs bacon (+2€)" : isSpanish ? "Tostada francesa salada huevos revueltos bacon (+2€)" : "Brioche perdue salée œuf brouillé bacon (+2€)",
-            isEnglish ? "Savory French toast burrata pesto (+2€)" : isSpanish ? "Tostada francesa salada burrata pesto (+2€)" : "Brioche perdue salée burrata pesto (+2€)"
           ],
           type: "dessert"
         },
