@@ -526,10 +526,10 @@ const ModalContent = styled(motion.div)`
   border: 1px solid rgba(224, 171, 159, 0.3);
   border-radius: ${props => props.theme.borderRadius.xlarge};
   padding: ${props => props.theme.spacing.lg};
-  max-width: 600px;
+  max-width: 420px;
   width: 100%;
-  max-height: 450px;
-  min-height: 350px;
+  max-height: 340px;
+  min-height: 200px;
   overflow-y: auto;
   position: relative;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
@@ -1502,6 +1502,158 @@ const MenuPage = () => {
         : isSpanish
         ? "Lata de refresco a elegir"
         : "Canette au choix"
+    },
+
+    // Burger (formule options)
+    "Burger (viande ou poulet)": {
+      image: "/images/menu/burgerHouse.jpg",
+      description: "Burger viande ou poulet"
+    },
+    "Burger (beef or chicken)": {
+      image: "/images/menu/burgerHouse.jpg",
+      description: "Beef or chicken burger"
+    },
+    "Burger (carne o pollo)": {
+      image: "/images/menu/burgerHouse.jpg",
+      description: "Hamburguesa de carne o pollo"
+    },
+
+    // Cordon bleu
+    "Cordon bleu": {
+      image: "/images/menu/cordonbleue.jpeg",
+      description: isEnglish
+        ? "Marinated chicken cutlet, turkey ham, cheese"
+        : isSpanish
+        ? "Escalope de pollo marinado, jamón de pavo, queso"
+        : "Escalope de poulet mariné, jambon de dinde, fromage"
+    },
+
+    // Croissant saumon (sans guacamole)
+    "Croissant saumon": {
+      image: "/images/menu/croissant2.png",
+      description: isEnglish
+        ? "Salmon croissant"
+        : isSpanish
+        ? "Croissant de salmón"
+        : "Croissant au saumon"
+    },
+    "Croissant salmon": {
+      image: "/images/menu/croissant2.png",
+      description: "Salmon croissant"
+    },
+    "Croissant salmón": {
+      image: "/images/menu/croissant2.png",
+      description: "Croissant de salmón"
+    },
+
+    // Croissant œuf brouillé bacon (variante sans s)
+    "Croissant œuf brouillé bacon": {
+      image: "/images/menu/croissant1.png",
+      description: isEnglish
+        ? "Scrambled eggs, bacon, cheddar, salad, tomatoes, onions"
+        : isSpanish
+        ? "Huevos revueltos, bacon, cheddar, ensalada, tomates, cebollas"
+        : "Œuf brouillé, bacon, cheddar, salade, tomates, oignons"
+    },
+
+    // Chocolat chaud
+    "Chocolat chaud": {
+      image: "/images/menu/chocolat.JPG",
+      description: isEnglish
+        ? "Rich hot chocolate"
+        : isSpanish
+        ? "Chocolate caliente cremoso"
+        : "Chocolat chaud onctueux"
+    },
+    "Hot chocolate": {
+      image: "/images/menu/chocolat.JPG",
+      description: "Rich hot chocolate"
+    },
+    "Chocolate caliente": {
+      image: "/images/menu/chocolat.JPG",
+      description: "Chocolate caliente cremoso"
+    },
+
+    // Latté
+    "Latté": {
+      image: "/images/menu/cafelatte.JPG",
+      description: isEnglish
+        ? "Smooth latte with steamed milk"
+        : isSpanish
+        ? "Café latte suave con leche vaporizada"
+        : "Café latte onctueux avec lait moussé"
+    },
+
+    // Chai Latté
+    "Chai Latté": {
+      image: "/images/menu/tea.JPG",
+      description: isEnglish
+        ? "Spiced chai latte"
+        : isSpanish
+        ? "Chai latte especiado"
+        : "Chai latté épicé"
+    },
+
+    // Jus de pomme
+    "Jus de pomme": {
+      image: "/images/menu/juice.jpeg",
+      description: "Jus de pomme"
+    },
+    "Apple juice": {
+      image: "/images/menu/juice.jpeg",
+      description: "Apple juice"
+    },
+    "Zumo de manzana": {
+      image: "/images/menu/juice.jpeg",
+      description: "Zumo de manzana"
+    },
+
+    // Jus d'orange
+    "Jus d'orange": {
+      image: "/images/menu/juice.jpeg",
+      description: "Jus d'orange"
+    },
+    "Orange juice": {
+      image: "/images/menu/juice.jpeg",
+      description: "Orange juice"
+    },
+    "Zumo de naranja": {
+      image: "/images/menu/juice.jpeg",
+      description: "Zumo de naranja"
+    },
+
+    // Jus d'ananas
+    "Jus d'ananas": {
+      image: "/images/menu/juice.jpeg",
+      description: "Jus d'ananas"
+    },
+    "Pineapple juice": {
+      image: "/images/menu/juice.jpeg",
+      description: "Pineapple juice"
+    },
+    "Zumo de piña": {
+      image: "/images/menu/juice.jpeg",
+      description: "Zumo de piña"
+    },
+
+    // Jus de gingembre
+    "Jus de gingembre": {
+      image: "/images/menu/juice.jpeg",
+      description: "Jus de gingembre"
+    },
+    "Ginger juice": {
+      image: "/images/menu/juice.jpeg",
+      description: "Ginger juice"
+    },
+    "Zumo de jengibre": {
+      image: "/images/menu/juice.jpeg",
+      description: "Zumo de jengibre"
+    },
+
+    // Bissap
+    "Bissap": {
+      image: "/images/menu/juice.jpeg",
+      description: "Bissap"
     }
   };
 
@@ -1863,6 +2015,119 @@ const MenuPage = () => {
 
   const formulas = [
     {
+      id: 'creatif',
+      name: isEnglish ? "Creative Brunch" : isSpanish ? "Brunch Creativo" : "Brunch Créatif",
+      price: "35 €",
+      emoji: "🎨",
+      description: isEnglish
+        ? "Tuesday to Friday — Between brushstrokes and gourmet bites, experience a creative brunch."
+        : isSpanish
+        ? "De martes a viernes — Entre pinceladas y bocados gourmet, vive un brunch creativo."
+        : "Du mardi au vendredi — Entre coups de pinceau et bouchées gourmandes, vivez un brunch créatif.",
+      sections: [
+        {
+          title: isEnglish ? "The concept" : isSpanish ? "El concepto" : "Le concept",
+          fixed: [
+            isEnglish
+              ? "A creative workshop included with your brunch"
+              : isSpanish
+              ? "Un taller creativo incluido con tu brunch"
+              : "Un atelier créatif inclus avec votre brunch",
+            isEnglish
+              ? "Tuesday to Friday"
+              : isSpanish
+              ? "De martes a viernes"
+              : "Du mardi au vendredi",
+            isEnglish
+              ? "Surprise creative activities every week"
+              : isSpanish
+              ? "Actividades creativas sorpresa cada semana"
+              : "Activités créatives surprise chaque semaine"
+          ]
+        },
+        {
+          title: isEnglish ? "Choose your formula" : isSpanish ? "Elige tu fórmula" : "Choisissez votre formule",
+          description: isEnglish ? "Select a formula or customize your menu" : isSpanish ? "Selecciona una fórmula o personaliza tu menú" : "Sélectionnez une formule ou personnalisez votre menu",
+          options: [
+            {
+              name: isEnglish ? "Pleasure formula" : isSpanish ? "Fórmula Placer" : "Formule Plaisir",
+              description: isEnglish ? "2 toasts of choice + dessert + hot drink + cold drink" : isSpanish ? "2 tostadas a elegir + postre + bebida caliente + bebida fría" : "2 toasts au choix + dessert + boisson chaude + boisson froide"
+            },
+            {
+              name: isEnglish ? "The House formula" : isSpanish ? "Fórmula House" : "Formule Le House",
+              description: isEnglish ? "Main course + dessert + hot drink + cold drink" : isSpanish ? "Plato principal + postre + bebida caliente + bebida fría" : "Plat + dessert + boisson chaude + boisson froide"
+            },
+          ],
+          type: "formule_choice"
+        },
+        {
+          title: isEnglish ? "Main course" : isSpanish ? "Plato principal" : "Plat",
+          options: [
+            isEnglish ? "Burger (beef or chicken)" : isSpanish ? "Burger (carne o pollo)" : "Burger (viande ou poulet)",
+            "Cordon bleu",
+            isEnglish ? "Croissant burger" : isSpanish ? "Croissant burger" : "Croissant burger",
+            isEnglish ? "Croissant scrambled eggs bacon" : isSpanish ? "Croissant huevos revueltos bacon" : "Croissant œuf brouillé bacon",
+            isEnglish ? "Croissant salmon" : isSpanish ? "Croissant salmón" : "Croissant saumon",
+            isEnglish ? "Savory French toast scrambled eggs bacon" : isSpanish ? "Tostada francesa salada huevos revueltos bacon" : "Brioche perdue salée œuf brouillé bacon",
+            isEnglish ? "Savory French toast burrata pesto" : isSpanish ? "Tostada francesa salada burrata pesto" : "Brioche perdue salée burrata pesto"
+          ],
+          type: "plat"
+        },
+        {
+          title: isEnglish ? "Dessert" : isSpanish ? "Postre" : "Dessert",
+          options: [
+            {
+              name: isEnglish ? "Greek granola" : isSpanish ? "Granola griego" : "Grec granola",
+              description: isEnglish ? "passion coulis / red berries" : isSpanish ? "coulis de maracuyá / frutos rojos" : "coulis passion / fruits rouges"
+            },
+            {
+              name: "Pancake",
+              description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable"
+            },
+            {
+              name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue",
+              description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup / crème brûlée (+2€)" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce / crème brûlée (+2€)" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable / crème brûlée (+2€)"
+            }
+          ],
+          type: "dessert"
+        },
+        {
+          title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
+          options: [
+            isEnglish ? "Espresso" : "Expresso",
+            isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
+            isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
+            isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
+            "Cappuccino (+2€)",
+            isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moca (+3€)",
+            "Matcha (+3€)",
+            "Chai Latté (+3€)",
+            {
+              name: isEnglish ? "Tea (+2€)" : isSpanish ? "Té (+2€)" : "Thé (+2€)",
+              description: isEnglish ? "mint / jasmine / mango" : isSpanish ? "menta / jazmín / mango" : "menthe / jasmin / mangue"
+            },
+            "Ube Latté (+3€)"
+          ],
+          type: "boisson_chaude"
+        },
+        {
+          title: isEnglish ? "Cold drink" : isSpanish ? "Bebida fría" : "Boisson froide",
+          options: [
+            {
+              name: isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
+              description: "Sprite, Coca Cola, Coca Cherry, Coca Zero, Oasis, Fuze Tea, Orangina"
+            },
+            isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme",
+            isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange",
+            isEnglish ? "Pineapple juice" : isSpanish ? "Zumo de piña" : "Jus d'ananas",
+            isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
+            isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)"
+          ],
+          type: "boisson_froide"
+        }
+      ]
+    },
+    {
       id: 'efficace',
       name: isEnglish ? "The Efficient" : isSpanish ? "El Eficaz" : "L'Efficace",
       price: "15 €",
@@ -2109,7 +2374,7 @@ const MenuPage = () => {
   return (
     <PageWrapper>
       <Header />
-      
+
       <MenuHeader>
         <BackButton to="/">
           <FiArrowLeft /> {isEnglish ? "Back" : isSpanish ? "Volver" : "Retour"}
@@ -2257,6 +2522,33 @@ const MenuPage = () => {
                                     </span>
                                   )}
                                 </span>
+                                {(() => {
+                                  const optName = typeof option === 'string' ? option : option.name;
+                                  const optDish = dishImages[optName] || dishImages[optName?.split(' (+')[0]?.trim()];
+                                  return optDish ? (
+                                    <div style={{
+                                      width: '48px',
+                                      height: '48px',
+                                      borderRadius: '50%',
+                                      overflow: 'hidden',
+                                      flexShrink: 0,
+                                      marginLeft: '8px',
+                                      border: '2px solid rgba(28, 63, 51, 0.15)',
+                                      boxShadow: '0 1px 4px rgba(0,0,0,0.1)'
+                                    }}>
+                                      <img
+                                        src={optDish.image}
+                                        alt={optName}
+                                        style={{
+                                          width: '100%',
+                                          height: '100%',
+                                          objectFit: 'cover'
+                                        }}
+                                        onError={(e) => { e.target.style.display = 'none'; }}
+                                      />
+                                    </div>
+                                  ) : null;
+                                })()}
                               </FormulaOption>
                             ))}
                             {section.note && (
