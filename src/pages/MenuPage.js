@@ -2526,16 +2526,23 @@ const MenuPage = () => {
                                   const optName = typeof option === 'string' ? option : option.name;
                                   const optDish = dishImages[optName] || dishImages[optName?.split(' (+')[0]?.trim()];
                                   return optDish ? (
-                                    <div style={{
-                                      width: '48px',
-                                      height: '48px',
-                                      borderRadius: '50%',
-                                      overflow: 'hidden',
-                                      flexShrink: 0,
-                                      marginLeft: '8px',
-                                      border: '2px solid rgba(28, 63, 51, 0.15)',
-                                      boxShadow: '0 1px 4px rgba(0,0,0,0.1)'
-                                    }}>
+                                    <div
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        setSelectedDish({ name: optName, description: optDish.description, ...optDish });
+                                        setShowDishModal(true);
+                                      }}
+                                      style={{
+                                        width: '48px',
+                                        height: '48px',
+                                        borderRadius: '50%',
+                                        overflow: 'hidden',
+                                        flexShrink: 0,
+                                        marginLeft: '8px',
+                                        border: '2px solid rgba(28, 63, 51, 0.15)',
+                                        boxShadow: '0 1px 4px rgba(0,0,0,0.1)',
+                                        cursor: 'pointer'
+                                      }}>
                                       <img
                                         src={optDish.image}
                                         alt={optName}
