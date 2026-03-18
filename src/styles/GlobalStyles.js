@@ -1,4 +1,12 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, keyframes } from 'styled-components';
+
+const bgDrift = keyframes`
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 0%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 100%; }
+  100% { background-position: 0% 50%; }
+`;
 
 export const GlobalStyles = createGlobalStyle`
   @import url('./fonts.css');
@@ -20,15 +28,15 @@ export const GlobalStyles = createGlobalStyle`
     line-height: ${props => props.theme.typography.lineHeight.normal};
     color: ${props => props.theme.colors.floralWhite};
     background: linear-gradient(
-      135deg,
+      -45deg,
       ${props => props.theme.colors.darkGreen} 0%,
-      rgba(1, 57, 39, 0.9) 40%,
-      rgba(190, 106, 101, 0.8) 70%,
-      ${props => props.theme.colors.teaRose} 100%
+      rgba(1, 57, 39, 0.9) 25%,
+      rgba(190, 106, 101, 0.8) 50%,
+      ${props => props.theme.colors.teaRose} 75%,
+      ${props => props.theme.colors.darkGreen} 100%
     );
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 400% 400%;
+    animation: ${bgDrift} 25s ease infinite;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -36,14 +44,15 @@ export const GlobalStyles = createGlobalStyle`
 
     @media (max-width: ${props => props.theme.breakpoints.tablet}) {
       background: linear-gradient(
-        135deg,
+        -45deg,
         ${props => props.theme.colors.darkGreen} 0%,
-        rgba(1, 57, 39, 0.9) 40%,
-        rgba(190, 106, 101, 0.8) 70%,
-        ${props => props.theme.colors.teaRose} 100%
+        rgba(1, 57, 39, 0.9) 25%,
+        rgba(190, 106, 101, 0.8) 50%,
+        ${props => props.theme.colors.teaRose} 75%,
+        ${props => props.theme.colors.darkGreen} 100%
       );
-      background-attachment: fixed;
-      background-size: 100% 100%;
+      background-size: 400% 400%;
+      animation: ${bgDrift} 25s ease infinite;
     }
 
     &::before {

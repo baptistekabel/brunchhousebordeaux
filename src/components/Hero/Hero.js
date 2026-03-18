@@ -601,11 +601,11 @@ const Hero = () => {
   useEffect(() => {
     const imageUrls = [
       '/images/presentation1.png',
-      '/images/presentation2.png',
-      '/images/presentation3.png',
-      '/images/presentation4.png',
-      '/images/presentation5.jpg',
-      '/images/presentation6.jpg'
+      '/images/menu/home2.jpeg',
+      '/images/menu/home3.jpeg',
+      '/images/menu/home4.jpeg',
+      '/images/menu/home5.jpeg',
+      '/images/menu/home6.jpeg'
     ];
     
     const preloadImages = async () => {
@@ -651,35 +651,35 @@ const Hero = () => {
     },
     {
       id: 2,
-      src: '/images/presentation6.jpg',
+      src: '/images/menu/home2.jpeg',
       title: 'Expérience Brunch',
       alt: 'Découvrez l\'art du brunch à la française',
       isBrunch: true
     },
     {
       id: 3,
-      src: '/images/presentation1.png',
+      src: '/images/menu/home3.jpeg',
       title: 'Pancakes Gourmands',
       alt: 'Nos fameux pancakes avec napage et fruits frais',
       isBrunch: false
     },
     {
       id: 4,
-      src: '/images/presentation2.png',
+      src: '/images/menu/home4.jpeg',
       title: 'Avocado Toast Signature',
       alt: 'Toast à l\'avocat, œuf poché et graines torréfiées',
       isBrunch: false
     },
     {
       id: 5,
-      src: '/images/presentation3.png',
+      src: '/images/menu/home5.jpeg',
       title: 'Bowl Énergétique',
       alt: 'Granola maison, yaourt grec et fruits de saison',
       isBrunch: false
     },
     {
       id: 6,
-      src: '/images/presentation4.png',
+      src: '/images/menu/home6.jpeg',
       title: 'Œufs Bénédicte',
       alt: 'Œufs pochés, sauce hollandaise et jambon de Bayonne',
       isBrunch: false

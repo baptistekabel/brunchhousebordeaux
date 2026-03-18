@@ -1,16 +1,24 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
+
+const bgMove = keyframes`
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 0%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 100%; }
+  100% { background-position: 0% 50%; }
+`;
 
 const getBackgroundColor = (variant) => {
   switch (variant) {
     case 'green':
-      return 'linear-gradient(135deg, #013927 0%, rgba(1, 57, 39, 0.95) 50%, #013927 100%)';
+      return 'linear-gradient(-45deg, #013927, rgba(1, 57, 39, 0.95), #024d35, #013927, rgba(1, 57, 39, 0.95))';
     case 'rose':
-      return 'linear-gradient(135deg, #FCBDBD 0%, rgba(252, 189, 189, 0.95) 50%, #BE6A65 100%)';
+      return 'linear-gradient(-45deg, #FCBDBD, rgba(252, 189, 189, 0.95), #BE6A65, #FCBDBD, rgba(252, 189, 189, 0.95))';
     case 'beige':
-      return 'linear-gradient(135deg, #FDF9F0 0%, rgba(253, 249, 240, 0.95) 50%, #F7F2E7 100%)';
+      return 'linear-gradient(-45deg, #FDF9F0, rgba(253, 249, 240, 0.95), #F7F2E7, #FDF9F0, rgba(253, 249, 240, 0.95))';
     default:
-      return 'linear-gradient(135deg, #013927 0%, rgba(1, 57, 39, 0.95) 50%, #013927 100%)';
+      return 'linear-gradient(-45deg, #013927, rgba(1, 57, 39, 0.95), #024d35, #013927, rgba(1, 57, 39, 0.95))';
   }
 };
 
@@ -33,6 +41,8 @@ const BannerSection = styled.section`
   margin-right: calc(-50vw + 50%);
   padding: ${props => props.theme.spacing.md} 0;
   background: ${props => getBackgroundColor(props.$variant)};
+  background-size: 400% 400%;
+  animation: ${bgMove} 20s ease infinite;
   position: relative;
   overflow: hidden;
 

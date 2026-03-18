@@ -1,7 +1,15 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 import { FiMapPin, FiHome } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
+
+const bgMove = keyframes`
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 0%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 100%; }
+  100% { background-position: 0% 50%; }
+`;
 
 const Section = styled.section`
   padding: ${props => props.theme.spacing.section.mobile} ${props => props.theme.spacing.container.padding};
@@ -51,10 +59,15 @@ const ValueCard = styled(motion.div)`
   text-align: center;
   padding: ${props => props.theme.spacing.xl};
   background: linear-gradient(
-    135deg,
-    rgba(253, 249, 240, 0.15) 0%,
-    rgba(252, 189, 189, 0.1) 100%
+    -45deg,
+    rgba(253, 249, 240, 0.15),
+    rgba(252, 189, 189, 0.1),
+    rgba(253, 249, 240, 0.15),
+    rgba(252, 189, 189, 0.15),
+    rgba(253, 249, 240, 0.15)
   );
+  background-size: 400% 400%;
+  animation: ${bgMove} 20s ease infinite;
   backdrop-filter: blur(10px);
   border-radius: ${props => props.theme.borderRadius.xlarge};
   border: 1px solid rgba(253, 249, 240, 0.2);

@@ -1,12 +1,29 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { FiPlus, FiMinus } from 'react-icons/fi';
 
+const bgMove = keyframes`
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 0%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 100%; }
+  100% { background-position: 0% 50%; }
+`;
+
 const Section = styled.section`
   padding: ${props => props.theme.spacing.section.mobile} ${props => props.theme.spacing.container.padding};
-  background: ${props => props.theme.colors.secondary.surface};
-  
+  background: linear-gradient(
+    -45deg,
+    #FDF9F0,
+    #F7F2E7,
+    #FDF9F0,
+    #F0EBE0,
+    #FDF9F0
+  );
+  background-size: 400% 400%;
+  animation: ${bgMove} 20s ease infinite;
+
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     padding: ${props => props.theme.spacing.section.desktop} ${props => props.theme.spacing.xl};
   }

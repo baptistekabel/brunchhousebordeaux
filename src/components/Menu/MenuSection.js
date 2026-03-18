@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 import { LiquidGlassCard } from '../LiquidGlass';
 import { LiquidGlassButton } from '../LiquidGlass';
@@ -6,9 +6,28 @@ import { animationVariants, createScrollTrigger } from '../../hooks/useScrollAni
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
+const bgMove = keyframes`
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 0%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 100%; }
+  100% { background-position: 0% 50%; }
+`;
+
 const Section = styled.section`
   padding: ${props => props.theme.spacing.section.mobile} ${props => props.theme.spacing.container.padding};
-  
+  background: linear-gradient(
+    -45deg,
+    #BE6A65,
+    #FCBDBD,
+    #d4847f,
+    #FCBDBD,
+    #BE6A65,
+    #d4847f
+  );
+  background-size: 400% 400%;
+  animation: ${bgMove} 20s ease infinite;
+
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     padding: ${props => props.theme.spacing.section.desktop} ${props => props.theme.spacing.xl};
   }
@@ -84,7 +103,7 @@ const MenuItem = styled(LiquidGlassCard)`
 
 const MenuItemImage = styled.div`
   width: calc(100% + ${props => props.theme.spacing.lg} * 2);
-  height: 200px;
+  height: 280px;
   margin: -${props => props.theme.spacing.lg} -${props => props.theme.spacing.lg} ${props => props.theme.spacing.md};
   border-radius: ${props => props.theme.borderRadius.large} ${props => props.theme.borderRadius.large} 0 0;
   overflow: hidden;
@@ -152,7 +171,7 @@ const MenuSection = () => {
       name: t('menu.homeItems.pancakes.name'),
       description: t('menu.homeItems.pancakes.description'),
       price: t('menu.homeItems.pancakes.price'),
-      image: "/images/menu/pancake.jpeg",
+      image: "/images/new/panecakechocolat.jpg",
       homemade: true
     },
     {
@@ -160,7 +179,7 @@ const MenuSection = () => {
       name: t('menu.homeItems.burgerHouse.name'),
       description: t('menu.homeItems.burgerHouse.description'),
       price: t('menu.homeItems.burgerHouse.price'),
-      image: "/images/menu/burgerhouse.jpeg",
+      image: "/images/new/burguerpoulet.jpg",
       homemade: true
     },
     {
@@ -168,7 +187,7 @@ const MenuSection = () => {
       name: t('menu.homeItems.salmonGuacamole.name'),
       description: t('menu.homeItems.salmonGuacamole.description'),
       price: t('menu.homeItems.salmonGuacamole.price'),
-      image: "/images/menu/saumonguacamole.jpeg",
+      image: "/images/new/toastsaumon.jpg",
       homemade: true
     },
     {
@@ -176,7 +195,7 @@ const MenuSection = () => {
       name: t('menu.homeItems.eggplantCaviar.name'),
       description: t('menu.homeItems.eggplantCaviar.description'),
       price: t('menu.homeItems.eggplantCaviar.price'),
-      image: "/images/menu/toastcaviaraubergine.jpeg",
+      image: "/images/new/toastcaviardaubergines.jpg",
       homemade: true
     },
     {
@@ -184,7 +203,7 @@ const MenuSection = () => {
       name: t('menu.homeItems.scrambledEggsBacon.name'),
       description: t('menu.homeItems.scrambledEggsBacon.description'),
       price: t('menu.homeItems.scrambledEggsBacon.price'),
-      image: "/images/menu/oeufbrouillebacon.jpeg",
+      image: "/images/new/toastoeufbrouille.jpg",
       homemade: true
     },
     {
@@ -192,7 +211,7 @@ const MenuSection = () => {
       name: t('menu.homeItems.beetrootHummus.name'),
       description: t('menu.homeItems.beetrootHummus.description'),
       price: t('menu.homeItems.beetrootHummus.price'),
-      image: "/images/menu/houmous.jpeg",
+      image: "/images/new/toasthoumous.jpg",
       homemade: true
     }
   ];
