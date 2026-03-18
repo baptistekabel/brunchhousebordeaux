@@ -1526,15 +1526,24 @@ const MenuPage = () => {
 
     // Burger (formule options)
     "Burger (viande ou poulet)": {
-      image: "/images/new/burguerpoulet.jpg",
-      description: "Burger viande ou poulet"
+      images: [
+        { src: "/images/new/burguerviande.jpg", label: isEnglish ? "Beef" : isSpanish ? "Carne" : "Viande" },
+        { src: "/images/new/burguerpoulet.jpg", label: isEnglish ? "Chicken" : isSpanish ? "Pollo" : "Poulet" }
+      ],
+      description: isEnglish ? "Beef or chicken burger" : isSpanish ? "Hamburguesa de carne o pollo" : "Burger viande ou poulet"
     },
     "Burger (beef or chicken)": {
-      image: "/images/new/burguerpoulet.jpg",
+      images: [
+        { src: "/images/new/burguerviande.jpg", label: "Beef" },
+        { src: "/images/new/burguerpoulet.jpg", label: "Chicken" }
+      ],
       description: "Beef or chicken burger"
     },
     "Burger (carne o pollo)": {
-      image: "/images/new/burguerpoulet.jpg",
+      images: [
+        { src: "/images/new/burguerviande.jpg", label: "Carne" },
+        { src: "/images/new/burguerpoulet.jpg", label: "Pollo" }
+      ],
       description: "Hamburguesa de carne o pollo"
     },
 
@@ -1642,19 +1651,8 @@ const MenuPage = () => {
       description: "Zumo de naranja"
     },
 
-    // Jus d'ananas
-    "Jus d'ananas": {
-      image: "/images/new/jusdorange.jpg",
-      description: "Jus d'ananas"
-    },
-    "Pineapple juice": {
-      image: "/images/new/jusdorange.jpg",
-      description: "Pineapple juice"
-    },
-    "Zumo de piña": {
-      image: "/images/new/jusdorange.jpg",
-      description: "Zumo de piña"
-    },
+
+
 
     // Jus de gingembre
     "Jus de gingembre": {
@@ -2227,6 +2225,7 @@ const MenuPage = () => {
           title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
           options: [
             isEnglish ? "Espresso" : "Expresso",
+            isEnglish ? "Double espresso" : isSpanish ? "Doble espresso" : "Double expresso",
             isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
             isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
             isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
@@ -2254,7 +2253,12 @@ const MenuPage = () => {
             isEnglish ? "Pineapple juice" : isSpanish ? "Zumo de piña" : "Jus d'ananas",
             isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
             isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)",
-            isEnglish ? "Watermelon juice (+2€)" : isSpanish ? "Zumo de sandía (+2€)" : "Jus de pastèque (+2€)"
+            isEnglish ? "Watermelon juice (+2€)" : isSpanish ? "Zumo de sandía (+2€)" : "Jus de pastèque (+2€)",
+            isEnglish ? "Speculoos milkshake (3€)" : isSpanish ? "Milkshake de speculoos (3€)" : "Milkshake Spéculoos (3€)",
+            isEnglish ? "Kinder milkshake (3€)" : isSpanish ? "Milkshake de Kinder (3€)" : "Milkshake Kinder (3€)",
+            isEnglish ? "Mango smoothie (3€)" : isSpanish ? "Smoothie de mango (3€)" : "Smoothie Mangue (3€)",
+            isEnglish ? "Pineapple coconut smoothie (3€)" : isSpanish ? "Smoothie de piña y coco (3€)" : "Smoothie Ananas Coco (3€)",
+            isEnglish ? "Orange strawberry banana smoothie (3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (3€)" : "Smoothie Orange Fraise Banane (3€)"
           ],
           type: "boisson_froide"
         }
@@ -2295,6 +2299,7 @@ const MenuPage = () => {
           title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
           options: [
             isEnglish ? "Espresso" : "Expresso",
+            isEnglish ? "Double espresso" : isSpanish ? "Doble espresso" : "Double expresso",
             isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
             isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
             isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
@@ -2361,6 +2366,7 @@ const MenuPage = () => {
           title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
           options: [
             isEnglish ? "Espresso" : "Expresso",
+            isEnglish ? "Double espresso" : isSpanish ? "Doble espresso" : "Double expresso",
             isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
             isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
             isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
@@ -2388,7 +2394,12 @@ const MenuPage = () => {
             isEnglish ? "Pineapple juice" : isSpanish ? "Zumo de piña" : "Jus d'ananas",
             isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
             isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)",
-            isEnglish ? "Watermelon juice (+2€)" : isSpanish ? "Zumo de sandía (+2€)" : "Jus de pastèque (+2€)"
+            isEnglish ? "Watermelon juice (+2€)" : isSpanish ? "Zumo de sandía (+2€)" : "Jus de pastèque (+2€)",
+            isEnglish ? "Speculoos milkshake (3€)" : isSpanish ? "Milkshake de speculoos (3€)" : "Milkshake Spéculoos (3€)",
+            isEnglish ? "Kinder milkshake (3€)" : isSpanish ? "Milkshake de Kinder (3€)" : "Milkshake Kinder (3€)",
+            isEnglish ? "Mango smoothie (3€)" : isSpanish ? "Smoothie de mango (3€)" : "Smoothie Mangue (3€)",
+            isEnglish ? "Pineapple coconut smoothie (3€)" : isSpanish ? "Smoothie de piña y coco (3€)" : "Smoothie Ananas Coco (3€)",
+            isEnglish ? "Orange strawberry banana smoothie (3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (3€)" : "Smoothie Orange Fraise Banane (3€)"
           ],
           type: "boisson_froide"
         }
@@ -2443,6 +2454,7 @@ const MenuPage = () => {
           title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
           options: [
             isEnglish ? "Espresso" : "Expresso",
+            isEnglish ? "Double espresso" : isSpanish ? "Doble espresso" : "Double expresso",
             isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
             isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
             isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
@@ -2470,7 +2482,12 @@ const MenuPage = () => {
             isEnglish ? "Pineapple juice" : isSpanish ? "Zumo de piña" : "Jus d'ananas",
             isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
             isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)",
-            isEnglish ? "Watermelon juice (+2€)" : isSpanish ? "Zumo de sandía (+2€)" : "Jus de pastèque (+2€)"
+            isEnglish ? "Watermelon juice (+2€)" : isSpanish ? "Zumo de sandía (+2€)" : "Jus de pastèque (+2€)",
+            isEnglish ? "Speculoos milkshake (3€)" : isSpanish ? "Milkshake de speculoos (3€)" : "Milkshake Spéculoos (3€)",
+            isEnglish ? "Kinder milkshake (3€)" : isSpanish ? "Milkshake de Kinder (3€)" : "Milkshake Kinder (3€)",
+            isEnglish ? "Mango smoothie (3€)" : isSpanish ? "Smoothie de mango (3€)" : "Smoothie Mangue (3€)",
+            isEnglish ? "Pineapple coconut smoothie (3€)" : isSpanish ? "Smoothie de piña y coco (3€)" : "Smoothie Ananas Coco (3€)",
+            isEnglish ? "Orange strawberry banana smoothie (3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (3€)" : "Smoothie Orange Fraise Banane (3€)"
           ],
           type: "boisson_froide"
         }
@@ -2659,8 +2676,9 @@ const MenuPage = () => {
                                 </span>
                                 {(() => {
                                   const optName = typeof option === 'string' ? option : option.name;
-                                  const optDish = dishImages[optName] || dishImages[optName?.split(' (+')[0]?.trim()];
-                                  return optDish ? (
+                                  const optDish = dishImages[optName] || dishImages[optName?.split(' (+')[0]?.trim()] || dishImages[optName?.split(' (')[0]?.trim()];
+                                  const thumbSrc = optDish?.image || (optDish?.images && optDish.images[0]?.src);
+                                  return optDish && thumbSrc ? (
                                     <div
                                       onClick={(e) => {
                                         e.stopPropagation();
@@ -2679,7 +2697,7 @@ const MenuPage = () => {
                                         cursor: 'pointer'
                                       }}>
                                       <img
-                                        src={optDish.image}
+                                        src={thumbSrc}
                                         alt={optName}
                                         style={{
                                           width: '100%',
@@ -2916,7 +2934,32 @@ const MenuPage = () => {
                 <FiX size={20} />
               </DishCloseButton>
               
-              {selectedDish.image && (
+              {selectedDish.images ? (
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0' }}>
+                  {selectedDish.images.map((img, i) => (
+                    <div key={i} style={{ position: 'relative' }}>
+                      <DishImage
+                        src={img.src}
+                        alt={img.label}
+                        style={{ borderRadius: i === 0 ? '28px 0 0 0' : '0 28px 0 0', height: '280px' }}
+                        onError={(e) => { e.target.style.display = 'none'; }}
+                      />
+                      <span style={{
+                        position: 'absolute',
+                        bottom: '8px',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        background: 'rgba(1, 57, 39, 0.8)',
+                        color: 'white',
+                        padding: '4px 12px',
+                        borderRadius: '20px',
+                        fontSize: '13px',
+                        fontWeight: 600
+                      }}>{img.label}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : selectedDish.image && (
                 <DishImage
                   src={selectedDish.image}
                   alt={selectedDish.name}
