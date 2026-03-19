@@ -36,9 +36,7 @@ const getTextColor = (variant) => {
 };
 
 const BannerSection = styled.section`
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  width: 100%;
   padding: ${props => props.theme.spacing.md} 0;
   background: ${props => getBackgroundColor(props.$variant)};
   background-size: 400% 400%;

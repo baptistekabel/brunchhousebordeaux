@@ -292,10 +292,8 @@ const Badge = styled(motion.div)`
 
 const PhotosContainer = styled.div`
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 80vh;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
   margin-top: ${props => props.theme.spacing.xxl};
   margin-bottom: ${props => props.theme.spacing.xxl};
   overflow: hidden;

@@ -10,9 +10,7 @@ const bgMove = keyframes`
 `;
 
 const IntroSection = styled.section`
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  width: 100%;
   min-height: 60vh;
   position: relative;
   display: flex;

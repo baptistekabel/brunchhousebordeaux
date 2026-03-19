@@ -2089,7 +2089,8 @@ const MenuPage = () => {
         },
         { name: isEnglish ? "Tea" : isSpanish ? "Té" : "Thé", price: "4 €" },
         { name: isEnglish ? "Mocha" : isSpanish ? "Moca" : "Moka", price: "5 €" },
-        { name: "Ube Latté", price: "6 €" }
+        { name: "Ube Latté", price: "6 €" },
+        { name: "Chai Latté", price: "5 €" }
       ],
       note: isEnglish 
         ? "Extra +€0.50: whipped cream"
@@ -2110,6 +2111,7 @@ const MenuPage = () => {
         { name: isEnglish ? "Homemade hibiscus" : isSpanish ? "Bissap casero" : "Bissap maison", price: "4 €" },
         { name: isEnglish ? "Homemade ginger juice" : isSpanish ? "Zumo de jengibre casero" : "Jus de gingembre maison", price: "5 €" },
         { name: isEnglish ? "Watermelon juice" : isSpanish ? "Zumo de sandía" : "Jus de pastèque", price: "5 €" },
+        { name: isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme", price: "4 €" },
       ]
     },
     milkshakesSmoothies: {
@@ -2126,21 +2128,22 @@ const MenuPage = () => {
         : isSpanish
         ? "En fórmula: +3€"
         : "En formule : +3 €"
-    },
-    kids: {
-      title: isEnglish ? "👶 Kids Menu" : isSpanish ? "👶 Menú Niños" : "👶 Menu Kids",
-      items: [
-        {
-          name: isEnglish ? "Complete menu" : isSpanish ? "Menú completo" : "Menu complet",
-          description: isEnglish
-            ? "Steak and fries, Caprisun"
-            : isSpanish
-            ? "Steak con patatas fritas, Caprisun"
-            : "Steak frites, Caprisun",
-          price: "6 €"
-        }
-      ]
     }
+  };
+
+  const kidsMenu = {
+    title: isEnglish ? "👶 Kids Menu" : isSpanish ? "👶 Menú Niños" : "👶 Menu Kids",
+    items: [
+      {
+        name: isEnglish ? "Complete menu" : isSpanish ? "Menú completo" : "Menu complet",
+        description: isEnglish
+          ? "Steak and fries, compote, Caprisun"
+          : isSpanish
+          ? "Steak con patatas fritas, compota, Caprisun"
+          : "Steak frites, compote, Caprisun",
+        price: "8 €"
+      }
+    ]
   };
 
   const formulas = [
@@ -2750,6 +2753,34 @@ const MenuPage = () => {
               ? "Suplemento +2€: ensalada / patatas fritas / patatas dulces fritas"
               : "Supplément +2€ : salade / frites / frites patates douces"}
           </Note>
+        </MenuSection>
+
+        <MenuSection
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          {...createScrollTrigger()}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <SectionTitle>{kidsMenu.title}</SectionTitle>
+          <MenuGrid>
+            {kidsMenu.items.map((item, index) => (
+              <MenuItem
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                {...createScrollTrigger()}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+              >
+                <ItemName>
+                  {item.name}
+                  {item.description && <span>{item.description}</span>}
+                </ItemName>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <ItemPrice>{item.price}</ItemPrice>
+                </div>
+              </MenuItem>
+            ))}
+          </MenuGrid>
         </MenuSection>
 
         {Object.entries(menuData).map(([key, section], sectionIndex) => (
