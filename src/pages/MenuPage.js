@@ -1216,7 +1216,7 @@ const MenuPage = () => {
       description: "Yogur griego con granola casera y frutas frescas"
     },
     "Brioche perdue": {
-      image: "/images/new/briochesiropderable.jpg",
+      image: "/images/new/brioche2.jpeg",
       description: isEnglish
         ? "French toast with caramelized sugar"
         : isSpanish
@@ -1224,11 +1224,11 @@ const MenuPage = () => {
         : "Brioche perdue dorée au sucre caramélisé"
     },
     "French toast": {
-      image: "/images/new/briochesiropderable.jpg",
+      image: "/images/new/brioche2.jpeg",
       description: "French toast with caramelized sugar"
     },
     "Tostada francesa": {
-      image: "/images/new/briochesiropderable.jpg",
+      image: "/images/new/brioche2.jpeg",
       description: "Tostada francesa con azúcar caramelizado"
     },
     // Pancake crème brûlée
@@ -2677,8 +2677,29 @@ const MenuPage = () => {
                                 {(() => {
                                   const optName = typeof option === 'string' ? option : option.name;
                                   const optDish = dishImages[optName] || dishImages[optName?.split(' (+')[0]?.trim()] || dishImages[optName?.split(' (')[0]?.trim()];
-                                  const thumbSrc = optDish?.image || (optDish?.images && optDish.images[0]?.src);
-                                  return optDish && thumbSrc ? (
+                                  return optDish?.images ? (
+                                    <div style={{ display: 'flex', gap: '4px', flexShrink: 0, marginLeft: '8px' }}>
+                                      {optDish.images.map((img, i) => (
+                                        <div key={i}
+                                          onClick={(e) => {
+                                            e.stopPropagation();
+                                            setSelectedDish({ name: `${optName} — ${img.label}`, description: optDish.description, image: img.src });
+                                            setShowDishModal(true);
+                                          }}
+                                          style={{
+                                            width: '44px',
+                                            height: '44px',
+                                            borderRadius: '50%',
+                                            overflow: 'hidden',
+                                            border: '2px solid rgba(28, 63, 51, 0.15)',
+                                            boxShadow: '0 1px 4px rgba(0,0,0,0.1)',
+                                            cursor: 'pointer'
+                                          }}>
+                                          <img src={img.src} alt={img.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.target.style.display = 'none'; }} />
+                                        </div>
+                                      ))}
+                                    </div>
+                                  ) : optDish?.image ? (
                                     <div
                                       onClick={(e) => {
                                         e.stopPropagation();
@@ -2697,13 +2718,9 @@ const MenuPage = () => {
                                         cursor: 'pointer'
                                       }}>
                                       <img
-                                        src={thumbSrc}
+                                        src={optDish.image}
                                         alt={optName}
-                                        style={{
-                                          width: '100%',
-                                          height: '100%',
-                                          objectFit: 'cover'
-                                        }}
+                                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                                         onError={(e) => { e.target.style.display = 'none'; }}
                                       />
                                     </div>
@@ -2935,30 +2952,11 @@ const MenuPage = () => {
               </DishCloseButton>
               
               {selectedDish.images ? (
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0' }}>
-                  {selectedDish.images.map((img, i) => (
-                    <div key={i} style={{ position: 'relative' }}>
-                      <DishImage
-                        src={img.src}
-                        alt={img.label}
-                        style={{ borderRadius: i === 0 ? '28px 0 0 0' : '0 28px 0 0', height: '280px' }}
-                        onError={(e) => { e.target.style.display = 'none'; }}
-                      />
-                      <span style={{
-                        position: 'absolute',
-                        bottom: '8px',
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        background: 'rgba(1, 57, 39, 0.8)',
-                        color: 'white',
-                        padding: '4px 12px',
-                        borderRadius: '20px',
-                        fontSize: '13px',
-                        fontWeight: 600
-                      }}>{img.label}</span>
-                    </div>
-                  ))}
-                </div>
+                <DishImage
+                  src={selectedDish.images[0].src}
+                  alt={selectedDish.name}
+                  onError={(e) => { e.target.style.display = 'none'; }}
+                />
               ) : selectedDish.image && (
                 <DishImage
                   src={selectedDish.image}
