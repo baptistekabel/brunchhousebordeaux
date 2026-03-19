@@ -2092,10 +2092,10 @@ const MenuPage = () => {
         { name: "Ube Latté", price: "6 €" }
       ],
       note: isEnglish 
-        ? "Extra €0.50: whipped cream"
+        ? "Extra +€0.50: whipped cream"
         : isSpanish
-        ? "Suplemento 0,50€: nata montada"
-        : "Supplément 0,50€ : chantilly"
+        ? "Suplemento +0,50€: nata montada"
+        : "Supplément +0,50€ : chantilly"
     },
     boissonsF: {
       title: isEnglish ? "🧊 Cold drinks" : isSpanish ? "🧊 Bebidas frías" : "🧊 Boissons froides",
@@ -2122,10 +2122,10 @@ const MenuPage = () => {
         { name: isEnglish ? "Orange strawberry banana smoothie" : isSpanish ? "Smoothie de naranja, fresa y plátano" : "Smoothie Orange Fraise Banane", price: "5,50 €", formulaPrice: "3 €" }
       ],
       note: isEnglish
-        ? "In formula: 3€"
+        ? "In formula: +3€"
         : isSpanish
-        ? "En fórmula: 3€"
-        : "En formule : 3 €"
+        ? "En fórmula: +3€"
+        : "En formule : +3 €"
     },
     kids: {
       title: isEnglish ? "👶 Kids Menu" : isSpanish ? "👶 Menú Niños" : "👶 Menu Kids",
@@ -2254,11 +2254,11 @@ const MenuPage = () => {
             isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
             isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)",
             isEnglish ? "Watermelon juice (+2€)" : isSpanish ? "Zumo de sandía (+2€)" : "Jus de pastèque (+2€)",
-            isEnglish ? "Speculoos milkshake (3€)" : isSpanish ? "Milkshake de speculoos (3€)" : "Milkshake Spéculoos (3€)",
-            isEnglish ? "Kinder milkshake (3€)" : isSpanish ? "Milkshake de Kinder (3€)" : "Milkshake Kinder (3€)",
-            isEnglish ? "Mango smoothie (3€)" : isSpanish ? "Smoothie de mango (3€)" : "Smoothie Mangue (3€)",
-            isEnglish ? "Pineapple coconut smoothie (3€)" : isSpanish ? "Smoothie de piña y coco (3€)" : "Smoothie Ananas Coco (3€)",
-            isEnglish ? "Orange strawberry banana smoothie (3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (3€)" : "Smoothie Orange Fraise Banane (3€)"
+            isEnglish ? "Speculoos milkshake (+3€)" : isSpanish ? "Milkshake de speculoos (+3€)" : "Milkshake Spéculoos (+3€)",
+            isEnglish ? "Kinder milkshake (+3€)" : isSpanish ? "Milkshake de Kinder (+3€)" : "Milkshake Kinder (+3€)",
+            isEnglish ? "Mango smoothie (+3€)" : isSpanish ? "Smoothie de mango (+3€)" : "Smoothie Mangue (+3€)",
+            isEnglish ? "Pineapple coconut smoothie (+3€)" : isSpanish ? "Smoothie de piña y coco (+3€)" : "Smoothie Ananas Coco (+3€)",
+            isEnglish ? "Orange strawberry banana smoothie (+3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (+3€)" : "Smoothie Orange Fraise Banane (+3€)"
           ],
           type: "boisson_froide"
         }
@@ -2395,11 +2395,11 @@ const MenuPage = () => {
             isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
             isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)",
             isEnglish ? "Watermelon juice (+2€)" : isSpanish ? "Zumo de sandía (+2€)" : "Jus de pastèque (+2€)",
-            isEnglish ? "Speculoos milkshake (3€)" : isSpanish ? "Milkshake de speculoos (3€)" : "Milkshake Spéculoos (3€)",
-            isEnglish ? "Kinder milkshake (3€)" : isSpanish ? "Milkshake de Kinder (3€)" : "Milkshake Kinder (3€)",
-            isEnglish ? "Mango smoothie (3€)" : isSpanish ? "Smoothie de mango (3€)" : "Smoothie Mangue (3€)",
-            isEnglish ? "Pineapple coconut smoothie (3€)" : isSpanish ? "Smoothie de piña y coco (3€)" : "Smoothie Ananas Coco (3€)",
-            isEnglish ? "Orange strawberry banana smoothie (3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (3€)" : "Smoothie Orange Fraise Banane (3€)"
+            isEnglish ? "Speculoos milkshake (+3€)" : isSpanish ? "Milkshake de speculoos (+3€)" : "Milkshake Spéculoos (+3€)",
+            isEnglish ? "Kinder milkshake (+3€)" : isSpanish ? "Milkshake de Kinder (+3€)" : "Milkshake Kinder (+3€)",
+            isEnglish ? "Mango smoothie (+3€)" : isSpanish ? "Smoothie de mango (+3€)" : "Smoothie Mangue (+3€)",
+            isEnglish ? "Pineapple coconut smoothie (+3€)" : isSpanish ? "Smoothie de piña y coco (+3€)" : "Smoothie Ananas Coco (+3€)",
+            isEnglish ? "Orange strawberry banana smoothie (+3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (+3€)" : "Smoothie Orange Fraise Banane (+3€)"
           ],
           type: "boisson_froide"
         }
@@ -2483,11 +2483,11 @@ const MenuPage = () => {
             isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
             isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)",
             isEnglish ? "Watermelon juice (+2€)" : isSpanish ? "Zumo de sandía (+2€)" : "Jus de pastèque (+2€)",
-            isEnglish ? "Speculoos milkshake (3€)" : isSpanish ? "Milkshake de speculoos (3€)" : "Milkshake Spéculoos (3€)",
-            isEnglish ? "Kinder milkshake (3€)" : isSpanish ? "Milkshake de Kinder (3€)" : "Milkshake Kinder (3€)",
-            isEnglish ? "Mango smoothie (3€)" : isSpanish ? "Smoothie de mango (3€)" : "Smoothie Mangue (3€)",
-            isEnglish ? "Pineapple coconut smoothie (3€)" : isSpanish ? "Smoothie de piña y coco (3€)" : "Smoothie Ananas Coco (3€)",
-            isEnglish ? "Orange strawberry banana smoothie (3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (3€)" : "Smoothie Orange Fraise Banane (3€)"
+            isEnglish ? "Speculoos milkshake (+3€)" : isSpanish ? "Milkshake de speculoos (+3€)" : "Milkshake Spéculoos (+3€)",
+            isEnglish ? "Kinder milkshake (+3€)" : isSpanish ? "Milkshake de Kinder (+3€)" : "Milkshake Kinder (+3€)",
+            isEnglish ? "Mango smoothie (+3€)" : isSpanish ? "Smoothie de mango (+3€)" : "Smoothie Mangue (+3€)",
+            isEnglish ? "Pineapple coconut smoothie (+3€)" : isSpanish ? "Smoothie de piña y coco (+3€)" : "Smoothie Ananas Coco (+3€)",
+            isEnglish ? "Orange strawberry banana smoothie (+3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (+3€)" : "Smoothie Orange Fraise Banane (+3€)"
           ],
           type: "boisson_froide"
         }
@@ -2745,10 +2745,10 @@ const MenuPage = () => {
           
           <Note style={{ marginTop: '32px', fontSize: '16px' }}>
             {i18n.language === 'en'
-              ? "Extra €2: salad / fries / sweet potato fries"
+              ? "Extra +€2: salad / fries / sweet potato fries"
               : i18n.language === 'es'
-              ? "Suplemento 2€: ensalada / patatas fritas / patatas dulces fritas"
-              : "Supplément 2€ : salade / frites / frites patates douces"}
+              ? "Suplemento +2€: ensalada / patatas fritas / patatas dulces fritas"
+              : "Supplément +2€ : salade / frites / frites patates douces"}
           </Note>
         </MenuSection>
 
