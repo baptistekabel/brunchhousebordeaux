@@ -1309,7 +1309,7 @@ const MenuPage = () => {
 
     // Brioche Tatin
     "Brioche Tatin": {
-      image: "/images/new/briochefruitrouge.jpg",
+      image: "/images/new/briochetatin.JPG",
       description: isEnglish
         ? "Apple, caramel, cinnamon, whipped cream, speculoos"
         : isSpanish
