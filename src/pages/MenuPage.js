@@ -1761,9 +1761,9 @@ const MenuPage = () => {
       image: "/images/new/matcha.jpg",
       description: "Iced matcha"
     },
-    "Ubee frappé": {
+    "Ube frappé": {
       image: "/images/new/ubelatte.jpg",
-      description: isEnglish ? "Iced ube" : isSpanish ? "Ubee frappé" : "Ubee frappé"
+      description: isEnglish ? "Iced ube" : isSpanish ? "Ube frappé" : "Ube frappé"
     },
     "Iced ube": {
       image: "/images/new/ubelatte.jpg",
@@ -2180,7 +2180,7 @@ const MenuPage = () => {
           formulaPrice: "3 €"
         },
         {
-          name: isEnglish ? "Iced ube" : isSpanish ? "Ubee frappé" : "Ubee frappé",
+          name: isEnglish ? "Iced ube" : isSpanish ? "Ube frappé" : "Ube frappé",
           description: isEnglish
             ? "Choice of syrups: caramel / vanilla / mango — Drizzle: caramel or chocolate"
             : isSpanish
@@ -2331,7 +2331,7 @@ const MenuPage = () => {
             isEnglish ? "Orange strawberry banana smoothie (+3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (+3€)" : "Smoothie Orange Fraise Banane (+3€)",
             "Frappuccino (+3€)",
             isEnglish ? "Iced matcha (+3€)" : isSpanish ? "Matcha frappé (+3€)" : "Matcha frappé (+3€)",
-            isEnglish ? "Iced ube (+3€)" : isSpanish ? "Ubee frappé (+3€)" : "Ubee frappé (+3€)",
+            isEnglish ? "Iced ube (+3€)" : isSpanish ? "Ube frappé (+3€)" : "Ube frappé (+3€)",
             isEnglish ? "Iced latte (+3€)" : isSpanish ? "Latté helado (+3€)" : "Latté glacé (+3€)"
           ],
           type: "boisson_froide"
@@ -2476,7 +2476,7 @@ const MenuPage = () => {
             isEnglish ? "Orange strawberry banana smoothie (+3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (+3€)" : "Smoothie Orange Fraise Banane (+3€)",
             "Frappuccino (+3€)",
             isEnglish ? "Iced matcha (+3€)" : isSpanish ? "Matcha frappé (+3€)" : "Matcha frappé (+3€)",
-            isEnglish ? "Iced ube (+3€)" : isSpanish ? "Ubee frappé (+3€)" : "Ubee frappé (+3€)",
+            isEnglish ? "Iced ube (+3€)" : isSpanish ? "Ube frappé (+3€)" : "Ube frappé (+3€)",
             isEnglish ? "Iced latte (+3€)" : isSpanish ? "Latté helado (+3€)" : "Latté glacé (+3€)"
           ],
           type: "boisson_froide"
@@ -2568,7 +2568,7 @@ const MenuPage = () => {
             isEnglish ? "Orange strawberry banana smoothie (+3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (+3€)" : "Smoothie Orange Fraise Banane (+3€)",
             "Frappuccino (+3€)",
             isEnglish ? "Iced matcha (+3€)" : isSpanish ? "Matcha frappé (+3€)" : "Matcha frappé (+3€)",
-            isEnglish ? "Iced ube (+3€)" : isSpanish ? "Ubee frappé (+3€)" : "Ubee frappé (+3€)",
+            isEnglish ? "Iced ube (+3€)" : isSpanish ? "Ube frappé (+3€)" : "Ube frappé (+3€)",
             isEnglish ? "Iced latte (+3€)" : isSpanish ? "Latté helado (+3€)" : "Latté glacé (+3€)"
           ],
           type: "boisson_froide"
