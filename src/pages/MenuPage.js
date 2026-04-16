@@ -1749,6 +1749,38 @@ const MenuPage = () => {
       image: "/images/new/smootieorangefraisebanane.jpg",
       description: "Smoothie de naranja, fresa y plátano"
     },
+    "Frappuccino": {
+      image: "/images/new/frappucino.jpeg",
+      description: isEnglish ? "Chocolate caramel drizzle" : isSpanish ? "Cobertura de chocolate y caramelo" : "Nappage chocolat caramel"
+    },
+    "Matcha frappé": {
+      image: "/images/new/matcha.jpg",
+      description: isEnglish ? "Iced matcha" : isSpanish ? "Matcha frappé" : "Matcha frappé"
+    },
+    "Iced matcha": {
+      image: "/images/new/matcha.jpg",
+      description: "Iced matcha"
+    },
+    "Ubee frappé": {
+      image: "/images/new/ubelatte.jpg",
+      description: isEnglish ? "Iced ube" : isSpanish ? "Ubee frappé" : "Ubee frappé"
+    },
+    "Iced ube": {
+      image: "/images/new/ubelatte.jpg",
+      description: "Iced ube"
+    },
+    "Latté glacé": {
+      image: "/images/new/latte.jpg",
+      description: isEnglish ? "Iced latte" : isSpanish ? "Latté helado" : "Latté glacé"
+    },
+    "Iced latte": {
+      image: "/images/new/latte.jpg",
+      description: "Iced latte"
+    },
+    "Latté helado": {
+      image: "/images/new/latte.jpg",
+      description: "Latté helado"
+    },
 
     // Toast chèvre miel
     "Chèvre, miel": {
@@ -2070,6 +2102,15 @@ const MenuPage = () => {
         { name: "Cappuccino", price: "4 €" },
         { name: isEnglish ? "Café Latte" : isSpanish ? "Café con leche" : "Café Latté", price: "4 €" },
         {
+          name: isEnglish ? "Iced latte" : isSpanish ? "Latté helado" : "Latté glacé",
+          description: isEnglish
+            ? "Choice of syrups: caramel / vanilla / mango — Drizzle: caramel or chocolate"
+            : isSpanish
+            ? "Siropes a elegir: caramelo / vainilla / mango — Cobertura: caramelo o chocolate"
+            : "Sirops au choix : caramel / vanille / mangue — Nappage : caramel ou chocolat",
+          price: "5 €"
+        },
+        {
           name: "Matcha",
           description: isEnglish
             ? "Choice of coulis: vanilla caramel / mango / passion"
@@ -2121,7 +2162,33 @@ const MenuPage = () => {
         { name: isEnglish ? "Kinder milkshake" : isSpanish ? "Milkshake de Kinder" : "Milkshake Kinder", price: "5,50 €", formulaPrice: "3 €" },
         { name: isEnglish ? "Mango smoothie" : isSpanish ? "Smoothie de mango" : "Smoothie Mangue", price: "5,50 €", formulaPrice: "3 €" },
         { name: isEnglish ? "Pineapple coconut smoothie" : isSpanish ? "Smoothie de piña y coco" : "Smoothie Ananas Coco", price: "5,50 €", formulaPrice: "3 €" },
-        { name: isEnglish ? "Orange strawberry banana smoothie" : isSpanish ? "Smoothie de naranja, fresa y plátano" : "Smoothie Orange Fraise Banane", price: "5,50 €", formulaPrice: "3 €" }
+        { name: isEnglish ? "Orange strawberry banana smoothie" : isSpanish ? "Smoothie de naranja, fresa y plátano" : "Smoothie Orange Fraise Banane", price: "5,50 €", formulaPrice: "3 €" },
+        {
+          name: "Frappuccino",
+          description: isEnglish ? "chocolate caramel drizzle" : isSpanish ? "cobertura de chocolate y caramelo" : "nappage chocolat caramel",
+          price: "5,50 €",
+          formulaPrice: "3 €"
+        },
+        {
+          name: isEnglish ? "Iced matcha" : isSpanish ? "Matcha frappé" : "Matcha frappé",
+          description: isEnglish
+            ? "Choice of syrups: caramel / vanilla / mango — Drizzle: caramel or chocolate"
+            : isSpanish
+            ? "Siropes a elegir: caramelo / vainilla / mango — Cobertura: caramelo o chocolate"
+            : "Sirops au choix : caramel / vanille / mangue — Nappage : caramel ou chocolat",
+          price: "5,50 €",
+          formulaPrice: "3 €"
+        },
+        {
+          name: isEnglish ? "Iced ube" : isSpanish ? "Ubee frappé" : "Ubee frappé",
+          description: isEnglish
+            ? "Choice of syrups: caramel / vanilla / mango — Drizzle: caramel or chocolate"
+            : isSpanish
+            ? "Siropes a elegir: caramelo / vainilla / mango — Cobertura: caramelo o chocolate"
+            : "Sirops au choix : caramel / vanille / mangue — Nappage : caramel ou chocolat",
+          price: "5,50 €",
+          formulaPrice: "3 €"
+        }
       ],
       note: isEnglish
         ? "In formula: +3€"
@@ -2261,7 +2328,11 @@ const MenuPage = () => {
             isEnglish ? "Kinder milkshake (+3€)" : isSpanish ? "Milkshake de Kinder (+3€)" : "Milkshake Kinder (+3€)",
             isEnglish ? "Mango smoothie (+3€)" : isSpanish ? "Smoothie de mango (+3€)" : "Smoothie Mangue (+3€)",
             isEnglish ? "Pineapple coconut smoothie (+3€)" : isSpanish ? "Smoothie de piña y coco (+3€)" : "Smoothie Ananas Coco (+3€)",
-            isEnglish ? "Orange strawberry banana smoothie (+3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (+3€)" : "Smoothie Orange Fraise Banane (+3€)"
+            isEnglish ? "Orange strawberry banana smoothie (+3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (+3€)" : "Smoothie Orange Fraise Banane (+3€)",
+            "Frappuccino (+3€)",
+            isEnglish ? "Iced matcha (+3€)" : isSpanish ? "Matcha frappé (+3€)" : "Matcha frappé (+3€)",
+            isEnglish ? "Iced ube (+3€)" : isSpanish ? "Ubee frappé (+3€)" : "Ubee frappé (+3€)",
+            isEnglish ? "Iced latte (+3€)" : isSpanish ? "Latté helado (+3€)" : "Latté glacé (+3€)"
           ],
           type: "boisson_froide"
         }
@@ -2402,7 +2473,11 @@ const MenuPage = () => {
             isEnglish ? "Kinder milkshake (+3€)" : isSpanish ? "Milkshake de Kinder (+3€)" : "Milkshake Kinder (+3€)",
             isEnglish ? "Mango smoothie (+3€)" : isSpanish ? "Smoothie de mango (+3€)" : "Smoothie Mangue (+3€)",
             isEnglish ? "Pineapple coconut smoothie (+3€)" : isSpanish ? "Smoothie de piña y coco (+3€)" : "Smoothie Ananas Coco (+3€)",
-            isEnglish ? "Orange strawberry banana smoothie (+3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (+3€)" : "Smoothie Orange Fraise Banane (+3€)"
+            isEnglish ? "Orange strawberry banana smoothie (+3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (+3€)" : "Smoothie Orange Fraise Banane (+3€)",
+            "Frappuccino (+3€)",
+            isEnglish ? "Iced matcha (+3€)" : isSpanish ? "Matcha frappé (+3€)" : "Matcha frappé (+3€)",
+            isEnglish ? "Iced ube (+3€)" : isSpanish ? "Ubee frappé (+3€)" : "Ubee frappé (+3€)",
+            isEnglish ? "Iced latte (+3€)" : isSpanish ? "Latté helado (+3€)" : "Latté glacé (+3€)"
           ],
           type: "boisson_froide"
         }
@@ -2490,7 +2565,11 @@ const MenuPage = () => {
             isEnglish ? "Kinder milkshake (+3€)" : isSpanish ? "Milkshake de Kinder (+3€)" : "Milkshake Kinder (+3€)",
             isEnglish ? "Mango smoothie (+3€)" : isSpanish ? "Smoothie de mango (+3€)" : "Smoothie Mangue (+3€)",
             isEnglish ? "Pineapple coconut smoothie (+3€)" : isSpanish ? "Smoothie de piña y coco (+3€)" : "Smoothie Ananas Coco (+3€)",
-            isEnglish ? "Orange strawberry banana smoothie (+3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (+3€)" : "Smoothie Orange Fraise Banane (+3€)"
+            isEnglish ? "Orange strawberry banana smoothie (+3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (+3€)" : "Smoothie Orange Fraise Banane (+3€)",
+            "Frappuccino (+3€)",
+            isEnglish ? "Iced matcha (+3€)" : isSpanish ? "Matcha frappé (+3€)" : "Matcha frappé (+3€)",
+            isEnglish ? "Iced ube (+3€)" : isSpanish ? "Ubee frappé (+3€)" : "Ubee frappé (+3€)",
+            isEnglish ? "Iced latte (+3€)" : isSpanish ? "Latté helado (+3€)" : "Latté glacé (+3€)"
           ],
           type: "boisson_froide"
         }
