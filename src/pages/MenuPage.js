@@ -1335,7 +1335,7 @@ const MenuPage = () => {
         : "Coulis au choix : caramel / vanille / mangue / passion"
     },
     "Moka": {
-      image: "/images/menu/moka.JPG",
+      image: "/images/new/mokaChocolat.jpeg",
       description: isEnglish
         ? "Rich mocha coffee with chocolate"
         : isSpanish
@@ -1343,15 +1343,15 @@ const MenuPage = () => {
         : "Coulis au choix : chocolat / caramel"
     },
     "Mocha": {
-      image: "/images/menu/moka.JPG",
+      image: "/images/new/mokaChocolat.jpeg",
       description: "Rich mocha coffee with chocolate"
     },
     "Moca": {
-      image: "/images/menu/moka.JPG",
+      image: "/images/new/mokaChocolat.jpeg",
       description: "Café moca rico con chocolate"
     },
     "Chocolat": {
-      image: "/images/menu/chocolat.JPG",
+      image: "/images/new/chocolat.jpeg",
       description: isEnglish
         ? "Rich hot chocolate - Whipped cream +0.50€"
         : isSpanish
@@ -1359,11 +1359,11 @@ const MenuPage = () => {
         : "Chocolat chaud onctueux - Chantilly +0,50€"
     },
     "Viennese chocolate": {
-      image: "/images/menu/chocolat.JPG",
+      image: "/images/new/chocolat.jpeg",
       description: "Rich hot chocolate - Whipped cream +0.50€"
     },
     "Chocolate vienés": {
-      image: "/images/menu/chocolat.JPG",
+      image: "/images/new/chocolat.jpeg",
       description: "Chocolate caliente cremoso - Nata montada +0,50€"
     },
     "Thé": {
@@ -1477,7 +1477,7 @@ const MenuPage = () => {
       description: "Café largo"
     },
     "Expresso": {
-      image: "/images/menu/expresso.png",
+      image: "/images/new/expresso.jpeg",
       description: isEnglish
         ? "Classic Italian espresso"
         : isSpanish
@@ -1485,7 +1485,7 @@ const MenuPage = () => {
         : "Expresso italien classique"
     },
     "Espresso": {
-      image: "/images/menu/expresso.png",
+      image: "/images/new/expresso.jpeg",
       description: "Classic Italian espresso"
     },
     
@@ -1587,7 +1587,7 @@ const MenuPage = () => {
 
     // Chocolat chaud
     "Chocolat chaud": {
-      image: "/images/menu/chocolat.JPG",
+      image: "/images/new/chocolat.jpeg",
       description: isEnglish
         ? "Rich hot chocolate"
         : isSpanish
@@ -1595,11 +1595,11 @@ const MenuPage = () => {
         : "Chocolat chaud onctueux"
     },
     "Hot chocolate": {
-      image: "/images/menu/chocolat.JPG",
+      image: "/images/new/chocolat.jpeg",
       description: "Rich hot chocolate"
     },
     "Chocolate caliente": {
-      image: "/images/menu/chocolat.JPG",
+      image: "/images/new/chocolat.jpeg",
       description: "Chocolate caliente cremoso"
     },
 
@@ -1615,7 +1615,7 @@ const MenuPage = () => {
 
     // Chai Latté
     "Chai Latté": {
-      image: "/images/menu/tea.JPG",
+      image: "/images/new/chailatte.jpeg",
       description: isEnglish
         ? "Spiced chai latte"
         : isSpanish
@@ -1653,6 +1653,20 @@ const MenuPage = () => {
 
 
 
+
+    // Jus d'ananas
+    "Jus d'ananas": {
+      image: "/images/new/ananas.jpeg",
+      description: "Jus d'ananas"
+    },
+    "Pineapple juice": {
+      image: "/images/new/ananas.jpeg",
+      description: "Pineapple juice"
+    },
+    "Zumo de piña": {
+      image: "/images/new/ananas.jpeg",
+      description: "Zumo de piña"
+    },
 
     // Jus de gingembre
     "Jus de gingembre": {
@@ -1754,19 +1768,19 @@ const MenuPage = () => {
       description: isEnglish ? "Chocolate caramel drizzle" : isSpanish ? "Cobertura de chocolate y caramelo" : "Nappage chocolat caramel"
     },
     "Matcha frappé": {
-      image: "/images/new/matcha.jpg",
+      image: "/images/new/matcha.jpeg",
       description: isEnglish ? "Iced matcha" : isSpanish ? "Matcha frappé" : "Matcha frappé"
     },
     "Iced matcha": {
-      image: "/images/new/matcha.jpg",
+      image: "/images/new/matcha.jpeg",
       description: "Iced matcha"
     },
     "Ube frappé": {
-      image: "/images/new/ubelatte.jpg",
+      image: "/images/new/ube.jpeg",
       description: isEnglish ? "Iced ube" : isSpanish ? "Ube frappé" : "Ube frappé"
     },
     "Iced ube": {
-      image: "/images/new/ubelatte.jpg",
+      image: "/images/new/ube.jpeg",
       description: "Iced ube"
     },
     "Latté glacé": {
@@ -2300,7 +2314,7 @@ const MenuPage = () => {
             isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
             isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
             "Cappuccino (+2€)",
-            isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moca (+3€)",
+            isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moka (+3€)",
             "Matcha (+3€)",
             "Chai Latté (+3€)",
             {
@@ -2378,7 +2392,7 @@ const MenuPage = () => {
             isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
             isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
             "Cappuccino (+2€)",
-            isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moca (+3€)",
+            isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moka (+3€)",
             "Matcha (+3€)",
             {
               name: isEnglish ? "Tea (+2€)" : isSpanish ? "Té (+2€)" : "Thé (+2€)",
@@ -2445,7 +2459,7 @@ const MenuPage = () => {
             isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
             isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
             "Cappuccino (+2€)",
-            isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moca (+3€)",
+            isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moka (+3€)",
             "Matcha (+3€)",
             "Chai Latté (+3€)",
             {
@@ -2537,7 +2551,7 @@ const MenuPage = () => {
             isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
             isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
             "Cappuccino (+2€)",
-            isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moca (+3€)",
+            isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moka (+3€)",
             "Matcha (+3€)",
             "Chai Latté (+3€)",
             {
