@@ -51,7 +51,7 @@ const IntroSection = styled.section`
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/images/presentation5.jpg');
+    background-image: url('/images/new/accueil.JPG');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

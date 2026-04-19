@@ -2116,15 +2116,6 @@ const MenuPage = () => {
         { name: "Cappuccino", price: "4 €" },
         { name: isEnglish ? "Café Latte" : isSpanish ? "Café con leche" : "Café Latté", price: "4 €" },
         {
-          name: isEnglish ? "Iced latte" : isSpanish ? "Latté helado" : "Latté glacé",
-          description: isEnglish
-            ? "Choice of syrups: caramel / vanilla / mango — Drizzle: caramel or chocolate"
-            : isSpanish
-            ? "Siropes a elegir: caramelo / vainilla / mango — Cobertura: caramelo o chocolate"
-            : "Sirops au choix : caramel / vanille / mangue — Nappage : caramel ou chocolat",
-          price: "5 €"
-        },
-        {
           name: "Matcha",
           description: isEnglish
             ? "Choice of coulis: vanilla caramel / mango / passion"
@@ -2167,6 +2158,15 @@ const MenuPage = () => {
         { name: isEnglish ? "Homemade ginger juice" : isSpanish ? "Zumo de jengibre casero" : "Jus de gingembre maison", price: "5 €" },
         { name: isEnglish ? "Watermelon juice" : isSpanish ? "Zumo de sandía" : "Jus de pastèque", price: "5 €" },
         { name: isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme", price: "4 €" },
+        {
+          name: isEnglish ? "Iced latte" : isSpanish ? "Latté helado" : "Latté glacé",
+          description: isEnglish
+            ? "Choice of syrups: caramel / vanilla / mango — Drizzle: caramel or chocolate"
+            : isSpanish
+            ? "Siropes a elegir: caramelo / vainilla / mango — Cobertura: caramelo o chocolate"
+            : "Sirops au choix : caramel / vanille / mangue — Nappage : caramel ou chocolat",
+          price: "5 €"
+        },
       ]
     },
     milkshakesSmoothies: {
