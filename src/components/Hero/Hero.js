@@ -598,8 +598,8 @@ const Hero = () => {
   // Preload images on mount
   useEffect(() => {
     const imageUrls = [
-      '/images/presentation1.png',
-      '/images/menu/home2.jpeg',
+      '/images/new/hero2.JPG',
+      '/images/new/hero1.JPG',
       '/images/menu/home3.jpeg',
       '/images/menu/home4.jpeg',
       '/images/menu/home5.jpeg',
@@ -642,14 +642,14 @@ const Hero = () => {
   const images = [
     {
       id: 1,
-      src: '/images/presentation5.jpg',
+      src: '/images/new/hero2.JPG',
       title: 'Ambiance Brunch',
       alt: 'L\'atmosphère chaleureuse de notre brunch',
       isBrunch: true
     },
     {
       id: 2,
-      src: '/images/menu/home2.jpeg',
+      src: '/images/new/hero1.JPG',
       title: 'Expérience Brunch',
       alt: 'Découvrez l\'art du brunch à la française',
       isBrunch: true
