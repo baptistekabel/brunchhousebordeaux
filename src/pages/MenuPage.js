@@ -1796,19 +1796,6 @@ const MenuPage = () => {
       description: "Latté helado"
     },
 
-    // Toast chèvre miel
-    "Chèvre, miel": {
-      image: "/images/new/toastchevremiel.jpg",
-      description: isEnglish ? "Goat cheese and honey toast" : isSpanish ? "Tostada de queso de cabra y miel" : "Toast chèvre miel"
-    },
-    "Goat cheese, honey": {
-      image: "/images/new/toastchevremiel.jpg",
-      description: "Goat cheese and honey toast"
-    },
-    "Queso de cabra, miel": {
-      image: "/images/new/toastchevremiel.jpg",
-      description: "Tostada de queso de cabra y miel"
-    }
   };
 
   const handleDishClick = (item) => {
@@ -2006,14 +1993,6 @@ const MenuPage = () => {
             ? "Gambas, tomates cherry, queso fresco"
             : "Crevettes, tomates cerises, fromage frais",
           price: "14 €"
-        },
-        {
-          name: isEnglish
-            ? "Goat cheese, honey"
-            : isSpanish
-            ? "Queso de cabra, miel"
-            : "Chèvre, miel",
-          price: "14 €"
         }
       ],
       note: isEnglish
@@ -2112,7 +2091,7 @@ const MenuPage = () => {
         { name: "Expresso", price: "2 €" },
         { name: isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé", price: "2,50 €" },
         { name: isEnglish ? "Coffee with milk" : isSpanish ? "Café cortado" : "Café noisette", price: "2,50 €" },
-        { name: isEnglish ? "Double espresso" : isSpanish ? "Doble espresso" : "Double expresso", price: "2,50 €" },
+        { name: isEnglish ? "Double espresso" : isSpanish ? "Doble espresso" : "Double expresso", price: "3,50 €" },
         { name: "Cappuccino", price: "4 €" },
         { name: isEnglish ? "Café Latte" : isSpanish ? "Café con leche" : "Café Latté", price: "4 €" },
         {
@@ -2375,19 +2354,15 @@ const MenuPage = () => {
               ? "1 scrambled eggs, bacon, cherry tomatoes toast"
               : isSpanish
               ? "1 tostada de huevos revueltos, bacon, tomates cherry"
-              : "1 toast œuf brouillé, bacon, tomates cerises"
+              : "1 toast œuf brouillé, bacon, tomates cerises",
+            isEnglish ? "1 croissant" : isSpanish ? "1 cruasán" : "1 croissant"
           ]
-        },
-        {
-          title: isEnglish ? "Pastry" : isSpanish ? "Bollería" : "Viennoiserie",
-          options: ["Chocolatine", "Croissant"],
-          type: "viennoiserie"
         },
         {
           title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
           options: [
             isEnglish ? "Espresso" : "Expresso",
-            isEnglish ? "Double espresso" : isSpanish ? "Doble espresso" : "Double expresso",
+            isEnglish ? "Double espresso (+1€)" : isSpanish ? "Doble espresso (+1€)" : "Double expresso (+1€)",
             isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
             isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
             isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
