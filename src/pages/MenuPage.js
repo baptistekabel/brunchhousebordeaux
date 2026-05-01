@@ -998,6 +998,70 @@ const MenuPage = () => {
       description: "El equilibrio perfecto entre dulce y salado"
     },
 
+    // Salade de la mer
+    "Salade de la mer": {
+      image: "/images/new/saladeMer.jpeg",
+      description: isEnglish
+        ? "Green salad, cherry tomatoes, red onions, avocado, shrimp, smoked salmon"
+        : isSpanish
+        ? "Ensalada verde, tomates cherry, cebolla roja, aguacate, gambas, salmón ahumado"
+        : "Salade verte, tomate cerise, oignons rouge, avocat, crevettes, saumon fumé"
+    },
+    "Sea salad": {
+      image: "/images/new/saladeMer.jpeg",
+      description: "Green salad, cherry tomatoes, red onions, avocado, shrimp, smoked salmon"
+    },
+    "Ensalada del mar": {
+      image: "/images/new/saladeMer.jpeg",
+      description: "Ensalada verde, tomates cherry, cebolla roja, aguacate, gambas, salmón ahumado"
+    },
+
+    // Salade César
+    "Salade César": {
+      image: "/images/new/saladeCesar.jpeg",
+      description: isEnglish
+        ? "Green salad, cherry tomatoes, red onions, avocado, chicken, parmesan, Caesar sauce"
+        : isSpanish
+        ? "Ensalada verde, tomates cherry, cebolla roja, aguacate, pollo, parmesano, salsa César"
+        : "Salade verte, tomate cerise, oignons rouge, avocat, poulet, parmesan, sauce César"
+    },
+    "Caesar salad": {
+      image: "/images/new/saladeCesar.jpeg",
+      description: "Green salad, cherry tomatoes, red onions, avocado, chicken, parmesan, Caesar sauce"
+    },
+    "Ensalada César": {
+      image: "/images/new/saladeCesar.jpeg",
+      description: "Ensalada verde, tomates cherry, cebolla roja, aguacate, pollo, parmesano, salsa César"
+    },
+
+    // Brioche burger
+    "Brioche burger": {
+      image: "/images/new/briocheBurger.jpeg",
+      description: isEnglish
+        ? "Beef steak, cheddar, salad, tomato, red onions, homemade burger sauce"
+        : isSpanish
+        ? "Filete de ternera, cheddar, ensalada, tomate, cebolla roja, salsa burger casera"
+        : "Steak de bœuf, cheddar, salade, tomate, oignons rouge, sauce burger maison"
+    },
+
+    // Toast œuf brouillé avocat
+    "Toast œuf brouillé avocat": {
+      image: "/images/new/toastoeufbrouilleavocat.jpeg",
+      description: isEnglish
+        ? "Scrambled egg, avocado, cream cheese, chives"
+        : isSpanish
+        ? "Huevo revuelto, aguacate, queso fresco, cebollino"
+        : "Œuf brouillé, avocat, fromage frais, ciboulette"
+    },
+    "Scrambled egg avocado toast": {
+      image: "/images/new/toastoeufbrouilleavocat.jpeg",
+      description: "Scrambled egg, avocado, cream cheese, chives"
+    },
+    "Tostada huevo revuelto aguacate": {
+      image: "/images/new/toastoeufbrouilleavocat.jpeg",
+      description: "Huevo revuelto, aguacate, queso fresco, cebollino"
+    },
+
     // Burrata
     "Burrata, tomates cœur de bœuf, pesto": {
       image: "/images/new/toastburrata.jpg",
@@ -1943,16 +2007,39 @@ const MenuPage = () => {
         }
       ]
     },
+    salades: {
+      title: isEnglish ? "🥗 Salads" : isSpanish ? "🥗 Ensaladas" : "🥗 Salades",
+      items: [
+        {
+          name: isEnglish ? "Sea salad" : isSpanish ? "Ensalada del mar" : "Salade de la mer",
+          description: isEnglish
+            ? "Green salad, cherry tomatoes, red onions, avocado, shrimp, smoked salmon"
+            : isSpanish
+            ? "Ensalada verde, tomates cherry, cebolla roja, aguacate, gambas, salmón ahumado"
+            : "Salade verte, tomate cerise, oignons rouge, avocat, crevettes, saumon fumé",
+          price: "12 €"
+        },
+        {
+          name: isEnglish ? "Caesar salad" : isSpanish ? "Ensalada César" : "Salade César",
+          description: isEnglish
+            ? "Green salad, cherry tomatoes, red onions, avocado, chicken, parmesan, Caesar sauce"
+            : isSpanish
+            ? "Ensalada verde, tomates cherry, cebolla roja, aguacate, pollo, parmesano, salsa César"
+            : "Salade verte, tomate cerise, oignons rouge, avocat, poulet, parmesan, sauce César",
+          price: "12 €"
+        }
+      ]
+    },
     toasts: {
       title: "🥑 Toasts",
       items: [
-        { 
-          name: isEnglish 
-            ? "Scrambled eggs, bacon, cherry tomatoes" 
-            : isSpanish 
+        {
+          name: isEnglish
+            ? "Scrambled eggs, bacon, cherry tomatoes"
+            : isSpanish
             ? "Huevos revueltos, bacon, tomates cherry"
-            : "Œuf brouillé, bacon, tomates cerises", 
-          price: "11 €" 
+            : "Œuf brouillé, bacon, tomates cerises",
+          price: "11 €"
         },
         {
           name: isEnglish
@@ -1962,13 +2049,13 @@ const MenuPage = () => {
             : "Houmous à la betterave, avocat, noix",
           price: "12 €"
         },
-        { 
-          name: isEnglish 
-            ? "Eggplant caviar, sliced chicken, parmesan" 
-            : isSpanish 
+        {
+          name: isEnglish
+            ? "Eggplant caviar, sliced chicken, parmesan"
+            : isSpanish
             ? "Caviar de berenjena, pollo laminado, parmesano"
-            : "Caviar d'aubergine, émincé de poulet, parmesan", 
-          price: "14 €" 
+            : "Caviar d'aubergine, émincé de poulet, parmesan",
+          price: "14 €"
         },
         {
           name: isEnglish
@@ -1976,6 +2063,19 @@ const MenuPage = () => {
             : isSpanish
             ? "Salmón, guacamole, flor de sal"
             : "Saumon, guacamole, fleur de sel",
+          price: "14 €"
+        },
+        {
+          name: isEnglish
+            ? "Scrambled egg avocado toast"
+            : isSpanish
+            ? "Tostada huevo revuelto aguacate"
+            : "Toast œuf brouillé avocat",
+          description: isEnglish
+            ? "Scrambled egg, avocado, cream cheese, chives"
+            : isSpanish
+            ? "Huevo revuelto, aguacate, queso fresco, cebollino"
+            : "Œuf brouillé, avocat, fromage frais, ciboulette",
           price: "14 €"
         },
         {
@@ -2004,14 +2104,23 @@ const MenuPage = () => {
     plats: {
       title: isEnglish ? "🍽️ Main dishes" : isSpanish ? "🍽️ Platos principales" : "🍽️ Plats",
       items: [
-        { 
-          name: "Le Special One", 
-          description: isEnglish 
+        {
+          name: "Brioche burger",
+          description: isEnglish
+            ? "Beef steak, cheddar, salad, tomato, red onions, homemade burger sauce"
+            : isSpanish
+            ? "Filete de ternera, cheddar, ensalada, tomate, cebolla roja, salsa burger casera"
+            : "Steak de bœuf, cheddar, salade, tomate, oignons rouge, sauce burger maison",
+          price: "12 €"
+        },
+        {
+          name: "Le Special One",
+          description: isEnglish
             ? "Brioche bun, guacamole, steak, cheddar, arugula, tomatoes, BBQ sauce"
-            : isSpanish 
+            : isSpanish
             ? "Pan brioche, guacamole, filete, cheddar, rúcula, tomates, salsa barbacoa"
-            : "Pain brioche, guacamole, steak, cheddar, roquette, tomates, sauce barbecue", 
-          price: "14 €" 
+            : "Pain brioche, guacamole, steak, cheddar, roquette, tomates, sauce barbecue",
+          price: "14 €"
         },
         { 
           name: "Le Burger House", 
@@ -2257,6 +2366,7 @@ const MenuPage = () => {
           title: isEnglish ? "Main course" : isSpanish ? "Plato principal" : "Plat",
           options: [
             isEnglish ? "Burger (beef or chicken)" : isSpanish ? "Burger (carne o pollo)" : "Burger (viande ou poulet)",
+            "Brioche burger",
             "Cordon bleu",
             isEnglish ? "Croissant burger" : isSpanish ? "Croissant burger" : "Croissant burger",
             isEnglish ? "Croissant scrambled eggs bacon" : isSpanish ? "Croissant huevos revueltos bacon" : "Croissant œuf brouillé bacon",
@@ -2395,6 +2505,7 @@ const MenuPage = () => {
           title: isEnglish ? "Main course" : isSpanish ? "Plato principal" : "Plat",
           options: [
             isEnglish ? "Burger (beef or chicken)" : isSpanish ? "Burger (carne o pollo)" : "Burger (viande ou poulet)",
+            "Brioche burger",
             "Cordon bleu",
             isEnglish ? "Croissant burger" : isSpanish ? "Croissant burger" : "Croissant burger",
             isEnglish ? "Croissant scrambled eggs bacon" : isSpanish ? "Croissant huevos revueltos bacon" : "Croissant œuf brouillé bacon",
@@ -2484,15 +2595,18 @@ const MenuPage = () => {
         : "L'équilibre parfait entre sucré et salé",
       sections: [
         {
-          title: isEnglish ? "Choice of toasts" : isSpanish ? "Tostadas a elegir" : "Toasts au choix",
+          title: isEnglish ? "Choice of toasts or salads" : isSpanish ? "Tostadas o ensaladas a elegir" : "Toasts ou salades au choix",
           description: isEnglish ? "Choose up to 2 toasts to your liking" : isSpanish ? "Elige hasta 2 tostadas a tu gusto" : "Choisissez jusqu'à 2 toasts selon vos envies",
           options: [
             isEnglish ? "Scrambled eggs, bacon, cherry tomatoes" : isSpanish ? "Huevos revueltos, bacon, tomates cherry" : "Œuf brouillé, bacon, tomates cerises",
             isEnglish ? "Beetroot hummus, avocado, walnuts" : isSpanish ? "Hummus de remolacha, aguacate, nueces" : "Houmous à la betterave, avocat, noix",
             isEnglish ? "Eggplant caviar, sliced chicken, parmesan" : isSpanish ? "Caviar de berenjena, pollo laminado, parmesano" : "Caviar d'aubergine, émincé de poulet, parmesan",
             isEnglish ? "Salmon, guacamole, fleur de sel" : isSpanish ? "Salmón, guacamole, flor de sal" : "Saumon, guacamole, fleur de sel",
+            isEnglish ? "Scrambled egg avocado toast" : isSpanish ? "Tostada huevo revuelto aguacate" : "Toast œuf brouillé avocat",
             isEnglish ? "Shrimp, cherry tomatoes, cream cheese" : isSpanish ? "Gambas, tomates cherry, queso fresco" : "Crevettes, tomates cerises, fromage frais",
-            isEnglish ? "Burrata, beef heart tomatoes, pesto (+2€)" : isSpanish ? "Burrata, tomates corazón de buey, pesto (+2€)" : "Burrata, tomates cœur de bœuf, pesto (+2€)"
+            isEnglish ? "Burrata, beef heart tomatoes, pesto (+2€)" : isSpanish ? "Burrata, tomates corazón de buey, pesto (+2€)" : "Burrata, tomates cœur de bœuf, pesto (+2€)",
+            isEnglish ? "Sea salad (+2€)" : isSpanish ? "Ensalada del mar (+2€)" : "Salade de la mer (+2€)",
+            isEnglish ? "Caesar salad (+2€)" : isSpanish ? "Ensalada César (+2€)" : "Salade César (+2€)"
           ],
           type: "toasts"
         },
