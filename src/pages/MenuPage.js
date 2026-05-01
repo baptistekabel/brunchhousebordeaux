@@ -182,6 +182,32 @@ const MenuGrid = styled.div`
   gap: ${props => props.theme.spacing.md};
 `;
 
+const SubSection = styled.div`
+  margin-bottom: ${props => props.theme.spacing.xl};
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+const SubSectionTitle = styled.h3`
+  display: inline-block;
+  font-size: 18px;
+  font-weight: ${props => props.theme.typography.weights.semibold};
+  color: ${props => props.theme.colors.darkGreen};
+  background: ${props => props.theme.colors.teaRose};
+  padding: 10px 22px;
+  border-radius: 999px;
+  margin-bottom: ${props => props.theme.spacing.md};
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 8px rgba(190, 106, 101, 0.25);
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 16px;
+    padding: 8px 18px;
+  }
+`;
+
 const MenuItem = styled(motion.div)`
   display: flex;
   justify-content: space-between;
@@ -1221,14 +1247,6 @@ const MenuPage = () => {
         ? "Steak picado, cheddar, ensalada, tomates, cebollas, salsa burger casera"
         : "Steak haché, cheddar, salade, tomates, oignons, sauce burger maison"
     },
-    "Chocolatine": {
-      image: "/images/menu/chocolatine.jpg",
-      description: isEnglish
-        ? "Flaky pastry with chocolate filling"
-        : isSpanish
-        ? "Hojaldre con relleno de chocolate"
-        : "Viennoiserie feuilletée au chocolat"
-    },
     "Muffin chocolat": {
       image: "/images/menu/muffin.jpeg",
       description: isEnglish
@@ -1950,7 +1968,6 @@ const MenuPage = () => {
       title: "🥐 Viennoiseries",
       items: [
         { name: "Croissant", price: "2 €" },
-        { name: "Chocolatine", price: "2 €" },
       ]
     },
     desserts: {
@@ -2103,89 +2120,114 @@ const MenuPage = () => {
     },
     plats: {
       title: isEnglish ? "🍽️ Main dishes" : isSpanish ? "🍽️ Platos principales" : "🍽️ Plats",
-      items: [
+      subsections: [
         {
-          name: "Brioche burger",
-          description: isEnglish
-            ? "Beef steak, cheddar, salad, tomato, red onions, homemade burger sauce"
-            : isSpanish
-            ? "Filete de ternera, cheddar, ensalada, tomate, cebolla roja, salsa burger casera"
-            : "Steak de bœuf, cheddar, salade, tomate, oignons rouge, sauce burger maison",
-          price: "12 €"
+          title: isEnglish ? "Our Burgers" : isSpanish ? "Nuestras Hamburguesas" : "Nos Burgers",
+          items: [
+            {
+              name: "Brioche burger",
+              description: isEnglish
+                ? "Beef steak, cheddar, salad, tomato, red onions, homemade burger sauce"
+                : isSpanish
+                ? "Filete de ternera, cheddar, ensalada, tomate, cebolla roja, salsa burger casera"
+                : "Steak de bœuf, cheddar, salade, tomate, oignons rouge, sauce burger maison",
+              price: "12 €"
+            },
+            {
+              name: "Le Burger House",
+              description: isEnglish
+                ? "Brioche bun, chicken cutlet (beef or chicken), lamb's lettuce, tomatoes, red onion, cheddar, saffron sauce"
+                : isSpanish
+                ? "Pan brioche, escalope de pollo (carne o pollo), canónigos, tomates, cebolla roja, cheddar, salsa azafrán"
+                : "Pain brioche, escalope de poulet (viande ou poulet), mâche, tomates, oignon rouge, cheddar, sauce safran",
+              price: "14 €"
+            }
+          ]
         },
         {
-          name: "Le Special One",
-          description: isEnglish
-            ? "Brioche bun, guacamole, steak, cheddar, arugula, tomatoes, BBQ sauce"
-            : isSpanish
-            ? "Pan brioche, guacamole, filete, cheddar, rúcula, tomates, salsa barbacoa"
-            : "Pain brioche, guacamole, steak, cheddar, roquette, tomates, sauce barbecue",
-          price: "14 €"
-        },
-        { 
-          name: "Le Burger House", 
-          description: isEnglish 
-            ? "Brioche bun, chicken cutlet (beef or chicken), lamb's lettuce, tomatoes, red onion, cheddar, saffron sauce"
-            : isSpanish 
-            ? "Pan brioche, escalope de pollo (carne o pollo), canónigos, tomates, cebolla roja, cheddar, salsa azafrán"
-            : "Pain brioche, escalope de poulet (viande ou poulet), mâche, tomates, oignon rouge, cheddar, sauce safran", 
-          price: "14 €" 
+          title: isEnglish ? "Chef's Specialty" : isSpanish ? "Especialidad del chef" : "Spécialité du chef",
+          items: [
+            {
+              name: "Le Special One",
+              description: isEnglish
+                ? "Brioche bun, guacamole, steak, cheddar, arugula, tomatoes, BBQ sauce"
+                : isSpanish
+                ? "Pan brioche, guacamole, filete, cheddar, rúcula, tomates, salsa barbacoa"
+                : "Pain brioche, guacamole, steak, cheddar, roquette, tomates, sauce barbecue",
+              price: "14 €"
+            }
+          ]
         },
         {
-          name: "Cordon Bleu House",
-          description: isEnglish
-            ? "Marinated chicken cutlet, turkey ham, cheese"
-            : isSpanish
-            ? "Escalope de pollo marinado, jamón de pavo, queso"
-            : "Escalope de poulet mariné, jambon de dinde, fromage",
-          price: "15 €"
+          title: isEnglish ? "Cordon bleu" : isSpanish ? "Cordon bleu" : "Cordon bleu",
+          items: [
+            {
+              name: "Cordon Bleu House",
+              description: isEnglish
+                ? "Marinated chicken cutlet, turkey ham, cheese"
+                : isSpanish
+                ? "Escalope de pollo marinado, jamón de pavo, queso"
+                : "Escalope de poulet mariné, jambon de dinde, fromage",
+              price: "15 €"
+            }
+          ]
         },
         {
-          name: isEnglish
-            ? "Croissant scrambled eggs bacon"
-            : isSpanish
-            ? "Croissant huevos revueltos bacon"
-            : "Croissant œufs brouillés bacon",
-          description: isEnglish
-            ? "Scrambled eggs, bacon, cheddar, salad, tomatoes, onions"
-            : isSpanish
-            ? "Huevos revueltos, bacon, cheddar, ensalada, tomates, cebollas"
-            : "Œufs brouillés, bacon, cheddar, salade, tomates, oignons",
-          price: "14 €"
+          title: isEnglish ? "Our savory brioches" : isSpanish ? "Nuestras brioches saladas" : "Nos brioches salées",
+          items: [
+            {
+              name: isEnglish ? "Savory French toast scrambled eggs bacon" : isSpanish ? "Tostada francesa salada huevos revueltos bacon" : "Brioche perdue salée œuf brouillé bacon",
+              price: "14 €"
+            },
+            {
+              name: isEnglish ? "Savory French toast burrata pesto" : isSpanish ? "Tostada francesa salada burrata pesto" : "Brioche perdue salée burrata pesto",
+              price: "14 €"
+            }
+          ]
         },
         {
-          name: isEnglish
-            ? "Croissant salmon guacamole"
-            : isSpanish
-            ? "Croissant salmón guacamole"
-            : "Croissant saumon guacamole",
-          description: isEnglish
-            ? "Salmon, guacamole, scrambled eggs, salad, tomatoes, red onions"
-            : isSpanish
-            ? "Salmón, guacamole, huevos revueltos, ensalada, tomates, cebollas rojas"
-            : "Saumon, guacamole, œufs brouillés, salade, tomates, oignons rouges",
-          price: "14 €"
-        },
-        {
-          name: isEnglish
-            ? "Croissant burger"
-            : isSpanish
-            ? "Croissant burger"
-            : "Croissant burger",
-          description: isEnglish
-            ? "Beef patty, cheddar, salad, tomatoes, onions, homemade burger sauce"
-            : isSpanish
-            ? "Steak picado, cheddar, ensalada, tomates, cebollas, salsa burger casera"
-            : "Steak haché, cheddar, salade, tomates, oignons, sauce burger maison",
-          price: "14 €"
-        },
-        {
-          name: isEnglish ? "Savory French toast scrambled eggs bacon" : isSpanish ? "Tostada francesa salada huevos revueltos bacon" : "Brioche perdue salée œuf brouillé bacon",
-          price: "14 €"
-        },
-        {
-          name: isEnglish ? "Savory French toast burrata pesto" : isSpanish ? "Tostada francesa salada burrata pesto" : "Brioche perdue salée burrata pesto",
-          price: "14 €"
+          title: isEnglish ? "Our savory croissants" : isSpanish ? "Nuestros croissants salados" : "Nos croissants salés",
+          items: [
+            {
+              name: isEnglish
+                ? "Croissant scrambled eggs bacon"
+                : isSpanish
+                ? "Croissant huevos revueltos bacon"
+                : "Croissant œufs brouillés bacon",
+              description: isEnglish
+                ? "Scrambled eggs, bacon, cheddar, salad, tomatoes, onions"
+                : isSpanish
+                ? "Huevos revueltos, bacon, cheddar, ensalada, tomates, cebollas"
+                : "Œufs brouillés, bacon, cheddar, salade, tomates, oignons",
+              price: "14 €"
+            },
+            {
+              name: isEnglish
+                ? "Croissant salmon guacamole"
+                : isSpanish
+                ? "Croissant salmón guacamole"
+                : "Croissant saumon guacamole",
+              description: isEnglish
+                ? "Salmon, guacamole, scrambled eggs, salad, tomatoes, red onions"
+                : isSpanish
+                ? "Salmón, guacamole, huevos revueltos, ensalada, tomates, cebollas rojas"
+                : "Saumon, guacamole, œufs brouillés, salade, tomates, oignons rouges",
+              price: "14 €"
+            },
+            {
+              name: isEnglish
+                ? "Croissant burger"
+                : isSpanish
+                ? "Croissant burger"
+                : "Croissant burger",
+              description: isEnglish
+                ? "Beef patty, cheddar, salad, tomatoes, onions, homemade burger sauce"
+                : isSpanish
+                ? "Steak picado, cheddar, ensalada, tomates, cebollas, salsa burger casera"
+                : "Steak haché, cheddar, salade, tomates, oignons, sauce burger maison",
+              price: "14 €"
+            }
+          ]
         }
       ],
       note: isEnglish
@@ -2965,77 +3007,92 @@ const MenuPage = () => {
           </MenuGrid>
         </MenuSection>
 
-        {Object.entries(menuData).map(([key, section], sectionIndex) => (
-          <MenuSection
-            key={key}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            {...createScrollTrigger()}
-            transition={{ duration: 0.6, delay: sectionIndex * 0.1 }}
-          >
-            <SectionTitle>{section.title}</SectionTitle>
-            <MenuGrid>
-              {section.items.map((item, index) => {
-                const dishInfo = dishImages[item.name] || dishImages[item.name.split(',')[0]?.trim()] || null;
+        {Object.entries(menuData).map(([key, section], sectionIndex) => {
+          const renderItem = (item, index) => {
+            const dishInfo = dishImages[item.name] || dishImages[item.name.split(',')[0]?.trim()] || null;
 
-                return (
-                  <MenuItem
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    {...createScrollTrigger()}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
-                    onClick={() => dishInfo ? handleDishClick(item) : null}
-                    style={{ cursor: dishInfo ? 'pointer' : 'default' }}
-                    onMouseEnter={() => dishInfo && setHoveredDish({ ...item, ...dishInfo })}
-                    onMouseLeave={() => setHoveredDish(null)}
-                  >
-                    <ItemName>
-                      {item.name}
-                      {item.description && item.name !== "Moka" && item.name !== "Matcha" && <span>{item.description}</span>}
-                      {(item.name === "Moka" || item.name === "Matcha") && dishInfo && dishInfo.description && <span>{dishInfo.description}</span>}
-                    </ItemName>
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                      <ItemPrice>{item.price}</ItemPrice>
-                      {dishInfo && (
-                        <ImageIndicator>
-                          <img
-                            src={dishInfo.image}
-                            alt={item.name}
-                            onError={(e) => {
-                              e.target.style.display = 'none';
-                            }}
-                          />
-                        </ImageIndicator>
-                      )}
-                    </div>
+            return (
+              <MenuItem
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                {...createScrollTrigger()}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                onClick={() => dishInfo ? handleDishClick(item) : null}
+                style={{ cursor: dishInfo ? 'pointer' : 'default' }}
+                onMouseEnter={() => dishInfo && setHoveredDish({ ...item, ...dishInfo })}
+                onMouseLeave={() => setHoveredDish(null)}
+              >
+                <ItemName>
+                  {item.name}
+                  {item.description && item.name !== "Moka" && item.name !== "Matcha" && <span>{item.description}</span>}
+                  {(item.name === "Moka" || item.name === "Matcha") && dishInfo && dishInfo.description && <span>{dishInfo.description}</span>}
+                </ItemName>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <ItemPrice>{item.price}</ItemPrice>
+                  {dishInfo && (
+                    <ImageIndicator>
+                      <img
+                        src={dishInfo.image}
+                        alt={item.name}
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                        }}
+                      />
+                    </ImageIndicator>
+                  )}
+                </div>
 
-                    <AnimatePresence>
-                      {hoveredDish && hoveredDish.name === item.name && dishInfo && (
-                        <DishPreview
-                          initial={{ opacity: 0, scale: 0.8, x: -10 }}
-                          animate={{ opacity: 1, scale: 1, x: 0 }}
-                          exit={{ opacity: 0, scale: 0.8, x: -10 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <PreviewImage
-                            src={dishInfo.image}
-                            alt={item.name}
-                            onError={(e) => {
-                              e.target.style.display = 'none';
-                            }}
-                          />
-                          <PreviewTitle>{item.name}</PreviewTitle>
-                        </DishPreview>
-                      )}
-                    </AnimatePresence>
-                  </MenuItem>
-                );
-              })}
-            </MenuGrid>
-            {section.note && <Note>{section.note}</Note>}
-          </MenuSection>
-        ))}
+                <AnimatePresence>
+                  {hoveredDish && hoveredDish.name === item.name && dishInfo && (
+                    <DishPreview
+                      initial={{ opacity: 0, scale: 0.8, x: -10 }}
+                      animate={{ opacity: 1, scale: 1, x: 0 }}
+                      exit={{ opacity: 0, scale: 0.8, x: -10 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <PreviewImage
+                        src={dishInfo.image}
+                        alt={item.name}
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                        }}
+                      />
+                      <PreviewTitle>{item.name}</PreviewTitle>
+                    </DishPreview>
+                  )}
+                </AnimatePresence>
+              </MenuItem>
+            );
+          };
+
+          return (
+            <MenuSection
+              key={key}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              {...createScrollTrigger()}
+              transition={{ duration: 0.6, delay: sectionIndex * 0.1 }}
+            >
+              <SectionTitle>{section.title}</SectionTitle>
+              {section.subsections ? (
+                section.subsections.map((sub, subIndex) => (
+                  <SubSection key={subIndex}>
+                    <SubSectionTitle>{sub.title}</SubSectionTitle>
+                    <MenuGrid>
+                      {sub.items.map((item, index) => renderItem(item, index))}
+                    </MenuGrid>
+                  </SubSection>
+                ))
+              ) : (
+                <MenuGrid>
+                  {section.items.map((item, index) => renderItem(item, index))}
+                </MenuGrid>
+              )}
+              {section.note && <Note>{section.note}</Note>}
+            </MenuSection>
+          );
+        })}
       </MenuContainer>
       
       <Footer />
