@@ -921,6 +921,30 @@ const MenuPage = () => {
         ? "Nuestra hamburguesa de la casa con salsa especial"
         : "Notre burger maison avec sauce spéciale"
     },
+    "Burger House viande": {
+      image: "/images/new/burguerviande.jpg",
+      description: "Pain brioche, steak de bœuf, mâche, tomates, oignon rouge, cheddar, sauce safran"
+    },
+    "Beef Burger House": {
+      image: "/images/new/burguerviande.jpg",
+      description: "Brioche bun, beef steak, lamb's lettuce, tomatoes, red onion, cheddar, saffron sauce"
+    },
+    "Hamburguesa de carne House": {
+      image: "/images/new/burguerviande.jpg",
+      description: "Pan brioche, filete de ternera, canónigos, tomates, cebolla roja, cheddar, salsa azafrán"
+    },
+    "Burger House poulet": {
+      image: "/images/new/burguerpoulet.jpg",
+      description: "Pain brioche, escalope de poulet, mâche, tomates, oignon rouge, cheddar, sauce safran"
+    },
+    "Chicken Burger House": {
+      image: "/images/new/burguerpoulet.jpg",
+      description: "Brioche bun, chicken cutlet, lamb's lettuce, tomatoes, red onion, cheddar, saffron sauce"
+    },
+    "Hamburguesa de pollo House": {
+      image: "/images/new/burguerpoulet.jpg",
+      description: "Pan brioche, escalope de pollo, canónigos, tomates, cebolla roja, cheddar, salsa azafrán"
+    },
 
     // Le Special One
     "Le Special One": {
@@ -2125,32 +2149,27 @@ const MenuPage = () => {
           title: isEnglish ? "Our Burgers" : isSpanish ? "Nuestras Hamburguesas" : "Nos Burgers",
           items: [
             {
-              name: "Le Burger House",
+              name: isEnglish ? "Beef Burger House" : isSpanish ? "Hamburguesa de carne House" : "Burger House viande",
               description: isEnglish
-                ? "Brioche bun, chicken cutlet (beef or chicken), lamb's lettuce, tomatoes, red onion, cheddar, saffron sauce"
+                ? "Brioche bun, beef steak, lamb's lettuce, tomatoes, red onion, cheddar, saffron sauce"
                 : isSpanish
-                ? "Pan brioche, escalope de pollo (carne o pollo), canónigos, tomates, cebolla roja, cheddar, salsa azafrán"
-                : "Pain brioche, escalope de poulet (viande ou poulet), mâche, tomates, oignon rouge, cheddar, sauce safran",
+                ? "Pan brioche, filete de ternera, canónigos, tomates, cebolla roja, cheddar, salsa azafrán"
+                : "Pain brioche, steak de bœuf, mâche, tomates, oignon rouge, cheddar, sauce safran",
+              price: "14 €"
+            },
+            {
+              name: isEnglish ? "Chicken Burger House" : isSpanish ? "Hamburguesa de pollo House" : "Burger House poulet",
+              description: isEnglish
+                ? "Brioche bun, chicken cutlet, lamb's lettuce, tomatoes, red onion, cheddar, saffron sauce"
+                : isSpanish
+                ? "Pan brioche, escalope de pollo, canónigos, tomates, cebolla roja, cheddar, salsa azafrán"
+                : "Pain brioche, escalope de poulet, mâche, tomates, oignon rouge, cheddar, sauce safran",
               price: "14 €"
             }
           ]
         },
         {
           title: isEnglish ? "Chef's Specialty" : isSpanish ? "Especialidad del chef" : "Spécialité du chef",
-          items: [
-            {
-              name: "Le Special One",
-              description: isEnglish
-                ? "Brioche bun, guacamole, steak, cheddar, arugula, tomatoes, BBQ sauce"
-                : isSpanish
-                ? "Pan brioche, guacamole, filete, cheddar, rúcula, tomates, salsa barbacoa"
-                : "Pain brioche, guacamole, steak, cheddar, roquette, tomates, sauce barbecue",
-              price: "14 €"
-            }
-          ]
-        },
-        {
-          title: isEnglish ? "Cordon bleu" : isSpanish ? "Cordon bleu" : "Cordon bleu",
           items: [
             {
               name: "Cordon Bleu House",
@@ -2173,7 +2192,7 @@ const MenuPage = () => {
                 : isSpanish
                 ? "Filete de ternera, cheddar, ensalada, tomate, cebolla roja, salsa burger casera"
                 : "Steak de bœuf, cheddar, salade, tomate, oignons rouge, sauce burger maison",
-              price: "12 €"
+              price: "15 €"
             },
             {
               name: isEnglish ? "Savory French toast scrambled eggs bacon" : isSpanish ? "Tostada francesa salada huevos revueltos bacon" : "Brioche perdue salée œuf brouillé bacon",
@@ -2440,7 +2459,7 @@ const MenuPage = () => {
           title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
           options: [
             isEnglish ? "Espresso" : "Expresso",
-            isEnglish ? "Double espresso" : isSpanish ? "Doble espresso" : "Double expresso",
+            isEnglish ? "Double espresso (+1€)" : isSpanish ? "Doble espresso (+1€)" : "Double expresso (+1€)",
             isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
             isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
             isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
@@ -2582,7 +2601,7 @@ const MenuPage = () => {
           title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
           options: [
             isEnglish ? "Espresso" : "Expresso",
-            isEnglish ? "Double espresso" : isSpanish ? "Doble espresso" : "Double expresso",
+            isEnglish ? "Double espresso (+1€)" : isSpanish ? "Doble espresso (+1€)" : "Double expresso (+1€)",
             isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
             isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
             isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
@@ -2677,7 +2696,7 @@ const MenuPage = () => {
           title: isEnglish ? "Hot drink" : isSpanish ? "Bebida caliente" : "Boisson chaude",
           options: [
             isEnglish ? "Espresso" : "Expresso",
-            isEnglish ? "Double espresso" : isSpanish ? "Doble espresso" : "Double expresso",
+            isEnglish ? "Double espresso (+1€)" : isSpanish ? "Doble espresso (+1€)" : "Double expresso (+1€)",
             isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
             isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
             isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
