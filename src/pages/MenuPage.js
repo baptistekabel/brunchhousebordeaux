@@ -194,13 +194,13 @@ const SubSectionTitle = styled.h3`
   display: inline-block;
   font-size: 18px;
   font-weight: ${props => props.theme.typography.weights.semibold};
-  color: ${props => props.theme.colors.darkGreen};
-  background: ${props => props.theme.colors.teaRose};
+  color: ${props => props.theme.colors.floralWhite};
+  background: ${props => props.theme.colors.darkGreen};
   padding: 10px 22px;
   border-radius: 999px;
   margin-bottom: ${props => props.theme.spacing.md};
   letter-spacing: 0.3px;
-  box-shadow: 0 2px 8px rgba(190, 106, 101, 0.25);
+  box-shadow: 0 2px 8px rgba(1, 57, 39, 0.25);
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     font-size: 16px;
@@ -2125,15 +2125,6 @@ const MenuPage = () => {
           title: isEnglish ? "Our Burgers" : isSpanish ? "Nuestras Hamburguesas" : "Nos Burgers",
           items: [
             {
-              name: "Brioche burger",
-              description: isEnglish
-                ? "Beef steak, cheddar, salad, tomato, red onions, homemade burger sauce"
-                : isSpanish
-                ? "Filete de ternera, cheddar, ensalada, tomate, cebolla roja, salsa burger casera"
-                : "Steak de bœuf, cheddar, salade, tomate, oignons rouge, sauce burger maison",
-              price: "12 €"
-            },
-            {
               name: "Le Burger House",
               description: isEnglish
                 ? "Brioche bun, chicken cutlet (beef or chicken), lamb's lettuce, tomatoes, red onion, cheddar, saffron sauce"
@@ -2175,6 +2166,15 @@ const MenuPage = () => {
         {
           title: isEnglish ? "Our savory brioches" : isSpanish ? "Nuestras brioches saladas" : "Nos brioches salées",
           items: [
+            {
+              name: "Brioche burger",
+              description: isEnglish
+                ? "Beef steak, cheddar, salad, tomato, red onions, homemade burger sauce"
+                : isSpanish
+                ? "Filete de ternera, cheddar, ensalada, tomate, cebolla roja, salsa burger casera"
+                : "Steak de bœuf, cheddar, salade, tomate, oignons rouge, sauce burger maison",
+              price: "12 €"
+            },
             {
               name: isEnglish ? "Savory French toast scrambled eggs bacon" : isSpanish ? "Tostada francesa salada huevos revueltos bacon" : "Brioche perdue salée œuf brouillé bacon",
               price: "14 €"
