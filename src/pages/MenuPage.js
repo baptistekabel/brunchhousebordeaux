@@ -1857,6 +1857,18 @@ const MenuPage = () => {
       image: "/images/new/smootieananascoco.jpg",
       description: "Smoothie de piña y coco"
     },
+    "Jus Ginger Ananas frais": {
+      image: "/images/new/JusGinger.jpeg",
+      description: isEnglish ? "Fresh ginger pineapple juice" : isSpanish ? "Zumo de jengibre y piña fresco" : "Jus gingembre ananas frais"
+    },
+    "Fresh ginger pineapple juice": {
+      image: "/images/new/JusGinger.jpeg",
+      description: "Fresh ginger pineapple juice"
+    },
+    "Zumo de jengibre y piña fresco": {
+      image: "/images/new/JusGinger.jpeg",
+      description: "Zumo de jengibre y piña fresco"
+    },
     "Smoothie Orange Fraise Banane": {
       image: "/images/new/smootieorangefraisebanane.jpg",
       description: isEnglish ? "Orange strawberry banana smoothie" : isSpanish ? "Smoothie de naranja, fresa y plátano" : "Smoothie orange fraise banane"
@@ -2326,6 +2338,7 @@ const MenuPage = () => {
         { name: isEnglish ? "Mango smoothie" : isSpanish ? "Smoothie de mango" : "Smoothie Mangue", price: "5,50 €", formulaPrice: "3 €" },
         { name: isEnglish ? "Pineapple coconut smoothie" : isSpanish ? "Smoothie de piña y coco" : "Smoothie Ananas Coco", price: "5,50 €", formulaPrice: "3 €" },
         { name: isEnglish ? "Orange strawberry banana smoothie" : isSpanish ? "Smoothie de naranja, fresa y plátano" : "Smoothie Orange Fraise Banane", price: "5,50 €", formulaPrice: "3 €" },
+        { name: isEnglish ? "Fresh ginger pineapple juice" : isSpanish ? "Zumo de jengibre y piña fresco" : "Jus Ginger Ananas frais", price: "5,50 €", formulaPrice: "3 €" },
         {
           name: "Frappuccino",
           description: isEnglish ? "chocolate caramel drizzle" : isSpanish ? "cobertura de chocolate y caramelo" : "nappage chocolat caramel",
@@ -2493,6 +2506,7 @@ const MenuPage = () => {
             isEnglish ? "Mango smoothie (+3€)" : isSpanish ? "Smoothie de mango (+3€)" : "Smoothie Mangue (+3€)",
             isEnglish ? "Pineapple coconut smoothie (+3€)" : isSpanish ? "Smoothie de piña y coco (+3€)" : "Smoothie Ananas Coco (+3€)",
             isEnglish ? "Orange strawberry banana smoothie (+3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (+3€)" : "Smoothie Orange Fraise Banane (+3€)",
+            isEnglish ? "Fresh ginger pineapple juice (+3€)" : isSpanish ? "Zumo de jengibre y piña fresco (+3€)" : "Jus Ginger Ananas frais (+3€)",
             "Frappuccino (+3€)",
             isEnglish ? "Iced matcha (+3€)" : isSpanish ? "Matcha frappé (+3€)" : "Matcha frappé (+3€)",
             isEnglish ? "Iced ube (+3€)" : isSpanish ? "Ube frappé (+3€)" : "Ube frappé (+3€)",
@@ -2635,6 +2649,7 @@ const MenuPage = () => {
             isEnglish ? "Mango smoothie (+3€)" : isSpanish ? "Smoothie de mango (+3€)" : "Smoothie Mangue (+3€)",
             isEnglish ? "Pineapple coconut smoothie (+3€)" : isSpanish ? "Smoothie de piña y coco (+3€)" : "Smoothie Ananas Coco (+3€)",
             isEnglish ? "Orange strawberry banana smoothie (+3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (+3€)" : "Smoothie Orange Fraise Banane (+3€)",
+            isEnglish ? "Fresh ginger pineapple juice (+3€)" : isSpanish ? "Zumo de jengibre y piña fresco (+3€)" : "Jus Ginger Ananas frais (+3€)",
             "Frappuccino (+3€)",
             isEnglish ? "Iced matcha (+3€)" : isSpanish ? "Matcha frappé (+3€)" : "Matcha frappé (+3€)",
             isEnglish ? "Iced ube (+3€)" : isSpanish ? "Ube frappé (+3€)" : "Ube frappé (+3€)",
@@ -2730,6 +2745,7 @@ const MenuPage = () => {
             isEnglish ? "Mango smoothie (+3€)" : isSpanish ? "Smoothie de mango (+3€)" : "Smoothie Mangue (+3€)",
             isEnglish ? "Pineapple coconut smoothie (+3€)" : isSpanish ? "Smoothie de piña y coco (+3€)" : "Smoothie Ananas Coco (+3€)",
             isEnglish ? "Orange strawberry banana smoothie (+3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (+3€)" : "Smoothie Orange Fraise Banane (+3€)",
+            isEnglish ? "Fresh ginger pineapple juice (+3€)" : isSpanish ? "Zumo de jengibre y piña fresco (+3€)" : "Jus Ginger Ananas frais (+3€)",
             "Frappuccino (+3€)",
             isEnglish ? "Iced matcha (+3€)" : isSpanish ? "Matcha frappé (+3€)" : "Matcha frappé (+3€)",
             isEnglish ? "Iced ube (+3€)" : isSpanish ? "Ube frappé (+3€)" : "Ube frappé (+3€)",
