@@ -371,7 +371,7 @@ const TestimonialsSection = () => {
           <LiquidGlassButton
             variant="accent"
             size="large"
-            onClick={() => window.open('https://www.google.com/search?q=brunch+house+bordeaux&rlz=1C5CHFA_enFR1079FR1079#lrd=0xd5527cf9d0c3831:0xfed2e2f5b0c10c2e,3,,,,', '_blank')}
+            onClick={() => window.open('https://search.google.com/local/writereview?placeid=ChIJz1t6mV0nVQ0ReiRRJk46vgI', '_blank')}
             as={motion.button}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

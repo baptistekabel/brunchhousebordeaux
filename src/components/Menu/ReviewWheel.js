@@ -5,7 +5,7 @@ import { FiX, FiExternalLink, FiCheckCircle } from 'react-icons/fi';
 import { FaGoogle } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
-const GOOGLE_REVIEW_URL = 'https://www.google.com/search?q=brunch+house+bordeaux&rlz=1C5CHFA_enFR1079FR1079#lrd=0xd5527cf9d0c3831:0xfed2e2f5b0c10c2e,3,,,,';
+const GOOGLE_REVIEW_URL = 'https://search.google.com/local/writereview?placeid=ChIJz1t6mV0nVQ0ReiRRJk46vgI';
 
 // Probabilités : menu = 0,01 %, toast = 5 %, le reste réparti selon le prix
 // du produit (moins c'est cher, plus la chance est grande) :
