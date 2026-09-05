@@ -155,7 +155,7 @@ const SectionTitle = styled.h2`
     );
   }
 
-  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     font-size: 24px;
     gap: ${props => props.theme.spacing.sm};
   }
@@ -208,7 +208,7 @@ const CategoryHeader = styled.button`
     background: rgba(252, 189, 189, 0.15);
   }
 
-  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: ${props => props.theme.spacing.sm} ${props => props.theme.spacing.md};
   }
 `;
@@ -221,7 +221,7 @@ const CategoryTitle = styled.h3`
   align-items: center;
   gap: ${props => props.theme.spacing.sm};
 
-  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     font-size: 16px;
   }
 `;
@@ -246,7 +246,7 @@ const CategoryBody = styled(motion.div)`
 const ItemsList = styled.div`
   padding: 0 ${props => props.theme.spacing.lg} ${props => props.theme.spacing.md};
 
-  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 0 ${props => props.theme.spacing.md} ${props => props.theme.spacing.sm};
   }
 `;
@@ -263,10 +263,10 @@ const ItemRow = styled.div`
     border-top: none;
   }
 
-  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     flex-direction: column;
     align-items: flex-start;
-    gap: 6px;
+    gap: 8px;
   }
 `;
 
@@ -275,7 +275,7 @@ const ItemName = styled.div`
   color: ${props => props.theme.colors.darkGreen};
   line-height: 1.4;
 
-  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     font-size: 14px;
   }
 `;
@@ -285,10 +285,11 @@ const ChipsWrapper = styled.div`
   flex-wrap: wrap;
   gap: 6px;
   justify-content: flex-end;
-  flex-shrink: 0;
+  max-width: 55%;
 
-  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     justify-content: flex-start;
+    max-width: 100%;
   }
 `;
 
