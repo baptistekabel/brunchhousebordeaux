@@ -1,11 +1,13 @@
 import styled, { keyframes } from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowLeft, FiCheck, FiPlus, FiX } from 'react-icons/fi';
+import { FiArrowLeft, FiCheck, FiChevronDown, FiPlus, FiX } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
+import AllergensSection from '../components/Menu/AllergensSection';
+import ReviewWheel from '../components/Menu/ReviewWheel';
 import { LiquidGlassCard } from '../components/LiquidGlass';
 import { createScrollTrigger } from '../hooks/useScrollAnimation';
 
@@ -117,6 +119,34 @@ const Subtitle = styled(motion.p)`
     font-size: 16px;
     margin-bottom: ${props => props.theme.spacing.lg};
     padding: 0 ${props => props.theme.spacing.sm};
+  }
+`;
+
+const AllergensButton = styled(motion.button)`
+  display: inline-flex;
+  align-items: center;
+  gap: ${props => props.theme.spacing.sm};
+  padding: ${props => props.theme.spacing.sm} ${props => props.theme.spacing.lg};
+  background: rgba(253, 249, 240, 0.12);
+  border: 1px solid rgba(253, 249, 240, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: ${props => props.theme.borderRadius.pill};
+  color: ${props => props.theme.colors.floralWhite};
+  font-size: ${props => props.theme.typography.sizes.small};
+  font-weight: ${props => props.theme.typography.weights.medium};
+  font-family: inherit;
+  cursor: pointer;
+  transition: all ${props => props.theme.transitions.fast};
+
+  &:hover {
+    background: rgba(253, 249, 240, 0.95);
+    color: ${props => props.theme.colors.darkGreen};
+    transform: translateY(2px);
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 13px;
+    padding: ${props => props.theme.spacing.xs} ${props => props.theme.spacing.md};
   }
 `;
 
@@ -877,6 +907,24 @@ const MenuPage = () => {
   const [selectedDish, setSelectedDish] = useState(null);
   const [showDishModal, setShowDishModal] = useState(false);
   const [hoveredDish, setHoveredDish] = useState(null);
+  const [showWheel, setShowWheel] = useState(false);
+
+  // Affiche la roue une seule fois par visiteur, à l'arrivée sur la page menu
+  useEffect(() => {
+    let alreadySeen = false;
+    try {
+      alreadySeen = localStorage.getItem('bh_wheel_seen') === '1';
+    } catch (e) { /* stockage indisponible */ }
+    if (!alreadySeen) {
+      const timer = setTimeout(() => {
+        setShowWheel(true);
+        try {
+          localStorage.setItem('bh_wheel_seen', '1');
+        } catch (e) { /* stockage indisponible */ }
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const toggleFormula = (formulaId) => {
     setExpandedFormulas(prev => ({
@@ -2809,6 +2857,16 @@ const MenuPage = () => {
         >
           {isEnglish ? "Everything is fresh and homemade" : isSpanish ? "Todo es fresco y casero" : "Tout est frais et fait maison"}
         </Subtitle>
+
+        <AllergensButton
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          onClick={() => document.getElementById('allergenes')?.scrollIntoView({ behavior: 'smooth' })}
+        >
+          ⚠️ {isEnglish ? "See allergens" : isSpanish ? "Ver alérgenos" : "Voir les allergènes"}
+          <FiChevronDown />
+        </AllergensButton>
       </MenuHeader>
       
       <MenuContainer>
@@ -3128,7 +3186,11 @@ const MenuPage = () => {
             </MenuSection>
           );
         })}
+
+        <AllergensSection />
       </MenuContainer>
+
+      <ReviewWheel open={showWheel} onClose={() => setShowWheel(false)} />
       
       <Footer />
       
