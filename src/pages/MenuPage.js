@@ -541,6 +541,45 @@ const RadioButton = styled(motion.div)`
   }
 `;
 
+const SupplementChip = styled.button`
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 4px 10px 4px 6px;
+  border-radius: 999px;
+  border: 1px dashed ${props => props.$active ? (props.$onDark ? '#f0b46a' : '#c47a2c') : (props.$onDark ? 'rgba(240, 180, 106, 0.6)' : 'rgba(196, 122, 44, 0.5)')};
+  background: ${props => props.$active ? (props.$onDark ? 'rgba(240, 180, 106, 0.22)' : 'rgba(196, 122, 44, 0.15)') : (props.$onDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(255, 255, 255, 0.6)')};
+  color: ${props => props.$onDark ? '#f6d9b0' : '#8a5219'};
+  font-style: normal;
+  text-shadow: none;
+  font-size: 12px;
+  font-weight: ${props => props.$active ? 600 : 500};
+  line-height: 1.2;
+  cursor: pointer;
+  transition: all ${props => props.theme.transitions.fast};
+
+  .chip-check {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    background: ${props => props.$active ? (props.$onDark ? '#f0b46a' : '#c47a2c') : (props.$onDark ? 'rgba(240, 180, 106, 0.25)' : 'rgba(196, 122, 44, 0.15)')};
+    color: ${props => props.$active ? (props.$onDark ? '#1c3f33' : 'white') : (props.$onDark ? '#f0b46a' : '#c47a2c')};
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background: ${props => props.$onDark ? 'rgba(240, 180, 106, 0.3)' : 'rgba(196, 122, 44, 0.2)'};
+    border-style: solid;
+  }
+`;
+
 const ExpandButton = styled(motion.button)`
   position: absolute;
   top: ${props => props.theme.spacing.md};
@@ -902,6 +941,7 @@ const MenuPage = () => {
   const isSpanish = i18n.language === 'es';
   const [expandedFormulas, setExpandedFormulas] = useState({});
   const [selectedOptions, setSelectedOptions] = useState({});
+  const [carteSupplements, setCarteSupplements] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [currentFormula, setCurrentFormula] = useState(null);
   const [selectedDish, setSelectedDish] = useState(null);
@@ -1842,20 +1882,6 @@ const MenuPage = () => {
       description: "Bissap"
     },
 
-    // Jus de pastèque
-    "Jus de pastèque": {
-      image: "/images/new/pastequejus.jpg",
-      description: "Jus de pastèque"
-    },
-    "Watermelon juice": {
-      image: "/images/new/pastequejus.jpg",
-      description: "Watermelon juice"
-    },
-    "Zumo de sandía": {
-      image: "/images/new/pastequejus.jpg",
-      description: "Zumo de sandía"
-    },
-
     // Milkshakes & Smoothies
     "Milkshake Spéculoos": {
       image: "/images/new/milkshakespeculos.jpg",
@@ -2018,7 +2044,9 @@ const MenuPage = () => {
         ...prev,
         [formulaId]: {
           ...prev[formulaId],
-          [optionType]: newSelection
+          [optionType]: newSelection,
+          // Un changement de boisson remet le supplément à zéro
+          [`${optionType}_supplement`]: null
         }
       };
       
@@ -2033,6 +2061,41 @@ const MenuPage = () => {
     });
   };
   
+  const isSupplementSelected = (formulaId, optionType, option) => {
+    return (
+      isOptionSelected(formulaId, optionType, option) &&
+      !!selectedOptions[formulaId]?.[`${optionType}_supplement`]
+    );
+  };
+
+  // Sélectionne la boisson et ajoute/retire son supplément (ex: nappage caramel)
+  const toggleSupplement = (formulaId, optionType, option) => {
+    const optionValue = getOptionValue(option);
+    const supplementKey = `${optionType}_supplement`;
+    setSelectedOptions(prev => {
+      const current = prev[formulaId] || {};
+      const alreadySelected = current[optionType] === optionValue;
+      const newSupplement = alreadySelected && current[supplementKey] ? null : option.supplement;
+
+      const newOptions = {
+        ...prev,
+        [formulaId]: {
+          ...current,
+          [optionType]: optionValue,
+          [supplementKey]: newSupplement
+        }
+      };
+
+      const formula = formulas.find(f => f.id === formulaId);
+      if (formula) {
+        setCurrentFormula({ ...formula, selections: newOptions[formulaId] || {} });
+        setShowModal(true);
+      }
+
+      return newOptions;
+    });
+  };
+
   const isFormulaComplete = (formula) => {
     if (!selectedOptions[formula.id]) return false;
     
@@ -2046,6 +2109,12 @@ const MenuPage = () => {
       madeSelections.includes(req) && selectedOptions[formula.id][req]
     );
   };
+
+  const caramelSupplement = isEnglish
+    ? "Caramel drizzle (+1€)"
+    : isSpanish
+    ? "Salsa de caramelo (+1€)"
+    : "Nappage caramel (+1€)";
 
   const menuData = {
     viennoiseries: {
@@ -2322,8 +2391,16 @@ const MenuPage = () => {
         { name: isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé", price: "2,50 €" },
         { name: isEnglish ? "Coffee with milk" : isSpanish ? "Café cortado" : "Café noisette", price: "2,50 €" },
         { name: isEnglish ? "Double espresso" : isSpanish ? "Doble espresso" : "Double expresso", price: "3,50 €" },
-        { name: "Cappuccino", price: "4 €" },
-        { name: isEnglish ? "Café Latte" : isSpanish ? "Café con leche" : "Café Latté", price: "4 €" },
+        {
+          name: "Cappuccino",
+          supplement: caramelSupplement,
+          price: "4 €"
+        },
+        {
+          name: isEnglish ? "Café Latte" : isSpanish ? "Café con leche" : "Café Latté",
+          supplement: caramelSupplement,
+          price: "4 €"
+        },
         {
           name: "Matcha",
           description: isEnglish
@@ -2348,10 +2425,10 @@ const MenuPage = () => {
         { name: "Chai Latté", price: "5 €" }
       ],
       note: isEnglish 
-        ? "Extra +€0.50: whipped cream"
+        ? "Extras: whipped cream +€0.50 · caramel drizzle +€1"
         : isSpanish
-        ? "Suplemento +0,50€: nata montada"
-        : "Supplément +0,50€ : chantilly"
+        ? "Suplementos: nata montada +0,50€ · salsa de caramelo +1€"
+        : "Suppléments : chantilly +0,50€ · nappage caramel +1€"
     },
     boissonsF: {
       title: isEnglish ? "🧊 Cold drinks" : isSpanish ? "🧊 Bebidas frías" : "🧊 Boissons froides",
@@ -2365,7 +2442,6 @@ const MenuPage = () => {
         { name: isEnglish ? "Pineapple juice" : isSpanish ? "Zumo de piña" : "Jus d'ananas", price: "4 €" },
         { name: isEnglish ? "Homemade hibiscus" : isSpanish ? "Bissap casero" : "Bissap maison", price: "4 €" },
         { name: isEnglish ? "Homemade ginger juice" : isSpanish ? "Zumo de jengibre casero" : "Jus de gingembre maison", price: "5 €" },
-        { name: isEnglish ? "Watermelon juice" : isSpanish ? "Zumo de sandía" : "Jus de pastèque", price: "5 €" },
         { name: isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme", price: "4 €" },
         {
           name: isEnglish ? "Iced latte" : isSpanish ? "Latté helado" : "Latté glacé",
@@ -2428,10 +2504,10 @@ const MenuPage = () => {
       {
         name: isEnglish ? "Complete menu" : isSpanish ? "Menú completo" : "Menu complet",
         description: isEnglish
-          ? "Steak and fries, compote, Caprisun"
+          ? "Beef patty or chicken tenders with fries, compote, Caprisun"
           : isSpanish
-          ? "Steak con patatas fritas, compota, Caprisun"
-          : "Steak frites, compote, Caprisun",
+          ? "Steak picado o tiras de pollo con patatas fritas, compota, Caprisun"
+          : "Steak haché ou aiguillettes de poulet, frites, compote, Caprisun",
         price: "8 €"
       }
     ]
@@ -2523,8 +2599,8 @@ const MenuPage = () => {
             isEnglish ? "Double espresso (+1€)" : isSpanish ? "Doble espresso (+1€)" : "Double expresso (+1€)",
             isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
             isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
-            isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
-            "Cappuccino (+2€)",
+            { name: "Latté (+2€)", supplement: caramelSupplement },
+            { name: "Cappuccino (+2€)", supplement: caramelSupplement },
             isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moka (+3€)",
             "Matcha (+3€)",
             "Chai Latté (+3€)",
@@ -2548,7 +2624,6 @@ const MenuPage = () => {
             isEnglish ? "Pineapple juice" : isSpanish ? "Zumo de piña" : "Jus d'ananas",
             isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
             isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)",
-            isEnglish ? "Watermelon juice (+2€)" : isSpanish ? "Zumo de sandía (+2€)" : "Jus de pastèque (+2€)",
             isEnglish ? "Speculoos milkshake (+3€)" : isSpanish ? "Milkshake de speculoos (+3€)" : "Milkshake Spéculoos (+3€)",
             isEnglish ? "Kinder milkshake (+3€)" : isSpanish ? "Milkshake de Kinder (+3€)" : "Milkshake Kinder (+3€)",
             isEnglish ? "Mango smoothie (+3€)" : isSpanish ? "Smoothie de mango (+3€)" : "Smoothie Mangue (+3€)",
@@ -2598,8 +2673,8 @@ const MenuPage = () => {
             isEnglish ? "Double espresso (+1€)" : isSpanish ? "Doble espresso (+1€)" : "Double expresso (+1€)",
             isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
             isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
-            isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
-            "Cappuccino (+2€)",
+            { name: "Latté (+2€)", supplement: caramelSupplement },
+            { name: "Cappuccino (+2€)", supplement: caramelSupplement },
             isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moka (+3€)",
             "Matcha (+3€)",
             {
@@ -2666,8 +2741,8 @@ const MenuPage = () => {
             isEnglish ? "Double espresso (+1€)" : isSpanish ? "Doble espresso (+1€)" : "Double expresso (+1€)",
             isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
             isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
-            isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
-            "Cappuccino (+2€)",
+            { name: "Latté (+2€)", supplement: caramelSupplement },
+            { name: "Cappuccino (+2€)", supplement: caramelSupplement },
             isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moka (+3€)",
             "Matcha (+3€)",
             "Chai Latté (+3€)",
@@ -2691,7 +2766,6 @@ const MenuPage = () => {
             isEnglish ? "Pineapple juice" : isSpanish ? "Zumo de piña" : "Jus d'ananas",
             isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
             isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)",
-            isEnglish ? "Watermelon juice (+2€)" : isSpanish ? "Zumo de sandía (+2€)" : "Jus de pastèque (+2€)",
             isEnglish ? "Speculoos milkshake (+3€)" : isSpanish ? "Milkshake de speculoos (+3€)" : "Milkshake Spéculoos (+3€)",
             isEnglish ? "Kinder milkshake (+3€)" : isSpanish ? "Milkshake de Kinder (+3€)" : "Milkshake Kinder (+3€)",
             isEnglish ? "Mango smoothie (+3€)" : isSpanish ? "Smoothie de mango (+3€)" : "Smoothie Mangue (+3€)",
@@ -2762,8 +2836,8 @@ const MenuPage = () => {
             isEnglish ? "Double espresso (+1€)" : isSpanish ? "Doble espresso (+1€)" : "Double expresso (+1€)",
             isEnglish ? "Long coffee" : isSpanish ? "Café largo" : "Allongé",
             isEnglish ? "Hot chocolate" : isSpanish ? "Chocolate caliente" : "Chocolat chaud",
-            isEnglish ? "Latté (+2€)" : isSpanish ? "Latté (+2€)" : "Latté (+2€)",
-            "Cappuccino (+2€)",
+            { name: "Latté (+2€)", supplement: caramelSupplement },
+            { name: "Cappuccino (+2€)", supplement: caramelSupplement },
             isEnglish ? "Mocha (+3€)" : isSpanish ? "Moca (+3€)" : "Moka (+3€)",
             "Matcha (+3€)",
             "Chai Latté (+3€)",
@@ -2787,7 +2861,6 @@ const MenuPage = () => {
             isEnglish ? "Pineapple juice" : isSpanish ? "Zumo de piña" : "Jus d'ananas",
             isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
             isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)",
-            isEnglish ? "Watermelon juice (+2€)" : isSpanish ? "Zumo de sandía (+2€)" : "Jus de pastèque (+2€)",
             isEnglish ? "Speculoos milkshake (+3€)" : isSpanish ? "Milkshake de speculoos (+3€)" : "Milkshake Spéculoos (+3€)",
             isEnglish ? "Kinder milkshake (+3€)" : isSpanish ? "Milkshake de Kinder (+3€)" : "Milkshake Kinder (+3€)",
             isEnglish ? "Mango smoothie (+3€)" : isSpanish ? "Smoothie de mango (+3€)" : "Smoothie Mangue (+3€)",
@@ -2993,6 +3066,21 @@ const MenuPage = () => {
                                       {option.description}
                                     </span>
                                   )}
+                                  {typeof option === 'object' && option.supplement && (
+                                    <SupplementChip
+                                      type="button"
+                                      $active={isSupplementSelected(formula.id, section.type, option)}
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        toggleSupplement(formula.id, section.type, option);
+                                      }}
+                                    >
+                                      <span className="chip-check">
+                                        {isSupplementSelected(formula.id, section.type, option) ? '✓' : '+'}
+                                      </span>
+                                      {option.supplement}
+                                    </SupplementChip>
+                                  )}
                                 </span>
                                 {(() => {
                                   const optName = typeof option === 'string' ? option : option.name;
@@ -3120,6 +3208,20 @@ const MenuPage = () => {
                   {item.name}
                   {item.description && item.name !== "Moka" && item.name !== "Matcha" && <span>{item.description}</span>}
                   {(item.name === "Moka" || item.name === "Matcha") && dishInfo && dishInfo.description && <span>{dishInfo.description}</span>}
+                  {item.supplement && (
+                    <SupplementChip
+                      type="button"
+                      $onDark
+                      $active={!!carteSupplements[item.name]}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCarteSupplements(prev => ({ ...prev, [item.name]: !prev[item.name] }));
+                      }}
+                    >
+                      <span className="chip-check">{carteSupplements[item.name] ? '✓' : '+'}</span>
+                      {item.supplement}
+                    </SupplementChip>
+                  )}
                 </ItemName>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                   <ItemPrice>{item.price}</ItemPrice>
@@ -3251,12 +3353,22 @@ const MenuPage = () => {
                               </ModalItem>
                             ))
                           ) : (
-                            <ModalItem>
-                              <FiCheck size={16} style={{ color: '#3BAA6D' }} />
-                              <span style={{ fontWeight: 500 }}>
-                                {currentFormula.selections[section.type]}
-                              </span>
-                            </ModalItem>
+                            <>
+                              <ModalItem>
+                                <FiCheck size={16} style={{ color: '#3BAA6D' }} />
+                                <span style={{ fontWeight: 500 }}>
+                                  {currentFormula.selections[section.type]}
+                                </span>
+                              </ModalItem>
+                              {currentFormula.selections[`${section.type}_supplement`] && (
+                                <ModalItem style={{ paddingLeft: '24px' }}>
+                                  <FiPlus size={14} style={{ color: '#c47a2c' }} />
+                                  <span style={{ fontSize: '13px', color: '#c47a2c', fontWeight: 500 }}>
+                                    {currentFormula.selections[`${section.type}_supplement`]}
+                                  </span>
+                                </ModalItem>
+                              )}
+                            </>
                           )
                         ) : (
                           <ModalItem style={{ opacity: 0.5, fontStyle: 'italic' }}>

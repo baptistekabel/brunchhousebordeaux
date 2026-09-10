@@ -116,7 +116,6 @@ const ALLERGEN_DATA = [
       { name: { fr: "Jus d'ananas", en: 'Pineapple juice', es: 'Zumo de piña' }, allergens: [] },
       { name: { fr: 'Bissap maison', en: 'Homemade bissap', es: 'Bissap casero' }, allergens: [] },
       { name: { fr: 'Jus de gingembre maison', en: 'Homemade ginger juice', es: 'Zumo de jengibre casero' }, allergens: [] },
-      { name: { fr: 'Jus de pastèque', en: 'Watermelon juice', es: 'Zumo de sandía' }, allergens: [] },
       { name: { fr: 'Jus de pomme', en: 'Apple juice', es: 'Zumo de manzana' }, allergens: [] },
       { name: { fr: 'Latté glacé — sirop/nappage au choix', en: 'Iced latte — syrup/topping of your choice', es: 'Latte helado — sirope/cobertura a elegir' }, allergens: ['lait'] },
       { name: { fr: 'Milkshake Spéculoos', en: 'Speculoos milkshake', es: 'Batido de speculoos' }, allergens: ['gluten', 'lait'] },
