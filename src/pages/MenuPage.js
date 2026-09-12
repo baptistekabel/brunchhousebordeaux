@@ -949,17 +949,18 @@ const MenuPage = () => {
   const [hoveredDish, setHoveredDish] = useState(null);
   const [showWheel, setShowWheel] = useState(false);
 
-  // Affiche la roue une seule fois par visiteur, à l'arrivée sur la page menu
+  // Affiche la roue une fois par jour et par visiteur, à l'arrivée sur la page menu
   useEffect(() => {
-    let alreadySeen = false;
+    const today = new Date().toLocaleDateString('fr-CA'); // AAAA-MM-JJ, heure locale
+    let seenToday = false;
     try {
-      alreadySeen = localStorage.getItem('bh_wheel_seen') === '1';
+      seenToday = localStorage.getItem('bh_wheel_seen') === today;
     } catch (e) { /* stockage indisponible */ }
-    if (!alreadySeen) {
+    if (!seenToday) {
       const timer = setTimeout(() => {
         setShowWheel(true);
         try {
-          localStorage.setItem('bh_wheel_seen', '1');
+          localStorage.setItem('bh_wheel_seen', today);
         } catch (e) { /* stockage indisponible */ }
       }, 1500);
       return () => clearTimeout(timer);
@@ -1563,18 +1564,18 @@ const MenuPage = () => {
     "Thé": {
       image: "/images/menu/tea.JPG",
       description: isEnglish
-        ? "Selection of fine teas"
+        ? "Jasmine, mint, mango"
         : isSpanish
-        ? "Selección de tés finos"
-        : "Sélection de thés fins"
+        ? "Jazmín, menta, mango"
+        : "Jasmin, menthe, mangue"
     },
     "Tea": {
       image: "/images/menu/tea.JPG",
-      description: "Selection of fine teas"
+      description: "Jasmine, mint, mango"
     },
     "Té": {
       image: "/images/menu/tea.JPG",
-      description: "Selección de tés finos"
+      description: "Jazmín, menta, mango"
     },
     
     // Cafés
@@ -2419,7 +2420,11 @@ const MenuPage = () => {
             : "Chantilly en option +0,50€",
           price: "5 €"
         },
-        { name: isEnglish ? "Tea" : isSpanish ? "Té" : "Thé", price: "4 €" },
+        {
+          name: isEnglish ? "Tea" : isSpanish ? "Té" : "Thé",
+          description: isEnglish ? "jasmine / mint / mango" : isSpanish ? "jazmín / menta / mango" : "jasmin / menthe / mangue",
+          price: "4 €"
+        },
         { name: isEnglish ? "Mocha" : isSpanish ? "Moca" : "Moka", price: "5 €" },
         { name: "Ube Latté", price: "6 €" },
         { name: "Chai Latté", price: "5 €" }
@@ -2435,7 +2440,7 @@ const MenuPage = () => {
       items: [
         {
           name: isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
-          description: "Sprite, Coca Cola, Coca Cherry, Coca Zero, Oasis, Fuze Tea, Orangina",
+          description: "Sprite, Coca Cola, Coca Cherry, Coca Zero, Fanta, Oasis, Fuze Tea, Orangina",
           price: "2 €"
         },
         { name: isEnglish ? "Homemade orange juice" : isSpanish ? "Zumo de naranja casero" : "Jus d'orange maison", price: "4 €" },
@@ -2606,7 +2611,7 @@ const MenuPage = () => {
             "Chai Latté (+3€)",
             {
               name: isEnglish ? "Tea (+2€)" : isSpanish ? "Té (+2€)" : "Thé (+2€)",
-              description: isEnglish ? "mint / jasmine / mango" : isSpanish ? "menta / jazmín / mango" : "menthe / jasmin / mangue"
+              description: isEnglish ? "jasmine / mint / mango" : isSpanish ? "jazmín / menta / mango" : "jasmin / menthe / mangue"
             },
             "Ube Latté (+3€)"
           ],
@@ -2617,7 +2622,7 @@ const MenuPage = () => {
           options: [
             {
               name: isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
-              description: "Sprite, Coca Cola, Coca Cherry, Coca Zero, Oasis, Fuze Tea, Orangina"
+              description: "Sprite, Coca Cola, Coca Cherry, Coca Zero, Fanta, Oasis, Fuze Tea, Orangina"
             },
             isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme",
             isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange",
@@ -2679,7 +2684,7 @@ const MenuPage = () => {
             "Matcha (+3€)",
             {
               name: isEnglish ? "Tea (+2€)" : isSpanish ? "Té (+2€)" : "Thé (+2€)",
-              description: isEnglish ? "mint / jasmine / mango" : isSpanish ? "menta / jazmín / mango" : "menthe / jasmin / mangue"
+              description: isEnglish ? "jasmine / mint / mango" : isSpanish ? "jazmín / menta / mango" : "jasmin / menthe / mangue"
             },
             isEnglish ? "Oat chai latte (+3€)" : isSpanish ? "Chai latte avena (+3€)" : "Chaï latté avoine (+3€)",
             "Ube Latté (+3€)"
@@ -2748,7 +2753,7 @@ const MenuPage = () => {
             "Chai Latté (+3€)",
             {
               name: isEnglish ? "Tea (+2€)" : isSpanish ? "Té (+2€)" : "Thé (+2€)",
-              description: isEnglish ? "mint / jasmine / mango" : isSpanish ? "menta / jazmín / mango" : "menthe / jasmin / mangue"
+              description: isEnglish ? "jasmine / mint / mango" : isSpanish ? "jazmín / menta / mango" : "jasmin / menthe / mangue"
             },
             "Ube Latté (+3€)"
           ],
@@ -2759,7 +2764,7 @@ const MenuPage = () => {
           options: [
             {
               name: isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
-              description: "Sprite, Coca Cola, Coca Cherry, Coca Zero, Oasis, Fuze Tea, Orangina"
+              description: "Sprite, Coca Cola, Coca Cherry, Coca Zero, Fanta, Oasis, Fuze Tea, Orangina"
             },
             isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme",
             isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange",
@@ -2843,7 +2848,7 @@ const MenuPage = () => {
             "Chai Latté (+3€)",
             {
               name: isEnglish ? "Tea (+2€)" : isSpanish ? "Té (+2€)" : "Thé (+2€)",
-              description: isEnglish ? "mint / jasmine / mango" : isSpanish ? "menta / jazmín / mango" : "menthe / jasmin / mangue"
+              description: isEnglish ? "jasmine / mint / mango" : isSpanish ? "jazmín / menta / mango" : "jasmin / menthe / mangue"
             },
             "Ube Latté (+3€)"
           ],
@@ -2854,7 +2859,7 @@ const MenuPage = () => {
           options: [
             {
               name: isEnglish ? "Can" : isSpanish ? "Lata" : "Canette",
-              description: "Sprite, Coca Cola, Coca Cherry, Coca Zero, Oasis, Fuze Tea, Orangina"
+              description: "Sprite, Coca Cola, Coca Cherry, Coca Zero, Fanta, Oasis, Fuze Tea, Orangina"
             },
             isEnglish ? "Apple juice" : isSpanish ? "Zumo de manzana" : "Jus de pomme",
             isEnglish ? "Orange juice" : isSpanish ? "Zumo de naranja" : "Jus d'orange",

@@ -111,7 +111,7 @@ const ALLERGEN_DATA = [
     title: { fr: 'Boissons froides', en: 'Cold drinks', es: 'Bebidas frías' },
     emoji: '🧊',
     items: [
-      { name: { fr: 'Canette — Sprite, Coca-Cola, Coca Cherry, Coca Zero, Oasis, Fuze Tea, Orangina', en: 'Can — Sprite, Coca-Cola, Coca Cherry, Coca Zero, Oasis, Fuze Tea, Orangina', es: 'Lata — Sprite, Coca-Cola, Coca Cherry, Coca Zero, Oasis, Fuze Tea, Orangina' }, allergens: [] },
+      { name: { fr: 'Canette — Sprite, Coca-Cola, Coca Cherry, Coca Zero, Fanta, Oasis, Fuze Tea, Orangina', en: 'Can — Sprite, Coca-Cola, Coca Cherry, Coca Zero, Fanta, Oasis, Fuze Tea, Orangina', es: 'Lata — Sprite, Coca-Cola, Coca Cherry, Coca Zero, Fanta, Oasis, Fuze Tea, Orangina' }, allergens: [] },
       { name: { fr: "Jus d'orange maison", en: 'Homemade orange juice', es: 'Zumo de naranja casero' }, allergens: [] },
       { name: { fr: "Jus d'ananas", en: 'Pineapple juice', es: 'Zumo de piña' }, allergens: [] },
       { name: { fr: 'Bissap maison', en: 'Homemade bissap', es: 'Bissap casero' }, allergens: [] },
