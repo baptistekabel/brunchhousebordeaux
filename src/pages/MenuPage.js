@@ -3158,10 +3158,10 @@ const MenuPage = () => {
           
           <Note style={{ marginTop: '32px', fontSize: '16px' }}>
             {i18n.language === 'en'
-              ? "Extra +€2: salad / fries / sweet potato fries"
+              ? "Extra +€2: salad / fries"
               : i18n.language === 'es'
-              ? "Suplemento +2€: ensalada / patatas fritas / patatas dulces fritas"
-              : "Supplément +2€ : salade / frites / frites patates douces"}
+              ? "Suplemento +2€: ensalada / patatas fritas"
+              : "Supplément +2€ : salade / frites"}
           </Note>
         </MenuSection>
 
