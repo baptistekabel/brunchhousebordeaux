@@ -2322,7 +2322,7 @@ const MenuPage = () => {
                 : isSpanish
                 ? "Filete de ternera, cheddar, ensalada, tomate, cebolla roja, salsa burger casera"
                 : "Steak de bœuf, cheddar, salade, tomate, oignons rouge, sauce burger maison",
-              price: "15 €"
+              price: "16 €"
             },
             {
               name: isEnglish ? "Savory French toast scrambled eggs bacon" : isSpanish ? "Tostada francesa salada huevos revueltos bacon" : "Brioche perdue salée œuf brouillé bacon",
