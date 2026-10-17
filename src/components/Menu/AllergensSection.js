@@ -121,7 +121,7 @@ const ALLERGEN_DATA = [
       { name: { fr: 'Milkshake Spéculoos', en: 'Speculoos milkshake', es: 'Batido de speculoos' }, allergens: ['gluten', 'lait'] },
       { name: { fr: 'Milkshake Kinder', en: 'Kinder milkshake', es: 'Batido de Kinder' }, allergens: ['gluten', 'soja', 'lait', 'coque'] },
       { name: { fr: 'Smoothie Mangue', en: 'Mango smoothie', es: 'Smoothie de mango' }, allergens: [] },
-      { name: { fr: 'Smoothie Ananas Coco', en: 'Pineapple coconut smoothie', es: 'Smoothie de piña y coco' }, allergens: ['lait'] },
+      { name: { fr: 'Smoothie Hawaï', en: 'Hawaii smoothie', es: 'Smoothie Hawái' }, allergens: ['lait'] },
       { name: { fr: 'Smoothie Orange Fraise Banane', en: 'Orange strawberry banana smoothie', es: 'Smoothie de naranja, fresa y plátano' }, allergens: [] },
       { name: { fr: 'Jus Ginger Ananas frais', en: 'Fresh ginger pineapple juice', es: 'Zumo fresco de jengibre y piña' }, allergens: [] },
       { name: { fr: 'Frappuccino nappage chocolat caramel', en: 'Frappuccino with chocolate caramel topping', es: 'Frappuccino con cobertura de chocolate y caramelo' }, allergens: ['gluten', 'lait'] },
