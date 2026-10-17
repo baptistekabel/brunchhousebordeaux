@@ -1920,29 +1920,29 @@ const MenuPage = () => {
       image: "/images/new/smootiemangue.jpg",
       description: "Smoothie de mango"
     },
-    "Smoothie Hawaï": {
+    "Smoothie Ananas": {
       image: "/images/new/smootieananascoco.jpg",
       description: isEnglish ? "Pineapple smoothie" : isSpanish ? "Smoothie de piña" : "Smoothie ananas"
     },
-    "Hawaii smoothie": {
+    "Pineapple smoothie": {
       image: "/images/new/smootieananascoco.jpg",
       description: "Pineapple smoothie"
     },
-    "Smoothie Hawái": {
+    "Smoothie de piña": {
       image: "/images/new/smootieananascoco.jpg",
       description: "Smoothie de piña"
     },
-    "Jus Ginger Ananas frais": {
+    "Smoothie Ananas frais": {
       image: "/images/new/JusGinger.jpeg",
-      description: isEnglish ? "Fresh ginger pineapple juice" : isSpanish ? "Zumo de jengibre y piña fresco" : "Jus gingembre ananas frais"
+      description: isEnglish ? "Fresh pineapple smoothie" : isSpanish ? "Smoothie de piña fresca" : "Smoothie ananas frais"
     },
-    "Fresh ginger pineapple juice": {
+    "Fresh pineapple smoothie": {
       image: "/images/new/JusGinger.jpeg",
-      description: "Fresh ginger pineapple juice"
+      description: "Fresh pineapple smoothie"
     },
-    "Zumo de jengibre y piña fresco": {
+    "Smoothie de piña fresca": {
       image: "/images/new/JusGinger.jpeg",
-      description: "Zumo de jengibre y piña fresco"
+      description: "Smoothie de piña fresca"
     },
     "Smoothie Orange Fraise Banane": {
       image: "/images/new/smootieorangefraisebanane.jpg",
@@ -2465,9 +2465,9 @@ const MenuPage = () => {
         { name: isEnglish ? "Speculoos milkshake" : isSpanish ? "Milkshake de speculoos" : "Milkshake Spéculoos", price: "5,50 €", formulaPrice: "3 €" },
         { name: isEnglish ? "Kinder milkshake" : isSpanish ? "Milkshake de Kinder" : "Milkshake Kinder", price: "5,50 €", formulaPrice: "3 €" },
         { name: isEnglish ? "Mango smoothie" : isSpanish ? "Smoothie de mango" : "Smoothie Mangue", price: "5,50 €", formulaPrice: "3 €" },
-        { name: isEnglish ? "Hawaii smoothie" : isSpanish ? "Smoothie Hawái" : "Smoothie Hawaï", price: "5,50 €", formulaPrice: "3 €" },
+        { name: isEnglish ? "Pineapple smoothie" : isSpanish ? "Smoothie de piña" : "Smoothie Ananas", price: "5,50 €", formulaPrice: "3 €" },
         { name: isEnglish ? "Orange strawberry banana smoothie" : isSpanish ? "Smoothie de naranja, fresa y plátano" : "Smoothie Orange Fraise Banane", price: "5,50 €", formulaPrice: "3 €" },
-        { name: isEnglish ? "Fresh ginger pineapple juice" : isSpanish ? "Zumo de jengibre y piña fresco" : "Jus Ginger Ananas frais", price: "5,50 €", formulaPrice: "3 €" },
+        { name: isEnglish ? "Fresh pineapple smoothie" : isSpanish ? "Smoothie de piña fresca" : "Smoothie Ananas frais", price: "5,50 €", formulaPrice: "3 €" },
         {
           name: "Frappuccino",
           description: isEnglish ? "chocolate caramel drizzle" : isSpanish ? "cobertura de chocolate y caramelo" : "nappage chocolat caramel",
@@ -2632,9 +2632,9 @@ const MenuPage = () => {
             isEnglish ? "Speculoos milkshake (+3€)" : isSpanish ? "Milkshake de speculoos (+3€)" : "Milkshake Spéculoos (+3€)",
             isEnglish ? "Kinder milkshake (+3€)" : isSpanish ? "Milkshake de Kinder (+3€)" : "Milkshake Kinder (+3€)",
             isEnglish ? "Mango smoothie (+3€)" : isSpanish ? "Smoothie de mango (+3€)" : "Smoothie Mangue (+3€)",
-            isEnglish ? "Hawaii smoothie (+3€)" : isSpanish ? "Smoothie Hawái (+3€)" : "Smoothie Hawaï (+3€)",
+            isEnglish ? "Pineapple smoothie (+3€)" : isSpanish ? "Smoothie de piña (+3€)" : "Smoothie Ananas (+3€)",
             isEnglish ? "Orange strawberry banana smoothie (+3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (+3€)" : "Smoothie Orange Fraise Banane (+3€)",
-            isEnglish ? "Fresh ginger pineapple juice (+3€)" : isSpanish ? "Zumo de jengibre y piña fresco (+3€)" : "Jus Ginger Ananas frais (+3€)",
+            isEnglish ? "Fresh pineapple smoothie (+3€)" : isSpanish ? "Smoothie de piña fresca (+3€)" : "Smoothie Ananas frais (+3€)",
             "Frappuccino (+3€)",
             isEnglish ? "Iced matcha (+3€)" : isSpanish ? "Matcha frappé (+3€)" : "Matcha frappé (+3€)",
             isEnglish ? "Iced ube (+3€)" : isSpanish ? "Ube frappé (+3€)" : "Ube frappé (+3€)",
@@ -2774,9 +2774,9 @@ const MenuPage = () => {
             isEnglish ? "Speculoos milkshake (+3€)" : isSpanish ? "Milkshake de speculoos (+3€)" : "Milkshake Spéculoos (+3€)",
             isEnglish ? "Kinder milkshake (+3€)" : isSpanish ? "Milkshake de Kinder (+3€)" : "Milkshake Kinder (+3€)",
             isEnglish ? "Mango smoothie (+3€)" : isSpanish ? "Smoothie de mango (+3€)" : "Smoothie Mangue (+3€)",
-            isEnglish ? "Hawaii smoothie (+3€)" : isSpanish ? "Smoothie Hawái (+3€)" : "Smoothie Hawaï (+3€)",
+            isEnglish ? "Pineapple smoothie (+3€)" : isSpanish ? "Smoothie de piña (+3€)" : "Smoothie Ananas (+3€)",
             isEnglish ? "Orange strawberry banana smoothie (+3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (+3€)" : "Smoothie Orange Fraise Banane (+3€)",
-            isEnglish ? "Fresh ginger pineapple juice (+3€)" : isSpanish ? "Zumo de jengibre y piña fresco (+3€)" : "Jus Ginger Ananas frais (+3€)",
+            isEnglish ? "Fresh pineapple smoothie (+3€)" : isSpanish ? "Smoothie de piña fresca (+3€)" : "Smoothie Ananas frais (+3€)",
             "Frappuccino (+3€)",
             isEnglish ? "Iced matcha (+3€)" : isSpanish ? "Matcha frappé (+3€)" : "Matcha frappé (+3€)",
             isEnglish ? "Iced ube (+3€)" : isSpanish ? "Ube frappé (+3€)" : "Ube frappé (+3€)",
@@ -2869,9 +2869,9 @@ const MenuPage = () => {
             isEnglish ? "Speculoos milkshake (+3€)" : isSpanish ? "Milkshake de speculoos (+3€)" : "Milkshake Spéculoos (+3€)",
             isEnglish ? "Kinder milkshake (+3€)" : isSpanish ? "Milkshake de Kinder (+3€)" : "Milkshake Kinder (+3€)",
             isEnglish ? "Mango smoothie (+3€)" : isSpanish ? "Smoothie de mango (+3€)" : "Smoothie Mangue (+3€)",
-            isEnglish ? "Hawaii smoothie (+3€)" : isSpanish ? "Smoothie Hawái (+3€)" : "Smoothie Hawaï (+3€)",
+            isEnglish ? "Pineapple smoothie (+3€)" : isSpanish ? "Smoothie de piña (+3€)" : "Smoothie Ananas (+3€)",
             isEnglish ? "Orange strawberry banana smoothie (+3€)" : isSpanish ? "Smoothie de naranja, fresa y plátano (+3€)" : "Smoothie Orange Fraise Banane (+3€)",
-            isEnglish ? "Fresh ginger pineapple juice (+3€)" : isSpanish ? "Zumo de jengibre y piña fresco (+3€)" : "Jus Ginger Ananas frais (+3€)",
+            isEnglish ? "Fresh pineapple smoothie (+3€)" : isSpanish ? "Smoothie de piña fresca (+3€)" : "Smoothie Ananas frais (+3€)",
             "Frappuccino (+3€)",
             isEnglish ? "Iced matcha (+3€)" : isSpanish ? "Matcha frappé (+3€)" : "Matcha frappé (+3€)",
             isEnglish ? "Iced ube (+3€)" : isSpanish ? "Ube frappé (+3€)" : "Ube frappé (+3€)",
