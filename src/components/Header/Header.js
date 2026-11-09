@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { localizedPath, stripLangPrefix } from '../../seo/lang';
 
 const HeaderWrapper = styled(motion.header)`
   position: fixed;
@@ -242,9 +243,13 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const lang = i18n.language;
+  const basePath = stripLangPrefix(location.pathname);
+  const isHomePage = basePath === '/';
+
   const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
     setLangDropdownOpen(false);
+    navigate(localizedPath(lng, basePath) + location.hash);
   };
 
   const languages = [
@@ -261,21 +266,21 @@ const Header = () => {
 
     // Si on clique sur Accueil, toujours retourner à l'accueil
     if (href === '#home') {
-      navigate('/');
+      navigate(localizedPath(lang, '/'));
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
 
     // Si on clique sur Menu, aller à la page menu
     if (href === '#menu') {
-      navigate('/menu');
+      navigate(localizedPath(lang, '/menu'));
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
 
     // Si on est sur la page menu, retourner à l'accueil
-    if (location.pathname === '/menu') {
-      navigate('/');
+    if (!isHomePage) {
+      navigate(localizedPath(lang, '/'));
       // Attendre un peu que la navigation se fasse puis scroller
       setTimeout(() => {
         const target = document.querySelector(href);
@@ -296,8 +301,7 @@ const Header = () => {
     { href: '#home', label: t('nav.home') },
     { href: '#menu', label: t('nav.menu') },
     { href: '#location', label: t('nav.location') },
-    { href: '#reservation', label: t('nav.reservation') },
-    { href: '#values', label: t('nav.values') }
+    { href: '#reservation', label: t('nav.reservation') }
   ];
 
   return (
@@ -317,14 +321,14 @@ const Header = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => {
-              if (location.pathname === '/menu') {
-                navigate('/');
+              if (!isHomePage) {
+                navigate(localizedPath(lang, '/'));
               } else {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }
             }}
           >
-            <img src="/logoBrunch.png" alt="Brunch House Logo" />
+            <img src="/logoBrunch.png" alt="Brunch House Bordeaux" />
           </Logo>
           
           <Nav>

@@ -1,0 +1,58 @@
+{
+  "siteUrl": "https://brunchhousebordeaux.fr",
+  "siteName": "Brunch House Bordeaux",
+  "ogImage": "/images/og-image.jpg",
+  "languages": {
+    "fr": {
+      "prefix": "",
+      "ogLocale": "fr_FR"
+    },
+    "en": {
+      "prefix": "/en",
+      "ogLocale": "en_GB"
+    },
+    "es": {
+      "prefix": "/es",
+      "ogLocale": "es_ES"
+    }
+  },
+  "pages": {
+    "home": {
+      "path": "/",
+      "fr": {
+        "title": "Brunch House Bordeaux | Brunch gourmand près de la Gare Saint-Jean",
+        "description": "Brunch maison à Bordeaux, quartier Gare Saint-Jean : pancakes, toasts, brioches perdues, burgers et formules brunch. Ouvert du mardi au dimanche, 10h-16h. Réservez votre table."
+      },
+      "en": {
+        "title": "Brunch House Bordeaux | Gourmet brunch near Gare Saint-Jean",
+        "description": "Homemade brunch in Bordeaux, in the Gare Saint-Jean area: pancakes, toasts, French toast, burgers and brunch sets. Open Tuesday to Sunday, 10am-4pm. Book your table."
+      },
+      "es": {
+        "title": "Brunch House Burdeos | Brunch gourmet cerca de la Gare Saint-Jean",
+        "description": "Brunch casero en Burdeos, barrio de la Gare Saint-Jean: pancakes, tostadas, torrijas, hamburguesas y fórmulas de brunch. Abierto de martes a domingo, 10h-16h. Reserva tu mesa."
+      }
+    },
+    "menu": {
+      "path": "/menu",
+      "fr": {
+        "title": "Menu & formules brunch | Brunch House Bordeaux",
+        "description": "La carte de Brunch House Bordeaux : formules brunch, pancakes, toasts, salades, brioches perdues, burgers, boissons chaudes, smoothies et milkshakes. Prix et allergènes."
+      },
+      "en": {
+        "title": "Brunch menu & sets | Brunch House Bordeaux",
+        "description": "The Brunch House Bordeaux menu: brunch sets, pancakes, toasts, salads, French toast, burgers, hot drinks, smoothies and milkshakes. Prices and allergens."
+      },
+      "es": {
+        "title": "Menú y fórmulas de brunch | Brunch House Burdeos",
+        "description": "La carta de Brunch House Burdeos: fórmulas de brunch, pancakes, tostadas, ensaladas, torrijas, hamburguesas, bebidas calientes, smoothies y batidos. Precios y alérgenos."
+      }
+    },
+    "legal": {
+      "path": "/mentions-legales",
+      "fr": {
+        "title": "Mentions légales | Brunch House Bordeaux",
+        "description": "Mentions légales du site Brunch House Bordeaux : éditeur, hébergeur, propriété intellectuelle et données personnelles."
+      }
+    }
+  }
+}

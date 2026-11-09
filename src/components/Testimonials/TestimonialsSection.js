@@ -84,7 +84,7 @@ const TestimonialInfo = styled.div`
   flex: 1;
 `;
 
-const Name = styled.h4`
+const Name = styled.p`
   font-size: 16px;
   font-weight: ${props => props.theme.typography.weights.semibold};
   margin-bottom: 4px;

@@ -28,7 +28,7 @@
     "start": "react-scripts start",
     "build": "CI=false react-scripts build && npm run post-build",
     "build:render": "CI=false react-scripts build && npm run post-build",
-    "post-build": "node scripts/post-build.js",
+    "post-build": "node scripts/generate-seo-pages.js && node scripts/post-build.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "compress-images": "node compress-images.js",

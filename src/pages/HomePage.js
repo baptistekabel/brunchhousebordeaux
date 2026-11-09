@@ -18,21 +18,21 @@ const HomePage = () => {
       { text: "SAVEURS & CRÉATIVITÉ •", variant: "green" },
       { text: "BRUNCH CRÉATIF •", variant: "rose" },
       { text: "QUARTIER GARE SAINT-JEAN •", variant: "beige" },
-      { text: "RÉSERVEZ & SAVOUREZ •", variant: "green" },
+      { text: "RÉSERVEZ & SAVOUREZ •", variant: "beige" },
       { text: "MERCI POUR VOS SOURIRES •", variant: "beige" }
     ],
     en: [
       { text: "FLAVORS & CREATIVITY •", variant: "green" },
       { text: "CREATIVE BRUNCH •", variant: "rose" },
       { text: "GARE SAINT-JEAN DISTRICT •", variant: "beige" },
-      { text: "BOOK & ENJOY •", variant: "green" },
+      { text: "BOOK & ENJOY •", variant: "beige" },
       { text: "THANK YOU FOR YOUR SMILES •", variant: "beige" }
     ],
     es: [
       { text: "SABORES & CREATIVIDAD •", variant: "green" },
       { text: "BRUNCH CREATIVO •", variant: "rose" },
       { text: "BARRIO GARE SAINT-JEAN •", variant: "beige" },
-      { text: "RESERVA & DISFRUTA •", variant: "green" },
+      { text: "RESERVA & DISFRUTA •", variant: "beige" },
       { text: "GRACIAS POR VUESTRAS SONRISAS •", variant: "beige" }
     ]
   };

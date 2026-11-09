@@ -5,9 +5,44 @@ services:
     buildCommand: npm run build
     staticPublishPath: build
     routes:
+      # Une page HTML statique par URL (générée par scripts/generate-seo-pages.js).
+      # Pas de rewrite global : les URLs inexistantes renvoient une vraie 404.
       - type: rewrite
-        source: /*
-        destination: /index.html
+        source: /mentions-legales
+        destination: /mentions-legales/index.html
+      - type: rewrite
+        source: /mentions-legales/
+        destination: /mentions-legales/index.html
+      - type: rewrite
+        source: /menu
+        destination: /menu/index.html
+      - type: rewrite
+        source: /menu/
+        destination: /menu/index.html
+      - type: rewrite
+        source: /en
+        destination: /en/index.html
+      - type: rewrite
+        source: /en/
+        destination: /en/index.html
+      - type: rewrite
+        source: /en/menu
+        destination: /en/menu/index.html
+      - type: rewrite
+        source: /en/menu/
+        destination: /en/menu/index.html
+      - type: rewrite
+        source: /es
+        destination: /es/index.html
+      - type: rewrite
+        source: /es/
+        destination: /es/index.html
+      - type: rewrite
+        source: /es/menu
+        destination: /es/menu/index.html
+      - type: rewrite
+        source: /es/menu/
+        destination: /es/menu/index.html
     headers:
       - path: /*
         headers:

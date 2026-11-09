@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import HeroIntro from './HeroIntro';
 import DecorativeDots from './DecorativeDots';
+import { localizedPath } from '../../seo/lang';
 
 const HeroSection = styled.section`
   min-height: 100vh;
@@ -100,7 +101,31 @@ const ContentWrapper = styled(motion.div)`
   }
 `;
 
-const Title = styled(motion.h1)`
+const SeoHeading = styled.h1`
+  font-family: ${props => props.theme.typography.fonts.body};
+  font-size: clamp(11px, 1.5vw, 15px);
+  font-weight: ${props => props.theme.typography.weights.semibold};
+  letter-spacing: 3px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-align: center;
+  color: ${props => props.theme.colors.floralWhite};
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(1, 57, 39, 0.3);
+  margin: 0 auto ${props => props.theme.spacing.md};
+  max-width: 90vw;
+  position: relative;
+  z-index: 3;
+
+  @media (min-width: ${props => props.theme.breakpoints.tablet}) {
+    font-size: clamp(11px, 1.5vw, 15px);
+    letter-spacing: 4px;
+  }
+`;
+
+const Title = styled(motion.p)`
+  font-family: ${props => props.theme.typography.fonts.heading};
+  line-height: ${props => props.theme.typography.lineHeight.tight};
   margin-bottom: ${props => props.theme.spacing.lg};
   color: ${props => props.theme.colors.floralWhite};
   position: relative;
@@ -588,7 +613,7 @@ const SwipeIndicator = styled(motion.div)`
 `;
 
 const Hero = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const [, setActiveImage] = useState(1);
   const [showModal, setShowModal] = useState(false);
@@ -598,12 +623,12 @@ const Hero = () => {
   // Preload images on mount
   useEffect(() => {
     const imageUrls = [
-      '/images/new/hero2.JPG',
-      '/images/new/hero1.JPG',
-      '/images/menu/home3.jpeg',
-      '/images/menu/home4.jpeg',
-      '/images/menu/home5.jpeg',
-      '/images/menu/home6.jpeg'
+      '/images/new/hero2.webp',
+      '/images/new/hero1.webp',
+      '/images/menu/home3.webp',
+      '/images/menu/home4.webp',
+      '/images/menu/home5.webp',
+      '/images/menu/home6.webp'
     ];
     
     const preloadImages = async () => {
@@ -642,42 +667,42 @@ const Hero = () => {
   const images = [
     {
       id: 1,
-      src: '/images/new/hero2.JPG',
+      src: '/images/new/hero2.webp',
       title: 'Ambiance Brunch',
       alt: 'L\'atmosphère chaleureuse de notre brunch',
       isBrunch: true
     },
     {
       id: 2,
-      src: '/images/new/hero1.JPG',
+      src: '/images/new/hero1.webp',
       title: 'Expérience Brunch',
       alt: 'Découvrez l\'art du brunch à la française',
       isBrunch: true
     },
     {
       id: 3,
-      src: '/images/menu/home3.jpeg',
+      src: '/images/menu/home3.webp',
       title: 'Pancakes Gourmands',
       alt: 'Nos fameux pancakes avec napage et fruits frais',
       isBrunch: false
     },
     {
       id: 4,
-      src: '/images/menu/home4.jpeg',
+      src: '/images/menu/home4.webp',
       title: 'Avocado Toast Signature',
       alt: 'Toast à l\'avocat, œuf poché et graines torréfiées',
       isBrunch: false
     },
     {
       id: 5,
-      src: '/images/menu/home5.jpeg',
+      src: '/images/menu/home5.webp',
       title: 'Bowl Énergétique',
       alt: 'Granola maison, yaourt grec et fruits de saison',
       isBrunch: false
     },
     {
       id: 6,
-      src: '/images/menu/home6.jpeg',
+      src: '/images/menu/home6.webp',
       title: 'Œufs Bénédicte',
       alt: 'Œufs pochés, sauce hollandaise et jambon de Bayonne',
       isBrunch: false
@@ -744,7 +769,8 @@ const Hero = () => {
           animate="visible"
         >
           <motion.div style={{ position: 'relative' }}>
-            <Title>
+            <SeoHeading>{t('hero.h1')}</SeoHeading>
+            <Title aria-label={t('hero.title')}>
               {(() => {
                 const title = t('hero.title');
                 return title.split('').map((letter, index) => (
@@ -875,7 +901,7 @@ const Hero = () => {
                 variant="secondary"
                 size="large"
                 onClick={() => {
-                  navigate('/menu');
+                  navigate(localizedPath(i18n.language, '/menu'));
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 as={motion.button}

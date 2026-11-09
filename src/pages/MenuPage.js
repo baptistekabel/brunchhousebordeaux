@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -10,27 +10,11 @@ import AllergensSection from '../components/Menu/AllergensSection';
 import ReviewWheel from '../components/Menu/ReviewWheel';
 import { LiquidGlassCard } from '../components/LiquidGlass';
 import { createScrollTrigger } from '../hooks/useScrollAnimation';
-
-const bgMove = keyframes`
-  0% { background-position: 0% 50%; }
-  25% { background-position: 50% 0%; }
-  50% { background-position: 100% 50%; }
-  75% { background-position: 50% 100%; }
-  100% { background-position: 0% 50%; }
-`;
+import { localizedPath } from '../seo/lang';
 
 const PageWrapper = styled.div`
   min-height: 100vh;
-  background: linear-gradient(
-    -45deg,
-    ${props => props.theme.colors.darkGreen} 0%,
-    rgba(1, 57, 39, 0.85) 25%,
-    rgba(28, 63, 51, 0.9) 50%,
-    rgba(43, 91, 74, 0.85) 75%,
-    ${props => props.theme.colors.darkGreen} 100%
-  );
-  background-size: 400% 400%;
-  animation: ${bgMove} 25s ease infinite;
+  background: ${props => props.theme.colors.darkGreen};
   padding-top: 80px;
 `;
 
@@ -977,7 +961,7 @@ const MenuPage = () => {
   const dishImages = {
     // Caviar d'aubergine
     "Caviar d'aubergine, émincé de poulet, parmesan": {
-      image: "/images/new/toastcaviardaubergines.jpg",
+      image: "/images/new/toastcaviardaubergines.webp",
       description: isEnglish 
         ? "Delicious eggplant caviar with sliced chicken and parmesan"
         : isSpanish
@@ -985,17 +969,17 @@ const MenuPage = () => {
         : "Délicieux caviar d'aubergine avec émincé de poulet et parmesan"
     },
     "Eggplant caviar, sliced chicken, parmesan": {
-      image: "/images/new/toastcaviardaubergines.jpg",
+      image: "/images/new/toastcaviardaubergines.webp",
       description: "Delicious eggplant caviar with sliced chicken and parmesan"
     },
     "Caviar de berenjena, pollo laminado, parmesano": {
-      image: "/images/new/toastcaviardaubergines.jpg",
+      image: "/images/new/toastcaviardaubergines.webp",
       description: "Delicioso caviar de berenjena con pollo laminado y parmesano"
     },
     
     // Burger House
     "Burger House": {
-      image: "/images/new/burguerpoulet.jpg",
+      image: "/images/new/burguerpoulet.webp",
       description: isEnglish
         ? "Our signature house burger with special sauce"
         : isSpanish
@@ -1003,7 +987,7 @@ const MenuPage = () => {
         : "Notre burger maison avec sauce spéciale"
     },
     "Le Burger House": {
-      image: "/images/new/burguerpoulet.jpg",
+      image: "/images/new/burguerpoulet.webp",
       description: isEnglish
         ? "Our signature house burger with special sauce"
         : isSpanish
@@ -1011,33 +995,33 @@ const MenuPage = () => {
         : "Notre burger maison avec sauce spéciale"
     },
     "Burger House viande": {
-      image: "/images/new/burguerviande.jpg",
+      image: "/images/new/burguerviande.webp",
       description: "Pain brioche, steak de bœuf, mâche, tomates, oignon rouge, cheddar, sauce safran"
     },
     "Beef Burger House": {
-      image: "/images/new/burguerviande.jpg",
+      image: "/images/new/burguerviande.webp",
       description: "Brioche bun, beef steak, lamb's lettuce, tomatoes, red onion, cheddar, saffron sauce"
     },
     "Hamburguesa de carne House": {
-      image: "/images/new/burguerviande.jpg",
+      image: "/images/new/burguerviande.webp",
       description: "Pan brioche, filete de ternera, canónigos, tomates, cebolla roja, cheddar, salsa azafrán"
     },
     "Burger House poulet": {
-      image: "/images/new/burguerpoulet.jpg",
+      image: "/images/new/burguerpoulet.webp",
       description: "Pain brioche, escalope de poulet, mâche, tomates, oignon rouge, cheddar, sauce safran"
     },
     "Chicken Burger House": {
-      image: "/images/new/burguerpoulet.jpg",
+      image: "/images/new/burguerpoulet.webp",
       description: "Brioche bun, chicken cutlet, lamb's lettuce, tomatoes, red onion, cheddar, saffron sauce"
     },
     "Hamburguesa de pollo House": {
-      image: "/images/new/burguerpoulet.jpg",
+      image: "/images/new/burguerpoulet.webp",
       description: "Pan brioche, escalope de pollo, canónigos, tomates, cebolla roja, cheddar, salsa azafrán"
     },
 
     // Le Special One
     "Le Special One": {
-      image: "/images/new/burguerviande.jpg",
+      image: "/images/new/burguerviande.webp",
       description: isEnglish
         ? "Brioche bun, guacamole, steak, cheddar, arugula, tomatoes, BBQ sauce"
         : isSpanish
@@ -1047,7 +1031,7 @@ const MenuPage = () => {
 
     // Burger végé aubergine
     "Burger végé aubergine": {
-      image: "/images/menu/burgerVege.JPG",
+      image: "/images/menu/burgerVege.webp",
       description: isEnglish
         ? "Veggie eggplant burger"
         : isSpanish
@@ -1055,17 +1039,17 @@ const MenuPage = () => {
         : "Burger végétarien à l'aubergine"
     },
     "Veggie eggplant burger": {
-      image: "/images/menu/burgerVege.JPG",
+      image: "/images/menu/burgerVege.webp",
       description: "Veggie eggplant burger"
     },
     "Hamburguesa vegetariana de berenjena": {
-      image: "/images/menu/burgerVege.JPG",
+      image: "/images/menu/burgerVege.webp",
       description: "Hamburguesa vegetariana de berenjena"
     },
 
     // Cordon Bleu House
     "Cordon Bleu House": {
-      image: "/images/new/cordonbleu.jpg",
+      image: "/images/new/cordonbleu.webp",
       description: isEnglish
         ? "Marinated chicken cutlet, turkey ham, cheese"
         : isSpanish
@@ -1075,7 +1059,7 @@ const MenuPage = () => {
 
     // Saumon guacamole
     "Saumon, guacamole, fleur de sel": {
-      image: "/images/new/toastsaumon.jpg",
+      image: "/images/new/toastsaumon.webp",
       description: isEnglish
         ? "Fresh salmon with guacamole and fleur de sel"
         : isSpanish
@@ -1083,17 +1067,17 @@ const MenuPage = () => {
         : "Saumon frais avec guacamole et fleur de sel"
     },
     "Salmon, guacamole, fleur de sel": {
-      image: "/images/new/toastsaumon.jpg",
+      image: "/images/new/toastsaumon.webp",
       description: "Fresh salmon with guacamole and fleur de sel"
     },
     "Salmón, guacamole, flor de sal": {
-      image: "/images/new/toastsaumon.jpg",
+      image: "/images/new/toastsaumon.webp",
       description: "Salmón fresco con guacamole y flor de sal"
     },
     
     // Œuf brouillé bacon
     "Œuf brouillé, bacon, tomates cerises": {
-      image: "/images/new/toastoeufbrouille.jpg",
+      image: "/images/new/toastoeufbrouille.webp",
       description: isEnglish
         ? "Scrambled eggs with crispy bacon and cherry tomatoes"
         : isSpanish
@@ -1101,17 +1085,17 @@ const MenuPage = () => {
         : "Œufs brouillés avec bacon croustillant et tomates cerises"
     },
     "Scrambled eggs, bacon, cherry tomatoes": {
-      image: "/images/new/toastoeufbrouille.jpg",
+      image: "/images/new/toastoeufbrouille.webp",
       description: "Scrambled eggs with crispy bacon and cherry tomatoes"
     },
     "Huevos revueltos, bacon, tomates cherry": {
-      image: "/images/new/toastoeufbrouille.jpg",
+      image: "/images/new/toastoeufbrouille.webp",
       description: "Huevos revueltos con bacon crujiente y tomates cherry"
     },
     
     // Pancake
     "Pancake": {
-      image: "/images/new/panecakechocolat.jpg",
+      image: "/images/new/panecakechocolat.webp",
       description: isEnglish
         ? "Fluffy pancakes with maple syrup and fresh fruits"
         : isSpanish
@@ -1121,7 +1105,7 @@ const MenuPage = () => {
     
     // Formule Plaisir
     "Plaisir": {
-      image: "/images/menu/formuleplaisir.jpeg",
+      image: "/images/menu/formuleplaisir.webp",
       description: isEnglish
         ? "The perfect balance between sweet and savory"
         : isSpanish
@@ -1129,35 +1113,17 @@ const MenuPage = () => {
         : "L'équilibre parfait entre sucré et salé"
     },
     "Pleasure": {
-      image: "/images/menu/formuleplaisir.jpeg",
+      image: "/images/menu/formuleplaisir.webp",
       description: "The perfect balance between sweet and savory"
     },
     "Placer": {
-      image: "/images/menu/formuleplaisir.jpeg",
+      image: "/images/menu/formuleplaisir.webp",
       description: "El equilibrio perfecto entre dulce y salado"
-    },
-
-    // Salade de la mer
-    "Salade de la mer": {
-      image: "/images/new/saladeMer.jpeg",
-      description: isEnglish
-        ? "Green salad, cherry tomatoes, red onions, avocado, shrimp, smoked salmon"
-        : isSpanish
-        ? "Ensalada verde, tomates cherry, cebolla roja, aguacate, gambas, salmón ahumado"
-        : "Salade verte, tomate cerise, oignons rouge, avocat, crevettes, saumon fumé"
-    },
-    "Sea salad": {
-      image: "/images/new/saladeMer.jpeg",
-      description: "Green salad, cherry tomatoes, red onions, avocado, shrimp, smoked salmon"
-    },
-    "Ensalada del mar": {
-      image: "/images/new/saladeMer.jpeg",
-      description: "Ensalada verde, tomates cherry, cebolla roja, aguacate, gambas, salmón ahumado"
     },
 
     // Salade César
     "Salade César": {
-      image: "/images/new/saladeCesar.jpeg",
+      image: "/images/new/saladeCesar.webp",
       description: isEnglish
         ? "Green salad, cherry tomatoes, red onions, avocado, chicken, parmesan, Caesar sauce"
         : isSpanish
@@ -1165,17 +1131,17 @@ const MenuPage = () => {
         : "Salade verte, tomate cerise, oignons rouge, avocat, poulet, parmesan, sauce César"
     },
     "Caesar salad": {
-      image: "/images/new/saladeCesar.jpeg",
+      image: "/images/new/saladeCesar.webp",
       description: "Green salad, cherry tomatoes, red onions, avocado, chicken, parmesan, Caesar sauce"
     },
     "Ensalada César": {
-      image: "/images/new/saladeCesar.jpeg",
+      image: "/images/new/saladeCesar.webp",
       description: "Ensalada verde, tomates cherry, cebolla roja, aguacate, pollo, parmesano, salsa César"
     },
 
     // Brioche burger
     "Brioche burger": {
-      image: "/images/new/briocheBurger.jpeg",
+      image: "/images/new/briocheBurger.webp",
       description: isEnglish
         ? "Beef steak, cheddar, salad, tomato, red onions, homemade burger sauce"
         : isSpanish
@@ -1185,7 +1151,7 @@ const MenuPage = () => {
 
     // Toast œuf brouillé avocat
     "Toast œuf brouillé avocat": {
-      image: "/images/new/toastoeufbrouilleavocat.jpeg",
+      image: "/images/new/toastoeufbrouilleavocat.webp",
       description: isEnglish
         ? "Scrambled egg, avocado, cream cheese, chives"
         : isSpanish
@@ -1193,17 +1159,17 @@ const MenuPage = () => {
         : "Œuf brouillé, avocat, fromage frais, ciboulette"
     },
     "Scrambled egg avocado toast": {
-      image: "/images/new/toastoeufbrouilleavocat.jpeg",
+      image: "/images/new/toastoeufbrouilleavocat.webp",
       description: "Scrambled egg, avocado, cream cheese, chives"
     },
     "Tostada huevo revuelto aguacate": {
-      image: "/images/new/toastoeufbrouilleavocat.jpeg",
+      image: "/images/new/toastoeufbrouilleavocat.webp",
       description: "Huevo revuelto, aguacate, queso fresco, cebollino"
     },
 
     // Burrata
     "Burrata, tomates cœur de bœuf, pesto": {
-      image: "/images/new/toastburrata.jpg",
+      image: "/images/new/toastburrata.webp",
       description: isEnglish
         ? "Burrata with beef heart tomatoes and pesto"
         : isSpanish
@@ -1211,17 +1177,17 @@ const MenuPage = () => {
         : "Burrata avec tomates cœur de bœuf et pesto"
     },
     "Burrata, beef heart tomatoes, pesto": {
-      image: "/images/new/toastburrata.jpg",
+      image: "/images/new/toastburrata.webp",
       description: "Burrata with beef heart tomatoes and pesto"
     },
     "Burrata, tomates corazón de buey, pesto": {
-      image: "/images/new/toastburrata.jpg",
+      image: "/images/new/toastburrata.webp",
       description: "Burrata con tomates corazón de buey y pesto"
     },
 
     // Crevettes tomates cerises fromage frais
     "Crevettes, tomates cerises, fromage frais": {
-      image: "/images/new/toastcrevette.jpg",
+      image: "/images/new/toastcrevette.webp",
       description: isEnglish
         ? "Shrimp with cherry tomatoes and cream cheese"
         : isSpanish
@@ -1229,17 +1195,17 @@ const MenuPage = () => {
         : "Crevettes avec tomates cerises et fromage frais"
     },
     "Shrimp, cherry tomatoes, cream cheese": {
-      image: "/images/new/toastcrevette.jpg",
+      image: "/images/new/toastcrevette.webp",
       description: "Shrimp with cherry tomatoes and cream cheese"
     },
     "Gambas, tomates cherry, queso fresco": {
-      image: "/images/new/toastcrevette.jpg",
+      image: "/images/new/toastcrevette.webp",
       description: "Gambas con tomates cherry y queso fresco"
     },
 
     // Houmous betterave
     "Houmous à la betterave, avocat, noix": {
-      image: "/images/new/toasthoumous.jpg",
+      image: "/images/new/toasthoumous.webp",
       description: isEnglish
         ? "Beetroot hummus with fresh avocado and walnuts"
         : isSpanish
@@ -1247,17 +1213,17 @@ const MenuPage = () => {
         : "Houmous de betterave avec avocat frais et noix"
     },
     "Beetroot hummus, avocado, walnuts": {
-      image: "/images/new/toasthoumous.jpg",
+      image: "/images/new/toasthoumous.webp",
       description: "Beetroot hummus with fresh avocado and walnuts"
     },
     "Hummus de remolacha, aguacate, nueces": {
-      image: "/images/new/toasthoumous.jpg",
+      image: "/images/new/toasthoumous.webp",
       description: "Hummus de remolacha con aguacate fresco y nueces"
     },
     
     // Jus maison
     "Jus d'orange maison": {
-      image: "/images/new/jusdorange.jpg",
+      image: "/images/new/jusdorange.webp",
       description: isEnglish
         ? "Freshly squeezed orange juice"
         : isSpanish
@@ -1265,7 +1231,7 @@ const MenuPage = () => {
         : "Jus d'orange fraîchement pressé"
     },
     "Bissap maison": {
-      image: "/images/new/jusbissap.jpg",
+      image: "/images/new/jusbissap.webp",
       description: isEnglish
         ? "Homemade hibiscus drink"
         : isSpanish
@@ -1273,7 +1239,7 @@ const MenuPage = () => {
         : "Bissap fait maison"
     },
     "Jus de gingembre maison": {
-      image: "/images/new/jusdegingembre.jpg",
+      image: "/images/new/jusdegingembre.webp",
       description: isEnglish
         ? "Homemade ginger juice"
         : isSpanish
@@ -1281,7 +1247,7 @@ const MenuPage = () => {
         : "Jus de gingembre fait maison"
     },
     "Jus de saison": {
-      image: "/images/menu/juice.jpeg",
+      image: "/images/menu/juice.webp",
       description: isEnglish
         ? "Seasonal fresh juice"
         : isSpanish
@@ -1289,25 +1255,25 @@ const MenuPage = () => {
         : "Jus de saison frais"
     },
     "Homemade orange juice": {
-      image: "/images/new/jusdorange.jpg",
+      image: "/images/new/jusdorange.webp",
       description: "Freshly squeezed orange juice"
     },
     "Homemade bissap": {
-      image: "/images/new/jusbissap.jpg",
+      image: "/images/new/jusbissap.webp",
       description: "Homemade hibiscus drink"
     },
     "Homemade ginger juice": {
-      image: "/images/new/jusdegingembre.jpg",
+      image: "/images/new/jusdegingembre.webp",
       description: "Homemade ginger juice"
     },
     "Seasonal juice": {
-      image: "/images/menu/juice.jpeg",
+      image: "/images/menu/juice.webp",
       description: "Seasonal fresh juice"
     },
     
     // Viennoiseries
     "Croissant": {
-      image: "/images/menu/croissant.png",
+      image: "/images/menu/croissant.webp",
       description: isEnglish
         ? "Fresh buttery croissant"
         : isSpanish
@@ -1317,7 +1283,7 @@ const MenuPage = () => {
 
     // Croissant œufs brouillés bacon
     "Croissant œufs brouillés bacon": {
-      image: "/images/menu/croissant1.png",
+      image: "/images/menu/croissant1.webp",
       description: isEnglish
         ? "Scrambled eggs, bacon, cheddar, salad, tomatoes, onions"
         : isSpanish
@@ -1325,17 +1291,17 @@ const MenuPage = () => {
         : "Œufs brouillés, bacon, cheddar, salade, tomates, oignons"
     },
     "Croissant scrambled eggs bacon": {
-      image: "/images/menu/croissant1.png",
+      image: "/images/menu/croissant1.webp",
       description: "Scrambled eggs, bacon, cheddar, salad, tomatoes, onions"
     },
     "Croissant huevos revueltos bacon": {
-      image: "/images/menu/croissant1.png",
+      image: "/images/menu/croissant1.webp",
       description: "Huevos revueltos, bacon, cheddar, ensalada, tomates, cebollas"
     },
 
     // Croissant saumon guacamole
     "Croissant saumon guacamole": {
-      image: "/images/menu/croissant2.png",
+      image: "/images/menu/croissant2.webp",
       description: isEnglish
         ? "Salmon, guacamole, scrambled eggs, salad, tomatoes, red onions"
         : isSpanish
@@ -1343,17 +1309,17 @@ const MenuPage = () => {
         : "Saumon, guacamole, œufs brouillés, salade, tomates, oignons rouges"
     },
     "Croissant salmon guacamole": {
-      image: "/images/menu/croissant2.png",
+      image: "/images/menu/croissant2.webp",
       description: "Salmon, guacamole, scrambled eggs, salad, tomatoes, red onions"
     },
     "Croissant salmón guacamole": {
-      image: "/images/menu/croissant2.png",
+      image: "/images/menu/croissant2.webp",
       description: "Salmón, guacamole, huevos revueltos, ensalada, tomates, cebollas rojas"
     },
 
     // Croissant burger
     "Croissant burger": {
-      image: "/images/menu/croissant3.png",
+      image: "/images/menu/croissant3.webp",
       description: isEnglish
         ? "Beef patty, cheddar, salad, tomatoes, onions, homemade burger sauce"
         : isSpanish
@@ -1361,7 +1327,7 @@ const MenuPage = () => {
         : "Steak haché, cheddar, salade, tomates, oignons, sauce burger maison"
     },
     "Muffin chocolat": {
-      image: "/images/menu/muffin.jpeg",
+      image: "/images/menu/muffin.webp",
       description: isEnglish
         ? "Chocolate muffin with chocolate chips"
         : isSpanish
@@ -1369,17 +1335,17 @@ const MenuPage = () => {
         : "Muffin au chocolat avec pépites de chocolat"
     },
     "Chocolate muffin": {
-      image: "/images/menu/muffin.jpeg",
+      image: "/images/menu/muffin.webp",
       description: "Chocolate muffin with chocolate chips"
     },
     "Muffin de chocolate": {
-      image: "/images/menu/muffin.jpeg",
+      image: "/images/menu/muffin.webp",
       description: "Muffin de chocolate con chips de chocolate"
     },
     
     // Desserts
     "Le pancake": {
-      image: "/images/new/panecakesiropderable.jpeg",
+      image: "/images/new/panecakesiropderable.webp",
       description: isEnglish
         ? "Fluffy pancake with toppings"
         : isSpanish
@@ -1387,15 +1353,15 @@ const MenuPage = () => {
         : "Pancake moelleux avec napage"
     },
     "The pancake": {
-      image: "/images/new/panecakesiropderable.jpeg",
+      image: "/images/new/panecakesiropderable.webp",
       description: "Fluffy pancake with toppings"
     },
     "El pancake": {
-      image: "/images/new/panecakesiropderable.jpeg",
+      image: "/images/new/panecakesiropderable.webp",
       description: "Pancake esponjoso con coberturas"
     },
     "Grec granola": {
-      image: "/images/menu/grecgranola.jpeg",
+      image: "/images/menu/grecgranola.webp",
       description: isEnglish
         ? "Greek yogurt with homemade granola and fresh fruits"
         : isSpanish
@@ -1403,15 +1369,15 @@ const MenuPage = () => {
         : "Yaourt grec avec granola maison et fruits frais"
     },
     "Greek granola": {
-      image: "/images/menu/grecgranola.jpeg",
+      image: "/images/menu/grecgranola.webp",
       description: "Greek yogurt with homemade granola and fresh fruits"
     },
     "Granola griego": {
-      image: "/images/menu/grecgranola.jpeg",
+      image: "/images/menu/grecgranola.webp",
       description: "Yogur griego con granola casera y frutas frescas"
     },
     "Brioche perdue": {
-      image: "/images/new/brioche2.jpeg",
+      image: "/images/new/brioche2.webp",
       description: isEnglish
         ? "French toast with caramelized sugar"
         : isSpanish
@@ -1419,16 +1385,16 @@ const MenuPage = () => {
         : "Brioche perdue dorée au sucre caramélisé"
     },
     "French toast": {
-      image: "/images/new/brioche2.jpeg",
+      image: "/images/new/brioche2.webp",
       description: "French toast with caramelized sugar"
     },
     "Tostada francesa": {
-      image: "/images/new/brioche2.jpeg",
+      image: "/images/new/brioche2.webp",
       description: "Tostada francesa con azúcar caramelizado"
     },
     // Pancake crème brûlée
     "Pancake crème brûlée": {
-      image: "/images/new/panecakecremebrulee.jpg",
+      image: "/images/new/panecakecremebrulee.webp",
       description: isEnglish
         ? "Crème brûlée pancake"
         : isSpanish
@@ -1436,13 +1402,40 @@ const MenuPage = () => {
         : "Pancake crème brûlée"
     },
     "Crème brûlée pancake": {
-      image: "/images/new/panecakecremebrulee.jpg",
+      image: "/images/new/panecakecremebrulee.webp",
       description: "Crème brûlée pancake"
+    },
+
+    // Pancake crème Nutella
+    "Pancake crème Nutella": {
+      image: "/images/new/pancakecremenutella.webp",
+      description: isEnglish ? "Nutella cream pancake" : isSpanish ? "Pancake crema Nutella" : "Pancake crème Nutella"
+    },
+    "Nutella cream pancake": {
+      image: "/images/new/pancakecremenutella.webp",
+      description: "Nutella cream pancake"
+    },
+    "Pancake crema Nutella": {
+      image: "/images/new/pancakecremenutella.webp",
+      description: "Pancake crema Nutella"
+    },
+    // Pancake crème spéculoos
+    "Pancake crème spéculoos": {
+      image: "/images/new/pancakecremespeculoos.webp",
+      description: isEnglish ? "Speculoos cream pancake" : isSpanish ? "Pancake crema speculoos" : "Pancake crème spéculoos"
+    },
+    "Speculoos cream pancake": {
+      image: "/images/new/pancakecremespeculoos.webp",
+      description: "Speculoos cream pancake"
+    },
+    "Pancake crema speculoos": {
+      image: "/images/new/pancakecremespeculoos.webp",
+      description: "Pancake crema speculoos"
     },
 
     // Brioche perdue tiramisu
     "Brioche perdue tiramisu": {
-      image: "/images/new/brochetiramisu.jpg",
+      image: "/images/new/brochetiramisu.webp",
       description: isEnglish
         ? "Tiramisu French toast"
         : isSpanish
@@ -1450,13 +1443,13 @@ const MenuPage = () => {
         : "Brioche perdue tiramisu"
     },
     "Tiramisu French toast": {
-      image: "/images/new/brochetiramisu.jpg",
+      image: "/images/new/brochetiramisu.webp",
       description: "Tiramisu French toast"
     },
 
     // Brioche perdue salée œuf brouillé bacon
     "Brioche perdue salée œuf brouillé bacon": {
-      image: "/images/new/briochesaleeoeufbrouillebacon.jpg",
+      image: "/images/new/briochesaleeoeufbrouillebacon.webp",
       description: isEnglish
         ? "Savory French toast with scrambled eggs and bacon"
         : isSpanish
@@ -1464,13 +1457,13 @@ const MenuPage = () => {
         : "Brioche perdue salée avec œuf brouillé et bacon"
     },
     "Savory French toast scrambled eggs bacon": {
-      image: "/images/new/briochesaleeoeufbrouillebacon.jpg",
+      image: "/images/new/briochesaleeoeufbrouillebacon.webp",
       description: "Savory French toast with scrambled eggs and bacon"
     },
 
     // Brioche perdue salée burrata pesto
     "Brioche perdue salée burrata pesto": {
-      image: "/images/new/briochesaleeburratapesto.jpg",
+      image: "/images/new/briochesaleeburratapesto.webp",
       description: isEnglish
         ? "Savory French toast with burrata and pesto"
         : isSpanish
@@ -1478,13 +1471,13 @@ const MenuPage = () => {
         : "Brioche perdue salée avec burrata et pesto"
     },
     "Savory French toast burrata pesto": {
-      image: "/images/new/briochesaleeburratapesto.jpg",
+      image: "/images/new/briochesaleeburratapesto.webp",
       description: "Savory French toast with burrata and pesto"
     },
 
     // Ube Latté
     "Ube Latté": {
-      image: "/images/new/ubelatte.jpg",
+      image: "/images/new/ubelatte.webp",
       description: isEnglish
         ? "Purple yam ube latte"
         : isSpanish
@@ -1494,7 +1487,7 @@ const MenuPage = () => {
 
     // Brioche crème brûlée
     "Brioche crème brûlée": {
-      image: "/images/new/briochecremebrulee.jpg",
+      image: "/images/new/briochecremebrulee.webp",
       description: isEnglish
         ? "Crème brûlée French toast"
         : isSpanish
@@ -1504,7 +1497,7 @@ const MenuPage = () => {
 
     // Brioche Tatin
     "Brioche Tatin": {
-      image: "/images/new/briochetatin.JPG",
+      image: "/images/new/briochetatin.webp",
       description: isEnglish
         ? "Apple, caramel, cinnamon, whipped cream, speculoos"
         : isSpanish
@@ -1512,17 +1505,17 @@ const MenuPage = () => {
         : "Pomme, caramel, cannelle, chantilly, spéculoos"
     },
     "Brioche crème brûlée EN": {
-      image: "/images/new/briochechocolat.jpg",
+      image: "/images/new/briochechocolat.webp",
       description: "Crème brûlée French toast"
     },
     "Brioche crème brûlée ES": {
-      image: "/images/new/briochechocolat.jpg",
+      image: "/images/new/briochechocolat.webp",
       description: "Tostada francesa crème brûlée"
     },
 
     // Boissons chaudes spéciales
     "Matcha": {
-      image: "/images/new/matcha.jpg",
+      image: "/images/new/matcha.webp",
       description: isEnglish
         ? "Japanese matcha tea - Choice of coulis: vanilla / caramel / mango / passion"
         : isSpanish
@@ -1530,7 +1523,7 @@ const MenuPage = () => {
         : "Coulis au choix : caramel / vanille / mangue / passion"
     },
     "Moka": {
-      image: "/images/new/mokaChocolat.jpeg",
+      image: "/images/new/mokaChocolat.webp",
       description: isEnglish
         ? "Rich mocha coffee with chocolate"
         : isSpanish
@@ -1538,15 +1531,15 @@ const MenuPage = () => {
         : "Coulis au choix : chocolat / caramel"
     },
     "Mocha": {
-      image: "/images/new/mokaChocolat.jpeg",
+      image: "/images/new/mokaChocolat.webp",
       description: "Rich mocha coffee with chocolate"
     },
     "Moca": {
-      image: "/images/new/mokaChocolat.jpeg",
+      image: "/images/new/mokaChocolat.webp",
       description: "Café moca rico con chocolate"
     },
     "Chocolat": {
-      image: "/images/new/chocolat.jpeg",
+      image: "/images/new/chocolat.webp",
       description: isEnglish
         ? "Rich hot chocolate - Whipped cream +0.50€"
         : isSpanish
@@ -1554,15 +1547,15 @@ const MenuPage = () => {
         : "Chocolat chaud onctueux - Chantilly +0,50€"
     },
     "Viennese chocolate": {
-      image: "/images/new/chocolat.jpeg",
+      image: "/images/new/chocolat.webp",
       description: "Rich hot chocolate - Whipped cream +0.50€"
     },
     "Chocolate vienés": {
-      image: "/images/new/chocolat.jpeg",
+      image: "/images/new/chocolat.webp",
       description: "Chocolate caliente cremoso - Nata montada +0,50€"
     },
     "Thé": {
-      image: "/images/menu/tea.JPG",
+      image: "/images/menu/tea.webp",
       description: isEnglish
         ? "Jasmine, mint, mango"
         : isSpanish
@@ -1570,17 +1563,17 @@ const MenuPage = () => {
         : "Jasmin, menthe, mangue"
     },
     "Tea": {
-      image: "/images/menu/tea.JPG",
+      image: "/images/menu/tea.webp",
       description: "Jasmine, mint, mango"
     },
     "Té": {
-      image: "/images/menu/tea.JPG",
+      image: "/images/menu/tea.webp",
       description: "Jazmín, menta, mango"
     },
     
     // Cafés
     "Café latte": {
-      image: "/images/new/latte.jpg",
+      image: "/images/new/latte.webp",
       description: isEnglish
         ? "Smooth latte with steamed milk"
         : isSpanish
@@ -1588,7 +1581,7 @@ const MenuPage = () => {
         : "Café latte onctueux avec lait moussé"
     },
     "Café Latté": {
-      image: "/images/new/latte.jpg",
+      image: "/images/new/latte.webp",
       description: isEnglish
         ? "Smooth latte with steamed milk"
         : isSpanish
@@ -1596,7 +1589,7 @@ const MenuPage = () => {
         : "Café latte onctueux avec lait moussé"
     },
     "Café Latte": {
-      image: "/images/new/latte.jpg",
+      image: "/images/new/latte.webp",
       description: isEnglish
         ? "Smooth latte with steamed milk"
         : isSpanish
@@ -1604,7 +1597,7 @@ const MenuPage = () => {
         : "Café latte onctueux avec lait moussé"
     },
     "Café con leche": {
-      image: "/images/new/latte.jpg",
+      image: "/images/new/latte.webp",
       description: isEnglish
         ? "Smooth latte with steamed milk"
         : isSpanish
@@ -1612,11 +1605,11 @@ const MenuPage = () => {
         : "Café latte onctueux avec lait moussé"
     },
     "Latte": {
-      image: "/images/new/latte.jpg",
+      image: "/images/new/latte.webp",
       description: "Smooth latte with steamed milk"
     },
     "Cappuccino": {
-      image: "/images/new/cappuccino.jpg",
+      image: "/images/new/cappuccino.webp",
       description: isEnglish
         ? "Classic Italian cappuccino"
         : isSpanish
@@ -1624,7 +1617,7 @@ const MenuPage = () => {
         : "Cappuccino italien classique"
     },
     "Double expresso": {
-      image: "/images/menu/doubleexpresso.jpg",
+      image: "/images/menu/doubleexpresso.webp",
       description: isEnglish
         ? "Strong double shot of espresso"
         : isSpanish
@@ -1632,15 +1625,15 @@ const MenuPage = () => {
         : "Double dose d'expresso corsé"
     },
     "Double espresso": {
-      image: "/images/menu/doubleexpresso.jpg",
+      image: "/images/menu/doubleexpresso.webp",
       description: "Strong double shot of espresso"
     },
     "Doble expreso": {
-      image: "/images/menu/doubleexpresso.jpg",
+      image: "/images/menu/doubleexpresso.webp",
       description: "Doble expreso fuerte"
     },
     "Café noisette": {
-      image: "/images/menu/cafenoisette.jpg",
+      image: "/images/menu/cafenoisette.webp",
       description: isEnglish
         ? "Cappuccino with a dash of milk"
         : isSpanish
@@ -1648,15 +1641,15 @@ const MenuPage = () => {
         : "Cappuccino avec une pointe de lait"
     },
     "Hazelnut coffee": {
-      image: "/images/menu/cafenoisette.jpg",
+      image: "/images/menu/cafenoisette.webp",
       description: "Cappuccino with a dash of milk"
     },
     "Café cortado": {
-      image: "/images/menu/cafenoisette.jpg",
+      image: "/images/menu/cafenoisette.webp",
       description: "Cappuccino con un toque de leche"
     },
     "Allongé": {
-      image: "/images/menu/cafeallonge.png",
+      image: "/images/menu/cafeallonge.webp",
       description: isEnglish
         ? "Long black coffee"
         : isSpanish
@@ -1664,15 +1657,15 @@ const MenuPage = () => {
         : "Café allongé"
     },
     "Long coffee": {
-      image: "/images/menu/cafeallonge.png",
+      image: "/images/menu/cafeallonge.webp",
       description: "Long black coffee"
     },
     "Café largo": {
-      image: "/images/menu/cafeallonge.png",
+      image: "/images/menu/cafeallonge.webp",
       description: "Café largo"
     },
     "Expresso": {
-      image: "/images/new/expresso.jpeg",
+      image: "/images/new/expresso.webp",
       description: isEnglish
         ? "Classic Italian espresso"
         : isSpanish
@@ -1680,13 +1673,13 @@ const MenuPage = () => {
         : "Expresso italien classique"
     },
     "Espresso": {
-      image: "/images/new/expresso.jpeg",
+      image: "/images/new/expresso.webp",
       description: "Classic Italian espresso"
     },
     
     // Boissons froides
     "Canette": {
-      image: "/images/menu/canettes.png",
+      image: "/images/menu/canettes.webp",
       description: isEnglish
         ? "Selection of canned soft drinks"
         : isSpanish
@@ -1695,15 +1688,15 @@ const MenuPage = () => {
     },
 
     "Can": {
-      image: "/images/menu/canettes.png",
+      image: "/images/menu/canettes.webp",
       description: "Selection of canned soft drinks"
     },
     "Lata": {
-      image: "/images/menu/canettes.png",
+      image: "/images/menu/canettes.webp",
       description: "Selección de refrescos en lata"
     },
     "Canette au choix": {
-      image: "/images/menu/canettes.png",
+      image: "/images/menu/canettes.webp",
       description: isEnglish
         ? "Choice of canned soft drink"
         : isSpanish
@@ -1711,7 +1704,7 @@ const MenuPage = () => {
         : "Canette au choix"
     },
     "1 canette au choix": {
-      image: "/images/menu/canettes.png",
+      image: "/images/menu/canettes.webp",
       description: isEnglish
         ? "Choice of canned soft drink"
         : isSpanish
@@ -1722,29 +1715,29 @@ const MenuPage = () => {
     // Burger (formule options)
     "Burger (viande ou poulet)": {
       images: [
-        { src: "/images/new/burguerviande.jpg", label: isEnglish ? "Beef" : isSpanish ? "Carne" : "Viande" },
-        { src: "/images/new/burguerpoulet.jpg", label: isEnglish ? "Chicken" : isSpanish ? "Pollo" : "Poulet" }
+        { src: "/images/new/burguerviande.webp", label: isEnglish ? "Beef" : isSpanish ? "Carne" : "Viande" },
+        { src: "/images/new/burguerpoulet.webp", label: isEnglish ? "Chicken" : isSpanish ? "Pollo" : "Poulet" }
       ],
       description: isEnglish ? "Beef or chicken burger" : isSpanish ? "Hamburguesa de carne o pollo" : "Burger viande ou poulet"
     },
     "Burger (beef or chicken)": {
       images: [
-        { src: "/images/new/burguerviande.jpg", label: "Beef" },
-        { src: "/images/new/burguerpoulet.jpg", label: "Chicken" }
+        { src: "/images/new/burguerviande.webp", label: "Beef" },
+        { src: "/images/new/burguerpoulet.webp", label: "Chicken" }
       ],
       description: "Beef or chicken burger"
     },
     "Burger (carne o pollo)": {
       images: [
-        { src: "/images/new/burguerviande.jpg", label: "Carne" },
-        { src: "/images/new/burguerpoulet.jpg", label: "Pollo" }
+        { src: "/images/new/burguerviande.webp", label: "Carne" },
+        { src: "/images/new/burguerpoulet.webp", label: "Pollo" }
       ],
       description: "Hamburguesa de carne o pollo"
     },
 
     // Cordon bleu
     "Cordon bleu": {
-      image: "/images/new/cordonbleu.jpg",
+      image: "/images/new/cordonbleu.webp",
       description: isEnglish
         ? "Marinated chicken cutlet, turkey ham, cheese"
         : isSpanish
@@ -1754,7 +1747,7 @@ const MenuPage = () => {
 
     // Croissant saumon (sans guacamole)
     "Croissant saumon": {
-      image: "/images/menu/croissant2.png",
+      image: "/images/menu/croissant2.webp",
       description: isEnglish
         ? "Salmon croissant"
         : isSpanish
@@ -1762,17 +1755,17 @@ const MenuPage = () => {
         : "Croissant au saumon"
     },
     "Croissant salmon": {
-      image: "/images/menu/croissant2.png",
+      image: "/images/menu/croissant2.webp",
       description: "Salmon croissant"
     },
     "Croissant salmón": {
-      image: "/images/menu/croissant2.png",
+      image: "/images/menu/croissant2.webp",
       description: "Croissant de salmón"
     },
 
     // Croissant œuf brouillé bacon (variante sans s)
     "Croissant œuf brouillé bacon": {
-      image: "/images/menu/croissant1.png",
+      image: "/images/menu/croissant1.webp",
       description: isEnglish
         ? "Scrambled eggs, bacon, cheddar, salad, tomatoes, onions"
         : isSpanish
@@ -1782,7 +1775,7 @@ const MenuPage = () => {
 
     // Chocolat chaud
     "Chocolat chaud": {
-      image: "/images/new/chocolat.jpeg",
+      image: "/images/new/chocolat.webp",
       description: isEnglish
         ? "Rich hot chocolate"
         : isSpanish
@@ -1790,17 +1783,17 @@ const MenuPage = () => {
         : "Chocolat chaud onctueux"
     },
     "Hot chocolate": {
-      image: "/images/new/chocolat.jpeg",
+      image: "/images/new/chocolat.webp",
       description: "Rich hot chocolate"
     },
     "Chocolate caliente": {
-      image: "/images/new/chocolat.jpeg",
+      image: "/images/new/chocolat.webp",
       description: "Chocolate caliente cremoso"
     },
 
     // Latté
     "Latté": {
-      image: "/images/new/latte.jpg",
+      image: "/images/new/latte.webp",
       description: isEnglish
         ? "Smooth latte with steamed milk"
         : isSpanish
@@ -1810,7 +1803,7 @@ const MenuPage = () => {
 
     // Chai Latté
     "Chai Latté": {
-      image: "/images/new/chailatte.jpeg",
+      image: "/images/new/chailatte.webp",
       description: isEnglish
         ? "Spiced chai latte"
         : isSpanish
@@ -1820,29 +1813,29 @@ const MenuPage = () => {
 
     // Jus de pomme
     "Jus de pomme": {
-      image: "/images/menu/juice.jpeg",
+      image: "/images/menu/juice.webp",
       description: "Jus de pomme"
     },
     "Apple juice": {
-      image: "/images/menu/juice.jpeg",
+      image: "/images/menu/juice.webp",
       description: "Apple juice"
     },
     "Zumo de manzana": {
-      image: "/images/menu/juice.jpeg",
+      image: "/images/menu/juice.webp",
       description: "Zumo de manzana"
     },
 
     // Jus d'orange
     "Jus d'orange": {
-      image: "/images/new/jusdorange.jpg",
+      image: "/images/new/jusdorange.webp",
       description: "Jus d'orange"
     },
     "Orange juice": {
-      image: "/images/new/jusdorange.jpg",
+      image: "/images/new/jusdorange.webp",
       description: "Orange juice"
     },
     "Zumo de naranja": {
-      image: "/images/new/jusdorange.jpg",
+      image: "/images/new/jusdorange.webp",
       description: "Zumo de naranja"
     },
 
@@ -1851,141 +1844,129 @@ const MenuPage = () => {
 
     // Jus d'ananas
     "Jus d'ananas": {
-      image: "/images/new/ananas.jpeg",
+      image: "/images/new/ananas.webp",
       description: "Jus d'ananas"
     },
     "Pineapple juice": {
-      image: "/images/new/ananas.jpeg",
+      image: "/images/new/ananas.webp",
       description: "Pineapple juice"
     },
     "Zumo de piña": {
-      image: "/images/new/ananas.jpeg",
+      image: "/images/new/ananas.webp",
       description: "Zumo de piña"
     },
 
     // Jus de gingembre
     "Jus de gingembre": {
-      image: "/images/new/jusdegingembre.jpg",
+      image: "/images/new/jusdegingembre.webp",
       description: "Jus de gingembre"
     },
     "Ginger juice": {
-      image: "/images/new/jusdegingembre.jpg",
+      image: "/images/new/jusdegingembre.webp",
       description: "Ginger juice"
     },
     "Zumo de jengibre": {
-      image: "/images/new/jusdegingembre.jpg",
+      image: "/images/new/jusdegingembre.webp",
       description: "Zumo de jengibre"
     },
 
     // Bissap
     "Bissap": {
-      image: "/images/new/jusbissap.jpg",
+      image: "/images/new/jusbissap.webp",
       description: "Bissap"
     },
 
     // Milkshakes & Smoothies
-    "Milkshake Spéculoos": {
-      image: "/images/new/milkshakespeculos.jpg",
-      description: isEnglish ? "Speculoos milkshake" : isSpanish ? "Milkshake de speculoos" : "Milkshake spéculoos"
-    },
-    "Speculoos milkshake": {
-      image: "/images/new/milkshakespeculos.jpg",
-      description: "Speculoos milkshake"
-    },
-    "Milkshake de speculoos": {
-      image: "/images/new/milkshakespeculos.jpg",
-      description: "Milkshake de speculoos"
-    },
     "Milkshake Kinder": {
-      image: "/images/new/milkshakekinder.jpg",
+      image: "/images/new/milkshakekinder.webp",
       description: isEnglish ? "Kinder milkshake" : isSpanish ? "Milkshake de Kinder" : "Milkshake Kinder"
     },
     "Kinder milkshake": {
-      image: "/images/new/milkshakekinder.jpg",
+      image: "/images/new/milkshakekinder.webp",
       description: "Kinder milkshake"
     },
     "Milkshake de Kinder": {
-      image: "/images/new/milkshakekinder.jpg",
+      image: "/images/new/milkshakekinder.webp",
       description: "Milkshake de Kinder"
     },
     "Smoothie Mangue": {
-      image: "/images/new/smootiemangue.jpg",
+      image: "/images/new/smootiemangue.webp",
       description: isEnglish ? "Mango smoothie" : isSpanish ? "Smoothie de mango" : "Smoothie mangue"
     },
     "Mango smoothie": {
-      image: "/images/new/smootiemangue.jpg",
+      image: "/images/new/smootiemangue.webp",
       description: "Mango smoothie"
     },
     "Smoothie de mango": {
-      image: "/images/new/smootiemangue.jpg",
+      image: "/images/new/smootiemangue.webp",
       description: "Smoothie de mango"
     },
     "Smoothie Ananas Gingembre": {
-      image: "/images/new/smootieananascoco.jpg",
+      image: "/images/new/smootieananascoco.webp",
       description: isEnglish ? "Pineapple ginger smoothie" : isSpanish ? "Smoothie de piña y jengibre" : "Smoothie ananas gingembre"
     },
     "Pineapple ginger smoothie": {
-      image: "/images/new/smootieananascoco.jpg",
+      image: "/images/new/smootieananascoco.webp",
       description: "Pineapple ginger smoothie"
     },
     "Smoothie de piña y jengibre": {
-      image: "/images/new/smootieananascoco.jpg",
+      image: "/images/new/smootieananascoco.webp",
       description: "Smoothie de piña y jengibre"
     },
     "Smoothie Ananas frais": {
-      image: "/images/new/JusGinger.jpeg",
+      image: "/images/new/JusGinger.webp",
       description: isEnglish ? "Fresh pineapple smoothie" : isSpanish ? "Smoothie de piña fresca" : "Smoothie ananas frais"
     },
     "Fresh pineapple smoothie": {
-      image: "/images/new/JusGinger.jpeg",
+      image: "/images/new/JusGinger.webp",
       description: "Fresh pineapple smoothie"
     },
     "Smoothie de piña fresca": {
-      image: "/images/new/JusGinger.jpeg",
+      image: "/images/new/JusGinger.webp",
       description: "Smoothie de piña fresca"
     },
     "Smoothie Orange Fraise Banane": {
-      image: "/images/new/smootieorangefraisebanane.jpg",
+      image: "/images/new/smootieorangefraisebanane.webp",
       description: isEnglish ? "Orange strawberry banana smoothie" : isSpanish ? "Smoothie de naranja, fresa y plátano" : "Smoothie orange fraise banane"
     },
     "Orange strawberry banana smoothie": {
-      image: "/images/new/smootieorangefraisebanane.jpg",
+      image: "/images/new/smootieorangefraisebanane.webp",
       description: "Orange strawberry banana smoothie"
     },
     "Smoothie de naranja, fresa y plátano": {
-      image: "/images/new/smootieorangefraisebanane.jpg",
+      image: "/images/new/smootieorangefraisebanane.webp",
       description: "Smoothie de naranja, fresa y plátano"
     },
     "Frappuccino": {
-      image: "/images/new/frappucino.jpeg",
+      image: "/images/new/frappucino.webp",
       description: isEnglish ? "Chocolate caramel drizzle" : isSpanish ? "Cobertura de chocolate y caramelo" : "Nappage chocolat caramel"
     },
     "Matcha frappé": {
-      image: "/images/new/matcha.jpeg",
+      image: "/images/new/matcha.webp",
       description: isEnglish ? "Iced matcha" : isSpanish ? "Matcha frappé" : "Matcha frappé"
     },
     "Iced matcha": {
-      image: "/images/new/matcha.jpeg",
+      image: "/images/new/matcha.webp",
       description: "Iced matcha"
     },
     "Ube frappé": {
-      image: "/images/new/ube.jpeg",
+      image: "/images/new/ube.webp",
       description: isEnglish ? "Iced ube" : isSpanish ? "Ube frappé" : "Ube frappé"
     },
     "Iced ube": {
-      image: "/images/new/ube.jpeg",
+      image: "/images/new/ube.webp",
       description: "Iced ube"
     },
     "Latté glacé": {
-      image: "/images/new/latte.jpg",
+      image: "/images/new/latte.webp",
       description: isEnglish ? "Iced latte" : isSpanish ? "Latté helado" : "Latté glacé"
     },
     "Iced latte": {
-      image: "/images/new/latte.jpg",
+      image: "/images/new/latte.webp",
       description: "Iced latte"
     },
     "Latté helado": {
-      image: "/images/new/latte.jpg",
+      image: "/images/new/latte.webp",
       description: "Latté helado"
     },
 
@@ -2025,10 +2006,17 @@ const MenuPage = () => {
 
       // Pour les toasts, permettre la sélection de 2 maximum
       if (optionType === 'toasts') {
+        const isSalad = (value) => /salad|salade|ensalada/i.test(value);
         const currentArray = Array.isArray(currentSelections) ? currentSelections : [];
         if (currentArray.includes(optionValue)) {
           // Désélectionner si déjà sélectionné
           newSelection = currentArray.filter(item => item !== optionValue);
+        } else if (isSalad(optionValue)) {
+          // Une salade remplace les toasts : 1 salade seule
+          newSelection = [optionValue];
+        } else if (currentArray.some(isSalad)) {
+          // Un toast remplace la salade
+          newSelection = [optionValue];
         } else if (currentArray.length < 2) {
           // Ajouter si moins de 2 sélectionnés
           newSelection = [...currentArray, optionValue];
@@ -2181,15 +2169,6 @@ const MenuPage = () => {
     salades: {
       title: isEnglish ? "🥗 Salads" : isSpanish ? "🥗 Ensaladas" : "🥗 Salades",
       items: [
-        {
-          name: isEnglish ? "Sea salad" : isSpanish ? "Ensalada del mar" : "Salade de la mer",
-          description: isEnglish
-            ? "Green salad, cherry tomatoes, red onions, avocado, shrimp, smoked salmon"
-            : isSpanish
-            ? "Ensalada verde, tomates cherry, cebolla roja, aguacate, gambas, salmón ahumado"
-            : "Salade verte, tomate cerise, oignons rouge, avocat, crevettes, saumon fumé",
-          price: "12 €"
-        },
         {
           name: isEnglish ? "Caesar salad" : isSpanish ? "Ensalada César" : "Salade César",
           description: isEnglish
@@ -2462,7 +2441,7 @@ const MenuPage = () => {
     milkshakesSmoothies: {
       title: isEnglish ? "🥤 Milkshakes & Smoothies" : isSpanish ? "🥤 Milkshakes & Smoothies" : "🥤 Milkshakes & Smoothies",
       items: [
-        { name: isEnglish ? "Speculoos milkshake" : isSpanish ? "Milkshake de speculoos" : "Milkshake Spéculoos", price: "5,50 €", formulaPrice: "3 €" },
+        { name: isEnglish ? "Vanilla milkshake" : isSpanish ? "Milkshake de vainilla" : "Milkshake Vanille", price: "5,50 €", formulaPrice: "3 €" },
         { name: isEnglish ? "Kinder milkshake" : isSpanish ? "Milkshake de Kinder" : "Milkshake Kinder", price: "5,50 €", formulaPrice: "3 €" },
         { name: isEnglish ? "Mango smoothie" : isSpanish ? "Smoothie de mango" : "Smoothie Mangue", price: "5,50 €", formulaPrice: "3 €" },
         { name: isEnglish ? "Pineapple ginger smoothie" : isSpanish ? "Smoothie de piña y jengibre" : "Smoothie Ananas Gingembre", price: "5,50 €", formulaPrice: "3 €" },
@@ -2591,8 +2570,8 @@ const MenuPage = () => {
               description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable"
             },
             {
-              name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue",
-              description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup / crème brûlée (+2€)" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce / crème brûlée (+2€)" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable / crème brûlée (+2€)"
+              name: isEnglish ? "French toast (+2€)" : isSpanish ? "Tostada francesa (+2€)" : "Brioche perdue (+2€)",
+              description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable"
             }
           ],
           type: "dessert"
@@ -2629,7 +2608,7 @@ const MenuPage = () => {
             isEnglish ? "Pineapple juice" : isSpanish ? "Zumo de piña" : "Jus d'ananas",
             isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
             isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)",
-            isEnglish ? "Speculoos milkshake (+3€)" : isSpanish ? "Milkshake de speculoos (+3€)" : "Milkshake Spéculoos (+3€)",
+            isEnglish ? "Vanilla milkshake (+3€)" : isSpanish ? "Milkshake de vainilla (+3€)" : "Milkshake Vanille (+3€)",
             isEnglish ? "Kinder milkshake (+3€)" : isSpanish ? "Milkshake de Kinder (+3€)" : "Milkshake Kinder (+3€)",
             isEnglish ? "Mango smoothie (+3€)" : isSpanish ? "Smoothie de mango (+3€)" : "Smoothie Mangue (+3€)",
             isEnglish ? "Pineapple ginger smoothie (+3€)" : isSpanish ? "Smoothie de piña y jengibre (+3€)" : "Smoothie Ananas Gingembre (+3€)",
@@ -2730,11 +2709,13 @@ const MenuPage = () => {
               description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable"
             },
             {
-              name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue",
-              description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup / crème brûlée (+2€)" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce / crème brûlée (+2€)" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable / crème brûlée (+2€)"
+              name: isEnglish ? "French toast (+2€)" : isSpanish ? "Tostada francesa (+2€)" : "Brioche perdue (+2€)",
+              description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable"
             },
             "Brioche Tatin (+2€)",
             isEnglish ? "Crème brûlée pancake (+2€)" : isSpanish ? "Pancake crème brûlée (+2€)" : "Pancake crème brûlée (+2€)",
+            isEnglish ? "Nutella cream pancake (+2€)" : isSpanish ? "Pancake crema Nutella (+2€)" : "Pancake crème Nutella (+2€)",
+            isEnglish ? "Speculoos cream pancake (+2€)" : isSpanish ? "Pancake crema speculoos (+2€)" : "Pancake crème spéculoos (+2€)",
             isEnglish ? "Tiramisu French toast (+2€)" : isSpanish ? "Tostada francesa tiramisú (+2€)" : "Brioche perdue tiramisu (+2€)",
           ],
           type: "dessert"
@@ -2771,7 +2752,7 @@ const MenuPage = () => {
             isEnglish ? "Pineapple juice" : isSpanish ? "Zumo de piña" : "Jus d'ananas",
             isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
             isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)",
-            isEnglish ? "Speculoos milkshake (+3€)" : isSpanish ? "Milkshake de speculoos (+3€)" : "Milkshake Spéculoos (+3€)",
+            isEnglish ? "Vanilla milkshake (+3€)" : isSpanish ? "Milkshake de vainilla (+3€)" : "Milkshake Vanille (+3€)",
             isEnglish ? "Kinder milkshake (+3€)" : isSpanish ? "Milkshake de Kinder (+3€)" : "Milkshake Kinder (+3€)",
             isEnglish ? "Mango smoothie (+3€)" : isSpanish ? "Smoothie de mango (+3€)" : "Smoothie Mangue (+3€)",
             isEnglish ? "Pineapple ginger smoothie (+3€)" : isSpanish ? "Smoothie de piña y jengibre (+3€)" : "Smoothie Ananas Gingembre (+3€)",
@@ -2798,8 +2779,8 @@ const MenuPage = () => {
         : "L'équilibre parfait entre sucré et salé",
       sections: [
         {
-          title: isEnglish ? "Choice of toasts or salads" : isSpanish ? "Tostadas o ensaladas a elegir" : "Toasts ou salades au choix",
-          description: isEnglish ? "Choose up to 2 toasts to your liking" : isSpanish ? "Elige hasta 2 tostadas a tu gusto" : "Choisissez jusqu'à 2 toasts selon vos envies",
+          title: isEnglish ? "2 toasts of your choice or 1 salad" : isSpanish ? "2 tostadas a elegir o 1 ensalada" : "2 toasts au choix ou 1 salade",
+          description: isEnglish ? "Choose 2 toasts, or 1 salad (not both)" : isSpanish ? "Elige 2 tostadas, o 1 ensalada (no ambas)" : "Choisissez 2 toasts, ou bien 1 salade (pas les deux)",
           options: [
             isEnglish ? "Scrambled eggs, bacon, cherry tomatoes" : isSpanish ? "Huevos revueltos, bacon, tomates cherry" : "Œuf brouillé, bacon, tomates cerises",
             isEnglish ? "Beetroot hummus, avocado, walnuts" : isSpanish ? "Hummus de remolacha, aguacate, nueces" : "Houmous à la betterave, avocat, noix",
@@ -2808,7 +2789,7 @@ const MenuPage = () => {
             isEnglish ? "Scrambled egg avocado toast" : isSpanish ? "Tostada huevo revuelto aguacate" : "Toast œuf brouillé avocat",
             isEnglish ? "Shrimp, cherry tomatoes, cream cheese" : isSpanish ? "Gambas, tomates cherry, queso fresco" : "Crevettes, tomates cerises, fromage frais",
             isEnglish ? "Burrata, beef heart tomatoes, pesto (+2€)" : isSpanish ? "Burrata, tomates corazón de buey, pesto (+2€)" : "Burrata, tomates cœur de bœuf, pesto (+2€)",
-            isEnglish ? "Sea salad (+2€)" : isSpanish ? "Ensalada del mar (+2€)" : "Salade de la mer (+2€)",
+            isEnglish ? "Burrata, tomato & pesto salad (+2€)" : isSpanish ? "Ensalada burrata, tomate, pesto (+2€)" : "Salade burrata, tomate, pesto (+2€)",
             isEnglish ? "Caesar salad (+2€)" : isSpanish ? "Ensalada César (+2€)" : "Salade César (+2€)"
           ],
           type: "toasts"
@@ -2825,11 +2806,13 @@ const MenuPage = () => {
               description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable"
             },
             {
-              name: isEnglish ? "French toast" : isSpanish ? "Tostada francesa" : "Brioche perdue",
-              description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup / crème brûlée (+2€)" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce / crème brûlée (+2€)" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable / crème brûlée (+2€)"
+              name: isEnglish ? "French toast (+2€)" : isSpanish ? "Tostada francesa (+2€)" : "Brioche perdue (+2€)",
+              description: isEnglish ? "toppings: red berries / salted butter caramel / chocolate hazelnut / maple syrup" : isSpanish ? "coberturas: frutos rojos / caramelo de mantequilla salada / chocolate avellana / jarabe de arce" : "napage : fruits rouges / caramel beurre salé / chocolat noisette / sirop d'érable"
             },
             "Brioche Tatin (+2€)",
             isEnglish ? "Crème brûlée pancake (+2€)" : isSpanish ? "Pancake crème brûlée (+2€)" : "Pancake crème brûlée (+2€)",
+            isEnglish ? "Nutella cream pancake (+2€)" : isSpanish ? "Pancake crema Nutella (+2€)" : "Pancake crème Nutella (+2€)",
+            isEnglish ? "Speculoos cream pancake (+2€)" : isSpanish ? "Pancake crema speculoos (+2€)" : "Pancake crème spéculoos (+2€)",
             isEnglish ? "Tiramisu French toast (+2€)" : isSpanish ? "Tostada francesa tiramisú (+2€)" : "Brioche perdue tiramisu (+2€)",
           ],
           type: "dessert"
@@ -2866,7 +2849,7 @@ const MenuPage = () => {
             isEnglish ? "Pineapple juice" : isSpanish ? "Zumo de piña" : "Jus d'ananas",
             isEnglish ? "Ginger juice (+2€)" : isSpanish ? "Zumo de jengibre (+2€)" : "Jus de gingembre (+2€)",
             isEnglish ? "Bissap (+2€)" : isSpanish ? "Bissap (+2€)" : "Bissap (+2€)",
-            isEnglish ? "Speculoos milkshake (+3€)" : isSpanish ? "Milkshake de speculoos (+3€)" : "Milkshake Spéculoos (+3€)",
+            isEnglish ? "Vanilla milkshake (+3€)" : isSpanish ? "Milkshake de vainilla (+3€)" : "Milkshake Vanille (+3€)",
             isEnglish ? "Kinder milkshake (+3€)" : isSpanish ? "Milkshake de Kinder (+3€)" : "Milkshake Kinder (+3€)",
             isEnglish ? "Mango smoothie (+3€)" : isSpanish ? "Smoothie de mango (+3€)" : "Smoothie Mangue (+3€)",
             isEnglish ? "Pineapple ginger smoothie (+3€)" : isSpanish ? "Smoothie de piña y jengibre (+3€)" : "Smoothie Ananas Gingembre (+3€)",
@@ -2916,7 +2899,7 @@ const MenuPage = () => {
       <Header />
 
       <MenuHeader>
-        <BackButton to="/">
+        <BackButton to={localizedPath(i18n.language, '/')}>
           <FiArrowLeft /> {isEnglish ? "Back" : isSpanish ? "Volver" : "Retour"}
         </BackButton>
         
@@ -3133,6 +3116,8 @@ const MenuPage = () => {
                                       <img
                                         src={optDish.image}
                                         alt={optName}
+                                        loading="lazy"
+                                        decoding="async"
                                         style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                                         onError={(e) => { e.target.style.display = 'none'; }}
                                       />
@@ -3235,6 +3220,8 @@ const MenuPage = () => {
                       <img
                         src={dishInfo.image}
                         alt={item.name}
+                        loading="lazy"
+                        decoding="async"
                         onError={(e) => {
                           e.target.style.display = 'none';
                         }}
@@ -3254,6 +3241,8 @@ const MenuPage = () => {
                       <PreviewImage
                         src={dishInfo.image}
                         alt={item.name}
+                        loading="lazy"
+                        decoding="async"
                         onError={(e) => {
                           e.target.style.display = 'none';
                         }}

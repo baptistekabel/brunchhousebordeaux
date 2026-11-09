@@ -1,25 +1,8 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-const bgMove = keyframes`
-  0% { background-position: 0% 50%; }
-  25% { background-position: 50% 0%; }
-  50% { background-position: 100% 50%; }
-  75% { background-position: 50% 100%; }
-  100% { background-position: 0% 50%; }
-`;
-
 const StyledCard = styled(motion.div)`
-  background: linear-gradient(
-    -45deg,
-    rgba(251, 247, 238, 0.9),
-    rgba(255, 255, 255, 0.8),
-    rgba(251, 247, 238, 0.9),
-    rgba(247, 242, 231, 0.85),
-    rgba(255, 255, 255, 0.8)
-  );
-  background-size: 400% 400%;
-  animation: ${bgMove} 20s ease infinite;
+  background: rgba(251, 247, 238, 0.9);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.6);

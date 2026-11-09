@@ -1,6 +1,5 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
 
 import translationFR from './locales/fr.json';
 import translationEN from './locales/en.json';
@@ -12,24 +11,24 @@ const resources = {
   es: { translation: translationES }
 };
 
+// La langue est déterminée par l'URL : / (fr), /en, /es
+const getLangFromPath = () => {
+  if (typeof window === 'undefined') return 'fr';
+  const match = window.location.pathname.match(/^\/(en|es)(\/|$)/);
+  return match ? match[1] : 'fr';
+};
+
 i18n
-  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'fr', // Force French as default
+    lng: getLangFromPath(),
     fallbackLng: 'fr',
+    supportedLngs: ['fr', 'en', 'es'],
     debug: false,
     interpolation: {
       escapeValue: false
-    },
-    detection: {
-      order: ['localStorage', 'htmlTag'],
-      caches: ['localStorage'],
-      lookupLocalStorage: 'i18nextLng',
-      checkWhitelist: true
-    },
-    whitelist: ['fr', 'en', 'es']
+    }
   });
 
 export default i18n;

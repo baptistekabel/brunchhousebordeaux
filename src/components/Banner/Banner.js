@@ -1,13 +1,5 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { motion } from 'framer-motion';
-
-const bgMove = keyframes`
-  0% { background-position: 0% 50%; }
-  25% { background-position: 50% 0%; }
-  50% { background-position: 100% 50%; }
-  75% { background-position: 50% 100%; }
-  100% { background-position: 0% 50%; }
-`;
 
 const getBackgroundColor = (variant) => {
   switch (variant) {
@@ -39,8 +31,6 @@ const BannerSection = styled.section`
   width: 100%;
   padding: ${props => props.theme.spacing.md} 0;
   background: ${props => getBackgroundColor(props.$variant)};
-  background-size: 400% 400%;
-  animation: ${bgMove} 20s ease infinite;
   position: relative;
   overflow: hidden;
 
@@ -73,7 +63,7 @@ const BannerContent = styled(motion.div)`
   width: 100%;
 `;
 
-const BannerText = styled(motion.h2)`
+const BannerText = styled(motion.p)`
   font-size: clamp(16px, 3vw, 28px);
   font-weight: ${props => props.theme.typography.weights.bold};
   color: ${props => getTextColor(props.$variant)};
@@ -115,7 +105,7 @@ const Banner = ({ text, variant = 'green', delay = 0 }) => {
           ease: [0.25, 0.46, 0.45, 0.94]
         }}
       >
-        <BannerText $variant={variant}>
+        <BannerText $variant={variant} aria-hidden="true">
           {text}
         </BannerText>
       </BannerContent>

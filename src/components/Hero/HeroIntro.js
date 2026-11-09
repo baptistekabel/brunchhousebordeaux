@@ -1,13 +1,5 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { motion } from 'framer-motion';
-
-const bgMove = keyframes`
-  0% { background-position: 0% 50%; }
-  25% { background-position: 50% 0%; }
-  50% { background-position: 100% 50%; }
-  75% { background-position: 50% 100%; }
-  100% { background-position: 0% 50%; }
-`;
 
 const IntroSection = styled.section`
   width: 100%;
@@ -16,16 +8,7 @@ const IntroSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    -45deg,
-    rgba(253, 249, 240, 0.95),
-    rgba(247, 242, 231, 0.9),
-    rgba(253, 249, 240, 0.95),
-    rgba(251, 247, 238, 0.9),
-    rgba(253, 249, 240, 0.95)
-  );
-  background-size: 400% 400%;
-  animation: ${bgMove} 20s ease infinite;
+  background: #FDF9F0;
   overflow: hidden;
 
   &::after {
@@ -51,7 +34,7 @@ const IntroSection = styled.section`
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/images/new/accueil.JPG');
+    background-image: url('/images/new/accueil.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

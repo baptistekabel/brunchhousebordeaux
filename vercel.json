@@ -4,8 +4,29 @@
   "framework": "create-react-app",
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/menu",
+      "destination": "/menu/index.html"
+    },
+    {
+      "source": "/en",
+      "destination": "/en/index.html"
+    },
+    {
+      "source": "/en/menu",
+      "destination": "/en/menu/index.html"
+    },
+    {
+      "source": "/es",
+      "destination": "/es/index.html"
+    },
+    {
+      "source": "/es/menu",
+      "destination": "/es/menu/index.html"
+    },
+    {
+      "source": "/mentions-legales",
+      "destination": "/mentions-legales/index.html"
     }
-  ]
+  ],
+  "trailingSlash": false
 }

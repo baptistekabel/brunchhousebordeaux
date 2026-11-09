@@ -1,32 +1,15 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { LiquidGlassCard } from '../LiquidGlass';
 import { LiquidGlassButton } from '../LiquidGlass';
 import { animationVariants, createScrollTrigger } from '../../hooks/useScrollAnimation';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-
-const bgMove = keyframes`
-  0% { background-position: 0% 50%; }
-  25% { background-position: 50% 0%; }
-  50% { background-position: 100% 50%; }
-  75% { background-position: 50% 100%; }
-  100% { background-position: 0% 50%; }
-`;
+import { localizedPath } from '../../seo/lang';
 
 const Section = styled.section`
   padding: ${props => props.theme.spacing.section.mobile} ${props => props.theme.spacing.container.padding};
-  background: linear-gradient(
-    -45deg,
-    #BE6A65,
-    #FCBDBD,
-    #d4847f,
-    #FCBDBD,
-    #BE6A65,
-    #d4847f
-  );
-  background-size: 400% 400%;
-  animation: ${bgMove} 20s ease infinite;
+  background: #BE6A65;
 
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     padding: ${props => props.theme.spacing.section.desktop} ${props => props.theme.spacing.xl};
@@ -163,7 +146,7 @@ const CTAWrapper = styled.div`
 `;
 
 const MenuSection = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   
   const menuItems = [
     {
@@ -171,7 +154,7 @@ const MenuSection = () => {
       name: t('menu.homeItems.pancakes.name'),
       description: t('menu.homeItems.pancakes.description'),
       price: t('menu.homeItems.pancakes.price'),
-      image: "/images/new/panecakechocolat.jpg",
+      image: "/images/new/panecakechocolat.webp",
       homemade: true
     },
     {
@@ -179,7 +162,7 @@ const MenuSection = () => {
       name: t('menu.homeItems.burgerHouse.name'),
       description: t('menu.homeItems.burgerHouse.description'),
       price: t('menu.homeItems.burgerHouse.price'),
-      image: "/images/new/burguerpoulet.jpg",
+      image: "/images/new/burguerpoulet.webp",
       homemade: true
     },
     {
@@ -187,7 +170,7 @@ const MenuSection = () => {
       name: t('menu.homeItems.salmonGuacamole.name'),
       description: t('menu.homeItems.salmonGuacamole.description'),
       price: t('menu.homeItems.salmonGuacamole.price'),
-      image: "/images/new/toastsaumon.jpg",
+      image: "/images/new/toastsaumon.webp",
       homemade: true
     },
     {
@@ -195,7 +178,7 @@ const MenuSection = () => {
       name: t('menu.homeItems.eggplantCaviar.name'),
       description: t('menu.homeItems.eggplantCaviar.description'),
       price: t('menu.homeItems.eggplantCaviar.price'),
-      image: "/images/new/toastcaviardaubergines.jpg",
+      image: "/images/new/toastcaviardaubergines.webp",
       homemade: true
     },
     {
@@ -203,7 +186,7 @@ const MenuSection = () => {
       name: t('menu.homeItems.scrambledEggsBacon.name'),
       description: t('menu.homeItems.scrambledEggsBacon.description'),
       price: t('menu.homeItems.scrambledEggsBacon.price'),
-      image: "/images/new/toastoeufbrouille.jpg",
+      image: "/images/new/toastoeufbrouille.webp",
       homemade: true
     },
     {
@@ -211,7 +194,7 @@ const MenuSection = () => {
       name: t('menu.homeItems.beetrootHummus.name'),
       description: t('menu.homeItems.beetrootHummus.description'),
       price: t('menu.homeItems.beetrootHummus.price'),
-      image: "/images/new/toasthoumous.jpg",
+      image: "/images/new/toasthoumous.webp",
       homemade: true
     }
   ];
@@ -304,7 +287,7 @@ const MenuSection = () => {
               }}
             >
               <MenuItemImage>
-                <img src={item.image} alt={item.name} />
+                <img src={item.image} alt={item.name} loading="lazy" decoding="async" />
               </MenuItemImage>
               <MenuItemContent>
                 <MenuItemHeader>
@@ -331,7 +314,7 @@ const MenuSection = () => {
               whileHover={{ scale: 1.05, rotateZ: 1 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => {
-                navigate('/menu');
+                navigate(localizedPath(i18n.language, '/menu'));
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
             >

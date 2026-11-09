@@ -1,1 +1,12 @@
-/*    /index.html   200
+/menu    /menu/index.html   200
+/menu/    /menu/index.html   200
+/en    /en/index.html   200
+/en/    /en/index.html   200
+/en/menu    /en/menu/index.html   200
+/en/menu/    /en/menu/index.html   200
+/es    /es/index.html   200
+/es/    /es/index.html   200
+/es/menu    /es/menu/index.html   200
+/es/menu/    /es/menu/index.html   200
+/mentions-legales    /mentions-legales/index.html   200
+/mentions-legales/    /mentions-legales/index.html   200

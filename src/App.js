@@ -1,29 +1,19 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
 import { GlobalStyles } from './styles/GlobalStyles';
 import './i18n/i18n';
-import { useTranslation } from 'react-i18next';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import HomePage from './pages/HomePage';
 import MenuPage from './pages/MenuPage';
 import ScrollToTop from './components/ScrollToTop';
 import ErrorBoundary from './components/ErrorBoundary';
+import LangRoute from './seo/LangRoute';
+import NotFound from './pages/NotFound';
+import LegalPage from './pages/LegalPage';
 
 function App() {
-  const { i18n } = useTranslation();
-  
-  useEffect(() => {
-    // Set document language attribute
-    document.documentElement.lang = i18n.language || 'fr';
-    
-    // Force French on first load if no language is stored
-    if (!localStorage.getItem('i18nextLng')) {
-      i18n.changeLanguage('fr');
-    }
-  }, [i18n]);
-  
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
@@ -32,33 +22,14 @@ function App() {
         <Router>
           <ScrollToTop />
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/menu" element={<MenuPage />} />
-            <Route path="*" element={<div style={{
-              minHeight: '100vh',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexDirection: 'column',
-              background: 'linear-gradient(135deg, #1C3F33 0%, #2A5F47 100%)',
-              color: 'white',
-              textAlign: 'center',
-              padding: '20px'
-            }}>
-              <h1>🍳 Page non trouvée</h1>
-              <p>Cette page n'existe pas dans notre menu.</p>
-              <a href="/" style={{
-                padding: '12px 24px',
-                background: '#D4AF37',
-                color: '#1C3F33',
-                textDecoration: 'none',
-                borderRadius: '8px',
-                fontWeight: 'bold',
-                marginTop: '20px'
-              }}>
-                Retour à l'accueil
-              </a>
-            </div>} />
+            <Route path="/" element={<LangRoute lang="fr" page="home"><HomePage /></LangRoute>} />
+            <Route path="/menu" element={<LangRoute lang="fr" page="menu"><MenuPage /></LangRoute>} />
+            <Route path="/en" element={<LangRoute lang="en" page="home"><HomePage /></LangRoute>} />
+            <Route path="/en/menu" element={<LangRoute lang="en" page="menu"><MenuPage /></LangRoute>} />
+            <Route path="/es" element={<LangRoute lang="es" page="home"><HomePage /></LangRoute>} />
+            <Route path="/es/menu" element={<LangRoute lang="es" page="menu"><MenuPage /></LangRoute>} />
+            <Route path="/mentions-legales" element={<LangRoute lang="fr" page="legal"><LegalPage /></LangRoute>} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
       </ErrorBoundary>

@@ -1,28 +1,12 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { FiInstagram, FiMapPin, FiClock } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
-
-const bgMove = keyframes`
-  0% { background-position: 0% 50%; }
-  25% { background-position: 50% 0%; }
-  50% { background-position: 100% 50%; }
-  75% { background-position: 50% 100%; }
-  100% { background-position: 0% 50%; }
-`;
+import { Link } from 'react-router-dom';
 
 const FooterSection = styled.footer`
   padding: ${props => props.theme.spacing.xxxl} ${props => props.theme.spacing.container.padding} ${props => props.theme.spacing.xl};
-  background: linear-gradient(
-    -45deg,
-    rgba(253, 249, 240, 0.95),
-    rgba(247, 242, 231, 0.95),
-    rgba(253, 249, 240, 0.95),
-    rgba(240, 235, 224, 0.95),
-    rgba(253, 249, 240, 0.95)
-  );
-  background-size: 400% 400%;
-  animation: ${bgMove} 20s ease infinite;
+  background: #FDF9F0;
   color: ${props => props.theme.colors.darkGreen};
 `;
 
@@ -44,7 +28,7 @@ const FooterContent = styled.div`
 
 const FooterColumn = styled.div``;
 
-const Logo = styled.h3`
+const Logo = styled.p`
   font-family: ${props => props.theme.typography.fonts.heading};
   font-size: 28px;
   margin-bottom: ${props => props.theme.spacing.lg};
@@ -80,7 +64,7 @@ const SocialLink = styled(motion.a)`
   }
 `;
 
-const ColumnTitle = styled.h4`
+const ColumnTitle = styled.p`
   font-size: 16px;
   font-weight: ${props => props.theme.typography.weights.semibold};
   margin-bottom: ${props => props.theme.spacing.lg};
@@ -151,6 +135,53 @@ const FooterBottom = styled.div`
 const Copyright = styled.p`
   font-size: ${props => props.theme.typography.sizes.small};
   opacity: 0.7;
+`;
+
+const LegalLink = styled(Link)`
+  font-size: ${props => props.theme.typography.sizes.small};
+  color: ${props => props.theme.colors.darkGreen};
+  opacity: 0.7;
+  text-decoration: underline;
+
+  &:hover {
+    opacity: 1;
+  }
+`;
+
+const AgencyCredit = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: ${props => props.theme.spacing.sm};
+  font-size: ${props => props.theme.typography.sizes.small};
+  color: ${props => props.theme.colors.darkGreen};
+  opacity: 0.7;
+  text-decoration: none;
+  transition: opacity ${props => props.theme.transitions.fast};
+
+  &:hover {
+    opacity: 1;
+  }
+`;
+
+const AgencyWordmark = styled.span`
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  color: #111;
+  white-space: nowrap;
+
+  .bracket {
+    font-weight: 300;
+    color: #b5b5b5;
+  }
+
+  .name {
+    font-weight: 600;
+  }
+
+  .suffix {
+    font-weight: 400;
+  }
 `;
 
 
@@ -243,13 +274,35 @@ const Footer = () => {
         
         <FooterBottom>
           <Copyright>
-            © 2024 Brunch House Bordeaux. 
+            © {new Date().getFullYear()} Brunch House Bordeaux. 
             {i18n.language === 'en' 
               ? 'All rights reserved.'
               : i18n.language === 'es'
               ? 'Todos los derechos reservados.'
               : 'Tous droits réservés.'}
           </Copyright>
+          <LegalLink to="/mentions-legales">
+            {i18n.language === 'en' ? 'Legal notice' : i18n.language === 'es' ? 'Aviso legal' : 'Mentions légales'}
+          </LegalLink>
+          <AgencyCredit
+            href="https://thecheatcode.agency/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>
+              {i18n.language === 'en'
+                ? 'Website created by'
+                : i18n.language === 'es'
+                ? 'Sitio web creado por'
+                : 'Site créé par'}
+            </span>
+            <AgencyWordmark aria-label="thecheatcode agency">
+              <span className="bracket">[</span>
+              <span className="name">thecheatcode</span>
+              <span className="bracket">]</span>
+              <span className="suffix"> agency</span>
+            </AgencyWordmark>
+          </AgencyCredit>
         </FooterBottom>
       </Container>
     </FooterSection>

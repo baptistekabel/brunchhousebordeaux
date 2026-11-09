@@ -1,12 +1,4 @@
-import { createGlobalStyle, keyframes } from 'styled-components';
-
-const bgDrift = keyframes`
-  0% { background-position: 0% 50%; }
-  25% { background-position: 50% 0%; }
-  50% { background-position: 100% 50%; }
-  75% { background-position: 50% 100%; }
-  100% { background-position: 0% 50%; }
-`;
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   @import url('./fonts.css');
@@ -28,56 +20,16 @@ export const GlobalStyles = createGlobalStyle`
     font-size: ${props => props.theme.typography.sizes.body.regular};
     line-height: ${props => props.theme.typography.lineHeight.normal};
     color: ${props => props.theme.colors.floralWhite};
-    background: linear-gradient(
-      -45deg,
-      ${props => props.theme.colors.darkGreen} 0%,
-      rgba(1, 57, 39, 0.9) 25%,
-      rgba(190, 106, 101, 0.8) 50%,
-      ${props => props.theme.colors.teaRose} 75%,
-      ${props => props.theme.colors.darkGreen} 100%
-    );
-    background-size: 400% 400%;
-    animation: ${bgDrift} 25s ease infinite;
+    background: ${props => props.theme.colors.darkGreen};
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
 
     @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-      background: linear-gradient(
-        -45deg,
-        ${props => props.theme.colors.darkGreen} 0%,
-        rgba(1, 57, 39, 0.9) 25%,
-        rgba(190, 106, 101, 0.8) 50%,
-        ${props => props.theme.colors.teaRose} 75%,
-        ${props => props.theme.colors.darkGreen} 100%
-      );
-      background-size: 400% 400%;
-      animation: ${bgDrift} 25s ease infinite;
+      background: ${props => props.theme.colors.darkGreen};
     }
 
-    &::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background:
-        radial-gradient(circle at 20% 30%, rgba(252, 189, 189, 0.3) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(190, 106, 101, 0.2) 0%, transparent 40%),
-        radial-gradient(circle at 60% 20%, rgba(253, 249, 240, 0.1) 0%, transparent 30%);
-      pointer-events: none;
-      z-index: -1;
-
-      @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-        position: fixed;
-        background:
-          radial-gradient(circle at 20% 30%, rgba(252, 189, 189, 0.3) 0%, transparent 40%),
-          radial-gradient(circle at 80% 70%, rgba(190, 106, 101, 0.2) 0%, transparent 40%),
-          radial-gradient(circle at 60% 20%, rgba(253, 249, 240, 0.1) 0%, transparent 30%);
-      }
-    }
   }
   
   h1, h2, h3, h4, h5, h6 {

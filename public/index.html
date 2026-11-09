@@ -11,48 +11,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#1C3F33" />
     
-    <!-- SEO Meta Tags -->
-    <title>Brunch House Bordeaux | Restaurant Brunch Bordeaux</title>
-    <meta name="description" content="Votre nouveau rendez-vous gourmand. Restaurant chaleureux à Bordeaux, cuisine maison avec produits frais. Ouvert du mardi au dimanche 10h-16h. Réservation conseillée." />
-    <meta name="keywords" content="brunch bordeaux, restaurant brunch bordeaux, brunch bacalan, brunch house bordeaux, petit déjeuner bordeaux, pancakes bordeaux, avocado toast bordeaux, brunch créatif bordeaux" />
+    <!-- SEO Meta Tags (adaptées par page au build : scripts/generate-seo-pages.js) -->
+    <title>Brunch House Bordeaux | Brunch gourmand près de la Gare Saint-Jean</title>
+    <meta name="description" content="Brunch maison à Bordeaux, quartier Gare Saint-Jean : pancakes, toasts, brioches perdues, burgers et formules brunch. Ouvert du mardi au dimanche, 10h-16h. Réservez votre table." />
     <meta name="author" content="Brunch House Bordeaux" />
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Brunch House Bordeaux | Votre nouveau rendez-vous gourmand." />
-    <meta property="og:description" content="Restaurant brunch à Bordeaux. Cuisine maison, produits frais locaux, ambiance chaleureuse. Ouvert mar-dim 10h-16h." />
+    <link rel="canonical" href="https://brunchhousebordeaux.fr/" />
+    <link rel="alternate" hreflang="fr" href="https://brunchhousebordeaux.fr/" />
+    <link rel="alternate" hreflang="en" href="https://brunchhousebordeaux.fr/en" />
+    <link rel="alternate" hreflang="es" href="https://brunchhousebordeaux.fr/es" />
+    <link rel="alternate" hreflang="x-default" href="https://brunchhousebordeaux.fr/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large" />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="restaurant" />
-    <meta property="og:url" content="https://brunchhousebordeaux.fr" />
-    <meta property="og:image" content="%PUBLIC_URL%/logoBrunch.png" />
-    <meta property="og:locale" content="fr_FR" />
     <meta property="og:site_name" content="Brunch House Bordeaux" />
-    
-    <!-- Twitter Card Meta Tags -->
+    <meta property="og:title" content="Brunch House Bordeaux | Brunch gourmand près de la Gare Saint-Jean" />
+    <meta property="og:description" content="Brunch maison à Bordeaux, quartier Gare Saint-Jean : pancakes, toasts, brioches perdues, burgers et formules brunch. Ouvert du mardi au dimanche, 10h-16h. Réservez votre table." />
+    <meta property="og:url" content="https://brunchhousebordeaux.fr/" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:image" content="https://brunchhousebordeaux.fr/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Brunch servi chez Brunch House Bordeaux : toasts, pancakes, brioche perdue et jus frais" />
+
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Brunch House Bordeaux | Restaurant Brunch" />
-    <meta name="twitter:description" content="Votre nouveau rendez-vous gourmand. Cuisine maison, produits frais, ambiance unique." />
-    <meta name="twitter:image" content="%PUBLIC_URL%/logoBrunch.png" />
-    
-    <!-- Business Information -->
-    <meta name="geo.region" content="FR-33" />
+    <meta name="twitter:title" content="Brunch House Bordeaux | Brunch gourmand près de la Gare Saint-Jean" />
+    <meta name="twitter:description" content="Brunch maison à Bordeaux, quartier Gare Saint-Jean : pancakes, toasts, brioches perdues, burgers et formules brunch. Ouvert du mardi au dimanche, 10h-16h. Réservez votre table." />
+    <meta name="twitter:image" content="https://brunchhousebordeaux.fr/images/og-image.jpg" />
+
+    <!-- Localisation : 3 rue Ferbos, 33800 Bordeaux (quartier Gare Saint-Jean) -->
+    <meta name="geo.region" content="FR-NAQ" />
     <meta name="geo.placename" content="Bordeaux" />
-    <meta name="geo.position" content="44.8637;-0.5574" />
-    <meta name="ICBM" content="44.8637, -0.5574" />
-    
-    <!-- Additional SEO -->
-    <link rel="canonical" href="https://brunchhousebordeaux.fr" />
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
-    
+    <meta name="geo.position" content="44.82819;-0.567471" />
+    <meta name="ICBM" content="44.82819, -0.567471" />
+
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&display=swap" rel="stylesheet" />
     
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Restaurant",
+      "@id": "https://brunchhousebordeaux.fr/#restaurant",
       "name": "Brunch House Bordeaux",
-      "image": "%PUBLIC_URL%/logoBrunch.png",
+      "description": "Restaurant de brunch fait maison à Bordeaux, quartier Gare Saint-Jean : pancakes, toasts, brioches perdues, burgers, salades et formules brunch.",
+      "url": "https://brunchhousebordeaux.fr/",
+      "logo": "https://brunchhousebordeaux.fr/logoBrunch.png",
+      "image": [
+        "https://brunchhousebordeaux.fr/images/og-image.jpg",
+        "https://brunchhousebordeaux.fr/images/new/hero1.JPG"
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "3 rue Ferbos",
@@ -63,13 +77,16 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 44.8637,
-        "longitude": -0.5574
+        "latitude": 44.82819,
+        "longitude": -0.567471
       },
-      "url": "https://brunchhousebordeaux.fr",
-      "telephone": "",
-      "servesCuisine": "Brunch, Petit-déjeuner",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Brunch+House+3+rue+Ferbos+33800+Bordeaux",
+      "sameAs": [
+        "https://www.instagram.com/brunchhousebordeaux/"
+      ],
+      "servesCuisine": ["Brunch", "Petit-déjeuner", "Cuisine maison"],
       "priceRange": "€€",
+      "currenciesAccepted": "EUR",
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -79,17 +96,9 @@
         }
       ],
       "acceptsReservations": true,
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "200"
-      },
       "menu": "https://brunchhousebordeaux.fr/menu",
-      "hasMenu": {
-        "@type": "Menu",
-        "name": "Menu Brunch",
-        "description": "Découvrez notre carte de brunchs gourmands avec des produits frais et locaux"
-      }
+      "hasMenu": "https://brunchhousebordeaux.fr/menu",
+      "inLanguage": ["fr", "en", "es"]
     }
     </script>
   </head>

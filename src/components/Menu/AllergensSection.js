@@ -118,7 +118,7 @@ const ALLERGEN_DATA = [
       { name: { fr: 'Jus de gingembre maison', en: 'Homemade ginger juice', es: 'Zumo de jengibre casero' }, allergens: [] },
       { name: { fr: 'Jus de pomme', en: 'Apple juice', es: 'Zumo de manzana' }, allergens: [] },
       { name: { fr: 'Latté glacé — sirop/nappage au choix', en: 'Iced latte — syrup/topping of your choice', es: 'Latte helado — sirope/cobertura a elegir' }, allergens: ['lait'] },
-      { name: { fr: 'Milkshake Spéculoos', en: 'Speculoos milkshake', es: 'Batido de speculoos' }, allergens: ['gluten', 'lait'] },
+      { name: { fr: 'Milkshake Vanille', en: 'Vanilla milkshake', es: 'Batido de vainilla' }, allergens: ['lait'] },
       { name: { fr: 'Milkshake Kinder', en: 'Kinder milkshake', es: 'Batido de Kinder' }, allergens: ['gluten', 'soja', 'lait', 'coque'] },
       { name: { fr: 'Smoothie Mangue', en: 'Mango smoothie', es: 'Smoothie de mango' }, allergens: [] },
       { name: { fr: 'Smoothie Ananas Gingembre', en: 'Pineapple ginger smoothie', es: 'Smoothie de piña y jengibre' }, allergens: ['lait'] },

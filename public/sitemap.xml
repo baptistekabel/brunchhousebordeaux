@@ -1,21 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://brunchhousebordeaux.fr/</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://brunchhousebordeaux.fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brunchhousebordeaux.fr/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://brunchhousebordeaux.fr/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brunchhousebordeaux.fr/"/>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://brunchhousebordeaux.fr/menu</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://brunchhousebordeaux.fr/en</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://brunchhousebordeaux.fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brunchhousebordeaux.fr/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://brunchhousebordeaux.fr/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brunchhousebordeaux.fr/"/>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://brunchhousebordeaux.fr/reservation</loc>
-    <lastmod>2024-12-19</lastmod>
+    <loc>https://brunchhousebordeaux.fr/es</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://brunchhousebordeaux.fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brunchhousebordeaux.fr/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://brunchhousebordeaux.fr/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brunchhousebordeaux.fr/"/>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://brunchhousebordeaux.fr/menu</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://brunchhousebordeaux.fr/menu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brunchhousebordeaux.fr/en/menu"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://brunchhousebordeaux.fr/es/menu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brunchhousebordeaux.fr/menu"/>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://brunchhousebordeaux.fr/en/menu</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://brunchhousebordeaux.fr/menu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brunchhousebordeaux.fr/en/menu"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://brunchhousebordeaux.fr/es/menu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brunchhousebordeaux.fr/menu"/>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://brunchhousebordeaux.fr/es/menu</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://brunchhousebordeaux.fr/menu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brunchhousebordeaux.fr/en/menu"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://brunchhousebordeaux.fr/es/menu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brunchhousebordeaux.fr/menu"/>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://brunchhousebordeaux.fr/mentions-legales</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
   </url>
 </urlset>

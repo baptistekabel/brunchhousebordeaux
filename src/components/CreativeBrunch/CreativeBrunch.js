@@ -1,18 +1,10 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { FiCalendar, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { LiquidGlassCard } from '../LiquidGlass';
 import { ParallaxSection, ScaleInWhenVisible } from '../AnimatedSection/AnimatedSection';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-
-const bgMove = keyframes`
-  0% { background-position: 0% 50%; }
-  25% { background-position: 50% 0%; }
-  50% { background-position: 100% 50%; }
-  75% { background-position: 50% 100%; }
-  100% { background-position: 0% 50%; }
-`;
 
 const Section = styled.section`
   padding: ${props => props.theme.spacing.section.mobile} ${props => props.theme.spacing.container.padding};
@@ -70,16 +62,7 @@ const Grid = styled.div`
 
 const ContentCard = styled(LiquidGlassCard)`
   padding: ${props => props.theme.spacing.xxl};
-  background: linear-gradient(
-    -45deg,
-    rgba(255, 255, 255, 0.95),
-    rgba(251, 247, 238, 0.9),
-    rgba(255, 255, 255, 0.95),
-    rgba(247, 242, 231, 0.9),
-    rgba(255, 255, 255, 0.95)
-  );
-  background-size: 400% 400%;
-  animation: ${bgMove} 20s ease infinite;
+  background: #FFFFFF;
 `;
 
 const Badge = styled.div`
@@ -87,16 +70,7 @@ const Badge = styled.div`
   align-items: center;
   gap: ${props => props.theme.spacing.sm};
   padding: ${props => props.theme.spacing.sm} ${props => props.theme.spacing.lg};
-  background: linear-gradient(
-    -45deg,
-    ${props => props.theme.colors.darkGreen},
-    rgba(1, 57, 39, 0.9),
-    #024d35,
-    rgba(1, 57, 39, 0.9),
-    ${props => props.theme.colors.darkGreen}
-  );
-  background-size: 400% 400%;
-  animation: ${bgMove} 20s ease infinite;
+  background: ${props => props.theme.colors.darkGreen};
   border-radius: ${props => props.theme.borderRadius.pill};
   margin-bottom: ${props => props.theme.spacing.lg};
   color: ${props => props.theme.colors.floralWhite};
@@ -256,16 +230,16 @@ const CreativeBrunch = () => {
 
   const images = [
     {
-      src: "/images/menu/brunchAccueil.JPG",
+      src: "/images/menu/brunchAccueil.webp",
       alt: "Brunch créatif - Ambiance accueil"
     },
     {
-      src: "/images/optimized/atelierBrunch.jpg",
+      src: "/images/optimized/atelierBrunch.webp",
       srcSet: `
-        /images/optimized/atelierBrunch-400w.jpg 400w,
-        /images/optimized/atelierBrunch-800w.jpg 800w,
-        /images/optimized/atelierBrunch-1200w.jpg 1200w,
-        /images/optimized/atelierBrunch-1600w.jpg 1600w
+        /images/optimized/atelierBrunch-400w.webp 400w,
+        /images/optimized/atelierBrunch-800w.webp 800w,
+        /images/optimized/atelierBrunch-1200w.webp 1200w,
+        /images/optimized/atelierBrunch-1600w.webp 1600w
       `,
       sizes: "(max-width: 768px) 400px, (max-width: 1200px) 800px, 1200px",
       alt: t('creativeBrunch.imageAlt')
